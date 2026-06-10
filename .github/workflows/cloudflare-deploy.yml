@@ -46,7 +46,7 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Build for Cloudflare Pages
         run: npm run build:cloudflare
@@ -59,7 +59,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy .vercel/output/static --project-name=heyberkshire-com --branch=${{ github.ref_name }}
+          command: pages deploy .vercel/output/static --project-name=nevadarealestatemarket-com --branch=${{ github.ref_name }}
 
       - name: Comment PR with deployment URL
         if: github.event_name == 'pull_request'
@@ -67,7 +67,7 @@ jobs:
         with:
           script: |
             const branch = context.payload.pull_request.head.ref;
-            const deploymentUrl = `https://${branch}.heyberkshire-com.pages.dev`;
+            const deploymentUrl = `https://${branch}.nevadarealestatemarket-com.pages.dev`;
             
             const comment = `## 🚀 Cloudflare Pages Deployment
             
@@ -107,7 +107,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Deploy Workers
         uses: cloudflare/wrangler-action@v3
@@ -133,7 +133,7 @@ jobs:
         uses: treosh/lighthouse-ci-action@v11
         with:
           urls: |
-            https://${{ github.event.pull_request.head.ref }}.heyberkshire-com.pages.dev
+            https://${{ github.event.pull_request.head.ref }}.nevadarealestatemarket-com.pages.dev
           uploadArtifacts: true
           temporaryPublicStorage: true
 

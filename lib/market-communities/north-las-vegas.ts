@@ -1,0 +1,103 @@
+import type { MarketCommunity } from "./types";
+
+export const northLasVegasCommunities: MarketCommunity[] = [
+  {
+    slug: "aliante",
+    name: "Aliante",
+    tagline: "Master-planned community with nature preserve and resort amenities",
+    priceRange: "$350K – $750K",
+    description: `Aliante is North Las Vegas's most complete master-planned community, built around a 20-acre nature discovery park and the Aliante Golf Club. The community features resort-style pools, a movie theater, and one of the most walkable park systems in Clark County. Del Webb at Aliante serves the 55+ market with a dedicated amenity center. Homes range from attached condos to single-family estates, with strong resale demand driven by the community's amenities, schools, and location near the I-215 Beltway.`,
+    highlights: [
+      "Aliante Golf Club",
+      "20-acre nature discovery park",
+      "Del Webb 55+ component",
+      "Resort pools & movie theater",
+      "I-215 Beltway access",
+      "Multiple price tiers",
+    ],
+    bestFor: ["Families", "55+ buyers", "First-time buyers", "Move-up buyers"],
+    address: "Aliante Pkwy",
+    zip: "89084",
+  },
+  {
+    slug: "del-webb-north-ranch",
+    name: "Del Webb North Ranch",
+    tagline: "North Las Vegas's premier 55+ active adult community",
+    priceRange: "$350K – $650K",
+    description: `Del Webb North Ranch is North Las Vegas's flagship active adult community, purpose-built for residents 55 and older. The community centers on a resort-style amenity campus with indoor and outdoor pools, pickleball, tennis, bocce, a fitness center, and a packed social calendar. Single-story floor plans from 1,400 to 2,600 sq ft. Its North Las Vegas location delivers strong value relative to Sun City Summerlin — buyers get the same Del Webb quality at a meaningful price advantage. New construction phases periodically release additional homesites.`,
+    highlights: [
+      "Del Webb 55+ community",
+      "Resort amenity campus",
+      "Pickleball & tennis",
+      "Single-story floor plans",
+      "Strong value vs. Summerlin 55+",
+      "Active social calendar",
+    ],
+    bestFor: ["55+ active adult buyers", "Downsizers", "Value-focused 55+ buyers", "CA retirees"],
+    address: "Beauty Vista Ave",
+    zip: "89084",
+  },
+  {
+    slug: "tule-springs",
+    name: "Tule Springs",
+    tagline: "New construction community adjacent to a 22,000-acre preserve",
+    priceRange: "$400K – $800K",
+    description: `Tule Springs is one of North Las Vegas's most exciting growth corridors, anchored by the 22,650-acre Tule Springs Fossil Beds National Monument — giving residents a permanent open-space boundary that no developer can touch. New construction communities from Lennar, KB Home, and Century Communities are delivering modern floor plans at competitive price points. The area appeals to buyers who want brand-new homes with generous lot sizes and outdoor recreation access without paying the Summerlin premium.`,
+    highlights: [
+      "Tule Springs National Monument adjacent",
+      "22,650 acres of permanent open space",
+      "New construction available",
+      "Multiple builders (Lennar, KB, Century)",
+      "Generous lot sizes",
+      "Fossil Beds hiking & recreation",
+    ],
+    bestFor: [
+      "New construction buyers",
+      "Families",
+      "Outdoor lifestyle buyers",
+      "Value-focused move-up buyers",
+    ],
+    address: "Tule Springs Rd",
+    zip: "89143",
+  },
+  {
+    slug: "eldorado",
+    name: "Eldorado",
+    tagline: "Established North Las Vegas community with great value",
+    priceRange: "$280K – $550K",
+    description: `Eldorado is one of North Las Vegas's most established residential areas, offering strong value for first-time buyers and investors. The community features a mix of housing built across several decades, with many homes featuring larger lots than comparably priced properties in the valley. Its central North Las Vegas location provides easy access to Nellis Air Force Base, North Las Vegas Airport, and major employment corridors along I-15 and US-95. Strong rental demand from military families and essential workers.`,
+    highlights: [
+      "Value-priced entry point",
+      "Larger lots than comparable areas",
+      "Near Nellis Air Force Base",
+      "Strong rental demand",
+      "I-15 & US-95 access",
+      "Established neighborhood feel",
+    ],
+    bestFor: ["First-time buyers", "Investors", "Military families", "Value-focused buyers"],
+    address: "Civic Center Dr",
+    zip: "89030",
+  },
+  {
+    slug: "villages-tule-springs",
+    name: "Villages of Tule Springs",
+    tagline: "Master-planned with parks, trails, and new construction",
+    priceRange: "$420K – $750K",
+    description: `The Villages of Tule Springs is a master-planned community in the heart of North Las Vegas's growth corridor, featuring an interconnected park and trail system, resort pools, and new construction from Century Communities and Woodside Homes. The community's design prioritizes walkability with pocket parks distributed throughout each village. Proximity to the 215 Beltway puts both the Las Vegas Strip and Summerlin within 20 minutes, making this a strong value play for buyers priced out of both.`,
+    highlights: [
+      "Master-planned park system",
+      "Walkable village design",
+      "Resort community pools",
+      "New construction available",
+      "215 Beltway proximity",
+      "Strong appreciation corridor",
+    ],
+    bestFor: ["Families", "First-time luxury buyers", "CA equity buyers", "New construction buyers"],
+    address: "Villages Tule Springs Dr",
+    zip: "89143",
+  },
+];
+
+export function getNorthLasVegasCommunity(slug: string): MarketCommunity | undefined {
+  return northLasVegasCommunities.find((c) => c.slug === slug);
+}

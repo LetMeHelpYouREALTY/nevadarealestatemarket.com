@@ -28,6 +28,17 @@ const nextConfig = {
         has: [
           {
             type: 'host',
+            value: 'nevadarealestatemarket.com',
+          },
+        ],
+        destination: 'https://www.nevadarealestatemarket.com/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
             value: 'heyberkshire.com',
           },
         ],

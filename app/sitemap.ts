@@ -1,7 +1,12 @@
 import { MetadataRoute } from "next";
+import { siteConfig } from "@/lib/site-config";
+import { hendersonCommunities } from "@/lib/market-communities/henderson";
+import { summerlinCommunities } from "@/lib/market-communities/summerlin";
+import { lasVegasCommunities } from "@/lib/market-communities/las-vegas";
+import { northLasVegasCommunities } from "@/lib/market-communities/north-las-vegas";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://heyberkshire.com";
+  const baseUrl = siteConfig.url;
   const lastModified = new Date();
 
   // Core pages
@@ -68,7 +73,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/neighborhoods/mountains-edge`, priority: 0.7, changeFrequency: "weekly" as const },
   ];
 
-  const allPages = [...corePages, ...servicePages, ...buyerPersonaPages, ...sellerPersonaPages, ...fiftyPlusCommunityPages, ...neighborhoodPages];
+  const marketAreaPages = [
+    { url: `${baseUrl}/henderson`, priority: 0.9, changeFrequency: "weekly" as const },
+    { url: `${baseUrl}/summerlin`, priority: 0.9, changeFrequency: "weekly" as const },
+    { url: `${baseUrl}/las-vegas`, priority: 0.9, changeFrequency: "weekly" as const },
+    { url: `${baseUrl}/north-las-vegas`, priority: 0.9, changeFrequency: "weekly" as const },
+    ...hendersonCommunities.map((c) => ({
+      url: `${baseUrl}/henderson/${c.slug}`,
+      priority: 0.8,
+      changeFrequency: "weekly" as const,
+    })),
+    ...summerlinCommunities.map((c) => ({
+      url: `${baseUrl}/summerlin/${c.slug}`,
+      priority: 0.8,
+      changeFrequency: "weekly" as const,
+    })),
+    ...lasVegasCommunities.map((c) => ({
+      url: `${baseUrl}/las-vegas/${c.slug}`,
+      priority: 0.8,
+      changeFrequency: "weekly" as const,
+    })),
+    ...northLasVegasCommunities.map((c) => ({
+      url: `${baseUrl}/north-las-vegas/${c.slug}`,
+      priority: 0.8,
+      changeFrequency: "weekly" as const,
+    })),
+  ];
+
+  const allPages = [
+    ...corePages,
+    ...servicePages,
+    ...buyerPersonaPages,
+    ...sellerPersonaPages,
+    ...fiftyPlusCommunityPages,
+    ...neighborhoodPages,
+    ...marketAreaPages,
+  ];
 
   return allPages.map((page) => ({
     url: page.url,
