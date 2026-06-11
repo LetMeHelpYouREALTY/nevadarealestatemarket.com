@@ -231,36 +231,5 @@ export const citationSources = {
   ],
 };
 
-// Photo categories for GBP
-export const photoCategories = [
-  {
-    category: "Office & Team",
-    description: "Exterior office, interior, team photos",
-    examples: ["Office exterior", "Reception area", "Dr. Jan headshot", "Team photo"],
-    count: "5-10 photos",
-  },
-  {
-    category: "Neighborhoods",
-    description: "Local area photos showing geography expertise",
-    examples: ["Summerlin views", "Henderson parks", "Las Vegas Strip", "Red Rock Canyon"],
-    count: "10-15 photos",
-  },
-  {
-    category: "Listings & Closings",
-    description: "Active listings, sold properties, closing day photos",
-    examples: ["Featured listings", "Sold signs", "Key handoff photos", "Happy clients"],
-    count: "15-20 photos",
-  },
-  {
-    category: "55+ Communities",
-    description: "Community amenities, clubhouses, golf courses",
-    examples: ["Sun City clubhouse", "Golf courses", "Recreation centers", "Community pools"],
-    count: "10-15 photos",
-  },
-  {
-    category: "Luxury Properties",
-    description: "High-end listings and neighborhoods",
-    examples: ["The Ridges homes", "Custom estates", "Strip views", "Pool/backyard features"],
-    count: "10-15 photos",
-  },
-];
+// Photo categories for GBP — Henderson MacDonald Highlands profile
+export { gbpPhotoUploadPlan as photoCategories } from "./gbp-media";

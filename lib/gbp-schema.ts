@@ -13,6 +13,7 @@ import {
   businessAttributes,
   agentStats,
 } from "./site-config";
+import { getGbpPhotoSchemaUrls } from "./gbp-media";
 
 export const businessInfo = {
   name: siteConfig.fullName,
@@ -162,13 +163,18 @@ const ALL_DAYS = [
 ] as const;
 
 export function generateLocalBusinessSchema() {
+  const galleryImages = getGbpPhotoSchemaUrls();
+
   return {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "@id": `${siteConfig.url}/#organization`,
     name: businessInfo.name,
     alternateName: businessInfo.alternateName,
-    image: `${siteConfig.url}/images/dr-jan-duffy.jpg`,
+    image:
+      galleryImages.length > 0
+        ? galleryImages
+        : `${siteConfig.url}/images/agent/dr-jan-duffy-headshot.webp`,
     url: businessInfo.url,
     telephone: businessInfo.phone.tel,
     email: businessInfo.email,

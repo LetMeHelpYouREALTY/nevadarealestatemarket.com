@@ -25,7 +25,12 @@ import {
   generateLocalBusinessSchema,
   generateFAQSchema,
 } from "@/lib/gbp-schema";
-import { businessHours, specialHours } from "@/lib/site-config";
+import { businessHours, specialHours, officeInfo } from "@/lib/site-config";
+import GbpMediaSection from "@/components/sections/GbpMediaSection";
+import {
+  generateImageGallerySchema,
+  generateVideoSchema,
+} from "@/lib/gbp-media";
 
 export const metadata: Metadata = {
   title: "Henderson MacDonald Highlands Real Estate | Dr. Jan Duffy, REALTOR®",
@@ -52,6 +57,9 @@ export const metadata: Metadata = {
 export default function GoogleBusinessPage() {
   const localBusinessSchema = generateLocalBusinessSchema();
   const faqSchema = generateFAQSchema();
+  const imageGallerySchema = generateImageGallerySchema();
+  const videoSchema = generateVideoSchema();
+  const extraSchemas = [imageGallerySchema, videoSchema].filter(Boolean);
 
   return (
     <>
@@ -65,6 +73,13 @@ export default function GoogleBusinessPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      {extraSchemas.map((schema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">
@@ -203,6 +218,8 @@ export default function GoogleBusinessPage() {
               )}
             </div>
           </section>
+
+          <GbpMediaSection />
 
           {/* About - 750 Word Description Structure */}
           <section className="max-w-4xl mx-auto mb-16">
@@ -387,7 +404,7 @@ export default function GoogleBusinessPage() {
                 transaction, and what made the experience valuable.
               </p>
               <a
-                href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review"
+                href={officeInfo.googleReviewsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
