@@ -1,5 +1,20 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Youtube,
+} from "lucide-react";
+import {
+  siteConfig,
+  agentInfo,
+  officeInfo,
+  businessHours,
+  socialProfiles,
+} from "@/lib/site-config";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,38 +25,46 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div>
-            <h3 className="font-bold text-xl mb-4">Berkshire Hathaway HomeServices</h3>
+            <h3 className="font-bold text-xl mb-4">{siteConfig.name}</h3>
             <p className="text-slate-300 mb-4 text-sm">
-              Nevada Properties - Your trusted real estate partner in Las Vegas, Henderson, and
-              Summerlin. Backed by Warren Buffett's legacy of trust.
+              {siteConfig.gbpDescription.slice(0, 200)}...
             </p>
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap gap-3">
               <a
-                href="http://drjanduffy.realscout.com/"
+                href={socialProfiles.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors"
-                aria-label="Search Las Vegas Homes"
+                aria-label="Dr. Jan Duffy on Facebook"
               >
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="http://drjanduffy.realscout.com/"
+                href={socialProfiles.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors"
-                aria-label="Search Las Vegas Homes"
+                aria-label="Dr. Jan Duffy on Instagram"
               >
                 <Instagram className="h-5 w-5" />
               </a>
               <a
-                href="http://drjanduffy.realscout.com/"
+                href={socialProfiles.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-white transition-colors"
-                aria-label="Search Las Vegas Homes"
+                aria-label="Dr. Jan Duffy on LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
+              </a>
+              <a
+                href={socialProfiles.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-white transition-colors"
+                aria-label="Dr. Jan Duffy on YouTube"
+              >
+                <Youtube className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -62,34 +85,34 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/neighborhoods"
+                  href="/henderson"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
-                  Neighborhoods
+                  Henderson Communities
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/why-berkshire-hathaway"
+                  href="/neighborhoods/henderson"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
-                  Why BHHS
+                  Henderson Neighborhood Guide
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/market-report"
+                  href="/luxury-homes"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
-                  Market Report
+                  Luxury Homes
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/google-business"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
-                  About Dr. Jan
+                  Google Business Profile
                 </Link>
               </li>
               <li>
@@ -117,14 +140,6 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/buyers/california-relocator"
-                  className="text-slate-300 hover:text-white transition-colors text-sm"
-                >
-                  California Relocators
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/sellers"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
@@ -136,15 +151,7 @@ export default function Footer() {
                   href="/luxury-homes"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
-                  Luxury Homes
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/55-plus-communities"
-                  className="text-slate-300 hover:text-white transition-colors text-sm"
-                >
-                  55+ Communities
+                  Luxury Homes & Estates
                 </Link>
               </li>
               <li>
@@ -152,7 +159,15 @@ export default function Footer() {
                   href="/new-construction"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
-                  New Construction
+                  Custom Builds
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/home-valuation"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Home Valuation
                 </Link>
               </li>
               <li>
@@ -173,28 +188,32 @@ export default function Footer() {
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0 mt-0.5" />
                 <span className="text-slate-300 text-sm">
-                  9406 W Lake Mead Blvd, Suite 100
+                  {officeInfo.address.street}
                   <br />
-                  Las Vegas, NV 89134
+                  {officeInfo.address.city}, {officeInfo.address.state}{" "}
+                  {officeInfo.address.zip}
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0" />
                 <Link
-                  href="tel:+17025001942"
+                  href={agentInfo.phoneTel}
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
-                  (702) 500-1942
+                  {agentInfo.phone}
                 </Link>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0" />
                 <Link
-                  href="mailto:homes@heyberkshire.com"
+                  href={`mailto:${agentInfo.email}`}
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
-                  Homes@HeyBerkshire.com
+                  {agentInfo.email}
                 </Link>
+              </li>
+              <li className="text-slate-400 text-xs">
+                {businessHours.display}
               </li>
             </ul>
           </div>
@@ -204,25 +223,26 @@ export default function Footer() {
         <div className="border-t border-slate-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-slate-400 text-sm text-center md:text-left">
-              © {currentYear} Berkshire Hathaway HomeServices Nevada Properties. All Rights
-              Reserved.
+              © {currentYear} {officeInfo.name}. All Rights Reserved.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <Link href="/faq" className="text-slate-400 hover:text-white transition-colors">
+              <Link
+                href="/faq"
+                className="text-slate-400 hover:text-white transition-colors"
+              >
                 FAQ
               </Link>
-              <Link href="/sitemap.xml" className="text-slate-400 hover:text-white transition-colors">
+              <Link
+                href="/sitemap.xml"
+                className="text-slate-400 hover:text-white transition-colors"
+              >
                 Sitemap
               </Link>
             </div>
           </div>
           <p className="text-slate-500 text-xs mt-4 text-center">
-            Dr. Jan Duffy, REALTOR® | License S.0197614.LLC | Berkshire Hathaway HomeServices Nevada
-            Properties
-          </p>
-          <p className="text-slate-600 text-xs mt-2 text-center max-w-3xl mx-auto">
-            When you work with a Berkshire Hathaway HomeServices agent, you're backed by a name
-            synonymous with trust, ethical standards, and financial strength.
+            {agentInfo.name}, {agentInfo.title} | License {agentInfo.license} |{" "}
+            {agentInfo.brokerage}
           </p>
         </div>
       </div>
