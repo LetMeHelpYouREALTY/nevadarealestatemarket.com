@@ -6,7 +6,15 @@
  * @see https://developers.google.com/search/docs/appearance/structured-data
  */
 
-import { siteConfig, agentInfo, officeInfo, agentStats } from "./site-config";
+import {
+  siteConfig,
+  agentInfo,
+  officeInfo,
+  agentStats,
+  businessHours,
+  hendersonServiceAreas,
+  socialProfileUrls,
+} from "./site-config";
 
 // ============================================================================
 // Types
@@ -63,13 +71,16 @@ export interface SeniorCommunityData {
 
 const BASE_URL = siteConfig.url;
 
-// Social media profiles (to be updated with actual URLs)
+// Social media profiles — matches GBP sameAs
 export const socialProfiles = {
-  facebook: "https://www.facebook.com/heyberkshire",
-  instagram: "https://www.instagram.com/heyberkshire",
-  linkedin: "https://www.linkedin.com/in/drjanduffy",
-  tiktok: "https://www.tiktok.com/@heyberkshire",
-  youtube: "https://www.youtube.com/@heyberkshire",
+  youtube: "https://www.youtube.com/@DrDuffy",
+  tiktok: "https://www.tiktok.com/@drjanduffy",
+  instagram: "https://www.instagram.com/drjanduffy/",
+  twitter: "https://x.com/drjanduffy",
+  linkedin:
+    "https://www.linkedin.com/company/dr-jan-duffy-realtor-berkshire-hathaway-homeservices-henderson/",
+  facebook: "https://www.facebook.com/DrJanDuffyRealtorHenderson/",
+  pinterest: "https://www.pinterest.com/DrJanDuffy/",
 };
 
 // ============================================================================
@@ -84,20 +95,21 @@ export function generateRealEstateAgentSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    "@id": `${BASE_URL}#organization`,
-    name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
+    "@id": `${BASE_URL}/#organization`,
+    name: siteConfig.fullName,
     alternateName: [
-      "HeyBerkshire",
+      siteConfig.name,
       "BHHS Nevada Properties",
       "Berkshire Hathaway HomeServices",
     ],
     url: BASE_URL,
     logo: `${BASE_URL}/images/dr-jan-duffy.jpg`,
     image: `${BASE_URL}/images/dr-jan-duffy.jpg`,
-    description: siteConfig.description,
-    telephone: "+1-702-500-1942",
+    description: siteConfig.gbpDescription,
+    telephone: agentInfo.phoneTel.replace("tel:", ""),
     email: agentInfo.email,
-    priceRange: "$385K - $10M+",
+    priceRange: "$$$",
+    foundingDate: siteConfig.foundingDate,
     address: {
       "@type": "PostalAddress",
       streetAddress: officeInfo.address.street,
@@ -114,33 +126,20 @@ export function generateRealEstateAgentSchema() {
     areaServed: [
       {
         "@type": "City",
-        name: "Las Vegas",
-        sameAs: "https://en.wikipedia.org/wiki/Las_Vegas",
-      },
-      {
-        "@type": "City",
         name: "Henderson",
         sameAs: "https://en.wikipedia.org/wiki/Henderson,_Nevada",
       },
-      {
-        "@type": "Place",
-        name: "Summerlin",
-      },
-      {
-        "@type": "City",
-        name: "North Las Vegas",
-      },
-      {
-        "@type": "Place",
-        name: "Green Valley",
-      },
+      ...hendersonServiceAreas.map((area) => ({
+        "@type": "Place" as const,
+        name: area,
+      })),
     ],
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        opens: "08:00",
-        closes: "20:00",
+        opens: businessHours.opens,
+        closes: businessHours.closes,
       },
     ],
     hasCredential: {
@@ -156,7 +155,7 @@ export function generateRealEstateAgentSchema() {
       },
       identifier: agentInfo.license,
     },
-    sameAs: Object.values(socialProfiles),
+    sameAs: socialProfileUrls,
     parentOrganization: {
       "@type": "Organization",
       "@id": `${BASE_URL}#parent-organization`,
@@ -177,18 +176,30 @@ export function generateRealEstateAgentSchema() {
       worstRating: "1",
     },
     knowsAbout: [
-      "Las Vegas real estate",
-      "Henderson homes",
-      "Summerlin properties",
-      "Luxury homes",
-      "New construction",
-      "Investment properties",
-      "Relocation services",
-      "55+ communities",
-      "First-time homebuyers",
+      "Henderson luxury real estate",
+      "MacDonald Ranch homes",
+      "Lake Las Vegas estates",
+      "Green Valley Ranch",
+      "Seven Hills Henderson",
+      "Anthem Henderson",
+      "Custom home builds",
+      "Luxury estates",
+      "Property management consulting",
     ],
-    slogan: "Your Berkshire Hathaway HomeServices expert in Las Vegas",
+    slogan: "Luxury Henderson Real Estate | Nevada's Top 1% REALTOR®",
   };
+}
+
+/**
+ * Site-wide @graph schema for SEO, AEO, and GEO
+ * Combines RealEstateAgent + Organization + WebSite entities
+ */
+export function generateSiteGraphSchema() {
+  return combineSchemas(
+    generateRealEstateAgentSchema(),
+    generateOrganizationSchema(),
+    generateWebSiteSchema()
+  );
 }
 
 /**

@@ -7,35 +7,28 @@ import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import { Phone, Home as HomeIcon, TrendingUp, Shield, Users } from "lucide-react";
 import { getPageDomainConfig } from "@/lib/get-domain-config";
+import { generateFAQSchema } from "@/lib/gbp-schema";
+import { combineSchemas } from "@/lib/schema";
+import { commonFAQs } from "@/lib/site-config";
 
 export default async function Home() {
   const config = await getPageDomainConfig();
 
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    name: `Dr. Jan Duffy - ${config.neighborhood} Real Estate`,
-    url: `https://${config.domain !== "default" ? config.domain : "heyberkshire.com"}`,
-    telephone: "+17022221964",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "9406 W Lake Mead Blvd, Suite 100",
-      addressLocality: "Las Vegas",
-      addressRegion: "NV",
-      postalCode: "89134",
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "200",
-    },
-  };
+  const homepageSchema = combineSchemas(
+    generateFAQSchema([
+      ...commonFAQs.general.slice(0, 4),
+      {
+        question: `What luxury homes are available in ${config.neighborhood}?`,
+        answer: `Dr. Jan Duffy specializes in luxury homes and estates in ${config.neighborhood} and surrounding Henderson communities. Call (702) 500-1955 for private showings and personalized market consultations.`,
+      },
+    ])
+  );
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchema) }}
       />
       <Navbar />
       <main>
@@ -162,11 +155,11 @@ export default async function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17022221964"
+                href="tel:+17025001955"
                 className="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call 702-222-1964
+                Call (702) 500-1955
               </a>
               <Link
                 href="/contact"

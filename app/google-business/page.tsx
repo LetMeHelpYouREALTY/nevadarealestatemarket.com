@@ -27,22 +27,23 @@ import {
 } from "@/lib/gbp-schema";
 
 export const metadata: Metadata = {
-  title: "Dr. Jan Duffy, REALTOR® Las Vegas | Berkshire Hathaway HomeServices",
+  title: "Henderson MacDonald Highlands Real Estate | Dr. Jan Duffy, REALTOR®",
   description:
-    "Dr. Jan Duffy is a trusted Las Vegas REALTOR® with Berkshire Hathaway HomeServices Nevada Properties. Specializing in Summerlin, Henderson, 55+ communities, California relocation, and luxury homes. Call (702) 500-1942.",
+    "Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada, specializes in luxury homes and estates in Henderson. Serving Lake Las Vegas, MacDonald Ranch, Green Valley Ranch, Seven Hills, and Anthem. Call (702) 500-1955.",
   keywords: [
-    "Dr. Jan Duffy realtor",
-    "Las Vegas real estate agent",
-    "Berkshire Hathaway HomeServices Las Vegas",
-    "Summerlin realtor",
-    "Henderson real estate agent",
-    "55+ communities Las Vegas",
-    "California relocation Las Vegas",
+    "Henderson MacDonald Highlands Real Estate",
+    "Dr Jan Duffy realtor Henderson",
+    "luxury homes Henderson NV",
+    "MacDonald Ranch real estate",
+    "Lake Las Vegas estates",
+    "Green Valley Ranch homes",
+    "Seven Hills Henderson realtor",
   ],
   openGraph: {
-    title: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    description: "Trusted Las Vegas REALTOR® serving since 2008. Summerlin, Henderson, luxury homes, 55+ communities.",
-    url: "https://heyberkshire.com/google-business",
+    title: "Henderson MacDonald Highlands Real Estate | Homes by Dr. Jan Duffy",
+    description:
+      "Luxury Henderson real estate expert ranked Nevada's Top 1%. Private showings and personalized consultations.",
+    url: "https://www.nevadarealestatemarket.com/google-business",
     type: "profile",
   },
 };
