@@ -4,6 +4,7 @@ on:
   pull_request:
     branches: [main, develop]
 
+# VERCEL_PROJECT_ID must target nevada-real-estate-market (prj_QfkncbvHOhOiWUYkAljCmx7v89M7).
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}

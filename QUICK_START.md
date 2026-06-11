@@ -19,10 +19,10 @@ Name: VERCEL_TOKEN
 Value: [Get from https://vercel.com/account/tokens]
 
 Name: VERCEL_ORG_ID  
-Value: [Run: npx vercel link, then copy from .vercel/project.json]
+Value: team_EIbjFXaDDtGMTweb5Hvo3CG3
 
 Name: VERCEL_PROJECT_ID
-Value: [Same file as above]
+Value: prj_QfkncbvHOhOiWUYkAljCmx7v89M7 (Vercel project: nevada-real-estate-market — serves www.nevadarealestatemarket.com)
 ```
 
 ### 3. Test Locally (2 min)

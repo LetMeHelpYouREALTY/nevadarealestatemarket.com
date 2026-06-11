@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
 
+# IMPORTANT: VERCEL_PROJECT_ID must be prj_QfkncbvHOhOiWUYkAljCmx7v89M7
+# (Vercel project "nevada-real-estate-market" → www.nevadarealestatemarket.com).
+# Do NOT use the drjanduffy.com project ID or pushes deploy to the wrong site.
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
