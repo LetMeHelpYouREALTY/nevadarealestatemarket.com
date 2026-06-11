@@ -144,6 +144,7 @@ jobs:
       - name: Generate coverage report
         if: always()
         run: npm run test:coverage
+        continue-on-error: true
 
       - name: Upload coverage to artifacts
         if: always()

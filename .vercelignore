@@ -1,0 +1,5 @@
+# Legacy Flask API — AI chat uses Next.js app/api routes instead.
+# Excluded so Vercel CLI does not require uv during vercel build.
+api/index.py
+api/faqGenerator.py
+requirements.txt
