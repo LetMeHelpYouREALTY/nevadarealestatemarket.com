@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, Home } from "lucide-react";
+import { agentInfo } from "@/lib/site-config";
 
 export default function CTASection() {
   return (
@@ -39,9 +40,9 @@ export default function CTASection() {
               variant="outline"
               className="border-white text-white hover:bg-white/10"
             >
-              <Link href="tel:+17025001942" className="flex items-center gap-2">
+              <Link href={agentInfo.phoneTel} className="flex items-center gap-2">
                 <Phone className="h-5 w-5" />
-                Call Now
+                Call {agentInfo.phone}
               </Link>
             </Button>
           </div>

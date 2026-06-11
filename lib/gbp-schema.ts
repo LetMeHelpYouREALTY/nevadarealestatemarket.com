@@ -6,6 +6,7 @@ import {
   agentInfo,
   officeInfo,
   businessHours,
+  specialHours,
   hendersonServiceAreas,
   businessCategories,
   socialProfileUrls,
@@ -125,7 +126,7 @@ export const gbpFAQs = [
   {
     question: "What are Dr. Jan Duffy's office hours in Henderson?",
     answer:
-      "Dr. Jan Duffy is available daily from 6:00 AM to 9:00 PM, seven days a week. The office is located at 3185 St Rose Pkwy, Suite 101, Henderson, NV 89052. Online appointments are also available.",
+      "Dr. Jan Duffy is available daily from 6:00 AM to 9:00 PM, seven days a week. The office is located at 3185 St Rose Pkwy, Suite 101, Henderson, NV 89052. Online appointments are also available. Closed July 3–4, 2026 for the 4th of July holiday.",
   },
   {
     question: "What is the average home price in Henderson in 2026?",
@@ -190,6 +191,12 @@ export function generateLocalBusinessSchema() {
         opens: businessHours.opens,
         closes: businessHours.closes,
       },
+      ...specialHours.map((entry) => ({
+        "@type": "OpeningHoursSpecification" as const,
+        validFrom: entry.date,
+        validThrough: entry.date,
+        description: `Closed — ${entry.label}`,
+      })),
     ],
     areaServed: businessInfo.serviceAreas.map((area) => ({
       "@type": "Place",

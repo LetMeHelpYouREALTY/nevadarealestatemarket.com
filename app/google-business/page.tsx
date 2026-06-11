@@ -25,6 +25,7 @@ import {
   generateLocalBusinessSchema,
   generateFAQSchema,
 } from "@/lib/gbp-schema";
+import { businessHours, specialHours } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Henderson MacDonald Highlands Real Estate | Dr. Jan Duffy, REALTOR®",
@@ -157,29 +158,49 @@ export default function GoogleBusinessPage() {
                   Business Hours
                 </h2>
               </div>
+              <p className="text-slate-700 mb-4">{businessHours.display}</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                <div>
-                  <span className="font-medium">Monday:</span> 9am - 6pm
-                </div>
-                <div>
-                  <span className="font-medium">Tuesday:</span> 9am - 6pm
-                </div>
-                <div>
-                  <span className="font-medium">Wednesday:</span> 9am - 6pm
-                </div>
-                <div>
-                  <span className="font-medium">Thursday:</span> 9am - 6pm
-                </div>
-                <div>
-                  <span className="font-medium">Friday:</span> 9am - 6pm
-                </div>
-                <div>
-                  <span className="font-medium">Saturday:</span> 10am - 4pm
-                </div>
-                <div>
-                  <span className="font-medium">Sunday:</span> By Appointment
-                </div>
+                {(
+                  [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday",
+                  ] as const
+                ).map((day) => (
+                  <div key={day}>
+                    <span className="font-medium">{day}:</span>{" "}
+                    {businessHours.dayDisplay}
+                  </div>
+                ))}
               </div>
+              {specialHours.length > 0 && (
+                <div className="mt-6 pt-4 border-t border-slate-200">
+                  <h3 className="font-semibold text-slate-900 mb-2">
+                    Special Hours
+                  </h3>
+                  <ul className="space-y-1 text-sm text-slate-700">
+                    {specialHours.map((entry) => (
+                      <li key={entry.date}>
+                        <span className="font-medium">
+                          {new Date(`${entry.date}T12:00:00`).toLocaleDateString(
+                            "en-US",
+                            {
+                              month: "long",
+                              day: "numeric",
+                              year: "numeric",
+                            },
+                          )}
+                        </span>
+                        : Closed — {entry.label}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </section>
 

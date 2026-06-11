@@ -63,9 +63,24 @@ export const businessHours = {
   saturday: "06:00-21:00",
   sunday: "06:00-21:00",
   display: "Monday – Sunday: 6:00 AM – 9:00 PM",
+  dayDisplay: "6:00 AM – 9:00 PM",
   opens: "06:00",
   closes: "21:00",
 };
+
+/** GBP special hours — closed dates */
+export const specialHours = [
+  {
+    date: "2026-07-03",
+    label: "4th of July (Observed)",
+    status: "closed" as const,
+  },
+  {
+    date: "2026-07-04",
+    label: "4th of July",
+    status: "closed" as const,
+  },
+];
 
 /** GBP service areas — Henderson neighborhoods */
 export const hendersonServiceAreas = [
