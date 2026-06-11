@@ -25,6 +25,7 @@
 - [ ] H1 tag present and keyword-optimized
 - [ ] Berkshire Hathaway HomeServices branding consistent
 - [ ] Phone number is correct: **(702) 500-1955** for CTAs (GBP-matched)
+- [ ] Email is correct: **DrDuffy@NevadaRealEstateMarket.com** (via `agentInfo.email` in site-config)
 
 ## Quality Checklist
 

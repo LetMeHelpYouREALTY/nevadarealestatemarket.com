@@ -4,6 +4,11 @@
 
 ```
 images/
+├── gbp/            # Google Business Profile gallery (sync with GBP uploads)
+│   ├── office/     # St Rose Pkwy office, headshots, team
+│   ├── neighborhoods/  # Lake Las Vegas, MacDonald Ranch, Seven Hills, etc.
+│   ├── luxury/     # Estate interiors, custom builds
+│   └── closings/   # Sold signs, key handoffs (with consent)
 ├── hero/           # Homepage hero backgrounds
 ├── agent/          # Dr. Jan Duffy photos
 ├── properties/     # Listing photos
@@ -11,6 +16,25 @@ images/
 ├── testimonials/   # Client headshots
 └── logos/          # Brand assets
 ```
+
+## GBP Photo Sync (Henderson MacDonald Highlands)
+
+When uploading to **Google Business Profile** → *Add photos and videos*, use the same files here:
+
+1. Save optimized WebP/JPG to the matching `gbp/` subfolder
+2. Add an entry in `lib/gbp-media.ts` → `gbpPhotos` array
+3. Photos appear automatically on `/google-business#photos`
+
+**GBP posting name:** Henderson MacDonald Highlands Real Estate | Homes by Dr. Jan Duffy
+
+| GBP category | Local folder | Examples |
+|--------------|--------------|----------|
+| At work / Team | `gbp/office/` | Office exterior, Dr. Jan headshot |
+| Exterior / Neighborhood | `gbp/neighborhoods/` | Lake Las Vegas, MacDonald Ranch, Anthem |
+| Inside / Products | `gbp/luxury/` | Luxury kitchens, pools, estates |
+| At work | `gbp/closings/` | SOLD signs, closing day (with consent) |
+
+**Videos:** Upload short tours to GBP directly, or add YouTube video IDs in `lib/gbp-media.ts` → `gbpVideos`.
 
 ## Recommended Specifications
 

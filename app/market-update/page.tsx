@@ -14,11 +14,12 @@ import {
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { agentInfo, siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Berkshire Hathaway HomeServices Las Vegas Market Update | January 2026",
   description:
-    "Weekly Las Vegas real estate market update from Berkshire Hathaway HomeServices Nevada Properties. Get the latest stats, notable sales, and expert analysis from Dr. Jan Duffy. Call (702) 500-1942.",
+    "Weekly Las Vegas real estate market update from Berkshire Hathaway HomeServices Nevada Properties. Get the latest stats, notable sales, and expert analysis from Dr. Jan Duffy. Call (702) 500-1955.",
   keywords: [
     "Berkshire Hathaway HomeServices Las Vegas market update",
     "Las Vegas real estate market",
@@ -38,17 +39,20 @@ const articleSchema = {
   dateModified: "2026-01-24",
   author: {
     "@type": "Person",
-    name: "Dr. Jan Duffy",
-    jobTitle: "REALTOR®",
+    name: agentInfo.name,
+    jobTitle: agentInfo.title,
+    email: agentInfo.email,
     worksFor: {
       "@type": "RealEstateAgent",
-      name: "Berkshire Hathaway HomeServices Nevada Properties",
+      name: siteConfig.fullName,
+      email: agentInfo.email,
     },
   },
   publisher: {
     "@type": "Organization",
-    name: "Berkshire Hathaway HomeServices Nevada Properties",
-    url: "https://heyberkshire.com",
+    name: siteConfig.fullName,
+    url: siteConfig.url,
+    email: agentInfo.email,
   },
 };
 
@@ -386,11 +390,11 @@ export default function MarketUpdatePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17025001942"
+                href="tel:+17025001955"
                 className="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call (702) 500-1942
+                Call (702) 500-1955
               </a>
               <Link
                 href="/home-valuation"

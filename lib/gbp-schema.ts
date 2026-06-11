@@ -6,12 +6,14 @@ import {
   agentInfo,
   officeInfo,
   businessHours,
+  specialHours,
   hendersonServiceAreas,
   businessCategories,
   socialProfileUrls,
   businessAttributes,
   agentStats,
 } from "./site-config";
+import { getGbpPhotoSchemaUrls } from "./gbp-media";
 
 export const businessInfo = {
   name: siteConfig.fullName,
@@ -125,7 +127,7 @@ export const gbpFAQs = [
   {
     question: "What are Dr. Jan Duffy's office hours in Henderson?",
     answer:
-      "Dr. Jan Duffy is available daily from 6:00 AM to 9:00 PM, seven days a week. The office is located at 3185 St Rose Pkwy, Suite 101, Henderson, NV 89052. Online appointments are also available.",
+      "Dr. Jan Duffy is available daily from 6:00 AM to 9:00 PM, seven days a week. The office is located at 3185 St Rose Pkwy, Suite 101, Henderson, NV 89052. Online appointments are also available. Closed July 3–4, 2026 for the 4th of July holiday.",
   },
   {
     question: "What is the average home price in Henderson in 2026?",
@@ -141,7 +143,7 @@ export const gbpFAQs = [
   {
     question: "How do I schedule a consultation with Dr. Jan Duffy?",
     answer:
-      "Call or text (702) 500-1955 for immediate assistance, or email homes@heyberkshire.com. Office visits available at 3185 St Rose Pkwy, Suite 101, Henderson, NV 89052. Open daily 6 AM – 9 PM. Online appointments also available.",
+      `Call or text (702) 500-1955 for immediate assistance, or email ${agentInfo.email}. Office visits available at 3185 St Rose Pkwy, Suite 101, Henderson, NV 89052. Open daily 6 AM – 9 PM. Online appointments also available.`,
   },
   {
     question: "What makes Henderson MacDonald Highlands Real Estate different?",
@@ -161,13 +163,18 @@ const ALL_DAYS = [
 ] as const;
 
 export function generateLocalBusinessSchema() {
+  const galleryImages = getGbpPhotoSchemaUrls();
+
   return {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "@id": `${siteConfig.url}/#organization`,
     name: businessInfo.name,
     alternateName: businessInfo.alternateName,
-    image: `${siteConfig.url}/images/dr-jan-duffy.jpg`,
+    image:
+      galleryImages.length > 0
+        ? galleryImages
+        : `${siteConfig.url}/images/agent/dr-jan-duffy-headshot.webp`,
     url: businessInfo.url,
     telephone: businessInfo.phone.tel,
     email: businessInfo.email,
@@ -190,6 +197,12 @@ export function generateLocalBusinessSchema() {
         opens: businessHours.opens,
         closes: businessHours.closes,
       },
+      ...specialHours.map((entry) => ({
+        "@type": "OpeningHoursSpecification" as const,
+        validFrom: entry.date,
+        validThrough: entry.date,
+        description: `Closed — ${entry.label}`,
+      })),
     ],
     areaServed: businessInfo.serviceAreas.map((area) => ({
       "@type": "Place",

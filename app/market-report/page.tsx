@@ -4,6 +4,7 @@ import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { TrendingUp, TrendingDown, Home, Calendar, DollarSign, BarChart, Phone } from "lucide-react";
 import type { Metadata } from "next";
+import { inlineRealEstateAgentAuthor } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Las Vegas Real Estate Market Report January 2026 | Berkshire Hathaway HomeServices",
@@ -23,11 +24,7 @@ const reportSchema = {
   "@context": "https://schema.org",
   "@type": "Report",
   name: "Las Vegas Real Estate Market Report - January 2026",
-  author: {
-    "@type": "RealEstateAgent",
-    name: "Dr. Jan Duffy",
-    worksFor: "Berkshire Hathaway HomeServices Nevada Properties",
-  },
+  author: inlineRealEstateAgentAuthor,
   datePublished: "2026-01-23",
   about: {
     "@type": "Place",
@@ -303,11 +300,11 @@ export default function MarketReportPage() {
               Jan Duffy provides free market consultations.
             </p>
             <a
-              href="tel:+17025001942"
+              href="tel:+17025001955"
               className="inline-flex items-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Call (702) 500-1942
+              Call (702) 500-1955
             </a>
             <p className="mt-4 text-blue-200 text-sm">
               Berkshire Hathaway HomeServices Nevada Properties

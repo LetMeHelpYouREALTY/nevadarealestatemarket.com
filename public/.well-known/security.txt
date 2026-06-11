@@ -1,4 +1,4 @@
-Contact: mailto:security@heyberkshire.com
+Contact: mailto:DrDuffy@NevadaRealEstateMarket.com
 Contact: tel:+1-702-500-1955
 Expires: 2027-06-11T00:00:00.000Z
 Preferred-Languages: en
@@ -10,7 +10,7 @@ Acknowledgments: We appreciate responsible disclosure of security vulnerabilitie
 # Security Contact Information
 #
 # If you've discovered a security vulnerability in this website,
-# please report it to us at security@heyberkshire.com or call
+# please report it to us at DrDuffy@NevadaRealEstateMarket.com or call
 # (702) 500-1955 during business hours (6 AM – 9 PM daily).
 #
 # We take security seriously and will respond within 48 hours.
