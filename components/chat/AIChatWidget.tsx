@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { Send, MessageCircle, X, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { agentInfo } from "@/lib/site-config";
 
 interface Message {
   role: "user" | "assistant";
@@ -80,7 +81,7 @@ export default function AIChatWidget() {
       const errorMessage: Message = {
         role: "assistant",
         content:
-          "I'm sorry, I'm having trouble connecting right now. Please try again or contact Dr. Jan Duffy directly at (702) 500-1955.",
+          `I'm sorry, I'm having trouble connecting right now. Please try again or contact Dr. Jan Duffy at ${agentInfo.phone} or ${agentInfo.email}.`,
       };
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
@@ -181,7 +182,7 @@ export default function AIChatWidget() {
               </Button>
             </div>
             <p className="text-xs text-slate-500 mt-2 text-center">
-              Powered by AI • Contact: (702) 500-1955
+              Powered by AI • {agentInfo.phone} • {agentInfo.email}
             </p>
           </div>
         </div>

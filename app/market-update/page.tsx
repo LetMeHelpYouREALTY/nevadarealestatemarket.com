@@ -14,6 +14,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { agentInfo, siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Berkshire Hathaway HomeServices Las Vegas Market Update | January 2026",
@@ -38,17 +39,20 @@ const articleSchema = {
   dateModified: "2026-01-24",
   author: {
     "@type": "Person",
-    name: "Dr. Jan Duffy",
-    jobTitle: "REALTOR®",
+    name: agentInfo.name,
+    jobTitle: agentInfo.title,
+    email: agentInfo.email,
     worksFor: {
       "@type": "RealEstateAgent",
-      name: "Berkshire Hathaway HomeServices Nevada Properties",
+      name: siteConfig.fullName,
+      email: agentInfo.email,
     },
   },
   publisher: {
     "@type": "Organization",
-    name: "Berkshire Hathaway HomeServices Nevada Properties",
-    url: "https://heyberkshire.com",
+    name: siteConfig.fullName,
+    url: siteConfig.url,
+    email: agentInfo.email,
   },
 };
 

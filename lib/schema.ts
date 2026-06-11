@@ -1,5 +1,5 @@
 /**
- * Schema.org Structured Data Generators for heyberkshire.com
+ * Schema.org Structured Data Generators for nevadarealestatemarket.com
  * Following Google's 2025 Structured Data Guidelines
  *
  * @see https://schema.org

@@ -25,7 +25,7 @@ import {
   generateLocalBusinessSchema,
   generateFAQSchema,
 } from "@/lib/gbp-schema";
-import { businessHours, specialHours, officeInfo } from "@/lib/site-config";
+import { agentInfo, businessHours, specialHours, officeInfo } from "@/lib/site-config";
 import GbpMediaSection from "@/components/sections/GbpMediaSection";
 import {
   generateImageGallerySchema,
@@ -129,7 +129,7 @@ export default function GoogleBusinessPage() {
                     <div className="flex items-center gap-3">
                       <Mail className="h-5 w-5 text-blue-400 flex-shrink-0" />
                       <a
-                        href={`mailto:${businessInfo.email}`}
+                        href={agentInfo.emailMailto}
                         className="hover:text-blue-300"
                       >
                         {businessInfo.email}

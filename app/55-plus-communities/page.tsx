@@ -23,6 +23,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { agentInfo, siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title:
@@ -107,11 +108,12 @@ const faqSchema = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
-  name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
+  name: siteConfig.fullName,
   description:
     "55+ community specialist helping active adults find their perfect Las Vegas retirement home",
-  telephone: "(702) 500-1955",
-  url: "https://heyberkshire.com/55-plus-communities",
+  telephone: agentInfo.phone,
+  email: agentInfo.email,
+  url: `${siteConfig.url}/55-plus-communities`,
   areaServed: {
     "@type": "City",
     name: "Las Vegas",

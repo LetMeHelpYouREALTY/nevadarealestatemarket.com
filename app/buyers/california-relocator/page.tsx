@@ -17,7 +17,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import type { Metadata } from "next";
-import { officeInfo } from "@/lib/site-config";
+import { agentInfo, officeInfo, siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Relocating from California to Las Vegas | Berkshire Hathaway HomeServices",
@@ -83,9 +83,10 @@ const faqSchema = {
 const realEstateAgentSchema = {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
-  name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-  telephone: "+17025001955",
-  url: "https://heyberkshire.com/buyers/california-relocator",
+  name: siteConfig.fullName,
+  telephone: agentInfo.phoneTel.replace("tel:", ""),
+  email: agentInfo.email,
+  url: `${siteConfig.url}/buyers/california-relocator`,
   address: {
     "@type": "PostalAddress",
     streetAddress: officeInfo.address.street,

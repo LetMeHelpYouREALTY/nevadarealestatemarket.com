@@ -143,7 +143,7 @@ export const gbpFAQs = [
   {
     question: "How do I schedule a consultation with Dr. Jan Duffy?",
     answer:
-      "Call or text (702) 500-1955 for immediate assistance, or email homes@heyberkshire.com. Office visits available at 3185 St Rose Pkwy, Suite 101, Henderson, NV 89052. Open daily 6 AM – 9 PM. Online appointments also available.",
+      `Call or text (702) 500-1955 for immediate assistance, or email ${agentInfo.email}. Office visits available at 3185 St Rose Pkwy, Suite 101, Henderson, NV 89052. Open daily 6 AM – 9 PM. Online appointments also available.`,
   },
   {
     question: "What makes Henderson MacDonald Highlands Real Estate different?",

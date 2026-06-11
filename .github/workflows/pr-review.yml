@@ -353,6 +353,14 @@ jobs:
                     content.includes('702-500-1942') || content.includes('7025001942')) {
                   issues.push(`❌ **${file.filename}**: Contains deprecated phone number (should be (702) 500-1955)`);
                 }
+
+                // Check for deprecated email addresses
+                if (content.includes('homes@heyberkshire.com') ||
+                    content.includes('security@heyberkshire.com') ||
+                    content.includes('info@heyberkshire.com') ||
+                    content.includes('Homes@HeyBerkshire.com')) {
+                  issues.push(`❌ **${file.filename}**: Contains deprecated email (should be DrDuffy@NevadaRealEstateMarket.com)`);
+                }
                 
                 // Check for JSON-LD schema
                 if (!content.includes('application/ld+json') && !content.includes('schema.org')) {

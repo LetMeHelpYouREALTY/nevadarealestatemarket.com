@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
+import { agentInfo } from "@/lib/site-config";
 
 const openrouter = new OpenAI({
   apiKey: process.env.OPENROUTER_API_KEY,
@@ -26,7 +27,7 @@ export async function POST(request: NextRequest) {
       {
         role: "system",
         content:
-          "You are a friendly real estate assistant for Dr. Jan Duffy, a licensed realtor with Berkshire Hathaway HomeServices Nevada Properties. You specialize in Las Vegas and Henderson real estate. Be concise, warm, helpful, and professional. Always mention that users can contact Dr. Jan Duffy at (702) 500-1955 for personalized assistance.",
+          `You are a friendly real estate assistant for Dr. Jan Duffy, a licensed realtor with Berkshire Hathaway HomeServices Nevada Properties. You specialize in Las Vegas and Henderson real estate. Be concise, warm, helpful, and professional. Always mention that users can contact Dr. Jan Duffy at ${agentInfo.phone} or ${agentInfo.email} for personalized assistance.`,
       },
       ...conversation,
       {

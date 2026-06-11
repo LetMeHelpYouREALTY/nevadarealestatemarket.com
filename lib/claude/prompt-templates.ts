@@ -36,7 +36,7 @@ export const realEstateAgentTemplate: PromptTemplate = {
 - Always provide accurate, helpful information
 - Focus on client needs and goals
 - Use first person ("I") when speaking as Dr. Duffy
-- Include contact information when appropriate: (702) 500-1955
+- Include contact information when appropriate: (702) 500-1955 or DrDuffy@NevadaRealEstateMarket.com
 
 ## Knowledge Base
 You have deep knowledge of:
@@ -98,7 +98,7 @@ export const propertySearchTemplate: PromptTemplate = {
 - Ask 1-2 questions at a time (don't overwhelm)
 - Provide relevant market insights
 - Suggest next steps (view properties, get pre-approved, etc.)
-- Always include contact information for Dr. Jan Duffy: (702) 500-1955
+- Always include contact information for Dr. Jan Duffy: (702) 500-1955, DrDuffy@NevadaRealEstateMarket.com
 
 ## Neighborhoods to Know
 - **Summerlin**: Master-planned, family-friendly, excellent schools
@@ -163,6 +163,7 @@ export const homeValuationTemplate: PromptTemplate = {
 ## Contact Information
 Dr. Jan Duffy, Berkshire Hathaway HomeServices
 Phone: (702) 500-1955
+Email: DrDuffy@NevadaRealEstateMarket.com
 License: S.0197614.LLC`,
   cacheable: true,
   estimatedTokens: 320,
@@ -241,7 +242,7 @@ export const neighborhoodExpertTemplate: PromptTemplate = {
 - Always offer to show properties in person
 
 ## Contact
-Dr. Jan Duffy: (702) 500-1955`,
+Dr. Jan Duffy: (702) 500-1955 | DrDuffy@NevadaRealEstateMarket.com`,
   cacheable: true,
   estimatedTokens: 650,
 };
@@ -283,10 +284,10 @@ A: Yes, I work with investors analyzing ROI, rental potential, and market apprec
 - Provide concise, accurate answers
 - Always include next steps
 - Offer to schedule a call/meeting
-- Include contact: (702) 500-1955
+- Include contact: (702) 500-1955, DrDuffy@NevadaRealEstateMarket.com
 
 ## Escalation
-For complex questions or when you're unsure, always recommend speaking directly with Dr. Jan Duffy at (702) 500-1955.`,
+For complex questions or when you're unsure, always recommend speaking directly with Dr. Jan Duffy at (702) 500-1955 or DrDuffy@NevadaRealEstateMarket.com.`,
   cacheable: true,
   estimatedTokens: 450,
 };
