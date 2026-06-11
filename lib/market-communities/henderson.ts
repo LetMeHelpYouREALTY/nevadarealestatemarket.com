@@ -15,7 +15,12 @@ export const hendersonCommunities: MarketCommunity[] = [
       "On-site resort hotels",
       "Guard-gated enclaves",
     ],
-    bestFor: ["Luxury buyers", "Resort lifestyle", "Vacation & second home", "Waterfront living"],
+    bestFor: [
+      "Luxury buyers",
+      "Resort lifestyle",
+      "Vacation & second home",
+      "Waterfront living",
+    ],
     address: "Lake Las Vegas Pkwy",
     zip: "89011",
   },
@@ -33,7 +38,12 @@ export const hendersonCommunities: MarketCommunity[] = [
       "Luxury custom homes",
       "Close to 215 access",
     ],
-    bestFor: ["Families", "Golf enthusiasts", "Luxury move-up buyers", "California equity buyers"],
+    bestFor: [
+      "Families",
+      "Golf enthusiasts",
+      "Luxury move-up buyers",
+      "California equity buyers",
+    ],
     address: "MacDonald Ranch Dr",
     zip: "89012",
   },
@@ -74,7 +84,12 @@ export const hendersonCommunities: MarketCommunity[] = [
       "Variety of price points",
       "Easy freeway access",
     ],
-    bestFor: ["First-time buyers", "Families", "Move-up buyers", "Retirees who want walkability"],
+    bestFor: [
+      "First-time buyers",
+      "Families",
+      "Move-up buyers",
+      "Retirees who want walkability",
+    ],
     address: "Green Valley Pkwy",
     zip: "89014",
   },
@@ -92,7 +107,12 @@ export const hendersonCommunities: MarketCommunity[] = [
       "Low density",
       "Short drive to Henderson Executive Airport",
     ],
-    bestFor: ["Luxury buyers", "Golf buyers", "Privacy seekers", "WA & CA equity buyers"],
+    bestFor: [
+      "Luxury buyers",
+      "Golf buyers",
+      "Privacy seekers",
+      "WA & CA equity buyers",
+    ],
     address: "Seven Hills Dr",
     zip: "89052",
   },
@@ -110,7 +130,12 @@ export const hendersonCommunities: MarketCommunity[] = [
       "Mountain & valley views",
       "Multiple price tiers",
     ],
-    bestFor: ["55+ buyers", "Golf buyers", "Families", "Active lifestyle buyers"],
+    bestFor: [
+      "55+ buyers",
+      "Golf buyers",
+      "Families",
+      "Active lifestyle buyers",
+    ],
     address: "Anthem Pkwy",
     zip: "89052",
   },
@@ -139,6 +164,8 @@ export const hendersonCommunities: MarketCommunity[] = [
   },
 ];
 
-export function getHendersonCommunity(slug: string): MarketCommunity | undefined {
+export function getHendersonCommunity(
+  slug: string,
+): MarketCommunity | undefined {
   return hendersonCommunities.find((c) => c.slug === slug);
 }

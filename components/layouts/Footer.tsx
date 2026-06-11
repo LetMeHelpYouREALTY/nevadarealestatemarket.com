@@ -1,5 +1,13 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Youtube,
+} from "lucide-react";
 import {
   siteConfig,
   agentInfo,
@@ -182,7 +190,8 @@ export default function Footer() {
                 <span className="text-slate-300 text-sm">
                   {officeInfo.address.street}
                   <br />
-                  {officeInfo.address.city}, {officeInfo.address.state} {officeInfo.address.zip}
+                  {officeInfo.address.city}, {officeInfo.address.state}{" "}
+                  {officeInfo.address.zip}
                 </span>
               </li>
               <li className="flex items-center">
@@ -217,10 +226,16 @@ export default function Footer() {
               © {currentYear} {officeInfo.name}. All Rights Reserved.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <Link href="/faq" className="text-slate-400 hover:text-white transition-colors">
+              <Link
+                href="/faq"
+                className="text-slate-400 hover:text-white transition-colors"
+              >
                 FAQ
               </Link>
-              <Link href="/sitemap.xml" className="text-slate-400 hover:text-white transition-colors">
+              <Link
+                href="/sitemap.xml"
+                className="text-slate-400 hover:text-white transition-colors"
+              >
                 Sitemap
               </Link>
             </div>

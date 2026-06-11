@@ -46,16 +46,46 @@ export const businessInfo = {
   categories: businessCategories,
 
   services: [
-    { name: "Luxury Home Sales", description: "High-end properties and estates in Henderson" },
-    { name: "Buyer Representation", description: "Full-service home buying assistance in Henderson" },
-    { name: "Seller Representation", description: "List and sell your Henderson home for top dollar" },
-    { name: "Custom Build Representation", description: "Expert guidance for custom home builds and estates" },
-    { name: "Private Showings", description: "Discreet private tours of luxury Henderson properties" },
-    { name: "Market Consultations", description: "Personalized Henderson market insights and analysis" },
-    { name: "Property Management Consulting", description: "Investment and rental property guidance" },
-    { name: "California Relocation Services", description: "Helping CA buyers transition to Henderson" },
-    { name: "55+ Community Specialist", description: "Anthem and Henderson active adult communities" },
-    { name: "New Construction Representation", description: "Builder negotiations and buyer protection" },
+    {
+      name: "Luxury Home Sales",
+      description: "High-end properties and estates in Henderson",
+    },
+    {
+      name: "Buyer Representation",
+      description: "Full-service home buying assistance in Henderson",
+    },
+    {
+      name: "Seller Representation",
+      description: "List and sell your Henderson home for top dollar",
+    },
+    {
+      name: "Custom Build Representation",
+      description: "Expert guidance for custom home builds and estates",
+    },
+    {
+      name: "Private Showings",
+      description: "Discreet private tours of luxury Henderson properties",
+    },
+    {
+      name: "Market Consultations",
+      description: "Personalized Henderson market insights and analysis",
+    },
+    {
+      name: "Property Management Consulting",
+      description: "Investment and rental property guidance",
+    },
+    {
+      name: "California Relocation Services",
+      description: "Helping CA buyers transition to Henderson",
+    },
+    {
+      name: "55+ Community Specialist",
+      description: "Anthem and Henderson active adult communities",
+    },
+    {
+      name: "New Construction Representation",
+      description: "Builder negotiations and buyer protection",
+    },
   ],
 
   attributes: businessAttributes,
@@ -103,7 +133,8 @@ export const gbpFAQs = [
       "As of January 2026, the Henderson median home price is $485,000, up 5.1% year-over-year. Luxury communities like Lake Las Vegas and MacDonald Ranch command higher price points. Contact Dr. Jan at (702) 500-1955 for current market data.",
   },
   {
-    question: "Does Dr. Jan help buyers relocating to Henderson from California?",
+    question:
+      "Does Dr. Jan help buyers relocating to Henderson from California?",
     answer:
       "Yes. California relocation is a specialty. Dr. Jan helps CA buyers understand Nevada's tax advantages, compare home values, and find the perfect Henderson neighborhood. Call (702) 500-1955 for relocation assistance.",
   },

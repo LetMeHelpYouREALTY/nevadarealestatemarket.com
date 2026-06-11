@@ -3,7 +3,8 @@
 
 export const siteConfig = {
   name: "Henderson MacDonald Highlands Real Estate",
-  fullName: "Henderson MacDonald Highlands Real Estate | Homes by Dr. Jan Duffy",
+  fullName:
+    "Henderson MacDonald Highlands Real Estate | Homes by Dr. Jan Duffy",
   tagline: "Luxury Henderson Real Estate | Dr. Jan Duffy, REALTOR®",
   brandLine:
     "Henderson MacDonald Highlands Real Estate | Homes by Dr. Jan Duffy | BHHS Nevada",
@@ -195,21 +196,34 @@ export const neighborhoods = [
   {
     name: "Lake Las Vegas",
     slug: "lake-las-vegas",
-    description: "Resort-style lakefront living with championship golf and luxury estates",
+    description:
+      "Resort-style lakefront living with championship golf and luxury estates",
     medianPrice: "$750,000",
-    highlights: ["Lakefront estates", "Championship golf", "Resort amenities", "Custom builds"],
+    highlights: [
+      "Lakefront estates",
+      "Championship golf",
+      "Resort amenities",
+      "Custom builds",
+    ],
   },
   {
     name: "MacDonald Ranch",
     slug: "macdonald-ranch",
-    description: "Prestigious Henderson community near MacDonald Highlands luxury corridor",
+    description:
+      "Prestigious Henderson community near MacDonald Highlands luxury corridor",
     medianPrice: "$650,000",
-    highlights: ["Golf course living", "Custom homes", "Mature landscaping", "Top schools"],
+    highlights: [
+      "Golf course living",
+      "Custom homes",
+      "Mature landscaping",
+      "Top schools",
+    ],
   },
   {
     name: "Green Valley Ranch",
     slug: "green-valley-ranch",
-    description: "Established Henderson master-planned community with resort-style amenities",
+    description:
+      "Established Henderson master-planned community with resort-style amenities",
     medianPrice: "$520,000",
     highlights: ["Golf courses", "Walking trails", "Shopping", "Parks"],
   },
@@ -218,19 +232,31 @@ export const neighborhoods = [
     slug: "seven-hills",
     description: "Hillside Henderson community with panoramic valley views",
     medianPrice: "$580,000",
-    highlights: ["Mountain views", "Custom homes", "Gated sections", "Golf access"],
+    highlights: [
+      "Mountain views",
+      "Custom homes",
+      "Gated sections",
+      "Golf access",
+    ],
   },
   {
     name: "Anthem",
     slug: "anthem",
-    description: "Master-planned Henderson community with parks, trails, and 55+ options",
+    description:
+      "Master-planned Henderson community with parks, trails, and 55+ options",
     medianPrice: "$495,000",
-    highlights: ["Parks and trails", "55+ communities", "Family-friendly", "Great schools"],
+    highlights: [
+      "Parks and trails",
+      "55+ communities",
+      "Family-friendly",
+      "Great schools",
+    ],
   },
   {
     name: "Summerlin",
     slug: "summerlin",
-    description: "Master-planned community with parks, trails, and top-rated schools",
+    description:
+      "Master-planned community with parks, trails, and top-rated schools",
     medianPrice: "$625,000",
     highlights: ["Red Rock views", "150+ parks", "Top schools", "Golf courses"],
   },
@@ -239,21 +265,36 @@ export const neighborhoods = [
     slug: "the-ridges",
     description: "Ultra-luxury guard-gated community in Summerlin",
     medianPrice: "$2.5M",
-    highlights: ["Celebrity homes", "Custom estates", "Bear's Best Golf", "Strip views"],
+    highlights: [
+      "Celebrity homes",
+      "Custom estates",
+      "Bear's Best Golf",
+      "Strip views",
+    ],
   },
   {
     name: "Southern Highlands",
     slug: "southern-highlands",
     description: "Master-planned luxury community with championship golf",
     medianPrice: "$750,000",
-    highlights: ["Golf community", "Guard-gated", "Mountain views", "Luxury amenities"],
+    highlights: [
+      "Golf community",
+      "Guard-gated",
+      "Mountain views",
+      "Luxury amenities",
+    ],
   },
   {
     name: "Inspirada",
     slug: "inspirada",
     description: "Henderson master-planned community with resort-style living",
     medianPrice: "$525,000",
-    highlights: ["Resort pools", "Walking trails", "New construction", "Great schools"],
+    highlights: [
+      "Resort pools",
+      "Walking trails",
+      "New construction",
+      "Great schools",
+    ],
   },
 ];
 
@@ -262,19 +303,22 @@ export const services = [
   {
     name: "Home Buying",
     slug: "buyers",
-    description: "Expert guidance through every step of the home buying process",
+    description:
+      "Expert guidance through every step of the home buying process",
     icon: "Home",
   },
   {
     name: "Home Selling",
     slug: "sellers",
-    description: "Maximize your home's value with professional marketing and negotiation",
+    description:
+      "Maximize your home's value with professional marketing and negotiation",
     icon: "TrendingUp",
   },
   {
     name: "Luxury Homes",
     slug: "luxury-homes",
-    description: "Specialized expertise in Henderson luxury real estate and estates",
+    description:
+      "Specialized expertise in Henderson luxury real estate and estates",
     icon: "Star",
   },
   {
@@ -325,12 +369,14 @@ export const expertQuotes = {
 export const commonFAQs = {
   general: [
     {
-      question: "Who is Dr. Jan Duffy and what areas does she serve in Henderson?",
+      question:
+        "Who is Dr. Jan Duffy and what areas does she serve in Henderson?",
       answer:
         "Dr. Jan Duffy is a REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, ranked in Nevada's Top 1%. She specializes in luxury homes and estates in Henderson, serving Lake Las Vegas, MacDonald Ranch, Green Valley Ranch, Seven Hills, Anthem, and surrounding Henderson communities. Call (702) 500-1955 for a consultation.",
     },
     {
-      question: "Why choose a Berkshire Hathaway HomeServices agent in Henderson?",
+      question:
+        "Why choose a Berkshire Hathaway HomeServices agent in Henderson?",
       answer:
         "Berkshire Hathaway HomeServices is the only real estate brand backed by Warren Buffett's Berkshire Hathaway Inc. This means unmatched financial stability, ethical standards, and a global referral network of 50,000+ agents. When you're making the biggest purchase of your life, that trust matters.",
     },
@@ -357,7 +403,8 @@ export const commonFAQs = {
         "Yes, a pre-approval letter is essential. It shows sellers you're serious and gives you a clear budget. Dr. Jan can connect you with trusted local lenders who offer competitive rates.",
     },
     {
-      question: "Does Dr. Jan offer private showings for luxury Henderson homes?",
+      question:
+        "Does Dr. Jan offer private showings for luxury Henderson homes?",
       answer:
         "Yes. Dr. Jan Duffy offers private showings and personalized consultations for luxury properties, custom builds, and estates in Henderson's premier communities. Call or text (702) 500-1955 to schedule.",
     },
