@@ -15,6 +15,8 @@ import {
   Heart,
 } from "lucide-react";
 import type { Metadata } from "next";
+import ScheduleButton from "@/components/calendly/ScheduleButton";
+
 
 export const metadata: Metadata = {
   title: "Trilogy at Summerlin Homes for Sale | Luxury Resort 55+ Living | Dr. Jan Duffy",
@@ -405,12 +407,10 @@ export default function TrilogySummerlinPage() {
                 <Phone className="h-5 w-5 mr-2" />
                 Call (702) 500-1955
               </a>
-              <Link
-                href="/contact"
+              <ScheduleButton
+                text="Schedule a Tour"
                 className="inline-flex items-center justify-center bg-rose-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-rose-400 transition-colors"
-              >
-                Schedule a Tour
-              </Link>
+              />
             </div>
             <p className="text-rose-200">
               Here to make your transition smooth, Dr. Jan{" "}

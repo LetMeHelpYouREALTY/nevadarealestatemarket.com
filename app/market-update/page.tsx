@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import { agentInfo, siteConfig } from "@/lib/site-config";
+import CalendlyWidget from "@/components/calendly/CalendlyWidget";
 
 export const metadata: Metadata = {
   title: "Berkshire Hathaway HomeServices Las Vegas Market Update | January 2026",
@@ -408,28 +409,20 @@ export default function MarketUpdatePage() {
             </p>
           </section>
 
-          {/* Newsletter Signup */}
-          <section className="mt-16 max-w-2xl mx-auto text-center">
-            <h3 className="text-xl font-bold text-slate-900 mb-4">
-              Get Weekly Market Updates in Your Inbox
-            </h3>
-            <p className="text-slate-600 mb-6">
-              Join 2,500+ Las Vegas homeowners and investors who receive Dr. Jan's weekly market
-              analysis every Monday morning.
-            </p>
-            <div className="flex gap-2 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
-              />
-              <button className="px-6 py-3 bg-slate-900 text-white font-semibold rounded-lg hover:bg-slate-800 transition-colors">
-                Subscribe
-              </button>
+          {/* Schedule consultation — replaces email signup form */}
+          <section className="mt-16 max-w-3xl mx-auto">
+            <div className="text-center mb-6">
+              <h3 className="text-xl font-bold text-slate-900 mb-4">
+                Discuss Weekly Market Updates With Dr. Jan
+              </h3>
+              <p className="text-slate-600">
+                Book a free 15-minute conversation to get personalized insight on how Las Vegas
+                market trends affect your buying, selling, or investment goals.
+              </p>
             </div>
-            <p className="mt-3 text-xs text-slate-500">
-              No spam. Unsubscribe anytime. Your data is protected.
-            </p>
+            <div className="rounded-xl border border-slate-200 overflow-hidden shadow-sm bg-white">
+              <CalendlyWidget height="650px" />
+            </div>
           </section>
         </div>
         <div className="text-center text-sm text-slate-500 mt-12">

@@ -1,6 +1,7 @@
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
+import ScheduleButton from "@/components/calendly/ScheduleButton";
 import {
   Phone,
   Mail,
@@ -430,13 +431,10 @@ export default function GoogleBusinessPage() {
                   <Phone className="h-5 w-5 mr-2" />
                   {businessInfo.phone.display}
                 </a>
-                <Link
-                  href="/contact"
+                <ScheduleButton
+                  text="Schedule time with me"
                   className="inline-flex items-center justify-center bg-white text-slate-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-100 transition-colors"
-                >
-                  <Mail className="h-5 w-5 mr-2" />
-                  Send Message
-                </Link>
+                />
               </div>
               <p className="text-slate-400 text-sm mt-6">
                 {businessInfo.address.streetAddress},{" "}

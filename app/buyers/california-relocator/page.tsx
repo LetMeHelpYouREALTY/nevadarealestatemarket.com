@@ -17,6 +17,8 @@ import {
   TrendingUp,
 } from "lucide-react";
 import type { Metadata } from "next";
+import ScheduleButton from "@/components/calendly/ScheduleButton";
+
 import { agentInfo, officeInfo, siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -478,12 +480,10 @@ export default function CaliforniaRelocatorPage() {
                 <Phone className="h-5 w-5 mr-2" />
                 Call/Text (702) 500-1955
               </a>
-              <Link
-                href="/contact"
+              <ScheduleButton
+                text="Schedule Consultation"
                 className="inline-flex items-center justify-center bg-blue-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-400 transition-colors"
-              >
-                Schedule Consultation
-              </Link>
+              />
             </div>
             <p className="mt-6 text-blue-200 text-sm">
               Berkshire Hathaway HomeServices Nevada Properties

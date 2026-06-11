@@ -14,6 +14,8 @@ import {
   Users,
 } from "lucide-react";
 import type { Metadata } from "next";
+import ScheduleButton from "@/components/calendly/ScheduleButton";
+
 
 export const metadata: Metadata = {
   title: "Divorce & Probate Home Sales Las Vegas | Berkshire Hathaway HomeServices",
@@ -514,12 +516,10 @@ export default function DivorceProbatePage() {
                 <Phone className="h-5 w-5 mr-2" />
                 Call (702) 500-1955
               </a>
-              <Link
-                href="/contact"
+              <ScheduleButton
+                text="Email Confidentially"
                 className="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-500 transition-colors"
-              >
-                Email Confidentially
-              </Link>
+              />
             </div>
             <p className="mt-6 text-slate-400 text-sm">
               All communications are confidential.

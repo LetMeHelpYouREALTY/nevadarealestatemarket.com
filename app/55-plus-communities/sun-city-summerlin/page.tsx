@@ -15,6 +15,8 @@ import {
   CheckCircle,
 } from "lucide-react";
 import type { Metadata } from "next";
+import ScheduleButton from "@/components/calendly/ScheduleButton";
+
 
 export const metadata: Metadata = {
   title: "Sun City Summerlin Homes for Sale | Berkshire Hathaway HomeServices",
@@ -299,12 +301,10 @@ export default function SunCitySummerlinPage() {
                 <Phone className="h-5 w-5 mr-2" />
                 Call (702) 500-1955
               </a>
-              <Link
-                href="/contact"
+              <ScheduleButton
+                text="Schedule a Tour"
                 className="inline-flex items-center justify-center bg-amber-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-amber-400 transition-colors"
-              >
-                Schedule a Tour
-              </Link>
+              />
             </div>
           </section>
         </div>

@@ -16,6 +16,8 @@ import {
   DollarSign,
 } from "lucide-react";
 import type { Metadata } from "next";
+import ScheduleButton from "@/components/calendly/ScheduleButton";
+
 
 export const metadata: Metadata = {
   title: "Luxury Homes Las Vegas | Berkshire Hathaway HomeServices",
@@ -262,12 +264,10 @@ export default function LuxuryHomesPage() {
                       Perfect for part-time residents
                     </li>
                   </ul>
-                  <Link
-                    href="/contact"
-                    className="text-blue-600 font-semibold hover:text-blue-700"
-                  >
-                    Request High-Rise Portfolio →
-                  </Link>
+                  <ScheduleButton
+                text="Request High-Rise Portfolio →"
+                className="text-blue-600 font-semibold hover:text-blue-700"
+              />
                 </div>
               </div>
 
@@ -397,12 +397,10 @@ export default function LuxuryHomesPage() {
                 <Phone className="h-5 w-5 mr-2" />
                 (702) 500-1955
               </a>
-              <Link
-                href="/contact"
+              <ScheduleButton
+                text="Request Private Showing"
                 className="inline-flex items-center justify-center bg-amber-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-amber-400 transition-colors"
-              >
-                Request Private Showing
-              </Link>
+              />
             </div>
             <p className="mt-6 text-slate-400 text-sm">
               Berkshire Hathaway HomeServices Nevada Properties

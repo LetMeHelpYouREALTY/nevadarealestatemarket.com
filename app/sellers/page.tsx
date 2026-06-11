@@ -18,6 +18,8 @@ import {
   Award,
 } from "lucide-react";
 import type { Metadata } from "next";
+import ScheduleButton from "@/components/calendly/ScheduleButton";
+
 import { inlineRealEstateAgentProvider } from "@/lib/schema";
 
 export const metadata: Metadata = {
@@ -429,12 +431,10 @@ export default function SellersPage() {
                 <Phone className="h-5 w-5 mr-2" />
                 Call (702) 500-1955
               </a>
-              <Link
-                href="/contact"
+              <ScheduleButton
+                text="Schedule Consultation"
                 className="inline-flex items-center justify-center bg-slate-700 hover:bg-slate-600 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors"
-              >
-                Schedule Consultation
-              </Link>
+              />
             </div>
             <p className="mt-4 text-slate-400 text-sm">
               Berkshire Hathaway HomeServices Nevada Properties

@@ -18,6 +18,10 @@ export const siteConfig = {
   foundingDate: "2013-09-19",
 };
 
+/** Primary scheduling — Calendly private 15-min conversation */
+export const calendlyUrl =
+  "https://calendly.com/drjanduffy/dr-duffy-private-15-min-conversation";
+
 export const agentInfo = {
   name: "Dr. Jan Duffy",
   title: "REALTOR®",

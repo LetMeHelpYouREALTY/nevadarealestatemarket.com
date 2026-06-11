@@ -13,6 +13,7 @@ import {
   Shield,
 } from "lucide-react";
 import CalendlyWidget from "@/components/calendly/CalendlyWidget";
+import ScheduleButton from "@/components/calendly/ScheduleButton";
 import Link from "next/link";
 import type { Metadata } from "next";
 import {
@@ -332,16 +333,11 @@ export default function ContactPage() {
                   <div className="text-blue-100">{agentInfo.phone}</div>
                 </div>
               </a>
-              <a
-                href={agentInfo.emailMailto}
-                className="flex items-center justify-center bg-slate-700 hover:bg-slate-800 text-white p-6 rounded-xl transition-colors"
-              >
-                <Mail className="h-8 w-8 mr-4" />
-                <div className="text-left">
-                  <div className="font-bold text-lg">Send Email</div>
-                  <div className="text-slate-300">{agentInfo.email}</div>
-                </div>
-              </a>
+              <ScheduleButton
+                text="Schedule time with me"
+                className="flex items-center justify-center bg-slate-700 hover:bg-slate-800 text-white p-6 rounded-xl transition-colors w-full"
+                showIcon={false}
+              />
             </div>
           </section>
 

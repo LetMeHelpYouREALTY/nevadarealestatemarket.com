@@ -3,6 +3,7 @@ import Footer from "@/components/layouts/Footer";
 import Image from "next/image";
 import { Bed, Bath, Square, MapPin, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ScheduleButton from "@/components/calendly/ScheduleButton";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -120,9 +121,10 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
                 <p className="text-slate-700 mb-4">
                   Contact us to schedule a private viewing of this property.
                 </p>
-                <Button asChild className="bg-blue-600 hover:bg-blue-700">
-                  <a href="/contact">Contact Agent</a>
-                </Button>
+                <ScheduleButton
+                  text="Schedule a Showing"
+                  className="w-full inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-semibold transition-colors"
+                />
               </div>
             </div>
 
@@ -138,9 +140,11 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
                   <Button asChild className="w-full bg-blue-600 hover:bg-blue-700">
                     <a href="tel:+17025001955">Call (702) 500-1955</a>
                   </Button>
-                  <Button asChild variant="outline" className="w-full">
-                    <a href="/contact">Send Message</a>
-                  </Button>
+                  <ScheduleButton
+                    text="Schedule time with me"
+                    className="w-full inline-flex items-center justify-center border border-slate-300 bg-white text-slate-900 px-4 py-2 rounded-md font-semibold hover:bg-slate-50 transition-colors"
+                    showIcon={false}
+                  />
                 </div>
               </div>
             </div>

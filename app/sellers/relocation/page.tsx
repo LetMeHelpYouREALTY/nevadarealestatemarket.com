@@ -14,6 +14,8 @@ import {
   Calendar,
 } from "lucide-react";
 import type { Metadata } from "next";
+import ScheduleButton from "@/components/calendly/ScheduleButton";
+
 
 export const metadata: Metadata = {
   title: "Relocation Home Sales Las Vegas | Berkshire Hathaway HomeServices",
@@ -470,7 +472,13 @@ export default function RelocationPage() {
                 </ul>
               </div>
               <p className="text-green-800 font-medium mt-4">
-                Moving to Las Vegas? <Link href="/contact" className="underline">Contact Dr. Jan</Link> to start your home search.
+                Moving to Las Vegas?{" "}
+                <ScheduleButton
+                  text="Schedule with Dr. Jan"
+                  className="inline underline font-medium text-green-800 bg-transparent p-0 hover:bg-transparent hover:text-green-900"
+                  showIcon={false}
+                />{" "}
+                to start your home search.
               </p>
             </div>
           </section>

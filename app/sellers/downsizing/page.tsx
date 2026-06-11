@@ -14,6 +14,8 @@ import {
   Sun,
 } from "lucide-react";
 import type { Metadata } from "next";
+import ScheduleButton from "@/components/calendly/ScheduleButton";
+
 
 export const metadata: Metadata = {
   title: "Downsizing in Las Vegas | Berkshire Hathaway HomeServices",
@@ -136,12 +138,10 @@ export default function DownsizingPage() {
                   smaller yard, lower utility costs. Age-in-place features available.
                 </p>
                 <div className="text-blue-600 font-semibold">$400K - $600K</div>
-                <Link
-                  href="/contact"
-                  className="block mt-3 text-sm text-blue-600 hover:text-blue-700"
-                >
-                  Search Single-Story Homes →
-                </Link>
+                <ScheduleButton
+                text="Search Single-Story Homes →"
+                className="block mt-3 text-sm text-blue-600 hover:text-blue-700"
+              />
               </div>
 
               <div className="bg-white border border-slate-200 rounded-xl p-6">
@@ -154,12 +154,10 @@ export default function DownsizingPage() {
                   Guard-gated options available in Summerlin and Henderson.
                 </p>
                 <div className="text-blue-600 font-semibold">$275K - $500K</div>
-                <Link
-                  href="/contact"
-                  className="block mt-3 text-sm text-blue-600 hover:text-blue-700"
-                >
-                  View Condo Options →
-                </Link>
+                <ScheduleButton
+                text="View Condo Options →"
+                className="block mt-3 text-sm text-blue-600 hover:text-blue-700"
+              />
               </div>
             </div>
           </section>

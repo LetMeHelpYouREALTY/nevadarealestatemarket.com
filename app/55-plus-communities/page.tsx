@@ -23,6 +23,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
+import ScheduleButton from "@/components/calendly/ScheduleButton";
+
 import { agentInfo, siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -865,12 +867,10 @@ export default function FiftyFiveCommunitiesPage() {
                 <Phone className="h-5 w-5 mr-2" />
                 Call/Text (702) 500-1955
               </a>
-              <Link
-                href="/contact"
+              <ScheduleButton
+                text="Request Information"
                 className="inline-flex items-center justify-center bg-blue-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-400 transition-colors"
-              >
-                Request Information
-              </Link>
+              />
             </div>
             <p className="text-blue-200 text-lg">
               Here to make your transition smooth, Dr. Jan{" "}

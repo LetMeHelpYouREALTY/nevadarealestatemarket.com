@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ScheduleButton from "@/components/calendly/ScheduleButton";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -127,6 +128,12 @@ export default function Navbar() {
               )}
             </div>
 
+            <ScheduleButton
+              text="Schedule"
+              variant="primary"
+              className="hidden xl:inline-flex items-center justify-center bg-blue-600 text-white px-4 py-2 rounded-md font-semibold text-sm hover:bg-blue-700 transition-colors"
+              showIcon={false}
+            />
             <Button asChild className="bg-blue-600 hover:bg-blue-700">
               <Link href="tel:+17025001955" className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
@@ -203,17 +210,21 @@ export default function Navbar() {
                 ))}
               </div>
 
-              <div className="pt-4">
+              <div className="pt-4 space-y-3">
+                <ScheduleButton
+                  text="Schedule time with me"
+                  className="w-full inline-flex items-center justify-center bg-blue-600 text-white px-4 py-3 rounded-md font-semibold hover:bg-blue-700 transition-colors"
+                />
                 <Button
                   asChild
-                  className="bg-blue-600 hover:bg-blue-700 w-full"
+                  className="bg-slate-100 hover:bg-slate-200 text-slate-900 w-full"
                 >
                   <Link
                     href="tel:+17025001955"
                     className="flex items-center justify-center gap-2"
                   >
                     <Phone className="h-4 w-4" />
-                    Call Dr. Jan: (702) 500-1955
+                    Call (702) 500-1955
                   </Link>
                 </Button>
               </div>
