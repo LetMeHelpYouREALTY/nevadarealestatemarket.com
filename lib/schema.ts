@@ -1,5 +1,5 @@
 /**
- * Schema.org Structured Data Generators for heyberkshire.com
+ * Schema.org Structured Data Generators for nevadarealestatemarket.com
  * Following Google's 2025 Structured Data Guidelines
  *
  * @see https://schema.org
@@ -70,6 +70,23 @@ export interface SeniorCommunityData {
 // ============================================================================
 
 const BASE_URL = siteConfig.url;
+
+/** Reusable RealEstateAgent contact fields for inline Service provider schemas */
+export const inlineRealEstateAgentProvider = {
+  "@type": "RealEstateAgent" as const,
+  name: `${agentInfo.name} - ${agentInfo.brokerage}`,
+  telephone: agentInfo.phoneTel.replace("tel:", ""),
+  email: agentInfo.email,
+};
+
+/** Reusable RealEstateAgent contact fields for Report author schemas */
+export const inlineRealEstateAgentAuthor = {
+  "@type": "RealEstateAgent" as const,
+  name: agentInfo.name,
+  email: agentInfo.email,
+  telephone: agentInfo.phoneTel.replace("tel:", ""),
+  worksFor: agentInfo.brokerage,
+};
 
 // Social media profiles — matches GBP sameAs
 export const socialProfiles = {
@@ -326,7 +343,9 @@ export function generateReviewSchema(reviews: ReviewItem[]) {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     "@id": `${BASE_URL}#organization`,
-    name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
+    name: `${agentInfo.name} - ${agentInfo.brokerage}`,
+    telephone: agentInfo.phoneTel.replace("tel:", ""),
+    email: agentInfo.email,
     aggregateRating: generateAggregateRatingSchema(
       agentStats.averageRating,
       agentStats.reviewCount,

@@ -16,11 +16,13 @@ import {
   DollarSign,
 } from "lucide-react";
 import type { Metadata } from "next";
+import ScheduleButton from "@/components/calendly/ScheduleButton";
+
 
 export const metadata: Metadata = {
   title: "Luxury Homes Las Vegas | Berkshire Hathaway HomeServices",
   description:
-    "Las Vegas luxury real estate from $1.2M to $10M+. Guard-gated estates, Strip penthouses, and custom homes. Dr. Jan Duffy provides discrete, expert representation. Call (702) 500-1942.",
+    "Las Vegas luxury real estate from $1.2M to $10M+. Guard-gated estates, Strip penthouses, and custom homes. Dr. Jan Duffy provides discrete, expert representation. Call (702) 500-1955.",
   keywords: [
     "luxury homes Las Vegas",
     "The Ridges Las Vegas",
@@ -96,11 +98,11 @@ export default function LuxuryHomesPage() {
               Guard-gated estates. Strip penthouses. Uncompromising privacy.
             </p>
             <a
-              href="tel:+17025001942"
+              href="tel:+17025001955"
               className="inline-flex items-center bg-slate-900 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-slate-800 transition-colors"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Schedule a Private Preview → (702) 500-1942
+              Schedule a Private Preview → (702) 500-1955
             </a>
           </div>
 
@@ -262,12 +264,10 @@ export default function LuxuryHomesPage() {
                       Perfect for part-time residents
                     </li>
                   </ul>
-                  <Link
-                    href="/contact"
-                    className="text-blue-600 font-semibold hover:text-blue-700"
-                  >
-                    Request High-Rise Portfolio →
-                  </Link>
+                  <ScheduleButton
+                text="Request High-Rise Portfolio →"
+                className="text-blue-600 font-semibold hover:text-blue-700"
+              />
                 </div>
               </div>
 
@@ -391,18 +391,16 @@ export default function LuxuryHomesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17025001942"
+                href="tel:+17025001955"
                 className="inline-flex items-center justify-center bg-white text-slate-900 px-8 py-4 rounded-md font-bold text-lg hover:bg-slate-100 transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                (702) 500-1942
+                (702) 500-1955
               </a>
-              <Link
-                href="/contact"
+              <ScheduleButton
+                text="Request Private Showing"
                 className="inline-flex items-center justify-center bg-amber-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-amber-400 transition-colors"
-              >
-                Request Private Showing
-              </Link>
+              />
             </div>
             <p className="mt-6 text-slate-400 text-sm">
               Berkshire Hathaway HomeServices Nevada Properties

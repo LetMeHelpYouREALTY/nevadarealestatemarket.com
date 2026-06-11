@@ -1,3 +1,5 @@
 export { default as CalendlyWidget } from "./CalendlyWidget";
 export { default as CalendlyBadge } from "./CalendlyBadge";
 export { default as CalendlyButton } from "./CalendlyButton";
+export { default as CalendlyScripts } from "./CalendlyScripts";
+export { default as ScheduleButton } from "./ScheduleButton";

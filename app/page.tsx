@@ -12,6 +12,7 @@ import {
   Shield,
   Users,
 } from "lucide-react";
+import ScheduleButton from "@/components/calendly/ScheduleButton";
 import type { Metadata } from "next";
 import { getPageDomainConfig } from "@/lib/get-domain-config";
 import { generateFAQSchema } from "@/lib/gbp-schema";
@@ -208,12 +209,11 @@ export default async function Home() {
                 <Phone className="h-5 w-5 mr-2" />
                 Call (702) 500-1955
               </a>
-              <Link
-                href="/contact"
-                className="inline-block bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors"
-              >
-                Send a Message
-              </Link>
+              <ScheduleButton
+                text="Schedule time with me"
+                variant="secondary"
+                className="inline-flex items-center justify-center bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors"
+              />
             </div>
             <p className="mt-6 text-blue-200 text-sm">
               Dr. Jan Duffy | License S.0197614.LLC | Berkshire Hathaway

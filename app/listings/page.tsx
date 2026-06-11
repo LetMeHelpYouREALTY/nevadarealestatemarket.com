@@ -18,11 +18,14 @@ import {
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
+import ScheduleButton from "@/components/calendly/ScheduleButton";
+
+import { inlineRealEstateAgentProvider } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Las Vegas Homes for Sale | MLS Property Search | Berkshire Hathaway HomeServices",
   description:
-    "Browse all Las Vegas and Henderson homes for sale with live MLS listings. Search by neighborhood, price, and features. Dr. Jan Duffy, Berkshire Hathaway HomeServices. Call (702) 500-1942.",
+    "Browse all Las Vegas and Henderson homes for sale with live MLS listings. Search by neighborhood, price, and features. Dr. Jan Duffy, Berkshire Hathaway HomeServices. Call (702) 500-1955.",
   keywords: [
     "Las Vegas homes for sale",
     "Henderson real estate",
@@ -38,11 +41,7 @@ const listingsSchema = {
   "@type": "RealEstateListing",
   name: "Las Vegas MLS Property Listings",
   description: "Live MLS property listings for Las Vegas, Henderson, and Summerlin homes for sale",
-  provider: {
-    "@type": "RealEstateAgent",
-    name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    telephone: "+17025001942",
-  },
+  provider: inlineRealEstateAgentProvider,
   areaServed: [
     { "@type": "City", name: "Las Vegas, NV" },
     { "@type": "City", name: "Henderson, NV" },
@@ -478,18 +477,16 @@ export default function ListingsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17025001942"
+                href="tel:+17025001955"
                 className="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call (702) 500-1942
+                Call (702) 500-1955
               </a>
-              <Link
-                href="/contact"
+              <ScheduleButton
+                text="Schedule Consultation"
                 className="inline-flex items-center justify-center bg-blue-500 text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-400 transition-colors"
-              >
-                Schedule Consultation
-              </Link>
+              />
             </div>
             <p className="mt-4 text-blue-200 text-sm">
               Berkshire Hathaway HomeServices Nevada Properties

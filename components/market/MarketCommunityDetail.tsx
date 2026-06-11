@@ -20,7 +20,8 @@ export function MarketCommunityDetail({
     "@type": "RealEstateAgent",
     name: agentInfo.name,
     url: pageUrl,
-    telephone: agentInfo.phoneFormatted.replace(/\D/g, "").replace(/^1/, "+1-"),
+    telephone: agentInfo.phoneTel.replace("tel:", ""),
+    email: agentInfo.email,
     address: {
       "@type": "PostalAddress",
       streetAddress: officeInfo.address.street,

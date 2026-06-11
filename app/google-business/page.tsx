@@ -1,6 +1,7 @@
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
+import ScheduleButton from "@/components/calendly/ScheduleButton";
 import {
   Phone,
   Mail,
@@ -25,6 +26,12 @@ import {
   generateLocalBusinessSchema,
   generateFAQSchema,
 } from "@/lib/gbp-schema";
+import { agentInfo, businessHours, specialHours, officeInfo } from "@/lib/site-config";
+import GbpMediaSection from "@/components/sections/GbpMediaSection";
+import {
+  generateImageGallerySchema,
+  generateVideoSchema,
+} from "@/lib/gbp-media";
 
 export const metadata: Metadata = {
   title: "Henderson MacDonald Highlands Real Estate | Dr. Jan Duffy, REALTOR®",
@@ -51,6 +58,9 @@ export const metadata: Metadata = {
 export default function GoogleBusinessPage() {
   const localBusinessSchema = generateLocalBusinessSchema();
   const faqSchema = generateFAQSchema();
+  const imageGallerySchema = generateImageGallerySchema();
+  const videoSchema = generateVideoSchema();
+  const extraSchemas = [imageGallerySchema, videoSchema].filter(Boolean);
 
   return (
     <>
@@ -64,6 +74,13 @@ export default function GoogleBusinessPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      {extraSchemas.map((schema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">
@@ -113,7 +130,7 @@ export default function GoogleBusinessPage() {
                     <div className="flex items-center gap-3">
                       <Mail className="h-5 w-5 text-blue-400 flex-shrink-0" />
                       <a
-                        href={`mailto:${businessInfo.email}`}
+                        href={agentInfo.emailMailto}
                         className="hover:text-blue-300"
                       >
                         {businessInfo.email}
@@ -157,31 +174,53 @@ export default function GoogleBusinessPage() {
                   Business Hours
                 </h2>
               </div>
+              <p className="text-slate-700 mb-4">{businessHours.display}</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                <div>
-                  <span className="font-medium">Monday:</span> 9am - 6pm
-                </div>
-                <div>
-                  <span className="font-medium">Tuesday:</span> 9am - 6pm
-                </div>
-                <div>
-                  <span className="font-medium">Wednesday:</span> 9am - 6pm
-                </div>
-                <div>
-                  <span className="font-medium">Thursday:</span> 9am - 6pm
-                </div>
-                <div>
-                  <span className="font-medium">Friday:</span> 9am - 6pm
-                </div>
-                <div>
-                  <span className="font-medium">Saturday:</span> 10am - 4pm
-                </div>
-                <div>
-                  <span className="font-medium">Sunday:</span> By Appointment
-                </div>
+                {(
+                  [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday",
+                  ] as const
+                ).map((day) => (
+                  <div key={day}>
+                    <span className="font-medium">{day}:</span>{" "}
+                    {businessHours.dayDisplay}
+                  </div>
+                ))}
               </div>
+              {specialHours.length > 0 && (
+                <div className="mt-6 pt-4 border-t border-slate-200">
+                  <h3 className="font-semibold text-slate-900 mb-2">
+                    Special Hours
+                  </h3>
+                  <ul className="space-y-1 text-sm text-slate-700">
+                    {specialHours.map((entry) => (
+                      <li key={entry.date}>
+                        <span className="font-medium">
+                          {new Date(`${entry.date}T12:00:00`).toLocaleDateString(
+                            "en-US",
+                            {
+                              month: "long",
+                              day: "numeric",
+                              year: "numeric",
+                            },
+                          )}
+                        </span>
+                        : Closed — {entry.label}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </section>
+
+          <GbpMediaSection />
 
           {/* About - 750 Word Description Structure */}
           <section className="max-w-4xl mx-auto mb-16">
@@ -366,7 +405,7 @@ export default function GoogleBusinessPage() {
                 transaction, and what made the experience valuable.
               </p>
               <a
-                href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review"
+                href={officeInfo.googleReviewsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
@@ -392,13 +431,10 @@ export default function GoogleBusinessPage() {
                   <Phone className="h-5 w-5 mr-2" />
                   {businessInfo.phone.display}
                 </a>
-                <Link
-                  href="/contact"
+                <ScheduleButton
+                  text="Schedule time with me"
                   className="inline-flex items-center justify-center bg-white text-slate-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-100 transition-colors"
-                >
-                  <Mail className="h-5 w-5 mr-2" />
-                  Send Message
-                </Link>
+                />
               </div>
               <p className="text-slate-400 text-sm mt-6">
                 {businessInfo.address.streetAddress},{" "}

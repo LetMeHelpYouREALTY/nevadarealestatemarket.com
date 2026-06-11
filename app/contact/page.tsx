@@ -13,6 +13,7 @@ import {
   Shield,
 } from "lucide-react";
 import CalendlyWidget from "@/components/calendly/CalendlyWidget";
+import ScheduleButton from "@/components/calendly/ScheduleButton";
 import Link from "next/link";
 import type { Metadata } from "next";
 import {
@@ -137,10 +138,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-slate-900 mb-1">Email</h3>
                     <a
-                      href="mailto:homes@heyberkshire.com"
+                      href={agentInfo.emailMailto}
                       className="text-blue-600 hover:text-blue-700 font-medium"
                     >
-                      Homes@HeyBerkshire.com
+                      {agentInfo.email}
                     </a>
                     <p className="text-sm text-slate-500 mt-1">
                       Typically respond within 2 hours
@@ -332,16 +333,11 @@ export default function ContactPage() {
                   <div className="text-blue-100">{agentInfo.phone}</div>
                 </div>
               </a>
-              <a
-                href="mailto:homes@heyberkshire.com"
-                className="flex items-center justify-center bg-slate-700 hover:bg-slate-800 text-white p-6 rounded-xl transition-colors"
-              >
-                <Mail className="h-8 w-8 mr-4" />
-                <div className="text-left">
-                  <div className="font-bold text-lg">Send Email</div>
-                  <div className="text-slate-300">Homes@HeyBerkshire.com</div>
-                </div>
-              </a>
+              <ScheduleButton
+                text="Schedule time with me"
+                className="flex items-center justify-center bg-slate-700 hover:bg-slate-800 text-white p-6 rounded-xl transition-colors w-full"
+                showIcon={false}
+              />
             </div>
           </section>
 

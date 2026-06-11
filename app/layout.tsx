@@ -7,6 +7,8 @@ import { siteConfig } from "@/lib/site-config";
 import { generateSiteGraphSchema } from "@/lib/schema";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
+import CalendlyScripts from "@/components/calendly/CalendlyScripts";
+import CalendlyBadge from "@/components/calendly/CalendlyBadge";
 
 export async function generateMetadata(): Promise<Metadata> {
   const domain = headers().get("x-domain") || "";
@@ -37,10 +39,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={GeistSans.className}>
       <head>
+        <link
+          href="https://assets.calendly.com/assets/external/widget.css"
+          rel="stylesheet"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteGraphSchema) }}
         />
+        <CalendlyScripts />
         {/* WidgetTracker */}
         <Script id="widget-tracker" strategy="afterInteractive">{`
           (function(w,i,d,g,e,t){w["WidgetTrackerObject"]=g;(w[g]=w[g]||function()
@@ -54,6 +61,7 @@ export default function RootLayout({
       </head>
       <body>
         {children}
+        <CalendlyBadge />
         <Analytics />
       </body>
     </html>
