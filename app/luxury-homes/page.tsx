@@ -18,6 +18,7 @@ import {
   Users,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { inlineRealEstateAgentProvider } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Las Vegas Luxury Homes for Sale | Berkshire Hathaway HomeServices",
@@ -39,11 +40,7 @@ const luxurySchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Las Vegas Luxury Home Services",
-  provider: {
-    "@type": "RealEstateAgent",
-    name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    telephone: "+17025001955",
-  },
+  provider: inlineRealEstateAgentProvider,
   areaServed: "Las Vegas, Henderson, Summerlin luxury communities",
   serviceType: "Luxury Real Estate",
   priceRange: "$1,000,000+",

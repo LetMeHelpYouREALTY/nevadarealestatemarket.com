@@ -18,6 +18,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { inlineRealEstateAgentProvider } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Las Vegas Homes for Sale | MLS Property Search | Berkshire Hathaway HomeServices",
@@ -38,11 +39,7 @@ const listingsSchema = {
   "@type": "RealEstateListing",
   name: "Las Vegas MLS Property Listings",
   description: "Live MLS property listings for Las Vegas, Henderson, and Summerlin homes for sale",
-  provider: {
-    "@type": "RealEstateAgent",
-    name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    telephone: "+17025001955",
-  },
+  provider: inlineRealEstateAgentProvider,
   areaServed: [
     { "@type": "City", name: "Las Vegas, NV" },
     { "@type": "City", name: "Henderson, NV" },

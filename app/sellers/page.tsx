@@ -18,6 +18,7 @@ import {
   Award,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { inlineRealEstateAgentProvider } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Sell Your Las Vegas Home | Berkshire Hathaway HomeServices",
@@ -38,11 +39,7 @@ const sellerSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "Home Selling Services Las Vegas",
-  provider: {
-    "@type": "RealEstateAgent",
-    name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    telephone: "+17025001955",
-  },
+  provider: inlineRealEstateAgentProvider,
   areaServed: "Las Vegas, Henderson, Summerlin, Clark County NV",
   serviceType: "Seller Representation",
 };

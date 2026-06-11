@@ -4,6 +4,7 @@ import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { TrendingUp, TrendingDown, Home, Calendar, DollarSign, BarChart, Phone } from "lucide-react";
 import type { Metadata } from "next";
+import { inlineRealEstateAgentAuthor } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Las Vegas Real Estate Market Report January 2026 | Berkshire Hathaway HomeServices",
@@ -23,11 +24,7 @@ const reportSchema = {
   "@context": "https://schema.org",
   "@type": "Report",
   name: "Las Vegas Real Estate Market Report - January 2026",
-  author: {
-    "@type": "RealEstateAgent",
-    name: "Dr. Jan Duffy",
-    worksFor: "Berkshire Hathaway HomeServices Nevada Properties",
-  },
+  author: inlineRealEstateAgentAuthor,
   datePublished: "2026-01-23",
   about: {
     "@type": "Place",

@@ -47,6 +47,7 @@ const personSchema = {
   worksFor: {
     "@type": "RealEstateAgent",
     name: siteConfig.fullName,
+    email: agentInfo.email,
     address: {
       "@type": "PostalAddress",
       streetAddress: officeInfo.address.street,
