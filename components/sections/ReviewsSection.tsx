@@ -69,7 +69,7 @@ export default function ReviewsSection({
   reviews = defaultReviews,
   title = "What Our Clients Say",
   subtitle = "Real testimonials from satisfied clients across Las Vegas and Henderson",
-  googleReviewsUrl = "https://g.page/r/heyberkshire/review",
+  googleReviewsUrl = "https://www.google.com/maps/search/?api=1&query=Henderson+MacDonald+Highlands+Real+Estate+Dr+Jan+Duffy",
   className = "",
 }: ReviewsSectionProps) {
   return (

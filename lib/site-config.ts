@@ -1,18 +1,23 @@
 // Site Configuration - nevadarealestatemarket.com
-// NAP aligned with Google Business Profile: Henderson MacDonald Highlands Real Estate
+// Site brand matches domain (SEO). GBP office name is separate — see gbpOfficeName.
+
+/** Must match Google Business Profile legal name exactly (NAP). */
+export const gbpOfficeName =
+  "Henderson MacDonald Highlands Real Estate | Homes by Dr. Jan Duffy";
 
 export const siteConfig = {
-  name: "Henderson MacDonald Highlands Real Estate",
+  name: "Nevada Real Estate Market",
   fullName:
-    "Henderson MacDonald Highlands Real Estate | Homes by Dr. Jan Duffy",
-  tagline: "Luxury Henderson Real Estate | Dr. Jan Duffy, REALTOR®",
+    "Nevada Real Estate Market | Las Vegas Valley Homes by Dr. Jan Duffy",
+  tagline:
+    "Las Vegas Valley Home Prices, Trends & Market Data | Dr. Jan Duffy, REALTOR®",
   brandLine:
-    "Henderson MacDonald Highlands Real Estate | Homes by Dr. Jan Duffy | BHHS Nevada",
+    "Nevada Real Estate Market | Dr. Jan Duffy, REALTOR® | BHHS Nevada",
   brandName: "Berkshire Hathaway HomeServices",
   shortName: "BHHS",
   url: "https://www.nevadarealestatemarket.com",
   description:
-    "Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada, specializes in luxury homes and estates in Henderson, Nevada. Serving Lake Las Vegas, MacDonald Ranch, Green Valley Ranch, Seven Hills, and Anthem. Ranked in Nevada's Top 1%.",
+    "Nevada real estate market data, home prices, and housing forecasts for the Las Vegas Valley — Henderson, Summerlin, Las Vegas, North Las Vegas, and Clark County. Expert guidance from Dr. Jan Duffy, Nevada's Top 1% REALTOR® with Berkshire Hathaway HomeServices. Call (702) 500-1955.",
   gbpDescription:
     "Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices® Nevada, specializes in luxury homes and estates in Henderson, Nevada. Serving prestigious communities like Lake Las Vegas, MacDonald Ranch, Green Valley Ranch, Seven Hills, and Anthem, Dr. Duffy provides expert representation for luxury properties, custom builds, and estates. Ranked in Nevada's Top 1%, she offers private showings, personalized consultations, and market insights tailored to buyers and sellers seeking premier real estate in Henderson.",
   foundingDate: "2013-09-19",
@@ -31,7 +36,7 @@ export const agentInfo = {
 };
 
 export const officeInfo = {
-  name: "Henderson MacDonald Highlands Real Estate | Homes by Dr. Jan Duffy",
+  name: gbpOfficeName,
   address: {
     street: "3185 St Rose Pkwy, Suite 101",
     city: "Henderson",
@@ -136,30 +141,30 @@ export const businessAttributes = {
   serviceOptions: ["Onsite services available", "Offers online appointments"],
 };
 
-// Market Statistics (Updated January 2026)
+// Market Statistics (Updated June 2026 — LVR valley reports & industry data)
 export const marketStats = {
-  lastUpdated: "January 2026",
+  lastUpdated: "June 2026",
   lasVegas: {
-    medianPrice: 450000,
-    medianPriceFormatted: "$450,000",
-    yearOverYearChange: "+4.2%",
-    daysOnMarket: 28,
-    activeListings: 4850,
+    medianPrice: 482000,
+    medianPriceFormatted: "$482,000",
+    yearOverYearChange: "+3.2%",
+    daysOnMarket: 38,
+    activeListings: 8100,
     closedSales: 2340,
-    inventoryMonths: 2.1,
+    inventoryMonths: 2.9,
   },
   henderson: {
-    medianPrice: 485000,
-    medianPriceFormatted: "$485,000",
-    yearOverYearChange: "+5.1%",
-    daysOnMarket: 24,
-    activeListings: 1280,
+    medianPrice: 492000,
+    medianPriceFormatted: "$492,000",
+    yearOverYearChange: "+1.0%",
+    daysOnMarket: 51,
+    activeListings: 1972,
   },
   summerlin: {
     medianPrice: 625000,
     medianPriceFormatted: "$625,000",
-    yearOverYearChange: "+6.8%",
-    daysOnMarket: 22,
+    yearOverYearChange: "+4.5%",
+    daysOnMarket: 35,
     luxuryMedian: 1200000,
     luxuryMedianFormatted: "$1.2M",
   },

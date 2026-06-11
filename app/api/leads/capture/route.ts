@@ -267,7 +267,12 @@ function enrichSource(source: string | undefined, request: NextRequest): string 
   if (referrer) {
     try {
       const refUrl = new URL(referrer);
-      if (!refUrl.hostname.includes('heyberkshire.com')) {
+      const host = refUrl.hostname.toLowerCase();
+      const isOwnSite =
+        host.includes('nevadarealestatemarket.com') ||
+        host === 'localhost' ||
+        host === '127.0.0.1';
+      if (!isOwnSite) {
         return `referral/${refUrl.hostname}`;
       }
     } catch (e) {

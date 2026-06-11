@@ -37,6 +37,7 @@ export default async function NorthLasVegasCommunityPage({ params }: Props) {
       community={community}
       areaLabel="North Las Vegas, NV Communities"
       areaPath="/north-las-vegas"
+      cityName="North Las Vegas"
     />
   );
 }

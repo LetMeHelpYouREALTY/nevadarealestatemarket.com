@@ -27,7 +27,7 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-xl mb-4">{siteConfig.name}</h3>
             <p className="text-slate-300 mb-4 text-sm">
-              {siteConfig.gbpDescription.slice(0, 200)}...
+              {siteConfig.description}
             </p>
             <div className="flex flex-wrap gap-3">
               <a
@@ -85,6 +85,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/nevada-real-estate-market"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Nevada Real Estate Market
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/henderson"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
@@ -105,6 +113,22 @@ export default function Footer() {
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
                   Luxury Homes
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/maps"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Real Estate Maps
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/directions"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Office Directions
                 </Link>
               </li>
               <li>
@@ -168,6 +192,30 @@ export default function Footer() {
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
                   Home Valuation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/clark-county-housing-market"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Clark County Housing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/compare-communities"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Compare Communities
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/nevada-housing-forecast"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  2026 Housing Forecast
                 </Link>
               </li>
               <li>

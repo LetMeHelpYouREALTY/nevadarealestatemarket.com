@@ -29,29 +29,29 @@ const REALSCOUT_AGENT_ID = "QWdlbnQtMjI1MDUw";
 export const DOMAIN_CONFIGS: Record<string, DomainConfig> = {
   "nevadarealestatemarket.com": {
     domain: "nevadarealestatemarket.com",
-    neighborhood: "Henderson",
+    neighborhood: "Nevada Real Estate Market",
     tagline:
-      "Henderson Luxury Real Estate | MacDonald Highlands & Premier Communities",
+      "Nevada Real Estate Market | Las Vegas Valley Home Prices & Housing Trends",
     description:
-      "Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada, specializes in luxury homes and estates in Henderson. Serving Lake Las Vegas, MacDonald Ranch, Green Valley Ranch, Seven Hills, and Anthem. Ranked Nevada's Top 1%. Call (702) 500-1955.",
-    heroHeadline: "Henderson Luxury Real Estate",
+      "Nevada real estate market statistics, forecasts, and expert guidance from Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada. Henderson, Summerlin, Las Vegas & Clark County. Ranked Nevada's Top 1%. Call (702) 500-1955.",
+    heroHeadline: "Nevada Real Estate Market",
     heroSubheadline:
-      "Luxury homes, custom builds, and estates in Henderson's premier communities — from Dr. Jan Duffy, ranked Nevada's Top 1%.",
+      "Live market data, neighborhood guides, and expert representation across the Las Vegas Valley — from Dr. Jan Duffy, Nevada's Top 1% REALTOR®.",
     keywords: [
-      "Henderson luxury real estate",
-      "MacDonald Highlands homes",
-      "Lake Las Vegas estates",
-      "Green Valley Ranch homes",
-      "Seven Hills Henderson",
-      "Anthem Henderson real estate",
-      "Dr Jan Duffy realtor Henderson",
+      "Nevada real estate market",
+      "Clark County housing market",
+      "Las Vegas home prices 2026",
+      "Henderson real estate",
+      "Summerlin homes for sale",
+      "Nevada housing forecast",
+      "Dr Jan Duffy realtor Nevada",
     ],
-    pageType: "luxury",
+    pageType: "investment",
     realscoutAgentId: REALSCOUT_AGENT_ID,
-    ctaBadge: "Nevada's Top 1%",
-    ctaHeadline: "Find Your Henderson Luxury Home",
+    ctaBadge: "Nevada Market Intelligence",
+    ctaHeadline: "Explore the Nevada Housing Market",
     ctaSubheadline:
-      "Call or text Dr. Jan at (702) 500-1955 — private showings and personalized consultations.",
+      "Call or text Dr. Jan at (702) 500-1955 — free market analysis and neighborhood guidance.",
   },
   "consenzaestates.com": {
     domain: "consenzaestates.com",

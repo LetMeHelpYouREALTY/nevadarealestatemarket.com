@@ -37,6 +37,7 @@ export default async function SummerlinCommunityPage({ params }: Props) {
       community={community}
       areaLabel="Summerlin, NV Communities"
       areaPath="/summerlin"
+      cityName="Summerlin"
     />
   );
 }

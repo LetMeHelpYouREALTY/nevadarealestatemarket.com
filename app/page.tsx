@@ -14,77 +14,61 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import { getPageDomainConfig } from "@/lib/get-domain-config";
-import { generateFAQSchema } from "@/lib/gbp-schema";
-import { combineSchemas } from "@/lib/schema";
-import { commonFAQs, siteConfig, agentInfo } from "@/lib/site-config";
+import { PageSeo } from "@/components/seo/PageSeo";
+import { buildPageMetadata } from "@/lib/seo/metadata";
+import { commonFAQs, siteConfig, agentInfo, marketStats } from "@/lib/site-config";
+import { speakableSummaries } from "@/lib/nevada-market-research";
+import { getHeroImageByKey } from "@/lib/hero-images";
+import { PageHero } from "@/components/sections/PageHero";
 
 export async function generateMetadata(): Promise<Metadata> {
   const config = await getPageDomainConfig();
-  return {
+  return buildPageMetadata({
     title: `${config.heroHeadline} | Dr. Jan Duffy, REALTOR® | BHHS Nevada`,
     description: config.description,
     keywords: config.keywords,
-    alternates: { canonical: siteConfig.url },
-    openGraph: {
-      title: config.heroHeadline,
-      description: config.description,
-      url: siteConfig.url,
-      type: "website",
-    },
-  };
+    path: "/",
+  });
 }
 
 export default async function Home() {
   const config = await getPageDomainConfig();
 
-  const homepageSchema = combineSchemas(
-    generateFAQSchema([
-      ...commonFAQs.general.slice(0, 4),
-      {
-        question: `What luxury homes are available in ${config.neighborhood}?`,
-        answer: `Dr. Jan Duffy specializes in luxury homes and estates in ${config.neighborhood} and surrounding Henderson communities. Call ${agentInfo.phone} for private showings and personalized market consultations.`,
-      },
-    ]),
-  );
+  const homepageFaqs = [
+    ...commonFAQs.general.slice(0, 3),
+    {
+      question: `What is the ${config.neighborhood} real estate market like in 2026?`,
+      answer: `Dr. Jan Duffy publishes Nevada market data at ${siteConfig.url}/nevada-real-estate-market — including median prices, inventory, and neighborhood comparisons across the Las Vegas Valley. Call ${agentInfo.phone} for a personalized analysis.`,
+    },
+  ];
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchema) }}
+      <PageSeo
+        name={config.neighborhood}
+        description={config.description}
+        path="/"
+        faqs={homepageFaqs}
+        speakable
+        schemaId="homepage-schema"
       />
       <Navbar />
       <main>
-        {/* Domain-Aware Hero */}
-        <section className="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-30"
-            style={{ backgroundImage: "url('/Image/hero_bg_1.jpg')" }}
-          />
-          <div className="relative z-10 container mx-auto px-4 text-center">
-            {config.ctaBadge && (
-              <span className="inline-block bg-blue-600 text-white text-sm font-semibold px-4 py-1 rounded-full mb-6">
-                {config.ctaBadge}
-              </span>
-            )}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              {config.heroHeadline}
-            </h1>
-            <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-3xl mx-auto">
-              {config.heroSubheadline}
-            </p>
-
-            {/* RealScout Search Widget */}
-            <div className="mb-8 flex justify-center">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: `<realscout-simple-search agent-encoded-id="${config.realscoutAgentId}"></realscout-simple-search>`,
-                }}
-              />
-            </div>
-
-            {/* Trust Indicators */}
-            <div className="flex flex-wrap justify-center gap-6 text-white/80 text-sm">
+        <PageHero
+          hero={getHeroImageByKey("home")}
+          badge={config.ctaBadge}
+          title={config.heroHeadline}
+          subtitle={config.heroSubheadline}
+          className="pt-24"
+        >
+          <div className="mb-8 flex justify-center">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `<realscout-simple-search agent-encoded-id="${config.realscoutAgentId}"></realscout-simple-search>`,
+              }}
+            />
+          </div>
+          <div className="flex flex-wrap justify-center gap-6 text-white/80 text-sm">
               <div className="flex items-center gap-2">
                 <span className="font-semibold text-white">500+</span>
                 <span>Families Helped</span>
@@ -97,9 +81,8 @@ export default async function Home() {
                 <span className="font-semibold text-white">4.9★</span>
                 <span>Client Rating</span>
               </div>
-            </div>
           </div>
-        </section>
+        </PageHero>
 
         {/* Value Proposition */}
         <section className="py-16 md:py-20 bg-white">
@@ -155,14 +138,33 @@ export default async function Home() {
               <h2 className="text-3xl font-bold mb-3">
                 {config.neighborhood} Real Estate Market
               </h2>
-              <p className="text-slate-400">Current data — updated regularly</p>
+              <p className="speakable-summary text-slate-300 max-w-3xl mx-auto text-sm md:text-base" data-speakable>
+                {speakableSummaries.hub}
+              </p>
+              <p className="text-slate-500 text-sm mt-3">Data as of {marketStats.lastUpdated}</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               {[
-                { value: "$450K", label: "Median Price", sub: "+4.2% YoY" },
-                { value: "28", label: "Avg Days on Market", sub: "" },
-                { value: "4,850", label: "Active Listings", sub: "" },
-                { value: "2.1", label: "Months Inventory", sub: "" },
+                {
+                  value: marketStats.lasVegas.medianPriceFormatted,
+                  label: "Valley Median Price",
+                  sub: marketStats.lasVegas.yearOverYearChange + " YoY",
+                },
+                {
+                  value: String(marketStats.lasVegas.daysOnMarket),
+                  label: "Avg Days on Market",
+                  sub: "",
+                },
+                {
+                  value: marketStats.lasVegas.activeListings.toLocaleString(),
+                  label: "Active Listings",
+                  sub: "",
+                },
+                {
+                  value: String(marketStats.lasVegas.inventoryMonths),
+                  label: "Months Inventory",
+                  sub: "",
+                },
               ].map(({ value, label, sub }) => (
                 <div key={label} className="text-center">
                   <div className="text-4xl font-bold text-blue-400 mb-1">
@@ -175,10 +177,22 @@ export default async function Home() {
                 </div>
               ))}
             </div>
-            <div className="text-center mt-8">
+            <div className="text-center mt-8 flex flex-wrap justify-center gap-4">
+              <Link
+                href="/nevada-real-estate-market"
+                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition-colors"
+              >
+                Nevada Market Hub
+              </Link>
+              <Link
+                href="/compare-communities"
+                className="inline-block border border-white/30 hover:bg-white/10 text-white px-6 py-3 rounded-md font-semibold transition-colors"
+              >
+                Compare Communities
+              </Link>
               <Link
                 href="/market-report"
-                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition-colors"
+                className="inline-block border border-white/30 hover:bg-white/10 text-white px-6 py-3 rounded-md font-semibold transition-colors"
               >
                 Full Market Report
               </Link>

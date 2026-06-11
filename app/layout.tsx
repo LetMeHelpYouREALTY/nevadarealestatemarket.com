@@ -5,26 +5,19 @@ import { headers } from "next/headers";
 import { getDomainConfig } from "@/lib/domain-config";
 import { siteConfig } from "@/lib/site-config";
 import { generateSiteGraphSchema } from "@/lib/schema";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 
 export async function generateMetadata(): Promise<Metadata> {
   const domain = headers().get("x-domain") || "";
   const config = getDomainConfig(domain);
-  return {
+  return buildPageMetadata({
     title: `${config.neighborhood} | Dr. Jan Duffy, REALTOR® | BHHS Nevada`,
     description: config.description,
     keywords: config.keywords,
-    openGraph: {
-      title: config.heroHeadline,
-      description: config.description,
-      type: "website",
-      url: siteConfig.url,
-    },
-    alternates: {
-      canonical: siteConfig.url,
-    },
-  };
+    path: "/",
+  });
 }
 
 export default function RootLayout({

@@ -12,6 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Core pages
   const corePages = [
     { url: baseUrl, priority: 1.0, changeFrequency: "weekly" as const },
+    { url: `${baseUrl}/nevada-real-estate-market`, priority: 1.0, changeFrequency: "weekly" as const },
+    { url: `${baseUrl}/clark-county-housing-market`, priority: 0.95, changeFrequency: "weekly" as const },
+    { url: `${baseUrl}/nevada-housing-forecast`, priority: 0.95, changeFrequency: "weekly" as const },
+    { url: `${baseUrl}/compare-communities`, priority: 0.9, changeFrequency: "monthly" as const },
+    { url: `${baseUrl}/no-state-income-tax`, priority: 0.9, changeFrequency: "monthly" as const },
+    { url: `${baseUrl}/nevada-buyers-guide`, priority: 0.9, changeFrequency: "monthly" as const },
     { url: `${baseUrl}/about`, priority: 0.9, changeFrequency: "monthly" as const },
     { url: `${baseUrl}/contact`, priority: 0.9, changeFrequency: "monthly" as const },
     { url: `${baseUrl}/listings`, priority: 0.9, changeFrequency: "daily" as const },
@@ -20,6 +26,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/market-update`, priority: 0.9, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/market-insights`, priority: 0.9, changeFrequency: "monthly" as const },
     { url: `${baseUrl}/google-business`, priority: 0.9, changeFrequency: "monthly" as const },
+    { url: `${baseUrl}/maps`, priority: 0.9, changeFrequency: "monthly" as const },
+    { url: `${baseUrl}/directions`, priority: 0.95, changeFrequency: "monthly" as const },
+    { url: `${baseUrl}/maps/henderson`, priority: 0.85, changeFrequency: "monthly" as const },
+    { url: `${baseUrl}/maps/summerlin`, priority: 0.85, changeFrequency: "monthly" as const },
+    { url: `${baseUrl}/maps/las-vegas`, priority: 0.85, changeFrequency: "monthly" as const },
+    { url: `${baseUrl}/maps/north-las-vegas`, priority: 0.85, changeFrequency: "monthly" as const },
+    { url: `${baseUrl}/maps/clark-county`, priority: 0.85, changeFrequency: "monthly" as const },
     { url: `${baseUrl}/faq`, priority: 0.8, changeFrequency: "monthly" as const },
   ];
 

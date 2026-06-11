@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/lib/site-config";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,6 +21,8 @@ export default function Navbar() {
 
   const mainNavLinks = [
     { href: "/", label: "Home", external: false },
+    { href: "/nevada-real-estate-market", label: "Nevada Market", external: false },
+    { href: "/maps", label: "Maps", external: false },
     {
       href: "http://drjanduffy.realscout.com/",
       label: "Properties",
@@ -36,7 +39,12 @@ export default function Navbar() {
     { href: "/luxury-homes", label: "Luxury Homes" },
     { href: "/55-plus-communities", label: "55+ Communities" },
     { href: "/new-construction", label: "New Construction" },
+    { href: "/nevada-real-estate-market", label: "Nevada Market Hub" },
+    { href: "/nevada-buyers-guide", label: "Buyers Guide" },
+    { href: "/no-state-income-tax", label: "No State Income Tax" },
+    { href: "/compare-communities", label: "Compare Communities" },
     { href: "/market-report", label: "Market Report" },
+    { href: "/nevada-housing-forecast", label: "2026 Forecast" },
     { href: "/market-insights", label: "Market Insights" },
   ];
 
@@ -55,7 +63,7 @@ export default function Navbar() {
               <span className="text-blue-600"> HomeServices</span>
             </span>
             <span className="text-xs text-slate-500 hidden sm:block">
-              Nevada Properties
+              {siteConfig.name}
             </span>
           </Link>
 

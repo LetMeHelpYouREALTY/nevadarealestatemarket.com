@@ -24,9 +24,9 @@ import {
 } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Contact Dr. Jan Duffy | Henderson Luxury Real Estate | BHHS Nevada",
+  title: "Contact Dr. Jan Duffy | Nevada Real Estate Market | (702) 500-1955",
   description:
-    "Contact Dr. Jan Duffy at Henderson MacDonald Highlands Real Estate. Schedule a private showing, get directions to 3185 St Rose Pkwy, Henderson, or call (702) 500-1955. Open daily 6 AM – 9 PM.",
+    "Contact Dr. Jan Duffy for Nevada real estate market guidance. Office: 3185 St Rose Pkwy, Suite 101, Henderson, NV 89052. Call (702) 500-1955. Open daily 6 AM – 9 PM.",
   keywords: [
     "contact Dr Jan Duffy Henderson",
     "Henderson luxury realtor",
@@ -41,7 +41,8 @@ const contactSchema = {
   "@type": "ContactPage",
   mainEntity: {
     "@type": "RealEstateAgent",
-    name: siteConfig.fullName,
+    name: officeInfo.name,
+    alternateName: siteConfig.name,
     telephone: agentInfo.phoneTel.replace("tel:", ""),
     email: agentInfo.email,
     url: siteConfig.url,

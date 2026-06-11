@@ -14,8 +14,8 @@ import {
 } from "./site-config";
 
 export const businessInfo = {
-  name: siteConfig.fullName,
-  alternateName: "Henderson MacDonald Highlands Real Estate",
+  name: officeInfo.name,
+  alternateName: siteConfig.name,
   address: {
     streetAddress: officeInfo.address.street,
     addressLocality: officeInfo.address.city,

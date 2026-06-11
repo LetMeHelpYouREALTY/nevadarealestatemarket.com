@@ -37,6 +37,7 @@ export default async function HendersonCommunityPage({ params }: Props) {
       community={community}
       areaLabel="Henderson, NV Communities"
       areaPath="/henderson"
+      cityName="Henderson"
     />
   );
 }

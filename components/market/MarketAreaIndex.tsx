@@ -1,8 +1,19 @@
 import Link from "next/link";
 import type { MarketCommunity } from "@/lib/market-communities/types";
 import { agentInfo } from "@/lib/site-config";
+import type { HeroImage } from "@/lib/hero-images";
+import { PageHero } from "@/components/sections/PageHero";
+import { SitePage } from "@/components/layouts/SitePage";
+import SchemaScript from "@/components/SchemaScript";
+import { generateItemListSchema, type BreadcrumbItem, type FAQItem } from "@/lib/schema";
 
 type MarketAreaIndexProps = {
+  path: string;
+  seoTitle: string;
+  seoDescription: string;
+  breadcrumbs: BreadcrumbItem[];
+  faqs?: FAQItem[];
+  hero: HeroImage;
   title: string;
   subtitle: string;
   sectionTitle: string;
@@ -14,6 +25,12 @@ type MarketAreaIndexProps = {
 };
 
 export function MarketAreaIndex({
+  path,
+  seoTitle,
+  seoDescription,
+  breadcrumbs,
+  faqs,
+  hero,
   title,
   subtitle,
   sectionTitle,
@@ -23,20 +40,33 @@ export function MarketAreaIndex({
   ctaTitle,
   ctaDescription,
 }: MarketAreaIndexProps) {
+  const listSchema = generateItemListSchema({
+    name: `${title} — Communities`,
+    items: communities.map((c) => ({
+      name: c.name,
+      url: `${areaPath}/${c.slug}`,
+      description: c.tagline,
+    })),
+  });
+
   return (
-    <main>
-      <section className="bg-blue-950 px-4 py-16 text-white">
-        <div className="mx-auto max-w-5xl">
-          <h1 className="mb-4 text-3xl font-bold md:text-5xl">{title}</h1>
-          <p className="mb-6 text-xl text-blue-200">{subtitle}</p>
-          <a
-            href={agentInfo.phoneTel}
-            className="inline-block rounded-lg bg-yellow-400 px-6 py-3 font-bold text-blue-950 transition hover:bg-yellow-300"
-          >
-            Call {agentInfo.name} · {agentInfo.phoneFormatted}
-          </a>
-        </div>
-      </section>
+    <SitePage
+      path={path}
+      seoTitle={seoTitle}
+      seoDescription={seoDescription}
+      breadcrumbs={breadcrumbs}
+      faqs={faqs}
+    >
+      <SchemaScript schema={listSchema} id="community-list-schema" />
+      <main>
+      <PageHero hero={hero} title={title} subtitle={subtitle} className="pt-24">
+        <a
+          href={agentInfo.phoneTel}
+          className="inline-block mt-6 rounded-lg bg-yellow-400 px-6 py-3 font-bold text-blue-950 transition hover:bg-yellow-300"
+        >
+          Call {agentInfo.name} · {agentInfo.phoneFormatted}
+        </a>
+      </PageHero>
 
       <section className="px-4 py-16">
         <div className="mx-auto max-w-5xl">
@@ -71,14 +101,23 @@ export function MarketAreaIndex({
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mb-3 text-2xl font-bold">{ctaTitle}</h2>
           <p className="mb-6 text-blue-200">{ctaDescription}</p>
-          <Link
-            href="/contact"
-            className="inline-block rounded-lg bg-yellow-400 px-8 py-3 font-bold text-blue-950 transition hover:bg-yellow-300"
-          >
-            Get a Free Community Comparison
-          </Link>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/contact"
+              className="inline-block rounded-lg bg-yellow-400 px-8 py-3 font-bold text-blue-950 transition hover:bg-yellow-300"
+            >
+              Get a Free Community Comparison
+            </Link>
+            <Link
+              href={`/maps${areaPath}`}
+              className="inline-block rounded-lg border border-yellow-400/60 px-8 py-3 font-bold text-yellow-400 transition hover:bg-yellow-400/10"
+            >
+              View Area Map
+            </Link>
+          </div>
         </div>
       </section>
-    </main>
+      </main>
+    </SitePage>
   );
 }

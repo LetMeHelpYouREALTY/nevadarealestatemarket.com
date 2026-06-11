@@ -37,6 +37,7 @@ export default async function LasVegasCommunityPage({ params }: Props) {
       community={community}
       areaLabel="Las Vegas, NV Neighborhoods"
       areaPath="/las-vegas"
+      cityName="Las Vegas"
     />
   );
 }

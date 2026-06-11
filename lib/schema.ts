@@ -1,6 +1,6 @@
 /**
- * Schema.org Structured Data Generators for heyberkshire.com
- * Following Google's 2025 Structured Data Guidelines
+ * Schema.org Structured Data Generators for nevadarealestatemarket.com
+ * SEO, AEO (FAQ/speakable), and GEO (entity @graph) optimized
  *
  * @see https://schema.org
  * @see https://developers.google.com/search/docs/appearance/structured-data
@@ -70,6 +70,9 @@ export interface SeniorCommunityData {
 // ============================================================================
 
 const BASE_URL = siteConfig.url;
+const ORG_ID = `${BASE_URL}/#organization`;
+const WEBSITE_ID = `${BASE_URL}/#website`;
+const PERSON_ID = `${BASE_URL}/#person`;
 
 // Social media profiles — matches GBP sameAs
 export const socialProfiles = {
@@ -95,10 +98,11 @@ export function generateRealEstateAgentSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    "@id": `${BASE_URL}/#organization`,
-    name: siteConfig.fullName,
+    "@id": ORG_ID,
+    name: officeInfo.name,
     alternateName: [
       siteConfig.name,
+      siteConfig.fullName,
       "BHHS Nevada Properties",
       "Berkshire Hathaway HomeServices",
     ],
@@ -166,7 +170,7 @@ export function generateRealEstateAgentSchema() {
     sameAs: socialProfileUrls,
     parentOrganization: {
       "@type": "Organization",
-      "@id": `${BASE_URL}#parent-organization`,
+      "@id": `${BASE_URL}/#parent-organization`,
       name: "Berkshire Hathaway HomeServices Nevada Properties",
       url: "https://www.bfrre.com",
       parentOrganization: {
@@ -176,6 +180,16 @@ export function generateRealEstateAgentSchema() {
         sameAs: "https://en.wikipedia.org/wiki/Berkshire_Hathaway_HomeServices",
       },
     },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: agentInfo.phoneTel.replace("tel:", ""),
+      contactType: "customer service",
+      email: agentInfo.email,
+      areaServed: "US",
+      availableLanguage: ["English"],
+    },
+    hasMap: officeInfo.googleMapsUrl,
+    employee: { "@id": PERSON_ID },
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: agentStats.averageRating.toString(),
@@ -199,12 +213,47 @@ export function generateRealEstateAgentSchema() {
 }
 
 /**
+ * Person schema linked to RealEstateAgent — strengthens E-E-A-T and GEO entity graph
+ */
+export function generatePersonSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": PERSON_ID,
+    name: agentInfo.name,
+    jobTitle: agentInfo.title,
+    description: siteConfig.gbpDescription,
+    url: `${BASE_URL}/about`,
+    image: `${BASE_URL}/images/dr-jan-duffy.jpg`,
+    email: agentInfo.email,
+    telephone: agentInfo.phoneTel.replace("tel:", ""),
+    worksFor: { "@id": ORG_ID },
+    sameAs: socialProfileUrls,
+    knowsAbout: [
+      "Henderson luxury real estate",
+      "Las Vegas real estate market",
+      "MacDonald Ranch homes",
+      "Lake Las Vegas estates",
+      "Summerlin luxury communities",
+      "55+ active adult communities",
+      "California relocation to Nevada",
+    ],
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Real Estate License",
+      identifier: agentInfo.license,
+    },
+  };
+}
+
+/**
  * Site-wide @graph schema for SEO, AEO, and GEO
- * Combines RealEstateAgent + Organization + WebSite entities
+ * Combines RealEstateAgent + Person + Organization + WebSite entities
  */
 export function generateSiteGraphSchema() {
   return combineSchemas(
     generateRealEstateAgentSchema(),
+    generatePersonSchema(),
     generateOrganizationSchema(),
     generateWebSiteSchema(),
   );
@@ -217,7 +266,7 @@ export function generateOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": `${BASE_URL}#parent-organization`,
+    "@id": `${BASE_URL}/#parent-organization`,
     name: "Berkshire Hathaway HomeServices Nevada Properties",
     url: "https://www.bfrre.com",
     logo: `${BASE_URL}/favicon-32x32.png`,
@@ -260,12 +309,12 @@ export function generateWebSiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": `${BASE_URL}#website`,
+    "@id": WEBSITE_ID,
     name: siteConfig.name,
     url: BASE_URL,
     description: siteConfig.description,
     publisher: {
-      "@id": `${BASE_URL}#organization`,
+      "@id": ORG_ID,
     },
     potentialAction: {
       "@type": "SearchAction",
@@ -325,7 +374,7 @@ export function generateReviewSchema(reviews: ReviewItem[]) {
   return {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
-    "@id": `${BASE_URL}#organization`,
+    "@id": ORG_ID,
     name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
     aggregateRating: generateAggregateRatingSchema(
       agentStats.averageRating,
@@ -540,7 +589,7 @@ export function generateServiceSchema(service: {
       ? service.url
       : `${BASE_URL}${service.url}`,
     provider: {
-      "@id": `${BASE_URL}#organization`,
+      "@id": ORG_ID,
     },
     areaServed: service.areaServed || [
       "Las Vegas",
@@ -570,14 +619,177 @@ export function generateWebPageSchema(page: {
     description: page.description,
     url: page.url.startsWith("http") ? page.url : `${BASE_URL}${page.url}`,
     isPartOf: {
-      "@id": `${BASE_URL}#website`,
+      "@id": WEBSITE_ID,
     },
     about: {
-      "@id": `${BASE_URL}#organization`,
+      "@id": ORG_ID,
     },
     ...(page.datePublished && { datePublished: page.datePublished }),
     ...(page.dateModified && { dateModified: page.dateModified }),
   };
+}
+
+/**
+ * WebPage with SpeakableSpecification — AEO / voice search optimization
+ */
+export function generateSpeakableWebPageSchema(page: {
+  name: string;
+  description: string;
+  url: string;
+  datePublished?: string;
+  dateModified?: string;
+  cssSelectors?: string[];
+}) {
+  return {
+    ...generateWebPageSchema(page),
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector:
+        page.cssSelectors ?? [
+          "h1",
+          "[data-speakable]",
+          ".speakable-summary",
+        ],
+    },
+  };
+}
+
+/**
+ * Article schema for market reports and insights — GEO / content citations
+ */
+export function generateArticleSchema(article: {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified?: string;
+  image?: string;
+}) {
+  const pageUrl = article.url.startsWith("http")
+    ? article.url
+    : `${BASE_URL}${article.url}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${pageUrl}#article`,
+    headline: article.headline,
+    description: article.description,
+    url: pageUrl,
+    datePublished: article.datePublished,
+    dateModified: article.dateModified ?? article.datePublished,
+    author: { "@id": PERSON_ID },
+    publisher: { "@id": ORG_ID },
+    mainEntityOfPage: { "@id": `${pageUrl}#webpage` },
+    image: article.image ?? `${BASE_URL}/images/dr-jan-duffy.jpg`,
+    inLanguage: "en-US",
+  };
+}
+
+/**
+ * Dataset schema for market statistics — GEO / structured data for AI crawlers
+ */
+export function generateDatasetSchema(dataset: {
+  name: string;
+  description: string;
+  url: string;
+  dateModified: string;
+  variables: Array<{ name: string; value: string }>;
+}) {
+  const pageUrl = dataset.url.startsWith("http")
+    ? dataset.url
+    : `${BASE_URL}${dataset.url}`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Dataset",
+    "@id": `${pageUrl}#dataset`,
+    name: dataset.name,
+    description: dataset.description,
+    url: pageUrl,
+    dateModified: dataset.dateModified,
+    creator: { "@id": ORG_ID },
+    publisher: { "@id": ORG_ID },
+    spatialCoverage: {
+      "@type": "Place",
+      name: "Clark County, Nevada",
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: officeInfo.coordinates.lat,
+        longitude: officeInfo.coordinates.lng,
+      },
+    },
+    variableMeasured: dataset.variables.map((v) => ({
+      "@type": "PropertyValue",
+      name: v.name,
+      value: v.value,
+    })),
+    license: "https://creativecommons.org/licenses/by/4.0/",
+  };
+}
+
+/**
+ * ItemList schema for neighborhood and service index pages
+ */
+export function generateItemListSchema(list: {
+  name: string;
+  description?: string;
+  items: Array<{ name: string; url: string; description?: string }>;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: list.name,
+    ...(list.description && { description: list.description }),
+    itemListElement: list.items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      url: item.url.startsWith("http") ? item.url : `${BASE_URL}${item.url}`,
+      ...(item.description && { description: item.description }),
+    })),
+  };
+}
+
+export type PageSchemaBundleOptions = {
+  name: string;
+  description: string;
+  path: string;
+  breadcrumbs?: BreadcrumbItem[];
+  faqs?: FAQItem[];
+  speakable?: boolean;
+  datePublished?: string;
+  dateModified?: string;
+};
+
+/**
+ * Standard page-level @graph: WebPage (+ optional speakable), BreadcrumbList, FAQPage
+ */
+export function generatePageSchemaBundle(options: PageSchemaBundleOptions) {
+  const path = options.path.startsWith("/") ? options.path : `/${options.path}`;
+  const pageInput = {
+    name: options.name,
+    description: options.description,
+    url: path,
+    datePublished: options.datePublished,
+    dateModified: options.dateModified,
+  };
+
+  const schemas: Record<string, unknown>[] = [
+    options.speakable
+      ? generateSpeakableWebPageSchema(pageInput)
+      : generateWebPageSchema(pageInput),
+  ];
+
+  if (options.breadcrumbs && options.breadcrumbs.length > 0) {
+    schemas.push(generateBreadcrumbSchema(options.breadcrumbs));
+  }
+
+  if (options.faqs && options.faqs.length > 0) {
+    schemas.push(generateFAQSchema(options.faqs));
+  }
+
+  return schemas;
 }
 
 // ============================================================================

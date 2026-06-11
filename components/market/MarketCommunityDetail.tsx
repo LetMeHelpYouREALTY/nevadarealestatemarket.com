@@ -1,120 +1,157 @@
 import Link from "next/link";
 import type { MarketCommunity } from "@/lib/market-communities/types";
-import { agentInfo, officeInfo, siteConfig } from "@/lib/site-config";
+import { agentInfo, officeInfo } from "@/lib/site-config";
+import { getHeroImage } from "@/lib/hero-images";
+import { PageHero } from "@/components/sections/PageHero";
+import { SitePage } from "@/components/layouts/SitePage";
+import SchemaScript from "@/components/SchemaScript";
+import {
+  generateNeighborhoodSchema,
+  generateWebPageSchema,
+  combineSchemas,
+  type BreadcrumbItem,
+} from "@/lib/schema";
+import { sitePath } from "@/lib/seo/site-url";
 
 type MarketCommunityDetailProps = {
   community: MarketCommunity;
   areaLabel: string;
   areaPath: string;
+  cityName?: string;
 };
 
 export function MarketCommunityDetail({
   community,
   areaLabel,
   areaPath,
+  cityName = "Las Vegas Valley",
 }: MarketCommunityDetailProps) {
-  const pageUrl = `${siteConfig.url}${areaPath}/${community.slug}`;
+  const pagePath = `${areaPath}/${community.slug}`;
+  const pageUrl = sitePath(pagePath);
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    name: agentInfo.name,
+  const breadcrumbs: BreadcrumbItem[] = [
+    { name: "Home", url: "/" },
+    { name: "Nevada Market", url: "/nevada-real-estate-market" },
+    { name: areaLabel.replace(" Communities", ""), url: areaPath },
+    { name: community.name, url: pagePath },
+  ];
+
+  const placeSchema = {
+    ...generateNeighborhoodSchema({
+      name: community.name,
+      slug: community.slug,
+      description: community.description,
+      containedIn: cityName,
+    }),
+    "@id": `${pageUrl}#place`,
     url: pageUrl,
-    telephone: agentInfo.phoneFormatted.replace(/\D/g, "").replace(/^1/, "+1-"),
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: officeInfo.address.street,
-      addressLocality: officeInfo.address.city,
-      addressRegion: officeInfo.address.state,
-      postalCode: officeInfo.address.zip,
-      addressCountry: "US",
-    },
-    areaServed: community.name,
-    description: community.description,
   };
 
+  const pageSchema = generateWebPageSchema({
+    name: `${community.name} Homes For Sale`,
+    description: community.description,
+    url: pagePath,
+  });
+
+  const communitySchema = combineSchemas(placeSchema, pageSchema);
+
+  const faqs = [
+    {
+      question: `What is the price range for homes in ${community.name}?`,
+      answer: `Homes in ${community.name} typically range ${community.priceRange}. ${community.description} Contact Dr. Jan Duffy at ${agentInfo.phone} for current listings and a private tour.`,
+    },
+    {
+      question: `Who is the best realtor for ${community.name}?`,
+      answer: `Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, specializes in ${community.name} and surrounding communities. Call ${agentInfo.phone} for expert buyer or seller representation.`,
+    },
+  ];
+
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+    <SitePage
+      path={pagePath}
+      seoTitle={`${community.name} Homes For Sale | Nevada Real Estate`}
+      seoDescription={`${community.name} — ${community.tagline}. Homes ${community.priceRange}. Dr. Jan Duffy, BHHS Nevada · ${agentInfo.phone}.`}
+      breadcrumbs={breadcrumbs}
+      faqs={faqs}
+    >
+      <SchemaScript schema={communitySchema} id="community-schema" />
       <main>
-        <section className="bg-blue-950 px-4 py-16 text-white">
-          <div className="mx-auto max-w-5xl">
-            <p className="mb-2 text-sm font-semibold text-yellow-400">{areaLabel}</p>
-            <h1 className="mb-4 text-3xl font-bold md:text-5xl">{community.name}</h1>
-            <p className="mb-2 text-xl text-blue-200">{community.tagline}</p>
-            <p className="text-2xl font-bold text-yellow-400">{community.priceRange}</p>
-          </div>
-        </section>
+        <PageHero
+          hero={getHeroImage(pagePath)}
+          badge={areaLabel}
+          title={community.name}
+          subtitle={`${community.tagline} · ${community.priceRange}`}
+          className="pt-24"
+        />
 
         <section className="px-4 py-16">
-          <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-3">
-            <div className="prose md:col-span-2">
-              <h2>About {community.name}</h2>
-              <p>{community.description}</p>
+          <div className="mx-auto max-w-5xl">
+            <p className="mb-8 text-lg text-gray-700 leading-relaxed" data-speakable>
+              {community.description}
+            </p>
 
-              <h2>Community Highlights</h2>
-              <ul>
-                {community.highlights.map((highlight) => (
-                  <li key={highlight}>{highlight}</li>
-                ))}
-              </ul>
-
-              <h2>Best For</h2>
-              <ul>
-                {community.bestFor.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+            <div className="mb-10 grid gap-8 md:grid-cols-2">
+              <div>
+                <h2 className="mb-4 text-xl font-bold text-blue-950">Highlights</h2>
+                <ul className="space-y-2">
+                  {community.highlights.map((highlight) => (
+                    <li key={highlight} className="flex items-center gap-2 text-gray-700">
+                      <span className="text-yellow-500">✦</span> {highlight}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h2 className="mb-4 text-xl font-bold text-blue-950">Best For</h2>
+                <ul className="space-y-2">
+                  {community.bestFor.map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-gray-700">
+                      <span className="text-blue-600">•</span> {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            <aside>
-              <div className="sticky top-24 rounded-xl bg-blue-950 p-6 text-white">
-                <h3 className="mb-4 text-lg font-bold text-yellow-400">
-                  Thinking About {community.name}?
-                </h3>
-                <p className="mb-6 text-sm text-blue-200">
-                  I track every sale in this community. Let me pull fresh comps and tell you
-                  exactly what&apos;s available right now.
-                </p>
+            <div className="rounded-xl bg-blue-50 p-8">
+              <h2 className="mb-3 text-xl font-bold text-blue-950">
+                Ready to explore {community.name}?
+              </h2>
+              <p className="mb-6 text-gray-700">
+                Get current listings, pricing trends, and a personalized tour from Dr. Jan
+                Duffy — Nevada&apos;s Top 1% REALTOR®.
+              </p>
+              <div className="flex flex-wrap gap-4">
                 <a
                   href={agentInfo.phoneTel}
-                  className="mb-3 block w-full rounded-lg bg-yellow-400 py-3 text-center font-bold text-blue-950 transition hover:bg-yellow-300"
+                  className="rounded-lg bg-blue-600 px-6 py-3 font-bold text-white hover:bg-blue-700 transition"
                 >
-                  Call {agentInfo.phoneFormatted}
+                  Call {agentInfo.phone}
                 </a>
                 <Link
                   href="/contact"
-                  className="block w-full rounded-lg border border-yellow-400 py-3 text-center font-semibold text-yellow-400 transition hover:bg-blue-800"
+                  className="rounded-lg border border-blue-600 px-6 py-3 font-bold text-blue-600 hover:bg-white transition"
                 >
-                  Request Market Report
+                  Schedule Consultation
                 </Link>
-                <p className="mt-4 text-center text-xs text-blue-300">
-                  {agentInfo.name} · {agentInfo.brokerage}
-                  <br />
-                  NV License #{agentInfo.license}
-                </p>
+                <Link
+                  href={areaPath}
+                  className="rounded-lg border border-gray-300 px-6 py-3 font-bold text-gray-700 hover:bg-white transition"
+                >
+                  ← Back to {areaLabel}
+                </Link>
               </div>
-            </aside>
-          </div>
-        </section>
+            </div>
 
-        <section className="border-t px-4 py-8">
-          <div className="mx-auto flex max-w-5xl items-center justify-between">
-            <Link href={areaPath} className="font-medium text-blue-700 hover:underline">
-              ← All {areaLabel}
-            </Link>
-            <Link
-              href="/contact"
-              className="rounded-lg bg-blue-950 px-6 py-2 text-sm font-semibold text-white transition hover:bg-blue-800"
-            >
-              Get Free Market Analysis
-            </Link>
+            <p className="mt-8 text-xs text-gray-500">
+              Office: {officeInfo.address.full} ·{" "}
+              <a href={pageUrl} className="underline">
+                {pageUrl}
+              </a>
+            </p>
           </div>
         </section>
       </main>
-    </>
+    </SitePage>
   );
 }
