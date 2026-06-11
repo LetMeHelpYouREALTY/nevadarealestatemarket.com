@@ -1,5 +1,5 @@
-# robots.txt for heyberkshire.com
-# Real estate site for Dr. Jan Duffy
+# robots.txt for nevadarealestatemarket.com
+# Henderson luxury real estate — Dr. Jan Duffy
 
 # Allow all search engines
 User-agent: *
@@ -20,7 +20,7 @@ Allow: /contact/
 Allow: /blog/
 
 # Sitemap location
-Sitemap: https://heyberkshire.com/sitemap.xml
+Sitemap: https://www.nevadarealestatemarket.com/sitemap.xml
 
 # Crawl-delay for aggressive bots (optional)
 User-agent: AhrefsBot

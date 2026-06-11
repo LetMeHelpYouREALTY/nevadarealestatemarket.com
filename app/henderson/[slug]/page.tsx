@@ -5,7 +5,7 @@ import {
   getHendersonCommunity,
   hendersonCommunities,
 } from "@/lib/market-communities/henderson";
-import { siteConfig } from "@/lib/site-config";
+import { siteConfig, agentInfo } from "@/lib/site-config";
 
 type Props = {
   params: { slug: string };
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `${community.name} Homes For Sale | Henderson NV Real Estate`,
-    description: `${community.name} Henderson NV — ${community.tagline}. Homes ${community.priceRange}. Dr. Jan Duffy, BHHS Nevada Properties · 702-222-1964.`,
+    description: `${community.name} Henderson NV — ${community.tagline}. Homes ${community.priceRange}. Dr. Jan Duffy, BHHS Nevada Properties · ${agentInfo.phone}.`,
     alternates: { canonical: `${siteConfig.url}/henderson/${slug}` },
   };
 }

@@ -44,7 +44,7 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Type check
         run: npx tsc --noEmit
@@ -79,7 +79,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Run ESLint
         run: npm run lint
@@ -112,7 +112,7 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Run tests
         run: npm run test:ci
@@ -190,7 +190,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Run npm audit
         run: npm audit --audit-level=high
@@ -323,10 +323,10 @@ jobs:
                   issues.push(`❌ **${file.filename}**: Missing metadata export (SEO)`);
                 }
                 
-                // Check for proper phone numbers
-                if (content.includes('702-222-1964') || content.includes('7022221964') || 
-                    content.includes('702-500-1955') || content.includes('7025001955')) {
-                  issues.push(`❌ **${file.filename}**: Contains old phone number (should be (702) 500-1942)`);
+                // Check for deprecated phone numbers (GBP uses 500-1955 for nevadarealestatemarket.com)
+                if (content.includes('702-222-1964') || content.includes('7022221964') ||
+                    content.includes('702-500-1942') || content.includes('7025001942')) {
+                  issues.push(`❌ **${file.filename}**: Contains deprecated phone number (should be (702) 500-1955)`);
                 }
                 
                 // Check for JSON-LD schema
@@ -484,7 +484,7 @@ jobs:
             - [ ] Code follows project conventions
             - [ ] Tests pass with adequate coverage (80%+)
             - [ ] SEO metadata is present and optimized
-            - [ ] Phone numbers are correct: (702) 500-1942
+            - [ ] Phone numbers are correct: (702) 500-1955
             - [ ] Berkshire Hathaway branding is consistent
             - [ ] Mobile responsive design verified
             - [ ] No console errors
