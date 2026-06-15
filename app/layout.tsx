@@ -44,6 +44,14 @@ export default function RootLayout({
           window.widgetTracker("create","WT-XQHVYQWW");
           window.widgetTracker("send","pageview");
         `}</Script>
+        <link
+          rel="stylesheet"
+          href="https://assets.calendly.com/assets/external/widget.css"
+        />
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="afterInteractive"
+        />
       </head>
       <body>
         {children}
