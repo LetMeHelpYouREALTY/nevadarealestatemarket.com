@@ -8,6 +8,7 @@ import { generateSiteGraphSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
+import GlobalHeroBanner from "@/components/layout/GlobalHeroBanner";
 
 export async function generateMetadata(): Promise<Metadata> {
   const domain = headers().get("x-domain") || "";
@@ -54,6 +55,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <GlobalHeroBanner />
         {children}
         <Analytics />
       </body>
