@@ -133,6 +133,46 @@
       "source": "/news-blog",
       "destination": "/news",
       "permanent": true
+    },
+    {
+      "source": "/news-blog/page/:page",
+      "destination": "/news",
+      "permanent": true
+    },
+    {
+      "source": "/homepage",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/learn-page",
+      "destination": "/nevada-buyers-guide",
+      "permanent": true
+    },
+    {
+      "source": "/luxury-homes-henderson-nv",
+      "destination": "/your-trusted-henderson-luxury-real-estate-expert",
+      "permanent": true
+    },
+    {
+      "source": "/retiring-soon-why-moving-might-be-the-perfect-next-step",
+      "destination": "/sellers/downsizing",
+      "permanent": true
+    },
+    {
+      "source": "/landing-page__trashed-2/william-lyon-homes-las-vegas-now-part-of-taylor-morrison",
+      "destination": "/william-lyon-homes-las-vegas-now-part-of-taylor-morrison",
+      "permanent": true
+    },
+    {
+      "source": "/landing-page__trashed-2/:path*",
+      "destination": "/news",
+      "permanent": true
+    },
+    {
+      "source": "/landing-page",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }

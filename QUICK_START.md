@@ -167,6 +167,28 @@ Or in Dashboard → Project → **Firewall** → Custom Rule:
 
 Then GSC → **Blocked due to access forbidden (403)** → Validate fix.
 
+## GSC: Crawled – currently not indexed
+
+Google crawled the URL and **chose not to index** it. This report mixes keep-pages and junk.
+
+| Keep (index after deploy) | Action |
+| --- | --- |
+| `/no-state-income-tax`, `/contact`, `/market-insights`, `/privacy-policy` | Self-canonical + Request indexing |
+
+| Drop (should leave the index) | 301 target |
+| --- | --- |
+| `/?p=*`, `/?page_id=*` | `/` |
+| `?swcfpc=1` cache busters | clean path (middleware) |
+| `/learn-page` | `/nevada-buyers-guide` |
+| `/homepage` | `/` |
+| `/luxury-homes-henderson-nv` | Henderson luxury expert page |
+| `/retiring-soon-…` | `/sellers/downsizing` |
+| `/news-blog/page/*`, categories, trashed landing | `/news` or specific article |
+| `/wp-includes/*` | `/` (Firewall + redirects) |
+| `/contact-us` | `/contact` |
+
+After deploy: Request indexing on the **Keep** URLs only. Junk should move to “Page with redirect” / drop out — do not request indexing on those.
+
 ## GSC: Discovered – currently not indexed
 
 **Meaning:** Google saw the URL (usually via `sitemap.xml`) but has **not crawled it yet** (`Last crawled: N/A`). This is crawl *scheduling*, not a broken page.

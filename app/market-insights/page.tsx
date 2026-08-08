@@ -17,12 +17,14 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "https://www.nevadarealestatemarket.com/market-insights" },
-  title: "Las Vegas Real Estate Market Insights 2026 | Berkshire Hathaway HomeServices",
+export const metadata: Metadata = buildPageMetadata({
+  title:
+    "Las Vegas Real Estate Market Insights 2026 | Berkshire Hathaway HomeServices",
   description:
     "Technology trends, economic forecasts, and market analysis shaping Las Vegas real estate in 2026. AI, data centers, California migration, and what it means for buyers and sellers. Call (702) 500-1955.",
+  path: "/market-insights",
   keywords: [
     "Las Vegas real estate trends 2026",
     "Las Vegas market forecast",
@@ -31,7 +33,7 @@ export const metadata: Metadata = {
     "Las Vegas tech hub",
     "Berkshire Hathaway market insights",
   ],
-};
+});
 
 const reportSchema = {
   "@context": "https://schema.org",

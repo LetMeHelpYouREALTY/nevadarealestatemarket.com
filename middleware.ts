@@ -25,9 +25,38 @@ function redirectLegacyWordpress(request: NextRequest): NextResponse | null {
   return NextResponse.redirect(url, 301);
 }
 
+/**
+ * WordPress query soft-duplicates (`?p=`, `?page_id=`) serve the homepage as 200.
+ * Cache-buster `?swcfpc=1` creates alternate URLs Google crawls then skips.
+ * Collapse all of these with 301s so GSC “Crawled – not indexed” junk drops.
+ */
+function redirectWordpressQueryParams(
+  request: NextRequest,
+): NextResponse | null {
+  const url = request.nextUrl.clone();
+  const { searchParams } = url;
+
+  if (searchParams.has("p") || searchParams.has("page_id")) {
+    url.pathname = "/";
+    url.search = "";
+    return NextResponse.redirect(url, 301);
+  }
+
+  if (searchParams.has("swcfpc")) {
+    searchParams.delete("swcfpc");
+    url.search = searchParams.toString() ? `?${searchParams.toString()}` : "";
+    return NextResponse.redirect(url, 301);
+  }
+
+  return null;
+}
+
 export function middleware(request: NextRequest) {
   const wpRedirect = redirectLegacyWordpress(request);
   if (wpRedirect) return wpRedirect;
+
+  const queryRedirect = redirectWordpressQueryParams(request);
+  if (queryRedirect) return queryRedirect;
 
   const hostname = request.headers.get("host") || "";
   const response = NextResponse.next();

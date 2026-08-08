@@ -23,12 +23,13 @@ import {
   businessHours,
   businessAttributes,
 } from "@/lib/site-config";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  alternates: { canonical: "https://www.nevadarealestatemarket.com/contact" },
+export const metadata: Metadata = buildPageMetadata({
   title: "Contact Dr. Jan Duffy | Nevada Real Estate Market | (702) 500-1955",
   description:
     "Contact Dr. Jan Duffy for Nevada real estate market guidance. Office: 3185 St Rose Pkwy, Suite 101, Henderson, NV 89052. Call (702) 500-1955. Open daily 6 AM – 9 PM.",
+  path: "/contact",
   keywords: [
     "contact Dr Jan Duffy Henderson",
     "Henderson luxury realtor",
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     "Dr Jan Duffy phone",
     "schedule Henderson home showing",
   ],
-};
+});
 
 const contactSchema = {
   "@context": "https://schema.org",

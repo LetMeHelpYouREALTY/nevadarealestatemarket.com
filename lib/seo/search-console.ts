@@ -36,6 +36,9 @@ export const searchConsoleConfig = {
     `${siteConfig.url}/maps`,
     `${siteConfig.url}/site-map`,
     `${siteConfig.url}/google-business`,
+    `${siteConfig.url}/no-state-income-tax`,
+    `${siteConfig.url}/market-insights`,
+    `${siteConfig.url}/privacy-policy`,
   ],
 } as const;
 
