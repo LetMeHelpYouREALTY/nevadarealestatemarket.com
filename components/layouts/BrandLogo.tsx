@@ -25,7 +25,6 @@ export function BrandLogo({
     <Link
       href="/"
       className={`group flex items-center gap-3 no-underline hover:no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 rounded-md ${className}`.trim()}
-      aria-label={`${siteConfig.name} — Dr. Jan Duffy, REALTOR® home`}
     >
       {showPortrait && (
         <span

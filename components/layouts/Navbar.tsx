@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BrandLogo } from "@/components/layouts/BrandLogo";
+import { agentInfo } from "@/lib/site-config";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -125,8 +126,11 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-3">
             <Button asChild size="sm" className="bg-blue-600 hover:bg-blue-700">
-              <Link href="tel:+17025001955">
-                <Phone className="h-4 w-4" />
+              <Link
+                href="tel:+17025001955"
+                aria-label={`Call Dr. Jan Duffy at ${agentInfo.phone}`}
+              >
+                <Phone className="h-4 w-4" aria-hidden="true" />
               </Link>
             </Button>
             <button

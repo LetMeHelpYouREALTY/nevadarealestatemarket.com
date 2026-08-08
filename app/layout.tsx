@@ -6,6 +6,7 @@ import { generateSiteGraphSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
+import { DeferredWidgetBe } from "@/components/analytics/DeferredWidgetBe";
 
 /**
  * Static root metadata (no headers()) so marketing pages can be CDN-cached.
@@ -47,16 +48,8 @@ export default function RootLayout({
         />
         {/* Analytics after idle — avoid competing with LCP */}
         <Analytics />
-        {/* Optional lead widget — defer until browser idle */}
-        <Script id="widget-tracker" strategy="lazyOnload">{`
-          (function(w,i,d,g,e,t){w["WidgetTrackerObject"]=g;(w[g]=w[g]||function()
-          {(w[g].q=w[g].q||[]).push(arguments);}),(w[g].ds=1*new Date());(e="script"),
-          (t=d.createElement(e)),(e=d.getElementsByTagName(e)[0]);t.async=1;t.src=i;
-          e.parentNode.insertBefore(t,e);})
-          (window,"https://widgetbe.com/agent",document,"widgetTracker");
-          window.widgetTracker("create","WT-XQHVYQWW");
-          window.widgetTracker("send","pageview");
-        `}</Script>
+        {/* Lead widget: idle + delay / first interaction — keeps WidgetBe off critical path */}
+        <DeferredWidgetBe />
       </body>
     </html>
   );

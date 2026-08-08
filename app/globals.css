@@ -46,11 +46,12 @@
     @apply font-semibold;
   }
 
+  /* Inherit body/section color — forcing slate-900 broke contrast on dark shells */
   h1,
   h2,
   h3,
   h4 {
-    @apply text-balance text-slate-900;
+    @apply text-balance;
   }
 
   p {

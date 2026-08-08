@@ -147,7 +147,7 @@ export default function Home() {
         <section className="section-shell bg-slate-950 text-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mb-10">
-              <h2 className="text-3xl font-bold mb-3 tracking-tight">
+              <h2 className="text-3xl font-bold mb-3 tracking-tight text-white">
                 {config.neighborhood} snapshot
               </h2>
               <p
@@ -156,7 +156,7 @@ export default function Home() {
               >
                 {speakableSummaries.hub}
               </p>
-              <p className="text-slate-500 text-sm mt-3">
+              <p className="text-slate-400 text-sm mt-3">
                 Data as of {marketStats.lastUpdated}
               </p>
             </div>

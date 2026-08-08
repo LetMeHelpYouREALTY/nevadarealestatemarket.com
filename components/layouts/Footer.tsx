@@ -75,7 +75,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-bold text-lg mb-4 text-white">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <a
@@ -204,7 +204,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Real Estate Services</h3>
+            <h3 className="font-bold text-lg mb-4 text-white">Real Estate Services</h3>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -299,7 +299,7 @@ export default function Footer() {
 
           {/* Contact Info - NAP (Name, Address, Phone) */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Contact Dr. Jan Duffy</h3>
+            <h3 className="font-bold text-lg mb-4 text-white">Contact Dr. Jan Duffy</h3>
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0 mt-0.5" />
@@ -362,7 +362,7 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-          <p className="text-slate-500 text-xs mt-4 text-center">
+          <p className="text-slate-400 text-xs mt-4 text-center">
             {agentInfo.name}, {agentInfo.title} | License {agentInfo.license} |{" "}
             {agentInfo.brokerage}
           </p>

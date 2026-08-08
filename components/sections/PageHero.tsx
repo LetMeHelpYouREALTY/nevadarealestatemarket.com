@@ -47,12 +47,12 @@ export function PageHero({
         alt={hero.alt}
         fill
         priority
-        quality={78}
+        quality={size === "home" ? 70 : 75}
         sizes="100vw"
         className={
           hero.src.includes("/images/agent/")
-            ? "object-cover object-top motion-safe:animate-hero-zoom"
-            : "object-cover object-center motion-safe:animate-hero-zoom"
+            ? "object-cover object-top"
+            : "object-cover object-center"
         }
       />
       <div
