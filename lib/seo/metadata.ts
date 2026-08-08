@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { siteConfig, agentInfo } from "@/lib/site-config";
 
-/** Prefer landscape hero for link previews; agent portrait remains fallback elsewhere. */
-const DEFAULT_OG_IMAGE = `${siteConfig.url}/images/hero/modern-nevada-home.jpg`;
-const DEFAULT_OG_ALT = `${siteConfig.name} | ${agentInfo.name}`;
+/** Branded 1200×630 share card — used sitewide when a page omits custom images. */
+const DEFAULT_OG_IMAGE = `${siteConfig.url}/images/og-home.jpg`;
+const DEFAULT_OG_ALT =
+  "Nevada Real Estate Market — Las Vegas Valley, Henderson & Summerlin | Dr. Jan Duffy, BHHS Nevada";
 
 export type PageMetadataOptions = {
   title: string;

@@ -38,10 +38,7 @@ export const metadata: Metadata = buildPageMetadata({
   description: siteConfig.description,
   keywords: config.keywords,
   path: "/",
-  images: [
-    `${siteConfig.url}/images/hero/modern-nevada-home.jpg`,
-    `${siteConfig.url}/images/dr-jan-duffy.jpg`,
-  ],
+  images: [`${siteConfig.url}/images/og-home.jpg`],
 });
 
 export default function Home() {

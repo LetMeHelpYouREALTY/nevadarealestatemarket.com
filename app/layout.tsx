@@ -20,7 +20,7 @@ export const metadata: Metadata = buildPageMetadata({
     "Henderson real estate",
     "Dr Jan Duffy",
   ],
-  images: [`${siteConfig.url}/images/hero/modern-nevada-home.jpg`],
+  images: [`${siteConfig.url}/images/og-home.jpg`],
 });
 
 export default function RootLayout({
