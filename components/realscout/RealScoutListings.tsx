@@ -1,8 +1,9 @@
-"use client";
-
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
+/**
+ * Server component — RealScout custom elements hydrate via global lazy script.
+ * Reserved min-height reduces CLS while the widget boots.
+ */
 export default function RealScoutListings() {
   return (
     <section className="py-16 md:py-24 bg-slate-50">
@@ -17,12 +18,18 @@ export default function RealScoutListings() {
             </p>
           </div>
           <Button asChild variant="outline" className="mt-4 md:mt-0">
-            <a href="http://drjanduffy.realscout.com/" target="_blank" rel="noopener noreferrer">View All Properties</a>
+            <a
+              href="http://drjanduffy.realscout.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View All Properties
+            </a>
           </Button>
         </div>
 
-        {/* RealScout Widget - using dangerouslySetInnerHTML per rules */}
         <div
+          className="min-h-[420px]"
           dangerouslySetInnerHTML={{
             __html: `<realscout-office-listings 
               agent-encoded-id="QWdlbnQtMjI1MDUw" 

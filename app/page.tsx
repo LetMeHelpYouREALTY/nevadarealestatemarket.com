@@ -13,7 +13,7 @@ import {
   Users,
 } from "lucide-react";
 import type { Metadata } from "next";
-import { getPageDomainConfig } from "@/lib/get-domain-config";
+import { getDomainConfig } from "@/lib/domain-config";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { commonFAQs, siteConfig, agentInfo, marketStats } from "@/lib/site-config";
@@ -21,18 +21,19 @@ import { speakableSummaries } from "@/lib/nevada-market-research";
 import { getHeroImageByKey } from "@/lib/hero-images";
 import { PageHero } from "@/components/sections/PageHero";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const config = await getPageDomainConfig();
-  return buildPageMetadata({
-    title: `${config.heroHeadline} | Dr. Jan Duffy, REALTOR® | BHHS Nevada`,
-    description: config.description,
-    keywords: config.keywords,
-    path: "/",
-  });
-}
+/** Static domain config — no headers() so `/` can be edge-cached (PageSpeed TTFB). */
+const config = getDomainConfig("nevadarealestatemarket.com");
 
-export default async function Home() {
-  const config = await getPageDomainConfig();
+export const revalidate = 3600;
+
+export const metadata: Metadata = buildPageMetadata({
+  title: `${config.heroHeadline} | Dr. Jan Duffy, REALTOR® | BHHS Nevada`,
+  description: config.description,
+  keywords: config.keywords,
+  path: "/",
+});
+
+export default function Home() {
 
   const homepageFaqs = [
     ...commonFAQs.general.slice(0, 3),
@@ -63,6 +64,7 @@ export default async function Home() {
         >
           <div className="mb-8 flex justify-center">
             <div
+              className="w-full max-w-xl min-h-[56px]"
               dangerouslySetInnerHTML={{
                 __html: `<realscout-simple-search agent-encoded-id="${config.realscoutAgentId}"></realscout-simple-search>`,
               }}

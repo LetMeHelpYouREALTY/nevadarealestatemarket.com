@@ -34,6 +34,7 @@ export function PageHero({
         alt={hero.alt}
         fill
         priority
+        quality={75}
         sizes="100vw"
         className={
           hero.src.includes("/images/agent/")

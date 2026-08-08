@@ -167,6 +167,12 @@ Or in Dashboard → Project → **Firewall** → Custom Rule:
 
 Then GSC → **Blocked due to access forbidden (403)** → Validate fix.
 
+## PageSpeed (mobile)
+
+Local Lighthouse after the perf pass: Calendly CSS removed from the critical path, `/` is ISR-cached (`s-maxage=3600`), hero masters shrunk (~3.5MB → ~190KB), RealScout/WidgetTracker deferred (`lazyOnload`), Sentry sampling reduced.
+
+After deploy, re-run: https://pagespeed.web.dev/analysis?url=https://www.nevadarealestatemarket.com/
+
 ## GSC: Duplicate, Google chose different canonical than user
 
 Example: `https://nevadarealestatemarket.com/henderson/seven-hills` (apex).
