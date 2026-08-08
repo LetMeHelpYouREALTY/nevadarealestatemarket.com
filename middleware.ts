@@ -10,5 +10,8 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon|images|videos|robots|sitemap).*)"],
+  // Exclude static SEO assets + Google HTML verification files (google*.html)
+  matcher: [
+    "/((?!api|_next/static|_next/image|favicon|images|videos|robots|sitemap|google).*)",
+  ],
 };

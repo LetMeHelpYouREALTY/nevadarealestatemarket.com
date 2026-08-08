@@ -21,11 +21,33 @@ function toCanonicalUrl(path?: string): string {
 }
 
 /**
- * Shared metadata builder for SEO, Open Graph, Twitter, and AI snippet hints.
+ * Google Search Console + Bing Webmaster verification tokens from env.
+ * Set GOOGLE_SITE_VERIFICATION to the content value from GSC HTML-tag method.
+ */
+function buildVerification(): Metadata["verification"] | undefined {
+  const google = process.env.GOOGLE_SITE_VERIFICATION?.trim();
+  const bing = process.env.BING_SITE_VERIFICATION?.trim();
+  const yandex = process.env.YANDEX_SITE_VERIFICATION?.trim();
+
+  if (!google && !bing && !yandex) return undefined;
+
+  const other: Record<string, string> = {};
+  if (bing) other["msvalidate.01"] = bing;
+
+  return {
+    ...(google ? { google } : {}),
+    ...(yandex ? { yandex } : {}),
+    ...(Object.keys(other).length > 0 ? { other } : {}),
+  };
+}
+
+/**
+ * Shared metadata builder for SEO, Open Graph, Twitter, GSC, and AI snippet hints.
  */
 export function buildPageMetadata(options: PageMetadataOptions): Metadata {
   const canonical = toCanonicalUrl(options.path);
   const images = options.images?.length ? options.images : [DEFAULT_OG_IMAGE];
+  const verification = buildVerification();
 
   return {
     title: options.title,
@@ -36,6 +58,7 @@ export function buildPageMetadata(options: PageMetadataOptions): Metadata {
     publisher: agentInfo.brokerage,
     metadataBase: new URL(siteConfig.url),
     alternates: { canonical },
+    ...(verification ? { verification } : {}),
     icons: {
       icon: [
         { url: "/favicon.ico", sizes: "any" },

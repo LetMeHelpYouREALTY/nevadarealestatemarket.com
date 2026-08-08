@@ -124,3 +124,24 @@ npm run vercel:deploy  # Deploy preview
 **That's it!** 🎉
 
 Your site is now optimized for performance, accessibility, and automated testing.
+
+## Google Search Console (5 min)
+
+Property: `https://www.nevadarealestatemarket.com/`
+
+1. Open [Google Search Console](https://search.google.com/search-console) → **Add property** → **URL prefix** → `https://www.nevadarealestatemarket.com/`
+2. Choose **HTML tag** verification. Copy the `content` value only.
+3. In Vercel → Project **nevada-real-estate-market** → Settings → Environment Variables:
+   - `GOOGLE_SITE_VERIFICATION` = *(paste content value)*
+   - Apply to Production (and Preview if you want)
+4. Redeploy Production, then click **Verify** in GSC.
+5. After verified → **Sitemaps** → submit:
+   - `https://www.nevadarealestatemarket.com/sitemap.xml`
+6. Confirm crawl access:
+   - `https://www.nevadarealestatemarket.com/robots.txt` lists the sitemap
+   - URL Inspection on `/` → Request indexing
+
+**Domain property (optional, stronger):** add the DNS TXT record Google shows for `nevadarealestatemarket.com` (Cloudflare DNS-only / gray cloud).
+
+**HTML file method (alternative):** drop Google’s `googleXXXXXXXX.html` into `/public/` and redeploy — no env var needed.
+
