@@ -3,6 +3,8 @@ import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import { PageSeo } from "@/components/seo/PageSeo";
+import { PageHero } from "@/components/sections/PageHero";
+import { getHeroImage, type HeroImage } from "@/lib/hero-images";
 import type { BreadcrumbItem, FAQItem } from "@/lib/schema";
 
 type SitePageProps = {
@@ -13,11 +15,16 @@ type SitePageProps = {
   faqs?: FAQItem[];
   speakable?: boolean;
   showListings?: boolean;
+  /** When set, renders a global PageHero above children */
+  heroTitle?: string;
+  heroSubtitle?: string;
+  heroBadge?: string;
+  hero?: HeroImage;
   children: ReactNode;
 };
 
 /**
- * Standard page shell: JSON-LD, nav, content, optional listings strip, footer.
+ * Standard page shell: JSON-LD, nav, optional hero, content, listings, footer.
  */
 export function SitePage({
   path,
@@ -27,8 +34,14 @@ export function SitePage({
   faqs,
   speakable = true,
   showListings = true,
+  heroTitle,
+  heroSubtitle,
+  heroBadge,
+  hero,
   children,
 }: SitePageProps) {
+  const resolvedHero = heroTitle ? hero ?? getHeroImage(path) : undefined;
+
   return (
     <>
       <PageSeo
@@ -40,6 +53,15 @@ export function SitePage({
         speakable={speakable}
       />
       <Navbar />
+      {resolvedHero && heroTitle && (
+        <PageHero
+          hero={resolvedHero}
+          badge={heroBadge}
+          title={heroTitle}
+          subtitle={heroSubtitle}
+          className="pt-24"
+        />
+      )}
       {children}
       {showListings && <RealScoutListings />}
       <Footer />

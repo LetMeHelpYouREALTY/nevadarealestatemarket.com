@@ -13,6 +13,8 @@ import {
   Shield,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { PageHero } from "@/components/sections/PageHero";
+import { getHeroImageByKey } from "@/lib/hero-images";
 
 export const metadata: Metadata = {
   title: "Move-Up Sellers Las Vegas | Berkshire Hathaway HomeServices",
@@ -31,7 +33,13 @@ export default function MoveUpSellerPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+        hero={getHeroImageByKey("sellers-move-up")}
+        title="Ready for Your Next Chapter?"
+        subtitle="Ready for Your Next Chapter? real estate guidance from Dr. Jan Duffy — Nevada Real Estate Market."
+        className="pt-24"
+      />
+      <main className="pt-8 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -50,9 +58,7 @@ export default function MoveUpSellerPage() {
               <TrendingUp className="h-4 w-4 mr-2" />
               Your Equity Unlocks Your Dream Home
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Ready for Your Next Chapter?
-            </h1>
+            <h2 className="sr-only">Ready for Your Next Chapter?</h2>
             <p className="text-xl text-slate-600 mb-8">
               Your home's equity unlocks your dream home. Let's make the upgrade seamless.
             </p>

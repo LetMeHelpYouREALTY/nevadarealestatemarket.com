@@ -18,6 +18,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { PageHero } from "@/components/sections/PageHero";
+import { getHeroImageByKey } from "@/lib/hero-images";
 
 export const metadata: Metadata = {
   title: "Las Vegas Homes for Sale | MLS Property Search | Berkshire Hathaway HomeServices",
@@ -41,7 +43,7 @@ const listingsSchema = {
   provider: {
     "@type": "RealEstateAgent",
     name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    telephone: "+17025001942",
+    telephone: "+17025001955",
   },
   areaServed: [
     { "@type": "City", name: "Las Vegas, NV" },
@@ -114,16 +116,21 @@ export default function ListingsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(listingsSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+        hero={getHeroImageByKey("listings")}
+        badge="Homes for Sale"
+        title="Las Vegas Homes for Sale"
+        subtitle="Browse Nevada MLS listings with Dr. Jan Duffy."
+        className="pt-24"
+      />
+      <main className="pt-8 pb-16">
         <div className="container mx-auto px-4">
           {/* Hero Section */}
           <div className="max-w-4xl mx-auto text-center mb-12">
             <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               Berkshire Hathaway HomeServices Nevada Properties
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Las Vegas Homes for Sale
-            </h1>
+            <h2 className="sr-only">Las Vegas Homes for Sale</h2>
             <p className="text-xl text-slate-600 mb-8">
               Search thousands of Las Vegas, Henderson, and Summerlin properties with live MLS 
               listings updated every 15 minutes. Find your dream home with expert guidance from 

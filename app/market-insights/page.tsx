@@ -15,6 +15,8 @@ import {
   CheckCircle,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { PageHero } from "@/components/sections/PageHero";
+import { getHeroImageByKey } from "@/lib/hero-images";
 
 export const metadata: Metadata = {
   title: "Las Vegas Real Estate Market Insights 2026 | Berkshire Hathaway HomeServices",
@@ -54,7 +56,14 @@ export default function MarketInsightsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reportSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+        hero={getHeroImageByKey("market-insights")}
+        badge="Market Insights"
+        title="Las Vegas Market Insights"
+        subtitle="Neighborhood-level Nevada real estate analysis."
+        className="pt-24"
+      />
+      <main className="pt-8 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -71,9 +80,7 @@ export default function MarketInsightsPage() {
               <TrendingUp className="h-4 w-4 mr-2" />
               2026 Economic & Real Estate Analysis
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Las Vegas Market Insights
-            </h1>
+            <h2 className="sr-only">Las Vegas Market Insights</h2>
             <p className="text-xl text-slate-600">
               Technology trends, economic forces, and market dynamics shaping Las Vegas
               real estate in 2026 and beyond.

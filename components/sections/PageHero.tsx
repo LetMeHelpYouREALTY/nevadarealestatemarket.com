@@ -35,7 +35,11 @@ export function PageHero({
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center"
+        className={
+          hero.src.includes("/images/agent/")
+            ? "object-cover object-top"
+            : "object-cover object-center"
+        }
       />
       <div
         className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-900/75 to-slate-900/50"

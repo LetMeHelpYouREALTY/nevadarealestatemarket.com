@@ -15,6 +15,8 @@ import {
   Heart,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { PageHero } from "@/components/sections/PageHero";
+import { getHeroImageByKey } from "@/lib/hero-images";
 
 export const metadata: Metadata = {
   title: "Trilogy at Summerlin Homes for Sale | Luxury Resort 55+ Living | Dr. Jan Duffy",
@@ -63,7 +65,13 @@ export default function TrilogySummerlinPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(communitySchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+        hero={getHeroImageByKey("55-plus-communities")}
+        title="Trilogy at Summerlin"
+        subtitle="Trilogy at Summerlin real estate guidance from Dr. Jan Duffy — Nevada Real Estate Market."
+        className="pt-24"
+      />
+      <main className="pt-8 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -86,9 +94,7 @@ export default function TrilogySummerlinPage() {
               <Sparkles className="h-4 w-4 mr-2" />
               Luxury Resort-Style 55+ Living
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Trilogy at Summerlin
-            </h1>
+            <h2 className="sr-only">Trilogy at Summerlin</h2>
             <p className="text-xl text-slate-600">
               Where five-star resort living meets 55+ community. Farm-to-table
               dining, world-class spa, and contemporary homes.

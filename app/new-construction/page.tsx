@@ -18,6 +18,8 @@ import {
   HelpCircle,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { PageHero } from "@/components/sections/PageHero";
+import { getHeroImageByKey } from "@/lib/hero-images";
 
 export const metadata: Metadata = {
   title: "Berkshire Hathaway HomeServices New Construction Las Vegas | Buyer's Guide",
@@ -236,7 +238,14 @@ export default function NewConstructionPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+        hero={getHeroImageByKey("new-construction")}
+        badge="New Construction"
+        title="Berkshire Hathaway HomeServices New Construction Las Vegas"
+        subtitle="Builder representation for Toll Brothers, Lennar, and more."
+        className="pt-24"
+      />
+      <main className="pt-8 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -254,9 +263,7 @@ export default function NewConstructionPage() {
             <div className="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               Free Buyer Representation
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Berkshire Hathaway HomeServices New Construction Las Vegas
-            </h1>
+            <h2 className="sr-only">Berkshire Hathaway HomeServices New Construction Las Vegas</h2>
             <p className="text-xl text-slate-600 mb-8">
               Your complete buyer's guide to new homes in Las Vegas. Free representation,
               expert contract review, and insider knowledge of builder incentives.

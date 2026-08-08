@@ -2,14 +2,13 @@ import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
-import { 
-  Phone, 
-  Mail, 
-  Award, 
-  Users, 
-  Home, 
-  TrendingUp, 
-  CheckCircle, 
+import {
+  Phone,
+  Mail,
+  Award,
+  Users,
+  Home,
+  CheckCircle,
   MapPin,
   Shield,
   Star,
@@ -17,11 +16,17 @@ import {
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { PageHero } from "@/components/sections/PageHero";
+import { AgentPhoto } from "@/components/sections/AgentPhoto";
+import { getHeroImageByKey } from "@/lib/hero-images";
+import { agentInfo, officeInfo, businessHours, siteConfig } from "@/lib/site-config";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "About Dr. Jan Duffy | Berkshire Hathaway HomeServices Las Vegas",
+export const metadata: Metadata = buildPageMetadata({
+  title: "About Dr. Jan Duffy | Nevada Real Estate Market | BHHS Nevada",
   description:
-    "Meet Dr. Jan Duffy, your trusted Berkshire Hathaway HomeServices Nevada Properties agent. Serving Las Vegas since 2008, $127M+ in transactions, Henderson & Summerlin specialist. Call (702) 500-1955.",
+    "Meet Dr. Jan Duffy, REALTOR® (S.0197614.LLC) with Berkshire Hathaway HomeServices Nevada Properties. Henderson office at 3185 St Rose Pkwy. Nevada market specialist. Call (702) 500-1955.",
+  path: "/about",
   keywords: [
     "Dr. Jan Duffy",
     "Berkshire Hathaway HomeServices agent",
@@ -29,35 +34,45 @@ export const metadata: Metadata = {
     "BHHS Nevada Properties",
     "Henderson real estate agent",
     "Summerlin realtor",
+    "Nevada real estate market expert",
   ],
-};
+  images: [`${siteConfig.url}/images/agent/dr-jan-duffy.jpg`],
+});
 
-// Person Schema for Dr. Jan Duffy
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "RealEstateAgent",
-  name: "Dr. Jan Duffy",
+  name: agentInfo.name,
   jobTitle: "REALTOR®",
+  image: `${siteConfig.url}${agentInfo.image}`,
   description:
     "Licensed real estate agent with Berkshire Hathaway HomeServices Nevada Properties, serving Las Vegas, Henderson, and Summerlin since 2008.",
-  telephone: "+17025001942",
-  email: "homes@heyberkshire.com",
-  url: "https://www.nevadarealestatemarket.com/about",
+  telephone: "+17025001955",
+  email: agentInfo.email,
+  url: `${siteConfig.url}/about`,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: officeInfo.address.street,
+    addressLocality: officeInfo.address.city,
+    addressRegion: officeInfo.address.state,
+    postalCode: officeInfo.address.zip,
+    addressCountry: "US",
+  },
   worksFor: {
     "@type": "RealEstateAgent",
-    name: "Berkshire Hathaway HomeServices Nevada Properties",
+    name: agentInfo.brokerage,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "9406 W Lake Mead Blvd, Suite 100",
-      addressLocality: "Las Vegas",
-      addressRegion: "NV",
-      postalCode: "89134",
+      streetAddress: officeInfo.address.street,
+      addressLocality: officeInfo.address.city,
+      addressRegion: officeInfo.address.state,
+      postalCode: officeInfo.address.zip,
     },
   },
   hasCredential: {
     "@type": "EducationalOccupationalCredential",
     credentialCategory: "Real Estate License",
-    credentialNumber: "S.0197614.LLC",
+    credentialNumber: agentInfo.license,
   },
   knowsAbout: [
     "Las Vegas real estate",
@@ -67,6 +82,7 @@ const personSchema = {
     "Investment properties",
     "55+ communities",
     "California relocation",
+    "Nevada housing market",
   ],
 };
 
@@ -120,30 +136,22 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
-        <div className="container mx-auto px-4">
-          {/* Hero Section */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Meet Your Berkshire Hathaway HomeServices Agent
-            </h1>
-            <p className="text-xl text-slate-600">
-              Dr. Jan Duffy has been serving Las Vegas since 2008—backed by the most
-              trusted name in real estate. Whether you're buying, selling, investing, or 
-              relocating, you'll receive expert guidance with integrity and professionalism.
-            </p>
-          </div>
-
+      <PageHero
+        hero={getHeroImageByKey("about")}
+        badge="Berkshire Hathaway HomeServices Nevada Properties"
+        title="Meet Dr. Jan Duffy"
+        subtitle="Nevada real estate market guidance since 2008 — buyer, seller, luxury, and California relocation representation across the Las Vegas Valley."
+        className="pt-24"
+      />
+      <main className="pb-16">
+        <div className="container mx-auto px-4 -mt-8 relative z-10">
           {/* Agent Profile */}
           <section className="mb-16">
-            <div className="grid md:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-start max-w-6xl mx-auto bg-white rounded-xl shadow-lg p-6 md:p-10">
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Dr. Jan Duffy</h2>
                 <p className="text-lg text-blue-600 mb-6">
-                  REALTOR® | License S.0197614.LLC
+                  REALTOR® | License {agentInfo.license}
                 </p>
 
                 <div className="prose prose-lg text-slate-700 mb-8 space-y-4">
@@ -189,22 +197,24 @@ export default function AboutPage() {
                       <span className="font-semibold">(702) 500-1955</span>
                     </a>
                     <a
-                      href="mailto:homes@heyberkshire.com"
+                      href={`mailto:${agentInfo.email}`}
                       className="flex items-center text-slate-700 hover:text-blue-600"
                     >
                       <Mail className="h-5 w-5 mr-3 text-blue-600" />
-                      Homes@HeyBerkshire.com
+                      {agentInfo.email}
                     </a>
                     <div className="flex items-start text-slate-700">
                       <MapPin className="h-5 w-5 mr-3 text-blue-600 mt-0.5" />
                       <address className="not-italic">
-                        9406 W Lake Mead Blvd, Suite 100<br />
-                        Las Vegas, NV 89134
+                        {officeInfo.address.street}
+                        <br />
+                        {officeInfo.address.city}, {officeInfo.address.state}{" "}
+                        {officeInfo.address.zip}
                       </address>
                     </div>
                     <div className="flex items-center text-slate-700">
                       <Clock className="h-5 w-5 mr-3 text-blue-600" />
-                      Mon-Fri 9am-6pm, Sat 10am-4pm, Sun by appointment
+                      {businessHours.display}
                     </div>
                   </div>
                 </div>
@@ -223,14 +233,7 @@ export default function AboutPage() {
 
               {/* Stats & Credentials */}
               <div className="space-y-6">
-                {/* Agent Photo Placeholder */}
-                <div className="bg-gradient-to-br from-blue-100 to-slate-100 rounded-lg p-8 aspect-square flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">👩‍💼</div>
-                    <p className="text-slate-600 font-semibold">Dr. Jan Duffy</p>
-                    <p className="text-sm text-slate-500">BHHS Nevada Properties</p>
-                  </div>
-                </div>
+                <AgentPhoto variant="primary" priority />
 
                 {/* Stats Grid */}
                 <div className="grid grid-cols-2 gap-4">

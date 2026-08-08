@@ -32,7 +32,12 @@ export const agentInfo = {
   phoneTel: "tel:+17025001955",
   smsTel: "sms:+17025001955",
   email: "homes@heyberkshire.com",
+  /** Prefer this display form on Nevada Market pages */
+  emailDisplay: "homes@heyberkshire.com",
   brokerage: "Berkshire Hathaway HomeServices Nevada Properties",
+  image: "/images/dr-jan-duffy.jpg",
+  imageOnCall: "/images/agent/dr-jan-duffy-on-call.jpg",
+  imagePortrait: "/images/agent/dr-jan-duffy-portrait.jpg",
 };
 
 export const officeInfo = {
@@ -143,7 +148,7 @@ export const businessAttributes = {
 
 // Market Statistics (Updated June 2026 — LVR valley reports & industry data)
 export const marketStats = {
-  lastUpdated: "June 2026",
+  lastUpdated: "February 2026",
   lasVegas: {
     medianPrice: 482000,
     medianPriceFormatted: "$482,000",

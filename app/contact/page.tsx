@@ -7,14 +7,15 @@ import {
   MapPin,
   Clock,
   Calendar,
-  CheckCircle,
   Star,
   Users,
   Shield,
 } from "lucide-react";
 import CalendlyWidget from "@/components/calendly/CalendlyWidget";
-import Link from "next/link";
 import type { Metadata } from "next";
+import { PageHero } from "@/components/sections/PageHero";
+import { getHeroImageByKey } from "@/lib/hero-images";
+import { AgentPhoto } from "@/components/sections/AgentPhoto";
 import {
   siteConfig,
   agentInfo,
@@ -81,16 +82,21 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+        hero={getHeroImageByKey("contact")}
+        badge="Call or Text (702) 500-1955"
+        title="Contact Dr. Jan Duffy — Henderson Luxury Real Estate"
+        subtitle="Henderson office open daily 6 AM – 9 PM — Nevada market guidance from Dr. Jan Duffy."
+        className="pt-24"
+      />
+      <main className="pt-8 pb-16">
         <div className="container mx-auto px-4">
           {/* Hero */}
           <div className="text-center mb-12">
             <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               Berkshire Hathaway HomeServices Nevada Properties
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Contact Dr. Jan Duffy — Henderson Luxury Real Estate
-            </h1>
+            <h2 className="sr-only">Contact Dr. Jan Duffy — Henderson Luxury Real Estate</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               Questions about Henderson luxury homes and estates? Your{" "}
               <strong>Berkshire Hathaway HomeServices</strong> expert is here to
@@ -102,6 +108,9 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Contact Info & Map */}
             <div>
+              <div className="mb-8 max-w-sm">
+                <AgentPhoto variant="on-call" priority sizes="384px" />
+              </div>
               <h2 className="text-2xl font-bold text-slate-900 mb-6">
                 Get In Touch
               </h2>

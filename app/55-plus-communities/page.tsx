@@ -23,6 +23,8 @@ import {
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { PageHero } from "@/components/sections/PageHero";
+import { getHeroImageByKey } from "@/lib/hero-images";
 
 export const metadata: Metadata = {
   title:
@@ -334,7 +336,14 @@ export default function FiftyFiveCommunitiesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+        hero={getHeroImageByKey("55-plus-communities")}
+        badge="Active Adult Living"
+        title="Find Your Perfect 55+ Community in Las Vegas"
+        subtitle="Sun City, Trilogy, Del Webb, and more 55+ communities."
+        className="pt-24"
+      />
+      <main className="pt-8 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -357,9 +366,7 @@ export default function FiftyFiveCommunitiesPage() {
               <Sun className="h-4 w-4 mr-2" />
               Active Adult Living Specialist
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Find Your Perfect 55+ Community in Las Vegas
-            </h1>
+            <h2 className="sr-only">Find Your Perfect 55+ Community in Las Vegas</h2>
             <p className="text-xl md:text-2xl text-slate-600 mb-8">
               Sun City, Del Webb, Heritage at Stonebridge & more—
               <br className="hidden md:block" />

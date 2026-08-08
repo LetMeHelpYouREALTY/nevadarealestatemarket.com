@@ -18,6 +18,8 @@ import {
   Heart,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { PageHero } from "@/components/sections/PageHero";
+import { getHeroImageByKey } from "@/lib/hero-images";
 import {
   businessInfo,
   gbpDescription,
@@ -65,7 +67,14 @@ export default function GoogleBusinessPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+        hero={getHeroImageByKey("google-business")}
+        badge="Google Business Profile"
+        title="Dr. Jan Duffy"
+        subtitle="Reviews, hours, and directions for Dr. Jan Duffy."
+        className="pt-24"
+      />
+      <main className="pt-8 pb-16">
         <div className="container mx-auto px-4">
           {/* Hero - NAP Prominent */}
           <section className="max-w-5xl mx-auto mb-16">
@@ -78,9 +87,7 @@ export default function GoogleBusinessPage() {
                       Berkshire Hathaway HomeServices
                     </span>
                   </div>
-                  <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                    Dr. Jan Duffy
-                  </h1>
+                  <h2 className="sr-only">Dr. Jan Duffy</h2>
                   <p className="text-xl text-blue-200 mb-2">
                     REALTOR® | License {businessInfo.license}
                   </p>

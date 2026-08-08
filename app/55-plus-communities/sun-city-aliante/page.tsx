@@ -14,6 +14,8 @@ import {
   TrendingUp,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { PageHero } from "@/components/sections/PageHero";
+import { getHeroImageByKey } from "@/lib/hero-images";
 
 export const metadata: Metadata = {
   title: "Sun City Aliante Homes for Sale | Most Affordable Sun City | Dr. Jan Duffy",
@@ -62,7 +64,13 @@ export default function SunCityAliantePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(communitySchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+        hero={getHeroImageByKey("55-plus-communities")}
+        title="Sun City Aliante"
+        subtitle="Sun City Aliante real estate guidance from Dr. Jan Duffy — Nevada Real Estate Market."
+        className="pt-24"
+      />
+      <main className="pt-8 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -85,9 +93,7 @@ export default function SunCityAliantePage() {
               <DollarSign className="h-4 w-4 mr-2" />
               Most Affordable Sun City in Las Vegas
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Sun City Aliante
-            </h1>
+            <h2 className="sr-only">Sun City Aliante</h2>
             <p className="text-xl text-slate-600">
               Full Sun City amenities at the best value. Golf, pools, fitness, and
               100+ clubs—from $280K.

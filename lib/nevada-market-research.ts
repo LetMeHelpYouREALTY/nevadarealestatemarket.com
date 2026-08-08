@@ -1,5 +1,5 @@
 /**
- * Research-backed Nevada market content (Parallel Search, June 2026).
+ * Research-backed Nevada market content (Parallel Search, August 2026).
  * Used for SEO body copy, AEO/GEO fact blocks, speakable summaries, and schema citations.
  */
 
@@ -7,24 +7,29 @@ import { agentInfo, marketStats, siteConfig } from "@/lib/site-config";
 import type { FAQItem } from "@/lib/schema";
 
 export const researchMeta = {
-  lastResearched: "June 2026",
+  lastResearched: "August 2026",
   methodology:
-    "Market statistics synthesized from Las Vegas Realtors (LVR) valley reports, U.S. Census Bureau Clark County estimates, and industry housing trend publications. Figures represent Clark County / Las Vegas Valley unless noted.",
+    "Market statistics synthesized from Las Vegas Realtors (LVR) valley reports, realtor.com Clark County inventory series, U.S. Census Bureau estimates, and industry housing trend publications. Figures represent Clark County / Las Vegas Valley unless noted. Optimized for SEO, GEO (generative engine citations), and AEO (direct-answer snippets).",
   sources: [
     {
-      name: "Las Vegas Realtors",
-      url: "https://www.lasvegasrealtor.com/market-statistics/",
-      note: "Valley median sale price, inventory, days on market",
+      name: "Las Vegas Realtors — February 2026 market report",
+      url: "https://www.thebrenkusteam.com/blog/las-vegas-housing-market-february-2026",
+      note: "Valley median single-family ~$481,995 (Feb 2026); ~2.6% MoM",
+    },
+    {
+      name: "realtor.com — Las Vegas / Clark County market",
+      url: "https://www.realtor.com/local/market/nevada/clark-county/las-vegas",
+      note: "Median listing price and days on market trends",
+    },
+    {
+      name: "FRED — Clark County active listing count",
+      url: "https://fred.stlouisfed.org/series/ACTLISCOU32003",
+      note: "Active inventory through mid-2026",
     },
     {
       name: "U.S. Census Bureau — Clark County",
       url: "https://www.census.gov/quickfacts/fact/table/clarkcountynevada/PST045225",
       note: "Population and demographic estimates",
-    },
-    {
-      name: "USAFacts — Clark County population",
-      url: "https://usafacts.org/answers/how-many-people-live-in-the-us/county/clark-county-nv",
-      note: "2024 county population (~2.4M)",
     },
     {
       name: "Federal Reserve H.15",

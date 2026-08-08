@@ -14,6 +14,8 @@ import {
   Sun,
 } from "lucide-react";
 import type { Metadata } from "next";
+import { PageHero } from "@/components/sections/PageHero";
+import { getHeroImageByKey } from "@/lib/hero-images";
 
 export const metadata: Metadata = {
   title: "Downsizing in Las Vegas | Berkshire Hathaway HomeServices",
@@ -32,7 +34,13 @@ export default function DownsizingPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+        hero={getHeroImageByKey("sellers-downsizing")}
+        title="Simplify. Downsize. Enjoy."
+        subtitle="Simplify. Downsize. Enjoy. real estate guidance from Dr. Jan Duffy — Nevada Real Estate Market."
+        className="pt-24"
+      />
+      <main className="pt-8 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -51,9 +59,7 @@ export default function DownsizingPage() {
               <Heart className="h-4 w-4 mr-2" />
               Embrace Low-Maintenance Living
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Simplify. Downsize. Enjoy.
-            </h1>
+            <h2 className="sr-only">Simplify. Downsize. Enjoy.</h2>
             <p className="text-xl text-slate-600 mb-8">
               Extract your equity. Embrace low-maintenance living. Start your next chapter.
             </p>

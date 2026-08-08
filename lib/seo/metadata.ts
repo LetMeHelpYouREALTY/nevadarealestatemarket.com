@@ -36,6 +36,14 @@ export function buildPageMetadata(options: PageMetadataOptions): Metadata {
     publisher: agentInfo.brokerage,
     metadataBase: new URL(siteConfig.url),
     alternates: { canonical },
+    icons: {
+      icon: [
+        { url: "/favicon.ico", sizes: "any" },
+        { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+        { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      ],
+      apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    },
     openGraph: {
       title: options.title,
       description: options.description,
@@ -43,7 +51,12 @@ export function buildPageMetadata(options: PageMetadataOptions): Metadata {
       siteName: siteConfig.name,
       locale: "en_US",
       type: options.type ?? "website",
-      images: images.map((url) => ({ url, alt: agentInfo.name })),
+      images: images.map((url) => ({
+        url,
+        alt: `${agentInfo.name} | ${siteConfig.name}`,
+        width: 1200,
+        height: 630,
+      })),
       ...(options.publishedTime && { publishedTime: options.publishedTime }),
       ...(options.modifiedTime && { modifiedTime: options.modifiedTime }),
     },
@@ -66,9 +79,10 @@ export function buildPageMetadata(options: PageMetadataOptions): Metadata {
     },
     other: {
       "geo.region": "US-NV",
-      "geo.placename": "Las Vegas Valley, Nevada",
+      "geo.placename": "Henderson, Las Vegas Valley, Nevada",
       "geo.position": "36.0017;-115.117",
       ICBM: "36.0017, -115.117",
+      "og:locale": "en_US",
     },
   };
 }

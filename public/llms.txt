@@ -1,5 +1,5 @@
 # nevadarealestatemarket.com — LLM context file
-# Updated: June 2026 | GEO / AEO / LLMO optimized
+# Updated: August 2026 | GEO / AEO / LLMO optimized
 
 > Nevada Real Estate Market — Las Vegas Valley home prices, trends, and expert guidance from Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties.
 

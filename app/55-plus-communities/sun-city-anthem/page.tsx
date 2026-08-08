@@ -14,6 +14,8 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import SchemaScript from "@/components/SchemaScript";
+import { PageHero } from "@/components/sections/PageHero";
+import { getHeroImageByKey } from "@/lib/hero-images";
 import {
   generateBreadcrumbSchema,
   generateSeniorCommunitySchema,
@@ -104,7 +106,13 @@ export default function SunCityAnthemPage() {
       {/* Combined JSON-LD Schema: Breadcrumb + ResidentialComplex + FAQ */}
       <SchemaScript schema={pageSchemas} id="sun-city-anthem-schema" />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+        hero={getHeroImageByKey("55-plus-communities")}
+        title="Sun City Anthem"
+        subtitle="Sun City Anthem real estate guidance from Dr. Jan Duffy — Nevada Real Estate Market."
+        className="pt-24"
+      />
+      <main className="pt-8 pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -123,9 +131,7 @@ export default function SunCityAnthemPage() {
               <Mountain className="h-4 w-4 mr-2" />
               Henderson's Premier 55+ Community
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Sun City Anthem
-            </h1>
+            <h2 className="sr-only">Sun City Anthem</h2>
             <p className="text-xl text-slate-600">
               7,100+ homes. Mountain views. Henderson safety. Championship golf.
             </p>

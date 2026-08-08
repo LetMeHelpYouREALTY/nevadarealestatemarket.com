@@ -1,4 +1,6 @@
-import { Shield, TrendingUp, Users, Award, Clock, Home } from "lucide-react";
+import { Shield, TrendingUp, Users, Award, Clock, Home, Phone } from "lucide-react";
+import { AgentPhoto } from "@/components/sections/AgentPhoto";
+import { agentInfo } from "@/lib/site-config";
 
 const features = [
   {
@@ -9,7 +11,8 @@ const features = [
   {
     icon: TrendingUp,
     title: "Market Knowledge",
-    description: "Deep understanding of local market trends and neighborhood insights.",
+    description:
+      "Live Nevada market data — valley medians near $482K, inventory, and neighborhood comps.",
   },
   {
     icon: Users,
@@ -24,7 +27,7 @@ const features = [
   {
     icon: Clock,
     title: "Responsive",
-    description: "Quick response times and seamless communication throughout.",
+    description: "Same-day responses and clear communication through closing.",
   },
   {
     icon: Home,
@@ -37,13 +40,31 @@ export default function WhyChooseUs() {
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-            Why Choose Us
-          </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Experience the difference of working with a trusted real estate professional
-          </p>
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mb-14">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wide text-blue-700 mb-3">
+              Dr. Jan Duffy, REALTOR®
+            </p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+              Why Choose Us
+            </h2>
+            <p className="text-xl text-slate-600 mb-6">
+              Local Nevada market expertise with Berkshire Hathaway HomeServices
+              resources — one agent who answers the phone.
+            </p>
+            <a
+              href={agentInfo.phoneTel}
+              className="inline-flex items-center gap-2 rounded-lg bg-blue-700 px-6 py-3 font-semibold text-white hover:bg-blue-800 transition-colors"
+            >
+              <Phone className="h-5 w-5" />
+              Call {agentInfo.phone}
+            </a>
+          </div>
+          <AgentPhoto
+            variant="on-call"
+            frameClassName="relative aspect-[4/3] w-full max-w-md mx-auto overflow-hidden rounded-lg bg-slate-100"
+            sizes="(max-width: 768px) 100vw, 480px"
+          />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">

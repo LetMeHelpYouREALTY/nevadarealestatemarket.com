@@ -160,15 +160,15 @@ export const DOMAIN_CONFIGS: Record<string, DomainConfig> = {
   "drjanetduffy.com": {
     domain: "drjanetduffy.com",
     neighborhood: "Las Vegas",
-    tagline: "Dr. Janet Duffy — Las Vegas REALTOR®",
+    tagline: "Dr. Jan Duffy — Las Vegas REALTOR®",
     description:
-      "Dr. Janet Duffy, top Las Vegas REALTOR® at Berkshire Hathaway HomeServices Nevada Properties.",
-    heroHeadline: "Dr. Janet Duffy | Las Vegas Real Estate Expert",
+      "Dr. Jan Duffy, top Las Vegas REALTOR® at Berkshire Hathaway HomeServices Nevada Properties.",
+    heroHeadline: "Dr. Jan Duffy | Las Vegas Real Estate Expert",
     heroSubheadline:
       "30+ years, 500+ families, $127M+ in career sales. Your trusted Las Vegas REALTOR®.",
     keywords: [
-      "Dr Janet Duffy",
-      "Janet Duffy Las Vegas realtor",
+      "Dr Jan Duffy",
+      "Jan Duffy Las Vegas realtor",
       "BHHS Nevada Properties",
     ],
     pageType: "search",
