@@ -15,16 +15,26 @@ export const searchConsoleConfig = {
   /** Sitemap to submit after verification */
   sitemapUrl: `${siteConfig.url}/sitemap.xml`,
   robotsUrl: `${siteConfig.url}/robots.txt`,
-  /** Key URLs to request indexing first */
+  /**
+   * Request indexing on these first after deploy (GSC URL Inspection).
+   * Includes hubs stuck in “Discovered – currently not indexed”.
+   */
   priorityUrls: [
     `${siteConfig.url}/`,
     `${siteConfig.url}/nevada-real-estate-market`,
     `${siteConfig.url}/clark-county-housing-market`,
     `${siteConfig.url}/about`,
     `${siteConfig.url}/contact`,
+    `${siteConfig.url}/buyers`,
+    `${siteConfig.url}/sellers`,
+    `${siteConfig.url}/listings`,
+    `${siteConfig.url}/55-plus-communities`,
     `${siteConfig.url}/henderson`,
     `${siteConfig.url}/summerlin`,
     `${siteConfig.url}/las-vegas`,
+    `${siteConfig.url}/neighborhoods`,
+    `${siteConfig.url}/maps`,
+    `${siteConfig.url}/site-map`,
     `${siteConfig.url}/google-business`,
   ],
 } as const;

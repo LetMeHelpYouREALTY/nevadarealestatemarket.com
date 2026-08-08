@@ -166,3 +166,18 @@ Or in Dashboard → Project → **Firewall** → Custom Rule:
 - Put these rules **above** any deny rules for the same paths
 
 Then GSC → **Blocked due to access forbidden (403)** → Validate fix.
+
+## GSC: Discovered – currently not indexed
+
+**Meaning:** Google saw the URL (usually via `sitemap.xml`) but has **not crawled it yet** (`Last crawled: N/A`). This is crawl *scheduling*, not a broken page.
+
+**Already in code (merge PR #18 first):**
+- Self-referencing canonicals (production still pointing many pages at `/` until deploy)
+- HTML crawl hub at `/site-map` (footer “Site Map”) linking every sitemap URL
+- Stronger footer internal links to buyers, about, listings, 55+, maps, etc.
+
+**What to do in GSC after production deploy:**
+1. **Sitemaps** → resubmit `sitemap.xml` (or leave it; confirm “Success”)
+2. **URL Inspection** on priority hubs → **Request indexing** (start with `/about`, `/buyers`, `/henderson`, `/55-plus-communities`, `/site-map`)
+3. Do **not** expect “Validate fix” to clear this report overnight — Google crawls on its own schedule
+4. After a URL shows a crawl date, if it still isn’t indexed, check that report’s new status (often fixed by the canonical PR)

@@ -109,10 +109,58 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/about"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  About Dr. Jan Duffy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/listings"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Listings
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/luxury-homes"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
                   Luxury Homes
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/55-plus-communities"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  55+ Communities
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  All Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/why-berkshire-hathaway"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Why Berkshire Hathaway
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/neighborhoods"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Neighborhood Guides
                 </Link>
               </li>
               <li>
@@ -164,10 +212,26 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/buyers/california-relocator"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  California Relocators
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/sellers"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
                   Home Selling
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/nevada-buyers-guide"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Nevada Buyers Guide
                 </Link>
               </li>
               <li>
@@ -281,10 +345,16 @@ export default function Footer() {
                 FAQ
               </Link>
               <Link
-                href="/sitemap.xml"
+                href="/site-map"
                 className="text-slate-400 hover:text-white transition-colors"
               >
-                Sitemap
+                Site Map
+              </Link>
+              <Link
+                href="/privacy-policy"
+                className="text-slate-400 hover:text-white transition-colors"
+              >
+                Privacy
               </Link>
             </div>
           </div>
