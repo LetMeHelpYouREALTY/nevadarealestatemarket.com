@@ -696,27 +696,31 @@ export const DOMAIN_CONFIGS: Record<string, DomainConfig> = {
   },
 };
 
-// Default config for any domain not specifically listed
+// Default for this property (nevadarealestatemarket.com) — never fall back to generic LV copy
 export const DEFAULT_CONFIG: DomainConfig = {
-  domain: "default",
-  neighborhood: "Las Vegas",
-  tagline: "Las Vegas Homes for Sale",
+  domain: "nevadarealestatemarket.com",
+  neighborhood: "Nevada Real Estate Market",
+  tagline:
+    "Nevada Real Estate Market | Las Vegas Valley Home Prices & Housing Trends",
   description:
-    "Search Las Vegas homes for sale. Expert real estate guidance from Dr. Jan Duffy, BHHS Nevada Properties.",
-  heroHeadline: "Las Vegas Homes for Sale",
+    "Nevada real estate market statistics, forecasts, and expert guidance from Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada. Henderson, Summerlin, Las Vegas & Clark County. Ranked Nevada's Top 1%. Call (702) 500-1955.",
+  heroHeadline: "Nevada Real Estate Market",
   heroSubheadline:
-    "Expert real estate guidance from Dr. Jan Duffy — 30+ years, 500+ families helped.",
+    "Home prices, neighborhood guides, and representation across Henderson, Summerlin, and Las Vegas — from Dr. Jan Duffy.",
   keywords: [
-    "Las Vegas homes for sale",
-    "Las Vegas real estate",
-    "Dr Jan Duffy",
+    "Nevada real estate market",
+    "Clark County housing market",
+    "Las Vegas home prices 2026",
+    "Henderson real estate",
+    "Summerlin homes for sale",
+    "Dr Jan Duffy realtor Nevada",
   ],
-  pageType: "search",
+  pageType: "investment",
   realscoutAgentId: REALSCOUT_AGENT_ID,
-  ctaBadge: "Las Vegas Expert",
-  ctaHeadline: "Find Your Las Vegas Home",
+  ctaBadge: "Nevada Market Intelligence",
+  ctaHeadline: "Explore the Nevada Housing Market",
   ctaSubheadline:
-    "Call or text Dr. Jan at 702-222-1964 — I answer my own phone.",
+    "Call or text Dr. Jan at (702) 500-1955 — free market analysis and neighborhood guidance.",
 };
 
 export function getDomainConfig(hostname: string): DomainConfig {

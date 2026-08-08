@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { siteConfig, agentInfo } from "@/lib/site-config";
 
-const DEFAULT_OG_IMAGE = `${siteConfig.url}/images/dr-jan-duffy.jpg`;
+/** Prefer landscape hero for link previews; agent portrait remains fallback elsewhere. */
+const DEFAULT_OG_IMAGE = `${siteConfig.url}/images/hero/modern-nevada-home.jpg`;
+const DEFAULT_OG_ALT = `${siteConfig.name} | ${agentInfo.name}`;
 
 export type PageMetadataOptions = {
   title: string;
@@ -84,7 +86,7 @@ export function buildPageMetadata(options: PageMetadataOptions): Metadata {
       type: options.type ?? "website",
       images: images.map((url) => ({
         url,
-        alt: `${agentInfo.name} | ${siteConfig.name}`,
+        alt: DEFAULT_OG_ALT,
         width: 1200,
         height: 630,
       })),

@@ -12,14 +12,15 @@ import Script from "next/script";
  * Per-page generateMetadata / metadata overrides title/description/canonical.
  */
 export const metadata: Metadata = buildPageMetadata({
-  title: siteConfig.fullName,
+  title: siteConfig.brandLine,
   description: siteConfig.description,
   keywords: [
     "Nevada real estate market",
-    "Las Vegas homes for sale",
+    "Las Vegas Valley home prices",
     "Henderson real estate",
     "Dr Jan Duffy",
   ],
+  images: [`${siteConfig.url}/images/hero/modern-nevada-home.jpg`],
 });
 
 export default function RootLayout({

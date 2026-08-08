@@ -32,11 +32,16 @@ const config = getDomainConfig("nevadarealestatemarket.com");
 
 export const revalidate = 3600;
 
+/** Explicit site brand for Vercel/OG/Twitter — do not inherit multi-domain fallbacks. */
 export const metadata: Metadata = buildPageMetadata({
-  title: `${config.heroHeadline} | Dr. Jan Duffy, REALTOR® | BHHS Nevada`,
-  description: config.description,
+  title: siteConfig.brandLine,
+  description: siteConfig.description,
   keywords: config.keywords,
   path: "/",
+  images: [
+    `${siteConfig.url}/images/hero/modern-nevada-home.jpg`,
+    `${siteConfig.url}/images/dr-jan-duffy.jpg`,
+  ],
 });
 
 export default function Home() {
