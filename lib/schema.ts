@@ -540,6 +540,10 @@ export function generateRealEstateListingSchema(listing: {
       "@type": "Offer",
       price: listing.price,
       priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      url: listing.url.startsWith("http")
+        ? listing.url
+        : `${BASE_URL}${listing.url}`,
     },
     address: {
       "@type": "PostalAddress",
