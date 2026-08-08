@@ -15,19 +15,23 @@ import {
   businessHours,
   socialProfiles,
 } from "@/lib/site-config";
+import { BrandLogo } from "@/components/layouts/BrandLogo";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-white">
+    <footer className="bg-slate-950 text-white border-t border-slate-800">
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div>
-            <h3 className="font-bold text-xl mb-4">{siteConfig.name}</h3>
-            <p className="text-slate-300 mb-4 text-sm">
-              {siteConfig.description}
+            <div className="mb-4 [&_span]:ring-offset-slate-950">
+              <BrandLogo variant="dark" />
+            </div>
+            <p className="text-slate-300 mb-4 text-sm leading-relaxed">
+              {siteConfig.tagline}. Expert guidance from Dr. Jan Duffy across
+              Henderson, Summerlin, Las Vegas, and North Las Vegas.
             </p>
             <div className="flex flex-wrap gap-3">
               <a

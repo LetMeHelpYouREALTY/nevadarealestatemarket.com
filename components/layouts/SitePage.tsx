@@ -59,7 +59,7 @@ export function SitePage({
           badge={heroBadge}
           title={heroTitle}
           subtitle={heroSubtitle}
-          className="pt-24"
+          showBrand
         />
       )}
       {children}

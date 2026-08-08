@@ -11,8 +11,8 @@ export type HeroImage = {
 /** Area slugs inherit parent city hero when not listed explicitly. */
 export const HERO_IMAGES: Record<string, HeroImage> = {
   home: {
-    src: "/images/hero/nevada-valley-skyline.jpg",
-    alt: "Las Vegas Valley skyline with desert mountains at golden hour, Nevada real estate market",
+    src: "/images/hero/modern-nevada-home.jpg",
+    alt: "Modern Nevada luxury home with pool and mountain light — Las Vegas Valley real estate by Dr. Jan Duffy",
   },
   about: {
     src: "/images/agent/dr-jan-duffy.jpg",

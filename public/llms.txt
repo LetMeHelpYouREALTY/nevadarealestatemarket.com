@@ -60,6 +60,9 @@ Las Vegas Valley: Summerlin, The Ridges, Southern Highlands, Skye Canyon, Centen
 - Henderson Map: https://www.nevadarealestatemarket.com/maps/henderson
 - Summerlin Map: https://www.nevadarealestatemarket.com/maps/summerlin
 - Las Vegas Map: https://www.nevadarealestatemarket.com/maps/las-vegas
+- Seven Hills Henderson: https://www.nevadarealestatemarket.com/henderson/seven-hills
+- Del Webb North Ranch: https://www.nevadarealestatemarket.com/north-las-vegas/del-webb-north-ranch
+- HTML Site Map: https://www.nevadarealestatemarket.com/site-map
 
 ## Market data (June 2026 — Clark County / Las Vegas Valley)
 
