@@ -73,6 +73,36 @@
       "source": "/home",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/author/:path*",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/category/for-buyers/:path*",
+      "destination": "/buyers",
+      "permanent": true
+    },
+    {
+      "source": "/category/:path*",
+      "destination": "/news",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy-2",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/news-blog",
+      "destination": "/news",
+      "permanent": true
     }
   ]
 }

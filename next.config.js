@@ -94,6 +94,68 @@ const nextConfig = {
         destination: '/buyers',
         permanent: true,
       },
+      // WordPress category archives → buyers/news hubs (clears GSC noindex-on-404)
+      {
+        source: '/category/:slug',
+        destination: '/news',
+        permanent: true,
+      },
+      {
+        source: '/category/:slug/',
+        destination: '/news',
+        permanent: true,
+      },
+      {
+        source: '/category/:slug/page/:page',
+        destination: '/news',
+        permanent: true,
+      },
+      {
+        source: '/category/:slug/page/:page/',
+        destination: '/news',
+        permanent: true,
+      },
+      // WordPress author archives → About (GSC “Excluded by noindex” on 404)
+      {
+        source: '/author/drduffybhhsnv-com',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/author/drduffybhhsnv-com/',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/author/drduffyblog',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/author/drduffyblog/',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/author/:slug',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/author/:slug/',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/tag/:slug',
+        destination: '/news',
+        permanent: true,
+      },
+      {
+        source: '/tag/:slug/',
+        destination: '/news',
+        permanent: true,
+      },
       {
         source: '/the-secret-to-being-a-fashionable-teen',
         destination: '/news',

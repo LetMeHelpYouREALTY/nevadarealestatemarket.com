@@ -5,13 +5,31 @@ import { agentInfo, officeInfo, siteConfig } from "@/lib/site-config";
 
 const path = "/privacy-policy";
 
-export const metadata = buildPageMetadata({
-  title: "Privacy Policy | Nevada Real Estate Market | Dr. Jan Duffy",
-  description:
-    "Privacy policy for nevadarealestatemarket.com — how Dr. Jan Duffy and Berkshire Hathaway HomeServices Nevada Properties handle contact and website data.",
-  path,
-  keywords: ["privacy policy", "nevadarealestatemarket.com privacy", "Dr Jan Duffy privacy"],
-});
+export const metadata = {
+  ...buildPageMetadata({
+    title: "Privacy Policy | Nevada Real Estate Market | Dr. Jan Duffy",
+    description:
+      "Privacy policy for nevadarealestatemarket.com — how Dr. Jan Duffy and Berkshire Hathaway HomeServices Nevada Properties handle contact and website data.",
+    path,
+    keywords: [
+      "privacy policy",
+      "nevadarealestatemarket.com privacy",
+      "Dr Jan Duffy privacy",
+    ],
+  }),
+  // Explicitly indexable — GSC previously saw noindex only because this URL 404'd
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large" as const,
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+};
 
 const faqs = [
   {
