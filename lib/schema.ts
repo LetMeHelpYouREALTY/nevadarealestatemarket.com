@@ -510,7 +510,9 @@ export function generateSeniorCommunitySchema(community: SeniorCommunityData) {
 }
 
 /**
- * Generate RealEstateListing schema for property pages
+ * Generate RealEstateListing schema for a single priced property page.
+ * Requires a numeric USD price — never emit Offer without price (GSC Merchant/
+ * Product errors). Do not use on MLS hub/search pages.
  */
 export function generateRealEstateListingSchema(listing: {
   name: string;
@@ -528,22 +530,32 @@ export function generateRealEstateListingSchema(listing: {
   images?: string[];
   url: string;
 }) {
+  if (
+    typeof listing.price !== "number" ||
+    !Number.isFinite(listing.price) ||
+    listing.price <= 0
+  ) {
+    throw new Error(
+      "generateRealEstateListingSchema requires a positive numeric price (USD)",
+    );
+  }
+
+  const url = listing.url.startsWith("http")
+    ? listing.url
+    : `${BASE_URL}${listing.url}`;
+
   return {
     "@context": "https://schema.org",
     "@type": "RealEstateListing",
     name: listing.name,
     description: listing.description,
-    url: listing.url.startsWith("http")
-      ? listing.url
-      : `${BASE_URL}${listing.url}`,
+    url,
     offers: {
       "@type": "Offer",
       price: listing.price,
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
-      url: listing.url.startsWith("http")
-        ? listing.url
-        : `${BASE_URL}${listing.url}`,
+      url,
     },
     address: {
       "@type": "PostalAddress",

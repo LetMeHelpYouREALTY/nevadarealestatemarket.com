@@ -195,39 +195,13 @@ export function generateLocalBusinessSchema() {
       "@type": "Place",
       name: area,
     })),
-    // List services as Service types — do NOT wrap in Offer without price.
-    // Bare Offer nodes were flagged in GSC Product snippets as invalid
-    // ("Either price or priceSpecification.price should be specified").
-    // Real estate representation is not a Product rich-result.
+    // Services as plain names — never Offer / OfferCatalog / Product.
+    // GSC Product snippets + Merchant listings flagged priceless Offers here
+    // (shipping/return-policy warnings are merchant-only and do not apply to
+    // real estate representation).
     serviceType: businessInfo.services.map((service) => service.name),
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Henderson Real Estate Services",
-      itemListElement: businessInfo.services.map((service, index) => ({
-        "@type": "ListItem",
-        position: index + 1,
-        item: {
-          "@type": "Service",
-          name: service.name,
-          description: service.description,
-          provider: {
-            "@type": "RealEstateAgent",
-            name: businessInfo.name,
-            telephone: businessInfo.phone.tel,
-          },
-          areaServed: "Henderson, NV",
-        },
-      })),
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: agentStats.averageRating.toString(),
-      reviewCount: agentStats.reviewCount.toString(),
-      bestRating: "5",
-      worstRating: "1",
-    },
-    sameAs: businessInfo.socialProfiles,
     knowsAbout: [
+      ...businessInfo.services.map((service) => service.name),
       "Henderson luxury real estate",
       "MacDonald Ranch homes",
       "Lake Las Vegas estates",
@@ -237,6 +211,14 @@ export function generateLocalBusinessSchema() {
       "Custom home builds",
       "Luxury estates",
     ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: agentStats.averageRating.toString(),
+      reviewCount: agentStats.reviewCount.toString(),
+      bestRating: "5",
+      worstRating: "1",
+    },
+    sameAs: businessInfo.socialProfiles,
     parentOrganization: {
       "@type": "Organization",
       name: "Berkshire Hathaway HomeServices Nevada Properties",

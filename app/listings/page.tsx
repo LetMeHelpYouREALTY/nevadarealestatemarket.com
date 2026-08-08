@@ -36,12 +36,20 @@ export const metadata: Metadata = {
   ],
 };
 
+/** Hub page — CollectionPage, not RealEstateListing/Product (avoids GSC Merchant listings). */
 const listingsSchema = {
   "@context": "https://schema.org",
-  "@type": "RealEstateListing",
+  "@type": "CollectionPage",
   name: "Las Vegas MLS Property Listings",
-  description: "Live MLS property listings for Las Vegas, Henderson, and Summerlin homes for sale",
-  provider: {
+  description:
+    "Browse live MLS property listings for Las Vegas, Henderson, and Summerlin homes for sale with Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.",
+  url: "https://www.nevadarealestatemarket.com/listings",
+  isPartOf: {
+    "@type": "WebSite",
+    name: "Nevada Real Estate Market",
+    url: "https://www.nevadarealestatemarket.com",
+  },
+  about: {
     "@type": "RealEstateAgent",
     name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
     telephone: "+17025001955",
