@@ -120,6 +120,11 @@
       "permanent": true
     },
     {
+      "source": "/north-las-vegas/del-webb-at-north-ranch",
+      "destination": "/north-las-vegas/del-webb-north-ranch",
+      "permanent": true
+    },
+    {
       "source": "/contact-us",
       "destination": "/contact",
       "permanent": true

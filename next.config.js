@@ -74,6 +74,17 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      // Alternate Del Webb naming → canonical community URL (GSC duplicate recovery)
+      {
+        source: '/north-las-vegas/del-webb-at-north-ranch',
+        destination: '/north-las-vegas/del-webb-north-ranch',
+        permanent: true,
+      },
+      {
+        source: '/north-las-vegas/del-webb-at-north-ranch/',
+        destination: '/north-las-vegas/del-webb-north-ranch',
+        permanent: true,
+      },
       // Legacy WordPress + soft-404 URLs → live Next.js routes (GSC recovery)
       {
         source: '/contact-us',

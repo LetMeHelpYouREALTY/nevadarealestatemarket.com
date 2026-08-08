@@ -5,7 +5,8 @@ import {
   getHendersonCommunity,
   hendersonCommunities,
 } from "@/lib/market-communities/henderson";
-import { siteConfig, agentInfo } from "@/lib/site-config";
+import { agentInfo } from "@/lib/site-config";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
 type Props = {
   params: { slug: string };
@@ -20,11 +21,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const community = getHendersonCommunity(slug);
   if (!community) return {};
 
-  return {
+  return buildPageMetadata({
     title: `${community.name} Homes For Sale | Henderson NV Real Estate`,
     description: `${community.name} Henderson NV — ${community.tagline}. Homes ${community.priceRange}. Dr. Jan Duffy, BHHS Nevada Properties · ${agentInfo.phone}.`,
-    alternates: { canonical: `${siteConfig.url}/henderson/${slug}` },
-  };
+    path: `/henderson/${slug}`,
+    keywords: [
+      `${community.name} homes`,
+      `${community.name} Henderson`,
+      "Henderson real estate",
+    ],
+  });
 }
 
 export default async function HendersonCommunityPage({ params }: Props) {

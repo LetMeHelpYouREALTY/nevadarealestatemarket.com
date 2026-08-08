@@ -5,7 +5,8 @@ import {
   getLasVegasCommunity,
   lasVegasCommunities,
 } from "@/lib/market-communities/las-vegas";
-import { siteConfig } from "@/lib/site-config";
+import { agentInfo } from "@/lib/site-config";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
 type Props = {
   params: { slug: string };
@@ -20,11 +21,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const community = getLasVegasCommunity(slug);
   if (!community) return {};
 
-  return {
+  return buildPageMetadata({
     title: `${community.name} Homes For Sale | Las Vegas NV Real Estate`,
-    description: `${community.name} Las Vegas NV — ${community.tagline}. Homes ${community.priceRange}. Dr. Jan Duffy, BHHS Nevada Properties · 702-222-1964.`,
-    alternates: { canonical: `${siteConfig.url}/las-vegas/${slug}` },
-  };
+    description: `${community.name} Las Vegas NV — ${community.tagline}. Homes ${community.priceRange}. Dr. Jan Duffy, BHHS Nevada Properties · ${agentInfo.phone}.`,
+    path: `/las-vegas/${slug}`,
+    keywords: [
+      `${community.name} homes`,
+      `${community.name} Las Vegas`,
+      "Las Vegas real estate",
+    ],
+  });
 }
 
 export default async function LasVegasCommunityPage({ params }: Props) {
