@@ -136,6 +136,8 @@ export function ReviewSchema({
     };
   }
 
+  // Nest reviews under RealEstateAgent (omit itemReviewed — parent is the item).
+  // Never emit standalone Review nodes or a second aggregateRating for #organization.
   if (reviews && reviews.length > 0) {
     schema.review = reviews.map((review) => ({
       "@type": "Review",

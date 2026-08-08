@@ -211,13 +211,8 @@ export function generateLocalBusinessSchema() {
       "Custom home builds",
       "Luxury estates",
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: agentStats.averageRating.toString(),
-      reviewCount: agentStats.reviewCount.toString(),
-      bestRating: "5",
-      worstRating: "1",
-    },
+    // aggregateRating lives only on sitewide RealEstateAgent (#organization).
+    // Duplicating it here caused GSC: "Review has multiple aggregate ratings".
     sameAs: businessInfo.socialProfiles,
     parentOrganization: {
       "@type": "Organization",
