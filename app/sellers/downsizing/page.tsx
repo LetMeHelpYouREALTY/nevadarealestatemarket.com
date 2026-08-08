@@ -18,6 +18,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.nevadarealestatemarket.com/sellers/downsizing" },
   title: "Downsizing in Las Vegas | Berkshire Hathaway HomeServices",
   description:
     "Ready to simplify? Dr. Jan Duffy helps Las Vegas homeowners extract equity and transition to low-maintenance living. 55+ communities, condos, and more. Call (702) 500-1955.",

@@ -29,6 +29,7 @@ import {
 } from "@/lib/gbp-schema";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.nevadarealestatemarket.com/google-business" },
   title: "Henderson MacDonald Highlands Real Estate | Dr. Jan Duffy, REALTOR®",
   description:
     "Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada, specializes in luxury homes and estates in Henderson. Serving Lake Las Vegas, MacDonald Ranch, Green Valley Ranch, Seven Hills, and Anthem. Call (702) 500-1955.",

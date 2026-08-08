@@ -6,11 +6,23 @@ import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { buildPageMetadata } from "@/lib/seo/metadata";
 
-export const metadata: Metadata = {
-  title: "Property Details | Las Vegas & Henderson Real Estate",
-  description: "View detailed information about this property listing in Las Vegas or Henderson, NV.",
+type PropertyPageProps = {
+  params: Promise<{ id: string }>;
 };
+
+export async function generateMetadata({
+  params,
+}: PropertyPageProps): Promise<Metadata> {
+  const { id } = await params;
+  return buildPageMetadata({
+    title: "Property Details | Las Vegas & Henderson Real Estate",
+    description:
+      "View detailed information about this property listing in Las Vegas or Henderson, NV.",
+    path: `/listings/${id}`,
+  });
+}
 
 // This would typically fetch from RealScout API
 async function getProperty(id: string) {
@@ -29,10 +41,6 @@ async function getProperty(id: string) {
       "Stunning modern home in desirable Summerlin community. Features open floor plan, updated kitchen, and beautiful backyard. Close to schools, shopping, and entertainment.",
   };
 }
-
-type PropertyPageProps = {
-  params: Promise<{ id: string }>;
-};
 
 export default async function PropertyPage({ params }: PropertyPageProps) {
   const { id } = await params;

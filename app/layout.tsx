@@ -12,11 +12,12 @@ import Script from "next/script";
 export async function generateMetadata(): Promise<Metadata> {
   const domain = headers().get("x-domain") || "";
   const config = getDomainConfig(domain);
+  // Do NOT set path/canonical here — children would inherit homepage as canonical
+  // and Google would report "Alternate page with proper canonical tag".
   return buildPageMetadata({
     title: `${config.neighborhood} | Dr. Jan Duffy, REALTOR® | BHHS Nevada`,
     description: config.description,
     keywords: config.keywords,
-    path: "/",
   });
 }
 

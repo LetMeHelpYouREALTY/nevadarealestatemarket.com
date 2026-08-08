@@ -8,6 +8,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.nevadarealestatemarket.com/market-report" },
   title: "Las Vegas Real Estate Market Report January 2026 | Berkshire Hathaway HomeServices",
   description:
     "Get the latest Las Vegas real estate market statistics for January 2026. Median prices, days on market, inventory levels, and expert analysis from Berkshire Hathaway HomeServices Nevada Properties.",

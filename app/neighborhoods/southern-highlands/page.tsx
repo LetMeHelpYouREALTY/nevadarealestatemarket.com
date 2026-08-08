@@ -8,6 +8,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.nevadarealestatemarket.com/neighborhoods/southern-highlands" },
   title: "Berkshire Hathaway HomeServices Southern Highlands | Las Vegas Golf Community",
   description:
     "Find Southern Highlands homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in this premier golf community. Median price $750K. Call (702) 500-1955.",

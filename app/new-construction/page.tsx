@@ -22,6 +22,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.nevadarealestatemarket.com/new-construction" },
   title: "Berkshire Hathaway HomeServices New Construction Las Vegas | Buyer's Guide",
   description:
     "Free buyer representation on new construction homes in Las Vegas. Dr. Jan Duffy helps you navigate builder contracts, negotiate upgrades, and secure incentives. Call (702) 500-1955.",

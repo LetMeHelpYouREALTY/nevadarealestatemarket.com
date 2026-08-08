@@ -20,6 +20,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.nevadarealestatemarket.com/buyers/luxury-homes-las-vegas" },
   title: "Luxury Homes Las Vegas | Berkshire Hathaway HomeServices",
   description:
     "Las Vegas luxury real estate from $1.2M to $10M+. Guard-gated estates, Strip penthouses, and custom homes. Dr. Jan Duffy provides discrete, expert representation. Call (702) 500-1955.",

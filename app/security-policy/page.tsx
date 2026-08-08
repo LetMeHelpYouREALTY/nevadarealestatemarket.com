@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.nevadarealestatemarket.com/security-policy" },
   title: 'Security Policy',
   description: 'Security policy and responsible disclosure information for nevadarealestatemarket.com',
   robots: {

@@ -18,6 +18,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.nevadarealestatemarket.com/sellers/divorce-probate" },
   title: "Divorce & Probate Home Sales Las Vegas | Berkshire Hathaway HomeServices",
   description:
     "Sensitive real estate situations handled with discretion. Dr. Jan Duffy helps with divorce sales, probate, estate liquidation, and court-ordered sales. Call (702) 500-1955.",

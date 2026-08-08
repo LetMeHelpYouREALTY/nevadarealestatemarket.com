@@ -8,6 +8,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.nevadarealestatemarket.com/neighborhoods/henderson" },
   title: "Berkshire Hathaway HomeServices Henderson | Nevada Real Estate",
   description:
     "Find Henderson homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in Henderson's family-friendly communities. Median price $485K. Call (702) 500-1955.",

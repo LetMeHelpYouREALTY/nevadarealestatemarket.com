@@ -15,6 +15,7 @@ import {
 } from "@/lib/schema";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.nevadarealestatemarket.com/faq" },
   title: "FAQ | Berkshire Hathaway HomeServices Las Vegas Real Estate",
   description:
     "Frequently asked questions about Las Vegas real estate, Berkshire Hathaway HomeServices, buying, selling, and working with Dr. Jan Duffy at BHHS Nevada Properties.",

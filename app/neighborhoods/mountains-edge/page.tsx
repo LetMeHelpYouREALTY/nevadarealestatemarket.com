@@ -8,6 +8,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.nevadarealestatemarket.com/neighborhoods/mountains-edge" },
   title: "Berkshire Hathaway HomeServices Mountains Edge | Southwest Las Vegas",
   description:
     "Find Mountains Edge homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in this southwest Las Vegas community. Median price $475K. Call (702) 500-1955.",

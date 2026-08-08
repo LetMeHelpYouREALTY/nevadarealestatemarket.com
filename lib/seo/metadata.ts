@@ -14,10 +14,15 @@ export type PageMetadataOptions = {
   modifiedTime?: string;
 };
 
-function toCanonicalUrl(path?: string): string {
-  if (!path || path === "/") return siteConfig.url;
+function toCanonicalUrl(path: string): string {
+  if (path === "/") return siteConfig.url;
   const normalized = path.startsWith("/") ? path : `/${path}`;
-  return `${siteConfig.url}${normalized}`;
+  // Strip trailing slash (except root) so GSC sees one canonical form
+  const trimmed =
+    normalized.length > 1 && normalized.endsWith("/")
+      ? normalized.slice(0, -1)
+      : normalized;
+  return `${siteConfig.url}${trimmed}`;
 }
 
 /**
@@ -45,7 +50,10 @@ function buildVerification(): Metadata["verification"] | undefined {
  * Shared metadata builder for SEO, Open Graph, Twitter, GSC, and AI snippet hints.
  */
 export function buildPageMetadata(options: PageMetadataOptions): Metadata {
-  const canonical = toCanonicalUrl(options.path);
+  // Only set a self-referencing canonical when `path` is provided.
+  // Root layout must omit `path` so child routes do not inherit homepage canonical
+  // (GSC: "Alternate page with proper canonical tag").
+  const canonical = options.path ? toCanonicalUrl(options.path) : undefined;
   const images = options.images?.length ? options.images : [DEFAULT_OG_IMAGE];
   const verification = buildVerification();
 
@@ -57,7 +65,7 @@ export function buildPageMetadata(options: PageMetadataOptions): Metadata {
     creator: agentInfo.name,
     publisher: agentInfo.brokerage,
     metadataBase: new URL(siteConfig.url),
-    alternates: { canonical },
+    ...(canonical ? { alternates: { canonical } } : {}),
     ...(verification ? { verification } : {}),
     icons: {
       icon: [
@@ -70,7 +78,7 @@ export function buildPageMetadata(options: PageMetadataOptions): Metadata {
     openGraph: {
       title: options.title,
       description: options.description,
-      url: canonical,
+      ...(canonical ? { url: canonical } : {}),
       siteName: siteConfig.name,
       locale: "en_US",
       type: options.type ?? "website",

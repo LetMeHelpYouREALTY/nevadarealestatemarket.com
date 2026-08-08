@@ -17,6 +17,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.nevadarealestatemarket.com/sellers/move-up" },
   title: "Move-Up Sellers Las Vegas | Berkshire Hathaway HomeServices",
   description:
     "Ready for your next chapter? Dr. Jan Duffy helps Las Vegas homeowners leverage equity into their dream home. Sell and buy seamlessly. Call (702) 500-1955.",

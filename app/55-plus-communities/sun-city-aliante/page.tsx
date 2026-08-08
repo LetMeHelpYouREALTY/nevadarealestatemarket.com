@@ -18,6 +18,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://www.nevadarealestatemarket.com/55-plus-communities/sun-city-aliante" },
   title: "Sun City Aliante Homes for Sale | Most Affordable Sun City | Dr. Jan Duffy",
   description:
     "Sun City Aliante - the most affordable Sun City in Las Vegas. Homes from $280K-$550K with full amenities. 18-hole golf course, pools, fitness center. Dr. Jan Duffy, BHHS. Call (702) 500-1955.",
