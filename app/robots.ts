@@ -15,12 +15,31 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/admin/", "/monitoring/"],
+        disallow: [
+          "/api/",
+          "/admin/",
+          "/monitoring/",
+          // Dead WordPress paths (site is Next.js) — stop GSC 403 crawls
+          "/wp-admin/",
+          "/wp-content/",
+          "/wp-includes/",
+          "/wp-login.php",
+          "/xmlrpc.php",
+        ],
       },
       {
         userAgent: "Googlebot",
         allow: "/",
-        disallow: ["/api/", "/admin/", "/monitoring/"],
+        disallow: [
+          "/api/",
+          "/admin/",
+          "/monitoring/",
+          "/wp-admin/",
+          "/wp-content/",
+          "/wp-includes/",
+          "/wp-login.php",
+          "/xmlrpc.php",
+        ],
       },
       {
         userAgent: "Googlebot-Image",

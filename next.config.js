@@ -23,6 +23,57 @@ const nextConfig = {
   // Redirects: apex→www, legacy WordPress/GSC 404 recovery
   async redirects() {
     return [
+      // Legacy WordPress paths — 301 away from Vercel WAF 403s (GSC “access forbidden”)
+      {
+        source: '/wp-admin',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/wp-admin/:path*',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/wp-content',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/wp-content/:path*',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/wp-includes',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/wp-includes/:path*',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/wp-login.php',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/wp-cron.php',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/xmlrpc.php',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/wp-:file.php',
+        destination: '/',
+        permanent: true,
+      },
       // Legacy WordPress + soft-404 URLs → live Next.js routes (GSC recovery)
       {
         source: '/contact-us',

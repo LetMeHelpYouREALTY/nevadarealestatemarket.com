@@ -145,3 +145,24 @@ Property: `https://www.nevadarealestatemarket.com/`
 
 **HTML file method (alternative):** drop Google’s `googleXXXXXXXX.html` into `/public/` and redeploy — no env var needed.
 
+## GSC: WordPress paths returning 403
+
+Google still crawls old WordPress URLs (`/wp-content/*`, `/wp-*.php`). Vercel’s edge WAF returns **403** (`x-vercel-mitigated: deny`) *before* Next.js redirects run.
+
+**Code already added:** 301 redirects in `next.config.js` / `vercel.json` / middleware, and `robots.txt` disallows those paths.
+
+**Finish in Vercel (required for Validate fix):**
+
+```bash
+npx vercel login
+npx vercel link   # project: nevada-real-estate-market
+bash scripts/gsc-wp-firewall-redirect.sh
+npx vercel firewall diff
+npx vercel firewall publish --yes
+```
+
+Or in Dashboard → Project → **Firewall** → Custom Rule:
+- If path starts with `/wp-content` or `/wp-admin` or matches `^/wp-.*\.php$` → **Redirect** to `/` (301)
+- Put these rules **above** any deny rules for the same paths
+
+Then GSC → **Blocked due to access forbidden (403)** → Validate fix.
