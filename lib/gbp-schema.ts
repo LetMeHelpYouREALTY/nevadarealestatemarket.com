@@ -10,7 +10,6 @@ import {
   businessCategories,
   socialProfileUrls,
   businessAttributes,
-  agentStats,
 } from "./site-config";
 
 export const businessInfo = {
