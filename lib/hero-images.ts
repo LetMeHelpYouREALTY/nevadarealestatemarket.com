@@ -166,6 +166,42 @@ export const HERO_IMAGES: Record<string, HeroImage> = {
     src: "/images/hero/henderson-neighborhood.jpg",
     alt: "Directions to Dr. Jan Duffy Henderson Nevada real estate office",
   },
+  "las-vegas-homes-with-rv-parking": {
+    src: "/images/hero/north-las-vegas-homes.jpg",
+    alt: "Las Vegas Valley homes with space for RV and recreational vehicle parking",
+  },
+  "las-vegas-real-estate": {
+    src: "/images/hero/las-vegas-skyline.jpg",
+    alt: "Las Vegas real estate skyline and valley housing market",
+  },
+  news: {
+    src: "/images/hero/nevada-valley-skyline.jpg",
+    alt: "Nevada real estate news and Las Vegas Valley market updates",
+  },
+  "privacy-policy": {
+    src: "/images/hero/nevada-valley-skyline.jpg",
+    alt: "Nevada Real Estate Market privacy policy",
+  },
+  "north-las-vegas-zip-codes-a-comprehensive-guide": {
+    src: "/images/hero/north-las-vegas-homes.jpg",
+    alt: "North Las Vegas neighborhoods by zip code",
+  },
+  "discover-your-dream-home-at-silverstone-ranch": {
+    src: "/images/hero/las-vegas-skyline.jpg",
+    alt: "Silverstone Ranch Northwest Las Vegas homes",
+  },
+  "your-trusted-henderson-luxury-real-estate-expert": {
+    src: "/images/agent/dr-jan-duffy.jpg",
+    alt: "Dr. Jan Duffy Henderson luxury real estate expert",
+  },
+  "william-lyon-homes-las-vegas-now-part-of-taylor-morrison": {
+    src: "/images/hero/buyer-new-home.jpg",
+    alt: "Taylor Morrison and former William Lyon new construction in Las Vegas",
+  },
+  "market-insights-home-is-possible-hip-program": {
+    src: "/images/hero/buyer-new-home.jpg",
+    alt: "Nevada Home Is Possible HIP program for Las Vegas buyers",
+  },
 };
 
 const AREA_FALLBACK: Record<string, string> = {

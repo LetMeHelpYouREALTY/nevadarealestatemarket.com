@@ -20,9 +20,100 @@ const nextConfig = {
   // Performance optimizations
   swcMinify: true,
 
-  // Redirect non-www to www
+  // Redirects: apex→www, legacy WordPress/GSC 404 recovery
   async redirects() {
     return [
+      // Legacy WordPress + soft-404 URLs → live Next.js routes (GSC recovery)
+      {
+        source: '/contact-us',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/contact-us/',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/news-blog',
+        destination: '/news',
+        permanent: true,
+      },
+      {
+        source: '/news-blog/',
+        destination: '/news',
+        permanent: true,
+      },
+      {
+        source: '/privacy-policy-2',
+        destination: '/privacy-policy',
+        permanent: true,
+      },
+      {
+        source: '/privacy-policy-2/',
+        destination: '/privacy-policy',
+        permanent: true,
+      },
+      {
+        source: '/landing-page',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/landing-page/',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/dashboard',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/dashboard/',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/category/for-buyers',
+        destination: '/buyers',
+        permanent: true,
+      },
+      {
+        source: '/category/for-buyers/',
+        destination: '/buyers',
+        permanent: true,
+      },
+      {
+        source: '/category/for-buyers/page/:page',
+        destination: '/buyers',
+        permanent: true,
+      },
+      {
+        source: '/category/for-buyers/page/:page/',
+        destination: '/buyers',
+        permanent: true,
+      },
+      {
+        source: '/the-secret-to-being-a-fashionable-teen',
+        destination: '/news',
+        permanent: true,
+      },
+      {
+        source: '/the-secret-to-being-a-fashionable-teen/',
+        destination: '/news',
+        permanent: true,
+      },
+      {
+        source: '/cdn-cgi/l/email-protection',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/cdn-cgi/:path*',
+        destination: '/',
+        permanent: true,
+      },
       {
         source: '/:path*',
         has: [

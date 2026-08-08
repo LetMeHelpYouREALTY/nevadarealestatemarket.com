@@ -34,6 +34,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/maps/north-las-vegas`, priority: 0.85, changeFrequency: "monthly" as const },
     { url: `${baseUrl}/maps/clark-county`, priority: 0.85, changeFrequency: "monthly" as const },
     { url: `${baseUrl}/faq`, priority: 0.8, changeFrequency: "monthly" as const },
+    // GSC 404 recovery — restored/created SEO URLs
+    { url: `${baseUrl}/las-vegas-real-estate`, priority: 0.95, changeFrequency: "weekly" as const },
+    { url: `${baseUrl}/las-vegas-homes-with-rv-parking`, priority: 0.85, changeFrequency: "weekly" as const },
+    { url: `${baseUrl}/north-las-vegas-zip-codes-a-comprehensive-guide`, priority: 0.85, changeFrequency: "monthly" as const },
+    { url: `${baseUrl}/discover-your-dream-home-at-silverstone-ranch`, priority: 0.85, changeFrequency: "weekly" as const },
+    { url: `${baseUrl}/your-trusted-henderson-luxury-real-estate-expert`, priority: 0.9, changeFrequency: "monthly" as const },
+    { url: `${baseUrl}/william-lyon-homes-las-vegas-now-part-of-taylor-morrison`, priority: 0.8, changeFrequency: "monthly" as const },
+    { url: `${baseUrl}/market-insights/home-is-possible-hip-program`, priority: 0.85, changeFrequency: "monthly" as const },
+    { url: `${baseUrl}/news`, priority: 0.8, changeFrequency: "weekly" as const },
+    { url: `${baseUrl}/privacy-policy`, priority: 0.4, changeFrequency: "yearly" as const },
   ];
 
   // Service pages
