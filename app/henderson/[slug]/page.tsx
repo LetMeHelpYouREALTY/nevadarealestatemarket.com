@@ -12,12 +12,18 @@ type Props = {
   params: { slug: string };
 };
 
+/** Dedicated unique pages own these slugs (stronger self-canonicals). */
+const DEDICATED_SLUGS = new Set(["seven-hills"]);
+
 export async function generateStaticParams() {
-  return hendersonCommunities.map((community) => ({ slug: community.slug }));
+  return hendersonCommunities
+    .filter((community) => !DEDICATED_SLUGS.has(community.slug))
+    .map((community) => ({ slug: community.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = params;
+  if (DEDICATED_SLUGS.has(slug)) return {};
   const community = getHendersonCommunity(slug);
   if (!community) return {};
 
@@ -35,6 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function HendersonCommunityPage({ params }: Props) {
   const { slug } = params;
+  if (DEDICATED_SLUGS.has(slug)) notFound();
   const community = getHendersonCommunity(slug);
   if (!community) notFound();
 

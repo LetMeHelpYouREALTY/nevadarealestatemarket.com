@@ -167,6 +167,19 @@ Or in Dashboard → Project → **Firewall** → Custom Rule:
 
 Then GSC → **Blocked due to access forbidden (403)** → Validate fix.
 
+## GSC: Duplicate, Google chose different canonical than user
+
+Example: `https://nevadarealestatemarket.com/henderson/seven-hills` (apex).
+
+**Cause:** Google crawled the apex host (or a thin template twin) and picked a different preferred URL than your `rel=canonical`.
+
+**Code fix:**
+- Middleware **301** apex → `www`
+- Dedicated unique `/henderson/seven-hills` page with www self-canonical
+- All sitemap/canonicals use `https://www.nevadarealestatemarket.com`
+
+After deploy: URL Inspection on the **www** URL → Request indexing. Apex should show as redirect.
+
 ## GSC: Crawled – currently not indexed
 
 Google crawled the URL and **chose not to index** it. This report mixes keep-pages and junk.

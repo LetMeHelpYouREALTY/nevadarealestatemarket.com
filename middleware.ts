@@ -51,7 +51,22 @@ function redirectWordpressQueryParams(
   return null;
 }
 
+/** Apex → www with 301 so Google does not keep apex URLs as alternate canonicals. */
+function forceWww(request: NextRequest): NextResponse | null {
+  const host = (request.headers.get("host") || "").split(":")[0].toLowerCase();
+  if (host !== "nevadarealestatemarket.com") return null;
+
+  const url = request.nextUrl.clone();
+  url.protocol = "https:";
+  url.hostname = "www.nevadarealestatemarket.com";
+  url.port = "";
+  return NextResponse.redirect(url, 301);
+}
+
 export function middleware(request: NextRequest) {
+  const wwwRedirect = forceWww(request);
+  if (wwwRedirect) return wwwRedirect;
+
   const wpRedirect = redirectLegacyWordpress(request);
   if (wpRedirect) return wpRedirect;
 
