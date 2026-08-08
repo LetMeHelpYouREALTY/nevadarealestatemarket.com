@@ -14,8 +14,12 @@ type SitePageProps = {
   breadcrumbs?: BreadcrumbItem[];
   faqs?: FAQItem[];
   speakable?: boolean;
+  /**
+   * When there is no SitePage hero, optionally render RealScout after nav.
+   * When a hero is present, PageHero already mounts RealScout below it.
+   */
   showListings?: boolean;
-  /** When set, renders a global PageHero above children */
+  /** When set, renders a global PageHero above children (+ RealScout under it) */
   heroTitle?: string;
   heroSubtitle?: string;
   heroBadge?: string;
@@ -24,7 +28,7 @@ type SitePageProps = {
 };
 
 /**
- * Standard page shell: JSON-LD, nav, optional hero, content, listings, footer.
+ * Standard page shell: JSON-LD, nav, optional hero + RealScout, content, footer.
  */
 export function SitePage({
   path,
@@ -62,8 +66,9 @@ export function SitePage({
           showBrand
         />
       )}
+      {/* No SitePage hero → still show RealScout near top when requested */}
+      {!resolvedHero && showListings && <RealScoutListings />}
       {children}
-      {showListings && <RealScoutListings />}
       <Footer />
     </>
   );

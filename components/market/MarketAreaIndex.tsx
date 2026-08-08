@@ -56,6 +56,7 @@ export function MarketAreaIndex({
       seoDescription={seoDescription}
       breadcrumbs={breadcrumbs}
       faqs={faqs}
+      showListings={false}
     >
       <SchemaScript schema={listSchema} id="community-list-schema" />
       <main>

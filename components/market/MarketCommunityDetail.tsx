@@ -73,6 +73,7 @@ export function MarketCommunityDetail({
       seoDescription={`${community.name} — ${community.tagline}. Homes ${community.priceRange}. Dr. Jan Duffy, BHHS Nevada · ${agentInfo.phone}.`}
       breadcrumbs={breadcrumbs}
       faqs={faqs}
+      showListings={false}
     >
       <SchemaScript schema={communitySchema} id="community-schema" />
       <main>

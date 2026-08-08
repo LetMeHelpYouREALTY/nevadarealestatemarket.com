@@ -1,5 +1,4 @@
 import Navbar from "@/components/layouts/Navbar";
-import RealScoutListings from "@/components/realscout/RealScoutListings";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import ReviewsSection from "@/components/sections/ReviewsSection";
 import FAQSection from "@/components/sections/FAQSection";
@@ -216,9 +215,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <RealScoutListings />
-        <WhyChooseUs />
+<WhyChooseUs />
         <ReviewsSection />
         <FAQSection />
 

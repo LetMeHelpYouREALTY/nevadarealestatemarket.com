@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
  */
 export default function RealScoutListings() {
   return (
-    <section className="py-16 md:py-24 bg-slate-50">
+    <section className="py-12 md:py-16 bg-slate-50 border-b border-slate-200/80">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center mb-12">
           <div>

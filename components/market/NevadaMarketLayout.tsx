@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
-import RealScoutListings from "@/components/realscout/RealScoutListings";
 import { PageSeo } from "@/components/seo/PageSeo";
 import {
   agentInfo,
@@ -207,8 +206,7 @@ export function NevadaMarketLayout({
           </section>
         </div>
       </main>
-      <RealScoutListings />
-      <Footer />
+<Footer />
     </>
   );
 }

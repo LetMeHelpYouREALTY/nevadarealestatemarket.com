@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
-import RealScoutListings from "@/components/realscout/RealScoutListings";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { PageHero } from "@/components/sections/PageHero";
 import { GoogleMapEmbed } from "@/components/maps/GoogleMapEmbed";
@@ -182,8 +181,7 @@ export function MapSeoPage({ location, breadcrumbs }: MapSeoPageProps) {
           </section>
         </div>
       </main>
-      <RealScoutListings />
-      <Footer />
+<Footer />
     </>
   );
 }
