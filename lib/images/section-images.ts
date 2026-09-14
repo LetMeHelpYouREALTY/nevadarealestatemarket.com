@@ -22,7 +22,7 @@ const RULES: { key: string; test: RegExp; src: string; alt: string }[] = [
   },
   {
     key: "luxury",
-    test: /luxury|estate|custom|the ridges|macdonald highlands/i,
+    test: /luxury|custom home|the ridges|macdonald highlands/i,
     src: "/images/sections/section-luxury.jpg",
     alt: "Luxury Nevada great room with desert mountain views",
   },
