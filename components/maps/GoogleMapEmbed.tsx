@@ -1,5 +1,6 @@
-import { MapPin, Navigation, Star } from "lucide-react";
+import { MapPin, Navigation, Phone, Star } from "lucide-react";
 import type { MapLocation } from "@/lib/map-locations";
+import { agentInfo } from "@/lib/site-config";
 
 type GoogleMapEmbedProps = {
   location: MapLocation;
@@ -37,6 +38,13 @@ export function GoogleMapEmbed({
 
       {showActions && (
         <div className="flex flex-col sm:flex-row gap-3">
+          <a
+            href={agentInfo.phoneTel}
+            className="flex-1 inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-4 py-3 rounded-lg font-medium transition-colors"
+          >
+            <Phone className="h-4 w-4" />
+            Call {agentInfo.phone}
+          </a>
           <a
             href={location.directionsUrl}
             target="_blank"

@@ -5,6 +5,18 @@ import type { HeroImage } from "@/lib/images/types";
  * (last path segment). Used when a route is not listed in HERO_IMAGES.
  */
 export const COMMUNITY_HERO_IMAGES: Record<string, HeroImage> = {
+  summerlin: {
+    src: "/images/hero/summerlin-red-rock.jpg",
+    alt: "Summerlin Las Vegas master-planned homes with Red Rock Canyon backdrop",
+  },
+  henderson: {
+    src: "/images/hero/henderson-neighborhood.jpg",
+    alt: "Henderson Nevada neighborhood streetscapes near St. Rose Parkway",
+  },
+  "north-las-vegas": {
+    src: "/images/hero/north-las-vegas-homes.jpg",
+    alt: "North Las Vegas new-construction homes in desert master-planned communities",
+  },
   "lake-las-vegas": {
     src: "/images/neighborhoods/lake-las-vegas.jpg",
     alt: "Lake Las Vegas Henderson waterfront homes around the private lake — Dr. Jan Duffy REALTOR®",

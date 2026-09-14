@@ -4,6 +4,7 @@ import type { HeroImage } from "@/lib/hero-images";
 import { siteConfig } from "@/lib/site-config";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import { siteImage } from "@/lib/images/src";
+import { GbpEngageBar } from "@/components/gbp/GbpEngageBar";
 
 type PageHeroProps = {
   hero: HeroImage;
@@ -108,6 +109,7 @@ export function PageHero({
           </div>
         </div>
       </section>
+      <GbpEngageBar variant="compact" />
       {showRealScout ? <RealScoutListings /> : null}
     </>
   );

@@ -1,6 +1,7 @@
 import { SeoArticlePage } from "@/components/sections/SeoArticlePage";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { GbpPostsFeed } from "@/components/gbp/GbpPostsFeed";
 
 const path = "/news";
 
@@ -88,6 +89,8 @@ export default function NewsPage() {
         },
       ]}
       relatedLinks={articles.map((a) => ({ href: a.href, label: a.title }))}
-    />
+    >
+      <GbpPostsFeed className="mt-10 mb-4" />
+    </SeoArticlePage>
   );
 }

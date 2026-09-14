@@ -20,6 +20,7 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://www.nevadarealestatemarket.com/listings" },
@@ -72,7 +73,7 @@ const popularSearches = [
 
 const priceRanges = [
   { range: "Under $400K", description: "Starter homes, condos, townhomes", count: "1,500+" },
-  { range: "$400K - $600K", description: "Family homes, established neighborhoods", count: "2,100+" },
+  { range: "$400K - $600K", description: "Single-family homes, established neighborhoods", count: "2,100+" },
   { range: "$600K - $1M", description: "Premium locations, larger homes", count: "1,200+" },
   { range: "$1M - $2M", description: "Luxury homes, guard-gated communities", count: "450+" },
   { range: "$2M+", description: "Ultra-luxury estates, custom builds", count: "180+" },
@@ -156,6 +157,7 @@ export default function ListingsPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
               Popular Property Searches in Las Vegas
             </h2>
+            <HeadingPhoto heading="Popular Property Searches in Las Vegas" />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Las Vegas offers diverse neighborhoods for every lifestyle and budget. Whether you're 
               seeking luxury estates in guard-gated communities, homes near parks and trails, 

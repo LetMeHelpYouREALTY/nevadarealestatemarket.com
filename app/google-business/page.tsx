@@ -27,6 +27,11 @@ import {
   generateLocalBusinessSchema,
   generateFAQSchema,
 } from "@/lib/gbp-schema";
+import { officeInfo, businessHours } from "@/lib/site-config";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
+import { GoogleMapEmbed } from "@/components/maps/GoogleMapEmbed";
+import { getOfficeLocation } from "@/lib/map-locations";
+import { GbpPostsFeed } from "@/components/gbp/GbpPostsFeed";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://www.nevadarealestatemarket.com/google-business" },
@@ -165,30 +170,41 @@ export default function GoogleBusinessPage() {
                   Business Hours
                 </h2>
               </div>
+              <p className="text-slate-700 font-medium mb-4">
+                {businessHours.display}
+              </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                <div>
-                  <span className="font-medium">Monday:</span> 9am - 6pm
-                </div>
-                <div>
-                  <span className="font-medium">Tuesday:</span> 9am - 6pm
-                </div>
-                <div>
-                  <span className="font-medium">Wednesday:</span> 9am - 6pm
-                </div>
-                <div>
-                  <span className="font-medium">Thursday:</span> 9am - 6pm
-                </div>
-                <div>
-                  <span className="font-medium">Friday:</span> 9am - 6pm
-                </div>
-                <div>
-                  <span className="font-medium">Saturday:</span> 10am - 4pm
-                </div>
-                <div>
-                  <span className="font-medium">Sunday:</span> By Appointment
-                </div>
+                {[
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday",
+                ].map((day) => (
+                  <div key={day}>
+                    <span className="font-medium">{day}:</span> 6:00 AM – 9:00 PM
+                  </div>
+                ))}
               </div>
             </div>
+          </section>
+
+          <section className="max-w-5xl mx-auto mb-16">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
+              Directions to the Henderson office
+            </h2>
+            <HeadingPhoto heading="Directions to the Henderson office" />
+            <p className="text-slate-600 text-center max-w-3xl mx-auto mb-6">
+              Pin {officeInfo.name} on Google Maps. Address matches GBP:{" "}
+              {officeInfo.address.full}.
+            </p>
+            <GoogleMapEmbed location={getOfficeLocation()} height={380} />
+          </section>
+
+          <section className="max-w-6xl mx-auto mb-16">
+            <GbpPostsFeed />
           </section>
 
           {/* About - 750 Word Description Structure */}
@@ -236,6 +252,7 @@ export default function GoogleBusinessPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
               Real Estate Services
             </h2>
+            <HeadingPhoto heading="Real Estate Services" />
             <div className="grid md:grid-cols-3 gap-4">
               {businessInfo.services.map((service) => (
                 <div
@@ -263,6 +280,7 @@ export default function GoogleBusinessPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
               Service Areas
             </h2>
+            <HeadingPhoto heading="Service Areas" />
             <div className="bg-blue-50 rounded-xl p-8">
               <div className="grid md:grid-cols-3 gap-8">
                 <div>
@@ -345,6 +363,7 @@ export default function GoogleBusinessPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
               Frequently Asked Questions
             </h2>
+            <HeadingPhoto heading="Frequently Asked Questions" />
             <div className="space-y-4">
               {gbpFAQs.map((faq, index) => (
                 <div
@@ -374,7 +393,7 @@ export default function GoogleBusinessPage() {
                 transaction, and what made the experience valuable.
               </p>
               <a
-                href="https://g.page/r/YOUR_GOOGLE_REVIEW_LINK/review"
+                href={officeInfo.googleReviewsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"

@@ -182,6 +182,7 @@ export function generateLocalBusinessSchema() {
       latitude: businessInfo.geo.latitude,
       longitude: businessInfo.geo.longitude,
     },
+    hasMap: officeInfo.googleMapsUrl,
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",

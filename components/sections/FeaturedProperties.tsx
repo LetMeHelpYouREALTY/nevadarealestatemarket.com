@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 import { marketStats } from "@/lib/site-config";
 import { siteImage } from "@/lib/images/src";
 
@@ -77,7 +78,7 @@ export default function FeaturedProperties() {
   return (
     <section className="bg-slate-50 py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
+        <div className="mb-6 flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
           <div>
             <h2 className="mb-3 text-3xl font-bold text-slate-900 md:text-4xl lg:text-5xl text-pretty">
               Explore Valley Communities
@@ -91,6 +92,7 @@ export default function FeaturedProperties() {
             <Link href="/compare-communities">Compare Communities</Link>
           </Button>
         </div>
+        <HeadingPhoto heading="Explore Valley Communities" className="mb-12" />
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {communities.map((community) => (

@@ -169,10 +169,10 @@ export default function SunCityAnthemPage() {
                 About Sun City Anthem
               </h2>
               <p>
-                <strong>Sun City Anthem</strong> brings the legendary Sun City lifestyle to Henderson,
-                Nevada's safest and most desirable city. Built by Del Webb from 1998-2008, this
-                7,100+ home community offers stunning mountain views, championship golf, and
-                resort-caliber amenities—all within Henderson's renowned safety and quality of life.
+                <strong>Sun City Anthem</strong> brings the Sun City lifestyle to Henderson.
+                Built by Del Webb from 1998-2008, this
+                7,100+ home community offers mountain views, championship golf, and
+                resort-caliber amenities along the Anthem corridor.
               </p>
               <p>
                 The community's centerpiece is the Anthem Center, a 64,000 sq ft clubhouse featuring

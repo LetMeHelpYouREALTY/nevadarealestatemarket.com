@@ -1,10 +1,14 @@
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
-import { MapPin, Phone, Home, Users, GraduationCap } from "lucide-react";
+import Image from "next/image";
+import { MapPin, Phone, Home } from "lucide-react";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { getCommunityHeroImage } from "@/lib/images/community-images";
+import { siteImage } from "@/lib/images/src";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://www.nevadarealestatemarket.com/neighborhoods" },
@@ -27,17 +31,17 @@ const neighborhoods = [
     medianPrice: "$625,000",
     priceChange: "+6.8%",
     description: "Premier master-planned community with parks, trails, and parks and trails",
-    highlights: ["150+ Parks", "Top Schools", "Red Rock Views", "Downtown Summerlin"],
-    bestFor: "Families, professionals, outdoor enthusiasts",
+    highlights: ["150+ Parks", "Walking Trails", "Red Rock Views", "Downtown Summerlin"],
+    bestFor: "Professionals, outdoor enthusiasts, relocators",
   },
   {
     name: "Henderson",
     slug: "henderson",
     medianPrice: "$485,000",
     priceChange: "+5.1%",
-    description: "Nevada's second-largest city known for safety, schools, and amenity-rich living",
-    highlights: ["Low Crime Rate", "Excellent Schools", "Lake Las Vegas", "Green Valley"],
-    bestFor: "Families, retirees, commuters",
+    description: "Nevada's second-largest city known for parks, trails, and amenity-rich living",
+    highlights: ["Parks & Trails", "Lake Las Vegas", "Green Valley", "St. Rose Corridor"],
+    bestFor: "Retirees, commuters, relocators",
   },
   {
     name: "Green Valley",
@@ -46,7 +50,7 @@ const neighborhoods = [
     priceChange: "+4.8%",
     description: "Established Henderson community with mature landscaping and excellent amenities",
     highlights: ["Golf Courses", "Walking Trails", "The District", "Mature Trees"],
-    bestFor: "Established families, golfers, professionals",
+    bestFor: "Golfers, professionals, downsizers",
   },
   {
     name: "The Ridges",
@@ -64,7 +68,7 @@ const neighborhoods = [
     priceChange: "+7.2%",
     description: "Master-planned luxury community with championship golf and mountain views",
     highlights: ["Golf Community", "Guard-Gated", "Mountain Views", "Luxury Amenities"],
-    bestFor: "Golfers, luxury buyers, families",
+    bestFor: "Golfers, luxury buyers, relocators",
   },
   {
     name: "North Las Vegas",
@@ -72,8 +76,8 @@ const neighborhoods = [
     medianPrice: "$385,000",
     priceChange: "+3.2%",
     description: "Rapidly growing area with affordable new construction and amenity-rich communities",
-    highlights: ["New Construction", "Affordable", "Growing Area", "Family-Friendly"],
-    bestFor: "First-time buyers, young families, investors",
+    highlights: ["New Construction", "Affordable", "Growing Area", "Master-Planned"],
+    bestFor: "First-time buyers, investors, new-construction shoppers",
   },
   {
     name: "Skye Canyon",
@@ -81,17 +85,17 @@ const neighborhoods = [
     medianPrice: "$550,000",
     priceChange: "+5.5%",
     description: "Newer master-planned community in northwest Las Vegas with mountain views",
-    highlights: ["New Homes", "Mountain Views", "Skye Center", "Great Schools"],
-    bestFor: "Young families, outdoor enthusiasts, commuters",
+    highlights: ["New Homes", "Mountain Views", "Skye Center", "Community Trails"],
+    bestFor: "Outdoor enthusiasts, commuters, new-home buyers",
   },
   {
     name: "Centennial Hills",
     slug: "centennial-hills",
     medianPrice: "$495,000",
     priceChange: "+4.8%",
-    description: "Northwest Las Vegas community with mountain proximity and family amenities",
-    highlights: ["Mountain Access", "Parks", "Shopping", "Family-Friendly"],
-    bestFor: "Families, outdoor lovers, professionals",
+    description: "Northwest Las Vegas community with mountain proximity, parks, and shopping",
+    highlights: ["Mountain Access", "Parks", "Shopping", "Hospital Corridor"],
+    bestFor: "Outdoor lovers, professionals, commuters",
   },
   {
     name: "Inspirada",
@@ -99,8 +103,8 @@ const neighborhoods = [
     medianPrice: "$525,000",
     priceChange: "+5.0%",
     description: "Henderson master-planned community with resort-style living and modern homes",
-    highlights: ["Resort Pools", "Walking Trails", "New Construction", "Great Schools"],
-    bestFor: "Families, active adults, new home buyers",
+    highlights: ["Resort Pools", "Walking Trails", "New Construction", "Town Center"],
+    bestFor: "Active adults, new-home buyers, relocators",
   },
   {
     name: "Mountains Edge",
@@ -109,7 +113,7 @@ const neighborhoods = [
     priceChange: "+4.5%",
     description: "Southwest Las Vegas master-planned community with mountain views and parks",
     highlights: ["Mountain Views", "Parks", "Growing Area", "Affordable Luxury"],
-    bestFor: "Families, commuters, value-seekers",
+    bestFor: "Commuters, value-seekers, new-home buyers",
   },
 ];
 
@@ -141,12 +145,28 @@ export default function NeighborhoodsPage() {
           {/* Neighborhood Grid */}
           <section className="mb-16 max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-6">
-              {neighborhoods.map((neighborhood) => (
+              {neighborhoods.map((neighborhood) => {
+                const photo =
+                  getCommunityHeroImage(neighborhood.slug) ?? {
+                    src: "/images/hero/nevada-neighborhoods.jpg",
+                    alt: `${neighborhood.name} Las Vegas Valley homes`,
+                  };
+                return (
                 <Link
                   key={neighborhood.slug}
                   href={`/neighborhoods/${neighborhood.slug}`}
-                  className="bg-white border border-slate-200 rounded-lg p-6 hover:shadow-lg transition-all hover:border-blue-300 group"
+                  className="bg-white border border-slate-200 rounded-lg overflow-hidden hover:shadow-lg transition-all hover:border-blue-300 group"
                 >
+                  <div className="relative aspect-[16/9] bg-slate-200">
+                    <Image
+                      src={siteImage(photo.src)}
+                      alt={photo.alt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
                   <div className="flex justify-between items-start mb-3">
                     <div>
                       <h2 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
@@ -170,8 +190,10 @@ export default function NeighborhoodsPage() {
                       </span>
                     ))}
                   </div>
+                  </div>
                 </Link>
-              ))}
+                );
+              })}
             </div>
           </section>
 
@@ -194,6 +216,7 @@ export default function NeighborhoodsPage() {
           {/* Neighborhood Services */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-8 text-center">Neighborhood Services</h2>
+            <HeadingPhoto heading="Neighborhood Services" className="mb-8" />
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center">
                 <MapPin className="h-12 w-12 text-blue-400 mx-auto mb-3" />
@@ -203,10 +226,10 @@ export default function NeighborhoodsPage() {
                 </p>
               </div>
               <div className="text-center">
-                <GraduationCap className="h-12 w-12 text-blue-400 mx-auto mb-3" />
-                <h3 className="font-bold mb-2">School Research</h3>
+                <Home className="h-12 w-12 text-blue-400 mx-auto mb-3" />
+                <h3 className="font-bold mb-2">Commute & Amenities</h3>
                 <p className="text-slate-400 text-sm">
-                  Detailed school district information, ratings, and enrollment guidance
+                  Drive-time to employment centers, named parks, trails, shopping, and rec centers
                 </p>
               </div>
               <div className="text-center">

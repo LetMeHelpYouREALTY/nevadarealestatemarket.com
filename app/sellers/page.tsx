@@ -19,6 +19,7 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://www.nevadarealestatemarket.com/sellers" },
@@ -224,6 +225,7 @@ export default function SellersPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
               The Home Selling Process
             </h2>
+            <HeadingPhoto heading="The Home Selling Process" />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Selling a home involves many steps, but you don't have to navigate them alone. 
               Dr. Jan Duffy manages every detail from initial valuation to closing day, keeping 
@@ -327,7 +329,7 @@ export default function SellersPage() {
                 the first time. The result? My listings typically sell within 2% of asking price."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, BHHS Nevada Properties | Serving Las Vegas Since 2008
+                — Dr. Jan Duffy, BHHS Nevada Properties | Serving Las Vegas Since 2013
               </cite>
             </div>
           </section>

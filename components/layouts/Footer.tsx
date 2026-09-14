@@ -16,12 +16,14 @@ import {
   socialProfiles,
 } from "@/lib/site-config";
 import { BrandLogo } from "@/components/layouts/BrandLogo";
+import { GbpEngageBar } from "@/components/gbp/GbpEngageBar";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-slate-950 text-white border-t border-slate-800">
+      <GbpEngageBar variant="dark" />
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}

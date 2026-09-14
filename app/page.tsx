@@ -27,6 +27,9 @@ import {
 import { speakableSummaries } from "@/lib/nevada-market-research";
 import { getHeroImageByKey } from "@/lib/hero-images";
 import { PageHero } from "@/components/sections/PageHero";
+import { GoogleMapEmbed } from "@/components/maps/GoogleMapEmbed";
+import { getOfficeLocation } from "@/lib/map-locations";
+import { GbpPostsFeed } from "@/components/gbp/GbpPostsFeed";
 
 /** Static domain config — no headers() so `/` can be edge-cached (PageSpeed TTFB). */
 const config = getDomainConfig("nevadarealestatemarket.com");
@@ -121,7 +124,7 @@ export default function Home() {
                 },
                 {
                   icon: Users,
-                  title: "500+ Families",
+                  title: "500+ Clients",
                   desc: "Hands-on representation for relocators, downsizers, and luxury buyers",
                 },
                 {
@@ -221,6 +224,28 @@ export default function Home() {
         </section>
 <WhyChooseUs />
         <FeaturedProperties />
+
+        <section className="section-shell bg-white">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <h2 className="mb-3 text-3xl font-bold tracking-tight text-pretty text-slate-900 md:text-4xl">
+              Visit the Henderson office
+            </h2>
+            <HeadingPhoto heading="Visit the Henderson office" />
+            <p className="text-slate-600 mb-6 max-w-3xl">
+              {officeInfo.name} — {officeInfo.address.full}. Open daily 6:00 AM –
+              9:00 PM. Pin this office on Google Maps, then call {agentInfo.phone}{" "}
+              for a showing or market consult.
+            </p>
+            <GoogleMapEmbed location={getOfficeLocation()} height={360} />
+          </div>
+        </section>
+
+        <section className="section-shell bg-slate-50">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <GbpPostsFeed />
+          </div>
+        </section>
+
         <ReviewsSection />
         <FAQSection />
 

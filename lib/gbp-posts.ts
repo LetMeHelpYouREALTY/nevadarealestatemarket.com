@@ -51,7 +51,7 @@ Call Dr. Jan Duffy at ${PHONE} for a free market analysis of your home or neighb
 
 ✅ 0% state income tax (save thousands annually)
 ✅ 40-60% lower home prices vs. comparable CA properties
-✅ Same-quality schools, better affordability
+✅ Parks, trails, and master-planned amenities at a lower carrying cost
 ✅ 4-hour drive to LA, easy flights everywhere
 
 A $1.2M California home could buy you a luxury property in Summerlin or The Ridges. Dr. Jan Duffy specializes in California-to-Nevada relocations and can help you maximize your equity.
@@ -162,6 +162,12 @@ Confidential luxury home search: ${PHONE}`,
     keywords: ["luxury homes Las Vegas", "The Ridges", "MacDonald Highlands", "high-rise condos"],
   },
 ];
+
+export function getRecentGbpPosts(limit = 4): GBPPost[] {
+  return [...gbpPostTemplates]
+    .sort((a, b) => (a.publishDate < b.publishDate ? 1 : -1))
+    .slice(0, limit);
+}
 
 // Review Response Templates
 // Respond promptly and in depth using who/what/when/where/why

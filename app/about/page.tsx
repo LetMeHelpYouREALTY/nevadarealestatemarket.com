@@ -18,6 +18,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { AgentPhoto } from "@/components/sections/AgentPhoto";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 import { agentInfo, officeInfo, businessHours, siteConfig } from "@/lib/site-config";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
@@ -161,11 +162,11 @@ export default function AboutPage() {
                     world-class resources and local expertise to every client I serve.
                   </p>
                   <p>
-                    Since 2008, I've closed $127 million in transactions and
-                    helped hundreds of families find their perfect home in Las Vegas, Henderson,
+                    Since 2013, I've closed $127 million in transactions and
+                    helped hundreds of clients find the right home in Las Vegas, Henderson,
                     Summerlin, and throughout Southern Nevada. My expertise spans luxury properties,
-                    new construction, investment real estate, 55+ active adult communities, and 
-                    relocations—particularly for California families seeking Nevada's tax advantages.
+                    new construction, investment real estate, 55+ active adult communities, and
+                    relocations—particularly for California buyers seeking Nevada's tax advantages.
                   </p>
                   <p>
                     What sets <strong>Berkshire Hathaway HomeServices Nevada Properties</strong>{" "}
@@ -237,7 +238,7 @@ export default function AboutPage() {
                 {/* Stats Grid */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-blue-50 rounded-lg p-6 text-center">
-                    <div className="text-3xl font-bold text-blue-600 mb-1">Since 2008</div>
+                    <div className="text-3xl font-bold text-blue-600 mb-1">Since 2013</div>
                     <div className="text-sm text-slate-600">Serving Las Vegas</div>
                   </div>
                   <div className="bg-blue-50 rounded-lg p-6 text-center">
@@ -285,6 +286,7 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center">
               Areas of Specialization
             </h2>
+            <HeadingPhoto heading="Areas of Specialization" />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Dr. Jan Duffy brings specialized expertise across multiple real estate categories. 
               Whether you're a first-time buyer, luxury home seeker, investor, or retiree looking 

@@ -19,6 +19,7 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://www.nevadarealestatemarket.com/luxury-homes" },
@@ -243,7 +244,7 @@ export default function LuxuryHomesPage() {
                 and the complete resources of BHHS."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, BHHS Nevada Properties | Serving Las Vegas Since 2008
+                — Dr. Jan Duffy, BHHS Nevada Properties | Serving Las Vegas Since 2013
               </cite>
             </div>
           </section>
@@ -253,6 +254,7 @@ export default function LuxuryHomesPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
               Premier Las Vegas Luxury Communities
             </h2>
+            <HeadingPhoto heading="Premier Las Vegas Luxury Communities" />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Las Vegas offers some of the most desirable luxury communities in the Southwest. From 
               ultra-exclusive guard-gated enclaves to lakefront estates, these premier neighborhoods 

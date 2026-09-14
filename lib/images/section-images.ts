@@ -76,6 +76,12 @@ const RULES: { key: string; test: RegExp; src: string; alt: string }[] = [
     alt: "Nevada townhomes suited to rental and investment analysis",
   },
   {
+    key: "office-contact",
+    test: /contact|get in touch|office|hours|directions|google business|appointment/i,
+    src: "/images/hero/office-henderson.jpg",
+    alt: "Henderson office of Dr. Jan Duffy at 3185 St Rose Pkwy, Suite 101",
+  },
+  {
     key: "valuation",
     test: /home worth|cma|appraisal|price your home/i,
     src: "/images/sections/section-valuation.jpg",

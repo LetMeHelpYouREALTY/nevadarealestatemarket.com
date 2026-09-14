@@ -78,7 +78,7 @@ export const mapLocations: MapLocation[] = [
     name: "Henderson, NV",
     headline: "Henderson NV Real Estate Map",
     description:
-      "Explore Henderson neighborhoods on the map — Green Valley Ranch, Anthem, Inspirada, Lake Las Vegas, MacDonald Ranch, and Seven Hills. Dr. Jan Duffy specializes in Henderson luxury and family homes.",
+      "Explore Henderson neighborhoods on the map — Green Valley Ranch, Anthem, Inspirada, Lake Las Vegas, MacDonald Ranch, and Seven Hills. Dr. Jan Duffy specializes in Henderson luxury and single-family homes.",
     metaTitle: "Henderson NV Real Estate Map | Neighborhoods & Homes",
     metaDescription:
       "Interactive map of Henderson Nevada real estate markets. Median $485K. Expert guidance from Dr. Jan Duffy, BHHS Nevada. (702) 500-1955.",
@@ -115,7 +115,7 @@ export const mapLocations: MapLocation[] = [
     name: "Summerlin, NV",
     headline: "Summerlin NV Real Estate Map",
     description:
-      "Map of Summerlin master-planned communities — The Ridges, Red Rock Canyon corridor, Downtown Summerlin, and village neighborhoods. Premier Las Vegas Valley luxury and family living.",
+      "Map of Summerlin master-planned communities — The Ridges, Red Rock Canyon corridor, Downtown Summerlin, and village neighborhoods. Premier Las Vegas Valley luxury and master-planned living.",
     metaTitle: "Summerlin NV Real Estate Map | Communities & Luxury Homes",
     metaDescription:
       "Summerlin Nevada real estate map with community guides. Median $625K. Dr. Jan Duffy, BHHS Nevada. (702) 500-1955.",
@@ -172,9 +172,9 @@ export const mapLocations: MapLocation[] = [
           "The Las Vegas Valley median is approximately $450,000 with 28 average days on market as of January 2026.",
       },
       {
-        question: "Which Las Vegas neighborhoods are best for families?",
+        question: "Which Las Vegas neighborhoods have parks and master-planned amenities?",
         answer:
-          "Summerlin, Henderson, Skye Canyon, Mountains Edge, and Centennial Hills are popular for schools, parks, and master-planned amenities.",
+          "Summerlin, Henderson, Skye Canyon, Mountains Edge, and Centennial Hills are popular for parks, trails, and master-planned amenities.",
       },
     ],
   },

@@ -23,6 +23,9 @@ import {
   businessAttributes,
 } from "@/lib/site-config";
 import { buildPageMetadata } from "@/lib/seo/metadata";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
+import { GoogleMapEmbed } from "@/components/maps/GoogleMapEmbed";
+import { getOfficeLocation } from "@/lib/map-locations";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Contact Dr. Jan Duffy | Nevada Real Estate Market | (702) 500-1955",
@@ -72,6 +75,7 @@ const contactSchema = {
         closes: businessHours.closes,
       },
     ],
+    hasMap: officeInfo.googleMapsUrl,
   },
 };
 
@@ -115,6 +119,7 @@ export default function ContactPage() {
               <h2 className="text-2xl font-bold text-slate-900 mb-6">
                 Get In Touch
               </h2>
+              <HeadingPhoto heading="Get In Touch" />
               <p className="text-slate-700 mb-8">
                 Whether you're buying your first home, selling a luxury
                 property, or exploring investment opportunities, I'm here to
@@ -190,40 +195,8 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Google Map Embed */}
-              <div className="rounded-xl overflow-hidden shadow-md mb-4">
-                <iframe
-                  src={officeInfo.googleMapsEmbed}
-                  width="100%"
-                  height="300"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Henderson MacDonald Highlands Real Estate - Dr. Jan Duffy Office"
-                  className="w-full"
-                />
-              </div>
-
-              {/* Map Action Buttons */}
-              <div className="flex gap-3 mb-8">
-                <a
-                  href={officeInfo.googleMapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg font-medium transition-colors"
-                >
-                  <MapPin className="h-4 w-4 mr-2" />
-                  Get Directions
-                </a>
-                <a
-                  href={officeInfo.googleReviewsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-3 rounded-lg font-medium transition-colors"
-                >
-                  View Google Reviews
-                </a>
+              <div className="mb-8">
+                <GoogleMapEmbed location={getOfficeLocation()} height={300} />
               </div>
 
               {/* Credentials */}
@@ -273,7 +246,7 @@ export default function ContactPage() {
                     <p className="text-slate-300 text-sm">
                       <strong className="text-white">Proven Results:</strong>{" "}
                       $127M+ in closed transactions serving Las Vegas since
-                      2008.
+                      2013.
                     </p>
                   </div>
                   <div className="flex items-start">
@@ -294,6 +267,7 @@ export default function ContactPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
               Areas We Serve
             </h2>
+            <HeadingPhoto heading="Areas We Serve" />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Dr. Jan Duffy provides expert real estate services throughout the
               Las Vegas Valley. Whether you're buying, selling, or investing in
@@ -361,6 +335,7 @@ export default function ContactPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
               Frequently Asked Questions
             </h2>
+            <HeadingPhoto heading="Frequently Asked Questions" />
             <div className="space-y-4">
               {[
                 {

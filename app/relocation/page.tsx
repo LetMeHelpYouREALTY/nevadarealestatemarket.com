@@ -20,6 +20,7 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://www.nevadarealestatemarket.com/relocation" },
@@ -54,25 +55,25 @@ const relocationSchema = {
 const popularRelocationAreas = [
   {
     name: "Summerlin",
-    best: "Families, professionals",
+    best: "Professionals, relocators",
     highlights: "Parks and trails, 150+ parks, Red Rock Canyon proximity, master-planned living",
     from: "$500K",
   },
   {
     name: "Henderson",
-    best: "Families, retirees",
-    highlights: "Lowest crime rates, nearby parks and trails, community feel, diverse neighborhoods",
+    best: "Retirees, relocators",
+    highlights: "Parks, trails, community rec centers, diverse neighborhoods",
     from: "$450K",
   },
   {
     name: "Green Valley",
-    best: "Established families",
+    best: "Golfers, professionals",
     highlights: "Mature landscaping, championship golf, shopping and dining, Henderson location",
     from: "$480K",
   },
   {
     name: "Skye Canyon",
-    best: "Young families",
+    best: "New-home buyers, commuters",
     highlights: "Newest construction, mountain trail access, modern amenities, growing area",
     from: "$500K",
   },
@@ -84,7 +85,7 @@ const popularRelocationAreas = [
   },
   {
     name: "Inspirada",
-    best: "Families, active adults",
+    best: "Active adults, new-home buyers",
     highlights: "Resort-style pools, extensive trails, new homes, Henderson convenience",
     from: "$450K",
   },
@@ -92,7 +93,7 @@ const popularRelocationAreas = [
 
 const relocationServices = [
   "Personalized neighborhood matching based on your priorities",
-  "School district research and tour coordination",
+  "Zoned school names for specific addresses",
   "Virtual home tours before you arrive",
   "Coordination with your current BHHS agent",
   "Cost of living and budget comparison",
@@ -137,7 +138,7 @@ export default function RelocationPage() {
             <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-500">
               <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> 50,000+ Agent Network</span>
               <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> Virtual Home Tours</span>
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> School Research</span>
+              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> Commute Mapping</span>
             </div>
           </div>
 
@@ -146,7 +147,7 @@ export default function RelocationPage() {
             <h2 className="text-2xl font-bold mb-4 text-center">Why People Are Moving to Las Vegas</h2>
             <p className="text-slate-300 text-center max-w-3xl mx-auto mb-8">
               Las Vegas has become one of the fastest-growing cities in America, attracting 
-              families, professionals, and retirees from across the country. Here's why so 
+              relocating buyers, professionals, and retirees from across the country. Here's why so 
               many people are making the move to Southern Nevada.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -181,13 +182,13 @@ export default function RelocationPage() {
             <div className="bg-slate-50 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Moving to a new city is stressful enough. I handle everything from neighborhood
-                tours to school research to contractor referrals so you can focus on your new
+                tours to commute mapping to contractor referrals so you can focus on your new
                 beginning. And because Berkshire Hathaway HomeServices has agents nationwide, I can
                 coordinate with your agent back home to make the transition seamless. My goal is to 
                 make Las Vegas feel like home before you even arrive."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, BHHS Nevada Properties | Serving Las Vegas Since 2008
+                — Dr. Jan Duffy, BHHS Nevada Properties | Serving Las Vegas Since 2013
               </cite>
             </div>
           </section>
@@ -197,6 +198,7 @@ export default function RelocationPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
               Comprehensive Relocation Services
             </h2>
+            <HeadingPhoto heading="Comprehensive Relocation Services" />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Relocating involves much more than just finding a home. Dr. Jan Duffy provides 
               end-to-end relocation services that address every aspect of your move, from 
@@ -250,18 +252,18 @@ export default function RelocationPage() {
           {/* School Information */}
           <section className="mb-16 max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Las Vegas Schools & Education
+              Named Schools Near Popular Communities
             </h2>
+            <HeadingPhoto heading="Named Schools Near Popular Communities" />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              For families with children, school quality is often the top priority when 
-              relocating. Las Vegas offers a range of public, charter, and private school 
-              options. Dr. Jan provides detailed school research to help you make informed decisions.
+              Clark County School District zones by address. Here are named campuses
+              near communities buyers often tour — without quality rankings.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white border border-slate-200 rounded-xl p-6">
                 <h3 className="font-bold text-lg text-slate-900 mb-4 flex items-center">
                   <School className="h-5 w-5 text-blue-600 mr-2" />
-                  Top-Rated School Areas
+                  Zoned Schools by Area
                 </h3>
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start">
@@ -274,31 +276,31 @@ export default function RelocationPage() {
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                    <span><strong>Private:</strong> The Meadows, Bishop Gorman, Faith Lutheran</span>
+                    <span><strong>Private campuses nearby:</strong> The Meadows, Bishop Gorman, Faith Lutheran</span>
                   </li>
                 </ul>
               </div>
               <div className="bg-white border border-slate-200 rounded-xl p-6">
                 <h3 className="font-bold text-lg text-slate-900 mb-4 flex items-center">
                   <Home className="h-5 w-5 text-blue-600 mr-2" />
-                  School Research Services
+                  Address-Level Zoning
                 </h3>
                 <ul className="space-y-2 text-slate-700">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                    <span>School ratings and test score comparisons</span>
-                  </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
                     <span>Zoned school identification for specific addresses</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                    <span>Magnet and charter school options</span>
+                    <span>Magnet and charter campus names</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                    <span>Private school recommendations</span>
+                    <span>Drive times to named campuses and employment centers</span>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
+                    <span>CCSD enrollment process orientation</span>
                   </li>
                 </ul>
               </div>
@@ -310,7 +312,7 @@ export default function RelocationPage() {
             <h2 className="text-2xl font-bold mb-4 text-center">Moving from California?</h2>
             <p className="text-blue-100 text-center max-w-3xl mx-auto mb-8">
               California to Nevada is one of the most popular relocation routes in the country. 
-              Thousands of California families move to Las Vegas each year seeking lower costs, 
+              Thousands of California buyers move to Las Vegas each year seeking lower costs, 
               no state income tax, and a better quality of life. Here's what the numbers look like.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
@@ -396,12 +398,12 @@ export default function RelocationPage() {
                   a: "Absolutely. Dr. Jan provides virtual tours, video walkthroughs, and detailed neighborhood analysis so you can purchase confidently before relocating. Many clients buy their Las Vegas home without ever visiting in person until closing day.",
                 },
                 {
-                  q: "What are the best areas for families relocating to Las Vegas?",
-                  a: "Summerlin, Henderson (especially Green Valley and Inspirada), and Skye Canyon consistently rank highest for families due to nearby parks and trails, walkable amenities, and amenity-rich amenities. Dr. Jan can match you with the right area based on your specific priorities—schools, commute, budget, and lifestyle.",
+                  q: "Which communities have parks, trails, and master-planned amenities?",
+                  a: "Summerlin, Henderson (especially Green Valley and Inspirada), and Skye Canyon are frequently toured for parks, trails, and walkable town centers. Dr. Jan matches you by commute, budget, square footage, and named amenities.",
                 },
                 {
                   q: "How does the cost of living compare to California?",
-                  a: "Las Vegas costs about 30-40% less than LA/Orange County and 50%+ less than San Francisco. The biggest savings come from no state income tax (California charges up to 13.3%) and significantly lower housing costs. A family earning $200K in California could save $20,000+ annually just in state taxes.",
+                  a: "Las Vegas costs about 30-40% less than LA/Orange County and 50%+ less than San Francisco. The biggest savings come from no state income tax (California charges up to 13.3%) and significantly lower housing costs. A household earning $200K in California could save $20,000+ annually just in state taxes.",
                 },
                 {
                   q: "Do you help coordinate the sale of my current home too?",
@@ -412,8 +414,8 @@ export default function RelocationPage() {
                   a: "Las Vegas has diversified beyond gaming and hospitality. Major growth sectors include healthcare (Intermountain Health, UMC), technology (Switch, various startups), sports (Raiders, Golden Knights, Aces), logistics (Amazon), and professional services. The economy is growing faster than the national average.",
                 },
                 {
-                  q: "Is Las Vegas safe for families?",
-                  a: "Yes, particularly in the suburban communities. Henderson consistently ranks as one of America's safest cities. Summerlin, Green Valley, and Inspirada also have very walkable amenities rates. Dr. Jan can provide detailed crime statistics for any neighborhood you're considering.",
+                  q: "Where is the Henderson office and when is it open?",
+                  a: "3185 St Rose Pkwy, Suite 101, Henderson, NV 89052. Open daily 6:00 AM – 9:00 PM to match the Google Business Profile. Call (702) 500-1955 for directions or a consult.",
                 },
               ].map((faq, index) => (
                 <div key={index} className="bg-slate-50 rounded-lg p-6">

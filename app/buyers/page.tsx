@@ -20,6 +20,7 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://www.nevadarealestatemarket.com/buyers" },
@@ -174,6 +175,7 @@ export default function BuyersPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
               The Home Buying Process in Las Vegas
             </h2>
+            <HeadingPhoto heading="The Home Buying Process in Las Vegas" />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Buying a home is one of the most significant financial decisions you'll make. 
               Understanding the process helps reduce stress and ensures you're prepared at each 
@@ -361,7 +363,7 @@ export default function BuyersPage() {
                 every client like family and won't stop until we find the right home for your needs."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, BHHS Nevada Properties | Serving Las Vegas Since 2008
+                — Dr. Jan Duffy, BHHS Nevada Properties | Serving Las Vegas Since 2013
               </cite>
             </div>
           </section>

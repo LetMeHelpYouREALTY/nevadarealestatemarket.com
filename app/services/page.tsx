@@ -21,6 +21,7 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   alternates: { canonical: "https://www.nevadarealestatemarket.com/services" },
@@ -197,7 +198,7 @@ export default function ServicesPage() {
             <div className="flex flex-wrap justify-center gap-6 text-sm">
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                <span>Serving Las Vegas Since 2008</span>
+                <span>Serving Las Vegas Since 2013</span>
               </div>
               <div className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
@@ -215,6 +216,7 @@ export default function ServicesPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
               Core Real Estate Services
             </h2>
+            <HeadingPhoto heading="Core Real Estate Services" />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               These foundational services cover the majority of real estate transactions in Las Vegas. 
               Each service is delivered with the professionalism, resources, and ethical standards 
@@ -385,7 +387,7 @@ export default function ServicesPage() {
                 <div className="text-slate-300 text-sm">Agents Worldwide</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-blue-400 mb-2">Since 2008</div>
+                <div className="text-3xl font-bold text-blue-400 mb-2">Since 2013</div>
                 <div className="text-slate-300 text-sm">Serving Las Vegas</div>
               </div>
               <div>

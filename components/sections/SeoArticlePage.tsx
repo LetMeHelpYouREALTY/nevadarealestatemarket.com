@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { Phone } from "lucide-react";
 import { SitePage } from "@/components/layouts/SitePage";
@@ -25,6 +26,7 @@ type SeoArticlePageProps = {
   intro: string[];
   sections: SeoArticleSection[];
   relatedLinks?: { href: string; label: string }[];
+  children?: ReactNode;
 };
 
 /**
@@ -43,6 +45,7 @@ export function SeoArticlePage({
   intro,
   sections,
   relatedLinks = [],
+  children,
 }: SeoArticlePageProps) {
   return (
     <SitePage
@@ -64,6 +67,8 @@ export function SeoArticlePage({
               {p}
             </p>
           ))}
+
+          {children}
 
           {sections.map((section) => (
             <section key={section.heading} className="mt-10">
