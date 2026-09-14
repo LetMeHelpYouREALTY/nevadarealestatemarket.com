@@ -1,10 +1,6 @@
 import Link from "next/link";
 import { Phone, Navigation, Star, MapPin, Clock } from "lucide-react";
-import {
-  agentInfo,
-  officeInfo,
-  businessHours,
-} from "@/lib/site-config";
+import { agentInfo, officeInfo, businessHours } from "@/lib/site-config";
 
 type GbpEngageBarProps = {
   variant?: "light" | "dark" | "compact";

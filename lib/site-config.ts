@@ -256,10 +256,10 @@ export const neighborhoods = [
       "Master-planned Henderson community with parks, trails, and 55+ options",
     medianPrice: "$495,000",
     highlights: [
-                "Parks, trails, and community amenities",
-                "Resort-style pools",
-                "Walking trails",
-                "New construction",
+      "Parks, trails, and community amenities",
+      "Resort-style pools",
+      "Walking trails",
+      "New construction",
     ],
   },
   {
@@ -268,7 +268,12 @@ export const neighborhoods = [
     description:
       "Master-planned community with parks, trails, and parks and trails",
     medianPrice: "$625,000",
-    highlights: ["Red Rock views", "150+ parks", "Trail network", "Golf courses"],
+    highlights: [
+      "Red Rock views",
+      "150+ parks",
+      "Trail network",
+      "Golf courses",
+    ],
   },
   {
     name: "The Ridges",

@@ -73,7 +73,9 @@ export default function FAQSection({
           <h2 className="mb-4 text-3xl font-bold text-pretty text-slate-900 md:text-4xl lg:text-5xl">
             {title}
           </h2>
-          <p className="mx-auto mb-6 max-w-3xl text-xl text-slate-600">{subtitle}</p>
+          <p className="mx-auto mb-6 max-w-3xl text-xl text-slate-600">
+            {subtitle}
+          </p>
           <HeadingPhoto heading={title} className="mx-auto max-w-3xl" />
         </div>
 
@@ -89,7 +91,9 @@ export default function FAQSection({
                 aria-expanded={openIndex === index}
                 className="flex w-full items-center justify-between px-6 py-4 text-left transition-colors hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
               >
-                <span className="font-semibold text-slate-900 pr-4">{faq.question}</span>
+                <span className="font-semibold text-slate-900 pr-4">
+                  {faq.question}
+                </span>
                 {openIndex === index ? (
                   <ChevronUp className="h-5 w-5 text-blue-600 flex-shrink-0" />
                 ) : (

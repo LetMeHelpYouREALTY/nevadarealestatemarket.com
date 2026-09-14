@@ -112,10 +112,7 @@ export function NevadaMarketLayout({
             <h2 className="mb-6 text-center text-xl font-bold text-pretty">
               Market Snapshot | {marketStats.lastUpdated}
             </h2>
-            <HeadingPhoto
-              heading="Market Snapshot"
-              className="mb-8"
-            />
+            <HeadingPhoto heading="Market Snapshot" className="mb-8" />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {displayStats.map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -152,7 +149,9 @@ export function NevadaMarketLayout({
                       +
                     </span>
                   </summary>
-                  <p className="mt-3 text-slate-600 leading-relaxed">{faq.answer}</p>
+                  <p className="mt-3 text-slate-600 leading-relaxed">
+                    {faq.answer}
+                  </p>
                 </details>
               ))}
             </div>
@@ -165,13 +164,16 @@ export function NevadaMarketLayout({
                   Get Nevada Market Guidance
                 </h2>
                 <p className="text-slate-600 mb-6">
-                  Dr. Jan Duffy provides data-backed market analysis across Clark
-                  County — free consultations, no obligation.
+                  Dr. Jan Duffy provides data-backed market analysis across
+                  Clark County — free consultations, no obligation.
                 </p>
                 <div className="space-y-3 text-sm text-slate-700">
                   <p className="flex items-center gap-2">
                     <Phone className="h-4 w-4 text-blue-600" />
-                    <a href={agentInfo.phoneTel} className="hover:text-blue-600 font-medium">
+                    <a
+                      href={agentInfo.phoneTel}
+                      className="hover:text-blue-600 font-medium"
+                    >
                       {agentInfo.phone}
                     </a>
                   </p>
@@ -211,7 +213,7 @@ export function NevadaMarketLayout({
           </section>
         </div>
       </main>
-<Footer />
+      <Footer />
     </>
   );
 }

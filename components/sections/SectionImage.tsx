@@ -36,7 +36,9 @@ export function SectionImage({
 
   if (bleed) {
     return (
-      <figure className={`relative aspect-[16/9] w-full overflow-hidden rounded-xl bg-slate-200 ${className}`.trim()}>
+      <figure
+        className={`relative aspect-[16/9] w-full overflow-hidden rounded-xl bg-slate-200 ${className}`.trim()}
+      >
         <Image
           src={imageSrc}
           alt={imageAlt}

@@ -1,22 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Standalone output for Docker/Vercel optimization
-  output: 'standalone',
+  output: "standalone",
 
   // Image optimization — local git files + Cloudflare Images CDN
   images: {
-    formats: ['image/avif', 'image/webp'],
+    formats: ["image/avif", "image/webp"],
     // Cap at 1920 — mobile PageSpeed was generating unused 3840w candidates
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 31536000, // 1 year
     dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
+    contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'imagedelivery.net',
+        protocol: "https",
+        hostname: "imagedelivery.net",
       },
     ],
   },
@@ -32,333 +32,335 @@ const nextConfig = {
     return [
       // Legacy WordPress paths — 301 away from Vercel WAF 403s (GSC “access forbidden”)
       {
-        source: '/wp-admin',
-        destination: '/',
+        source: "/wp-admin",
+        destination: "/",
         permanent: true,
       },
       {
-        source: '/wp-admin/:path*',
-        destination: '/',
+        source: "/wp-admin/:path*",
+        destination: "/",
         permanent: true,
       },
       {
-        source: '/wp-content',
-        destination: '/',
+        source: "/wp-content",
+        destination: "/",
         permanent: true,
       },
       {
-        source: '/wp-content/:path*',
-        destination: '/',
+        source: "/wp-content/:path*",
+        destination: "/",
         permanent: true,
       },
       {
-        source: '/wp-includes',
-        destination: '/',
+        source: "/wp-includes",
+        destination: "/",
         permanent: true,
       },
       {
-        source: '/wp-includes/:path*',
-        destination: '/',
+        source: "/wp-includes/:path*",
+        destination: "/",
         permanent: true,
       },
       {
-        source: '/wp-login.php',
-        destination: '/',
+        source: "/wp-login.php",
+        destination: "/",
         permanent: true,
       },
       {
-        source: '/wp-cron.php',
-        destination: '/',
+        source: "/wp-cron.php",
+        destination: "/",
         permanent: true,
       },
       {
-        source: '/xmlrpc.php',
-        destination: '/',
+        source: "/xmlrpc.php",
+        destination: "/",
         permanent: true,
       },
       {
-        source: '/wp-:file.php',
-        destination: '/',
+        source: "/wp-:file.php",
+        destination: "/",
         permanent: true,
       },
       // Alternate Del Webb naming → canonical community URL (GSC duplicate recovery)
       {
-        source: '/north-las-vegas/del-webb-at-north-ranch',
-        destination: '/north-las-vegas/del-webb-north-ranch',
+        source: "/north-las-vegas/del-webb-at-north-ranch",
+        destination: "/north-las-vegas/del-webb-north-ranch",
         permanent: true,
       },
       {
-        source: '/north-las-vegas/del-webb-at-north-ranch/',
-        destination: '/north-las-vegas/del-webb-north-ranch',
+        source: "/north-las-vegas/del-webb-at-north-ranch/",
+        destination: "/north-las-vegas/del-webb-north-ranch",
         permanent: true,
       },
       // Legacy WordPress + soft-404 URLs → live Next.js routes (GSC recovery)
       {
-        source: '/contact-us',
-        destination: '/contact',
+        source: "/contact-us",
+        destination: "/contact",
         permanent: true,
       },
       {
-        source: '/contact-us/',
-        destination: '/contact',
+        source: "/contact-us/",
+        destination: "/contact",
         permanent: true,
       },
       {
-        source: '/news-blog',
-        destination: '/news',
+        source: "/news-blog",
+        destination: "/news",
         permanent: true,
       },
       {
-        source: '/news-blog/',
-        destination: '/news',
+        source: "/news-blog/",
+        destination: "/news",
         permanent: true,
       },
       {
-        source: '/news-blog/page/:page',
-        destination: '/news',
+        source: "/news-blog/page/:page",
+        destination: "/news",
         permanent: true,
       },
       {
-        source: '/news-blog/page/:page/',
-        destination: '/news',
+        source: "/news-blog/page/:page/",
+        destination: "/news",
         permanent: true,
       },
       {
-        source: '/privacy-policy-2',
-        destination: '/privacy-policy',
+        source: "/privacy-policy-2",
+        destination: "/privacy-policy",
         permanent: true,
       },
       {
-        source: '/privacy-policy-2/',
-        destination: '/privacy-policy',
+        source: "/privacy-policy-2/",
+        destination: "/privacy-policy",
         permanent: true,
       },
       {
-        source: '/homepage',
-        destination: '/',
+        source: "/homepage",
+        destination: "/",
         permanent: true,
       },
       {
-        source: '/homepage/',
-        destination: '/',
+        source: "/homepage/",
+        destination: "/",
         permanent: true,
       },
       {
-        source: '/learn-page',
-        destination: '/nevada-buyers-guide',
+        source: "/learn-page",
+        destination: "/nevada-buyers-guide",
         permanent: true,
       },
       {
-        source: '/learn-page/',
-        destination: '/nevada-buyers-guide',
+        source: "/learn-page/",
+        destination: "/nevada-buyers-guide",
         permanent: true,
       },
       {
-        source: '/luxury-homes-henderson-nv',
-        destination: '/your-trusted-henderson-luxury-real-estate-expert',
+        source: "/luxury-homes-henderson-nv",
+        destination: "/your-trusted-henderson-luxury-real-estate-expert",
         permanent: true,
       },
       {
-        source: '/luxury-homes-henderson-nv/',
-        destination: '/your-trusted-henderson-luxury-real-estate-expert',
+        source: "/luxury-homes-henderson-nv/",
+        destination: "/your-trusted-henderson-luxury-real-estate-expert",
         permanent: true,
       },
       {
-        source: '/retiring-soon-why-moving-might-be-the-perfect-next-step',
-        destination: '/sellers/downsizing',
+        source: "/retiring-soon-why-moving-might-be-the-perfect-next-step",
+        destination: "/sellers/downsizing",
         permanent: true,
       },
       {
-        source: '/retiring-soon-why-moving-might-be-the-perfect-next-step/',
-        destination: '/sellers/downsizing',
-        permanent: true,
-      },
-      {
-        source:
-          '/landing-page__trashed-2/william-lyon-homes-las-vegas-now-part-of-taylor-morrison',
-        destination: '/william-lyon-homes-las-vegas-now-part-of-taylor-morrison',
+        source: "/retiring-soon-why-moving-might-be-the-perfect-next-step/",
+        destination: "/sellers/downsizing",
         permanent: true,
       },
       {
         source:
-          '/landing-page__trashed-2/william-lyon-homes-las-vegas-now-part-of-taylor-morrison/',
-        destination: '/william-lyon-homes-las-vegas-now-part-of-taylor-morrison',
+          "/landing-page__trashed-2/william-lyon-homes-las-vegas-now-part-of-taylor-morrison",
+        destination:
+          "/william-lyon-homes-las-vegas-now-part-of-taylor-morrison",
         permanent: true,
       },
       {
-        source: '/landing-page__trashed-2/:path*',
-        destination: '/news',
+        source:
+          "/landing-page__trashed-2/william-lyon-homes-las-vegas-now-part-of-taylor-morrison/",
+        destination:
+          "/william-lyon-homes-las-vegas-now-part-of-taylor-morrison",
         permanent: true,
       },
       {
-        source: '/landing-page',
-        destination: '/',
+        source: "/landing-page__trashed-2/:path*",
+        destination: "/news",
         permanent: true,
       },
       {
-        source: '/landing-page/',
-        destination: '/',
+        source: "/landing-page",
+        destination: "/",
         permanent: true,
       },
       {
-        source: '/dashboard',
-        destination: '/',
+        source: "/landing-page/",
+        destination: "/",
         permanent: true,
       },
       {
-        source: '/dashboard/',
-        destination: '/',
+        source: "/dashboard",
+        destination: "/",
         permanent: true,
       },
       {
-        source: '/category/for-buyers',
-        destination: '/buyers',
+        source: "/dashboard/",
+        destination: "/",
         permanent: true,
       },
       {
-        source: '/category/for-buyers/',
-        destination: '/buyers',
+        source: "/category/for-buyers",
+        destination: "/buyers",
         permanent: true,
       },
       {
-        source: '/category/for-buyers/page/:page',
-        destination: '/buyers',
+        source: "/category/for-buyers/",
+        destination: "/buyers",
         permanent: true,
       },
       {
-        source: '/category/for-buyers/page/:page/',
-        destination: '/buyers',
+        source: "/category/for-buyers/page/:page",
+        destination: "/buyers",
+        permanent: true,
+      },
+      {
+        source: "/category/for-buyers/page/:page/",
+        destination: "/buyers",
         permanent: true,
       },
       // WordPress category archives → buyers/news hubs (clears GSC noindex-on-404)
       {
-        source: '/category/:slug',
-        destination: '/news',
+        source: "/category/:slug",
+        destination: "/news",
         permanent: true,
       },
       {
-        source: '/category/:slug/',
-        destination: '/news',
+        source: "/category/:slug/",
+        destination: "/news",
         permanent: true,
       },
       {
-        source: '/category/:slug/page/:page',
-        destination: '/news',
+        source: "/category/:slug/page/:page",
+        destination: "/news",
         permanent: true,
       },
       {
-        source: '/category/:slug/page/:page/',
-        destination: '/news',
+        source: "/category/:slug/page/:page/",
+        destination: "/news",
         permanent: true,
       },
       // WordPress author archives → About (GSC “Excluded by noindex” on 404)
       {
-        source: '/author/drduffybhhsnv-com',
-        destination: '/about',
+        source: "/author/drduffybhhsnv-com",
+        destination: "/about",
         permanent: true,
       },
       {
-        source: '/author/drduffybhhsnv-com/',
-        destination: '/about',
+        source: "/author/drduffybhhsnv-com/",
+        destination: "/about",
         permanent: true,
       },
       {
-        source: '/author/drduffyblog',
-        destination: '/about',
+        source: "/author/drduffyblog",
+        destination: "/about",
         permanent: true,
       },
       {
-        source: '/author/drduffyblog/',
-        destination: '/about',
+        source: "/author/drduffyblog/",
+        destination: "/about",
         permanent: true,
       },
       {
-        source: '/author/:slug',
-        destination: '/about',
+        source: "/author/:slug",
+        destination: "/about",
         permanent: true,
       },
       {
-        source: '/author/:slug/',
-        destination: '/about',
+        source: "/author/:slug/",
+        destination: "/about",
         permanent: true,
       },
       {
-        source: '/tag/:slug',
-        destination: '/news',
+        source: "/tag/:slug",
+        destination: "/news",
         permanent: true,
       },
       {
-        source: '/tag/:slug/',
-        destination: '/news',
+        source: "/tag/:slug/",
+        destination: "/news",
         permanent: true,
       },
       {
-        source: '/the-secret-to-being-a-fashionable-teen',
-        destination: '/news',
+        source: "/the-secret-to-being-a-fashionable-teen",
+        destination: "/news",
         permanent: true,
       },
       {
-        source: '/the-secret-to-being-a-fashionable-teen/',
-        destination: '/news',
+        source: "/the-secret-to-being-a-fashionable-teen/",
+        destination: "/news",
         permanent: true,
       },
       {
-        source: '/cdn-cgi/l/email-protection',
-        destination: '/contact',
+        source: "/cdn-cgi/l/email-protection",
+        destination: "/contact",
         permanent: true,
       },
       {
-        source: '/cdn-cgi/:path*',
-        destination: '/',
+        source: "/cdn-cgi/:path*",
+        destination: "/",
         permanent: true,
       },
       {
-        source: '/:path*',
+        source: "/:path*",
         has: [
           {
-            type: 'host',
-            value: 'nevadarealestatemarket.com',
+            type: "host",
+            value: "nevadarealestatemarket.com",
           },
         ],
-        destination: 'https://www.nevadarealestatemarket.com/:path*',
+        destination: "https://www.nevadarealestatemarket.com/:path*",
         permanent: true,
       },
       {
-        source: '/:path*',
+        source: "/:path*",
         has: [
           {
-            type: 'host',
-            value: 'heyberkshire.com',
+            type: "host",
+            value: "heyberkshire.com",
           },
         ],
-        destination: 'https://www.heyberkshire.com/:path*',
+        destination: "https://www.heyberkshire.com/:path*",
         permanent: true,
       },
-    ]
+    ];
   },
 
   // Python API rewrites
   rewrites: async () => {
     return [
       {
-        source: '/api/:path*',
+        source: "/api/:path*",
         destination:
-          process.env.NODE_ENV === 'development'
-            ? 'http://127.0.0.1:5328/api/:path*'
-            : '/api/',
+          process.env.NODE_ENV === "development"
+            ? "http://127.0.0.1:5328/api/:path*"
+            : "/api/",
       },
-    ]
+    ];
   },
 
   // Enhanced security headers including CSP for RealScout widget
   async headers() {
     return [
       {
-        source: '/(.*)',
+        source: "/(.*)",
         headers: [
           // CSP for RealScout widget
           {
-            key: 'Content-Security-Policy',
+            key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://em.realscout.com https://www.realscout.com https://assets.calendly.com https://widgetbe.com https://www.googletagmanager.com https://www.google-analytics.com",
@@ -368,53 +370,53 @@ const nextConfig = {
               "connect-src 'self' https://em.realscout.com https://www.realscout.com https://openrouter.ai https://api.openai.com https://calendly.com https://widgetbe.com https://www.google-analytics.com https://analytics.google.com https://*.ingest.sentry.io",
               "frame-src 'self' https://em.realscout.com https://www.realscout.com https://calendly.com https://assets.calendly.com https://www.google.com https://maps.google.com https://*.google.com https://widgetbe.com",
               "worker-src 'self' blob:",
-            ].join('; '),
+            ].join("; "),
           },
           // Additional security headers
           {
-            key: 'X-DNS-Prefetch-Control',
-            value: 'on'
+            key: "X-DNS-Prefetch-Control",
+            value: "on",
           },
           {
-            key: 'Strict-Transport-Security',
-            value: 'max-age=63072000; includeSubDomains; preload'
+            key: "Strict-Transport-Security",
+            value: "max-age=63072000; includeSubDomains; preload",
           },
           {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff'
+            key: "X-Content-Type-Options",
+            value: "nosniff",
           },
           {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN'
+            key: "X-Frame-Options",
+            value: "SAMEORIGIN",
           },
           {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin'
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
           },
           {
-            key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()'
-          }
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=()",
+          },
         ],
       },
-    ]
+    ];
   },
 
   // Bundle analyzer (when ANALYZE=true)
   webpack: (config, { isServer }) => {
-    if (process.env.ANALYZE === 'true' && !isServer) {
-      const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+    if (process.env.ANALYZE === "true" && !isServer) {
+      const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
       config.plugins.push(
         new BundleAnalyzerPlugin({
-          analyzerMode: 'static',
-          reportFilename: './analyze.html',
+          analyzerMode: "static",
+          reportFilename: "./analyze.html",
           openAnalyzer: false,
-        })
-      )
+        }),
+      );
     }
-    return config
+    return config;
   },
-}
+};
 
 // Injected content via Sentry wizard below
 
@@ -449,5 +451,5 @@ module.exports = withSentryConfig(
 
     // Automatically tree-shake Sentry logger statements to reduce bundle size
     disableLogger: true,
-  }
+  },
 );

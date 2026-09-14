@@ -32,11 +32,11 @@ CDN helper: `siteImage()` in `lib/images/src.ts`.
 
 ## Specs
 
-| Folder | Size | Format | Notes |
-|--------|------|--------|-------|
-| hero/ | 1280×720 | JPG | 16:9, edge-to-edge |
-| neighborhoods/ | 1280×720 | JPG | Community context |
-| sections/ | 4:3 or 16:9 | JPG | Heading-matched |
-| agent/ | portrait | JPG | Real likeness only |
+| Folder         | Size        | Format | Notes              |
+| -------------- | ----------- | ------ | ------------------ |
+| hero/          | 1280×720    | JPG    | 16:9, edge-to-edge |
+| neighborhoods/ | 1280×720    | JPG    | Community context  |
+| sections/      | 4:3 or 16:9 | JPG    | Heading-matched    |
+| agent/         | portrait    | JPG    | Real likeness only |
 
 Always include location/service language in `alt` text.

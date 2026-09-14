@@ -63,7 +63,10 @@ export function SeoArticlePage({
       <main className="pb-16">
         <article className="container mx-auto px-4 max-w-3xl pt-10">
           {intro.map((p) => (
-            <p key={p.slice(0, 48)} className="text-lg text-slate-700 mb-4 leading-relaxed">
+            <p
+              key={p.slice(0, 48)}
+              className="text-lg text-slate-700 mb-4 leading-relaxed"
+            >
               {p}
             </p>
           ))}
@@ -77,7 +80,10 @@ export function SeoArticlePage({
               </h2>
               <HeadingPhoto heading={section.heading} />
               {section.body.map((p) => (
-                <p key={p.slice(0, 48)} className="text-slate-700 mb-3 leading-relaxed">
+                <p
+                  key={p.slice(0, 48)}
+                  className="text-slate-700 mb-3 leading-relaxed"
+                >
                   {p}
                 </p>
               ))}
@@ -98,9 +104,16 @@ export function SeoArticlePage({
               </h2>
               <div className="space-y-4">
                 {faqs.map((faq) => (
-                  <div key={faq.question} className="border-b border-slate-200 pb-4">
-                    <h3 className="font-semibold text-slate-900 mb-2">{faq.question}</h3>
-                    <p className="text-slate-700 leading-relaxed">{faq.answer}</p>
+                  <div
+                    key={faq.question}
+                    className="border-b border-slate-200 pb-4"
+                  >
+                    <h3 className="font-semibold text-slate-900 mb-2">
+                      {faq.question}
+                    </h3>
+                    <p className="text-slate-700 leading-relaxed">
+                      {faq.answer}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -109,11 +122,16 @@ export function SeoArticlePage({
 
           {relatedLinks.length > 0 && (
             <section className="mt-12">
-              <h2 className="text-xl font-bold text-slate-900 mb-4">Related guides</h2>
+              <h2 className="text-xl font-bold text-slate-900 mb-4">
+                Related guides
+              </h2>
               <ul className="space-y-2">
                 {relatedLinks.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href} className="text-blue-700 hover:underline font-medium">
+                    <Link
+                      href={link.href}
+                      className="text-blue-700 hover:underline font-medium"
+                    >
                       {link.label}
                     </Link>
                   </li>

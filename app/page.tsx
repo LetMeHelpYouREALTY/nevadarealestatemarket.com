@@ -46,7 +46,6 @@ export const metadata: Metadata = buildPageMetadata({
 });
 
 export default function Home() {
-
   const homepageFaqs = [
     ...commonFAQs.general.slice(0, 3),
     {
@@ -140,8 +139,12 @@ export default function Home() {
               ].map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="border-t border-blue-100 pt-6">
                   <Icon className="h-7 w-7 text-blue-600 mb-3" aria-hidden />
-                  <h3 className="font-bold text-lg mb-2 text-slate-900">{title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">{desc}</p>
+                  <h3 className="font-bold text-lg mb-2 text-slate-900">
+                    {title}
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    {desc}
+                  </p>
                 </div>
               ))}
             </div>
@@ -155,7 +158,10 @@ export default function Home() {
               <h2 className="mb-3 text-3xl font-bold tracking-tight text-pretty text-white">
                 {config.neighborhood} snapshot
               </h2>
-              <HeadingPhoto heading={`${config.neighborhood} snapshot`} className="mb-6" />
+              <HeadingPhoto
+                heading={`${config.neighborhood} snapshot`}
+                className="mb-6"
+              />
               <p
                 className="speakable-summary text-slate-300 text-sm md:text-base leading-relaxed"
                 data-speakable
@@ -222,7 +228,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-<WhyChooseUs />
+        <WhyChooseUs />
         <FeaturedProperties />
 
         <section className="section-shell bg-white">
@@ -232,9 +238,9 @@ export default function Home() {
             </h2>
             <HeadingPhoto heading="Visit the Henderson office" />
             <p className="text-slate-600 mb-6 max-w-3xl">
-              {officeInfo.name} — {officeInfo.address.full}. Open daily 6:00 AM –
-              9:00 PM. Pin this office on Google Maps, then call {agentInfo.phone}{" "}
-              for a showing or market consult.
+              {officeInfo.name} — {officeInfo.address.full}. Open daily 6:00 AM
+              – 9:00 PM. Pin this office on Google Maps, then call{" "}
+              {agentInfo.phone} for a showing or market consult.
             </p>
             <GoogleMapEmbed location={getOfficeLocation()} height={360} />
           </div>

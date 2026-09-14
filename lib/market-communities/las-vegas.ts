@@ -14,7 +14,12 @@ export const lasVegasCommunities: MarketCommunity[] = [
       "Mountain recreation access",
       "Mix of resale & new construction",
     ],
-    bestFor: ["Move-up buyers", "CA equity buyers", "Outdoor lifestyle buyers", "Buyers wanting mountain access"],
+    bestFor: [
+      "Move-up buyers",
+      "CA equity buyers",
+      "Outdoor lifestyle buyers",
+      "Buyers wanting mountain access",
+    ],
     address: "Centennial Pkwy",
     zip: "89149",
   },
@@ -55,7 +60,12 @@ export const lasVegasCommunities: MarketCommunity[] = [
       "215 Beltway access",
       "Value-priced guard-gate",
     ],
-    bestFor: ["Golf buyers", "First-time luxury buyers", "Move-up buyers", "Investors"],
+    bestFor: [
+      "Golf buyers",
+      "First-time luxury buyers",
+      "Move-up buyers",
+      "Investors",
+    ],
     address: "Rhodes Ranch Pkwy",
     zip: "89148",
   },
@@ -73,7 +83,12 @@ export const lasVegasCommunities: MarketCommunity[] = [
       "Northwest Las Vegas location",
       "Strong resale history",
     ],
-    bestFor: ["Move-up buyers", "Outdoor lifestyle buyers", "CA equity buyers", "Golf-community buyers"],
+    bestFor: [
+      "Move-up buyers",
+      "Outdoor lifestyle buyers",
+      "CA equity buyers",
+      "Golf-community buyers",
+    ],
     address: "Silverstone Ranch Dr",
     zip: "89131",
   },
@@ -91,7 +106,12 @@ export const lasVegasCommunities: MarketCommunity[] = [
       "Trail system access",
       "Between Centennial Hills & Summerlin",
     ],
-    bestFor: ["Outdoor lifestyle buyers", "Value-focused buyers", "Move-up buyers", "Buyers wanting larger lots"],
+    bestFor: [
+      "Outdoor lifestyle buyers",
+      "Value-focused buyers",
+      "Move-up buyers",
+      "Buyers wanting larger lots",
+    ],
     address: "Lone Mountain Rd",
     zip: "89129",
   },
@@ -120,6 +140,8 @@ export const lasVegasCommunities: MarketCommunity[] = [
   },
 ];
 
-export function getLasVegasCommunity(slug: string): MarketCommunity | undefined {
+export function getLasVegasCommunity(
+  slug: string,
+): MarketCommunity | undefined {
   return lasVegasCommunities.find((c) => c.slug === slug);
 }

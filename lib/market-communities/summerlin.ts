@@ -15,7 +15,12 @@ export const summerlinCommunities: MarketCommunity[] = [
       "Luxury finishes standard",
       "Close to Downtown Summerlin",
     ],
-    bestFor: ["Luxury buyers", "Privacy seekers", "Golf buyers", "CA & WA equity buyers"],
+    bestFor: [
+      "Luxury buyers",
+      "Privacy seekers",
+      "Golf buyers",
+      "CA & WA equity buyers",
+    ],
     address: "The Ridges",
     zip: "89135",
   },
@@ -56,7 +61,12 @@ export const summerlinCommunities: MarketCommunity[] = [
       "Patio homes to custom estates",
       "Adjacent to 197,000-acre preserve",
     ],
-    bestFor: ["Golf buyers", "Luxury move-up buyers", "CA equity buyers", "Active lifestyle buyers"],
+    bestFor: [
+      "Golf buyers",
+      "Luxury move-up buyers",
+      "CA equity buyers",
+      "Active lifestyle buyers",
+    ],
     address: "Red Rock Country Club Dr",
     zip: "89135",
   },
@@ -120,7 +130,12 @@ export const summerlinCommunities: MarketCommunity[] = [
       "Mature landscaping",
       "No active construction",
     ],
-    bestFor: ["Luxury resale buyers", "Privacy seekers", "Move-up buyers", "Executives relocating"],
+    bestFor: [
+      "Luxury resale buyers",
+      "Privacy seekers",
+      "Move-up buyers",
+      "Executives relocating",
+    ],
     address: "The Vistas",
     zip: "89138",
   },
@@ -138,12 +153,19 @@ export const summerlinCommunities: MarketCommunity[] = [
       "US-95 & 215 access",
       "Mountain recreation nearby",
     ],
-    bestFor: ["New construction buyers", "First-time luxury buyers", "CA equity buyers", "Buyers wanting park amenities"],
+    bestFor: [
+      "New construction buyers",
+      "First-time luxury buyers",
+      "CA equity buyers",
+      "Buyers wanting park amenities",
+    ],
     address: "Skye Canyon Park Dr",
     zip: "89166",
   },
 ];
 
-export function getSummerlinCommunity(slug: string): MarketCommunity | undefined {
+export function getSummerlinCommunity(
+  slug: string,
+): MarketCommunity | undefined {
   return summerlinCommunities.find((c) => c.slug === slug);
 }

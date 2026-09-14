@@ -23,7 +23,11 @@ export default function cloudflareImageLoader({
   const accountHash = process.env.NEXT_PUBLIC_CF_IMAGES_HASH;
   const useFlexible = process.env.NEXT_PUBLIC_CF_IMAGES_FLEXIBLE === "true";
 
-  if (accountHash && !src.startsWith("http://") && !src.startsWith("https://")) {
+  if (
+    accountHash &&
+    !src.startsWith("http://") &&
+    !src.startsWith("https://")
+  ) {
     const imageId = localPathToImageId(src);
     if (useFlexible) {
       return `https://imagedelivery.net/${accountHash}/${imageId}/w=${width},q=${quality || 85}`;

@@ -1,4 +1,12 @@
-import { Shield, TrendingUp, Users, Award, Clock, Home, Phone } from "lucide-react";
+import {
+  Shield,
+  TrendingUp,
+  Users,
+  Award,
+  Clock,
+  Home,
+  Phone,
+} from "lucide-react";
 import { AgentPhoto } from "@/components/sections/AgentPhoto";
 import { HeadingPhoto } from "@/components/sections/SectionImage";
 import { agentInfo, agentStats } from "@/lib/site-config";
@@ -18,7 +26,8 @@ const features = [
   {
     icon: Users,
     title: "Personalized Service",
-    description: "Dedicated attention to every client with customized solutions.",
+    description:
+      "Dedicated attention to every client with customized solutions.",
   },
   {
     icon: Award,
@@ -80,7 +89,9 @@ export default function WhyChooseUs() {
                 <div className="mb-4 rounded-full bg-blue-100 p-4">
                   <Icon className="h-8 w-8 text-blue-600" aria-hidden />
                 </div>
-                <h3 className="mb-2 text-xl font-bold text-slate-900">{feature.title}</h3>
+                <h3 className="mb-2 text-xl font-bold text-slate-900">
+                  {feature.title}
+                </h3>
                 <p className="text-slate-600">{feature.description}</p>
               </div>
             );

@@ -4,7 +4,8 @@ export const northLasVegasCommunities: MarketCommunity[] = [
   {
     slug: "aliante",
     name: "Aliante",
-    tagline: "Master-planned community with nature preserve and resort amenities",
+    tagline:
+      "Master-planned community with nature preserve and resort amenities",
     priceRange: "$350K – $750K",
     description: `Aliante is North Las Vegas's most complete master-planned community, built around a 20-acre nature discovery park and the Aliante Golf Club. The community features resort-style pools, a movie theater, and one of the most walkable park systems in Clark County. Sun City Aliante — a separate mid-2000s Del Webb 55+ neighborhood inside Aliante — serves age-qualified buyers (distinct from newer Del Webb at North Ranch near Centennial and Losee). Homes range from attached condos to single-family estates, with strong resale demand driven by amenities and I-215 Beltway access.`,
     highlights: [
@@ -15,14 +16,20 @@ export const northLasVegasCommunities: MarketCommunity[] = [
       "I-215 Beltway access",
       "Multiple price tiers",
     ],
-    bestFor: ["55+ buyers", "First-time buyers", "Move-up buyers", "Golf and trail buyers"],
+    bestFor: [
+      "55+ buyers",
+      "First-time buyers",
+      "Move-up buyers",
+      "Golf and trail buyers",
+    ],
     address: "Aliante Pkwy",
     zip: "89084",
   },
   {
     slug: "del-webb-north-ranch",
     name: "Del Webb at North Ranch",
-    tagline: "Newer Del Webb 55+ community near Centennial & Losee — not Sun City Aliante",
+    tagline:
+      "Newer Del Webb 55+ community near Centennial & Losee — not Sun City Aliante",
     priceRange: "$400K – $600K",
     description: `Del Webb at North Ranch (also called Del Webb North Ranch) is a newer age-qualified community in North Las Vegas near Centennial Parkway and Losee Road. It is separate from Sun City Aliante: North Ranch launched around 2020 with modern single-story plans and a compact amenity set (clubhouse, fitness, resort pool, pickleball, bocce), while Sun City Aliante is a mid-2000s Del Webb community of ~2,000 homes inside the Aliante master plan. Buyers often choose North Ranch for newer construction and a lower entry point than Summerlin 55+ options.`,
     highlights: [
@@ -33,7 +40,12 @@ export const northLasVegasCommunities: MarketCommunity[] = [
       "Clubhouse, pool, pickleball, bocce",
       "Value vs. Summerlin 55+",
     ],
-    bestFor: ["55+ active adult buyers", "Downsizers", "Value-focused 55+ buyers", "CA retirees"],
+    bestFor: [
+      "55+ active adult buyers",
+      "Downsizers",
+      "Value-focused 55+ buyers",
+      "CA retirees",
+    ],
     address: "Centennial Pkwy & Losee Rd",
     zip: "89084",
   },
@@ -74,7 +86,12 @@ export const northLasVegasCommunities: MarketCommunity[] = [
       "I-15 & US-95 access",
       "Established neighborhood feel",
     ],
-    bestFor: ["First-time buyers", "Investors", "Military families", "Value-focused buyers"],
+    bestFor: [
+      "First-time buyers",
+      "Investors",
+      "Military families",
+      "Value-focused buyers",
+    ],
     address: "Civic Center Dr",
     zip: "89030",
   },
@@ -92,12 +109,19 @@ export const northLasVegasCommunities: MarketCommunity[] = [
       "215 Beltway proximity",
       "Strong appreciation corridor",
     ],
-    bestFor: ["First-time luxury buyers", "CA equity buyers", "New construction buyers", "Buyers wanting park amenities"],
+    bestFor: [
+      "First-time luxury buyers",
+      "CA equity buyers",
+      "New construction buyers",
+      "Buyers wanting park amenities",
+    ],
     address: "Villages Tule Springs Dr",
     zip: "89143",
   },
 ];
 
-export function getNorthLasVegasCommunity(slug: string): MarketCommunity | undefined {
+export function getNorthLasVegasCommunity(
+  slug: string,
+): MarketCommunity | undefined {
   return northLasVegasCommunities.find((c) => c.slug === slug);
 }

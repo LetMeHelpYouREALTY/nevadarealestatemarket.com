@@ -101,7 +101,9 @@ export default function ContactPage() {
             <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               Berkshire Hathaway HomeServices Nevada Properties
             </div>
-            <h2 className="sr-only">Contact Dr. Jan Duffy — Henderson Luxury Real Estate</h2>
+            <h2 className="sr-only">
+              Contact Dr. Jan Duffy — Henderson Luxury Real Estate
+            </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               Questions about Henderson luxury homes and estates? Your{" "}
               <strong>Berkshire Hathaway HomeServices</strong> expert is here to
@@ -369,7 +371,7 @@ export default function ContactPage() {
           Last Updated: January 2026
         </div>
       </main>
-<Footer />
+      <Footer />
     </>
   );
 }

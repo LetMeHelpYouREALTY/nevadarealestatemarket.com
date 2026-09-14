@@ -34,7 +34,9 @@ import { getOfficeLocation } from "@/lib/map-locations";
 import { GbpPostsFeed } from "@/components/gbp/GbpPostsFeed";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "https://www.nevadarealestatemarket.com/google-business" },
+  alternates: {
+    canonical: "https://www.nevadarealestatemarket.com/google-business",
+  },
   title: "Henderson MacDonald Highlands Real Estate | Dr. Jan Duffy, REALTOR®",
   description:
     "Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada, specializes in luxury homes and estates in Henderson. Serving Lake Las Vegas, MacDonald Ranch, Green Valley Ranch, Seven Hills, and Anthem. Call (702) 500-1955.",
@@ -184,7 +186,8 @@ export default function GoogleBusinessPage() {
                   "Sunday",
                 ].map((day) => (
                   <div key={day}>
-                    <span className="font-medium">{day}:</span> 6:00 AM – 9:00 PM
+                    <span className="font-medium">{day}:</span> 6:00 AM – 9:00
+                    PM
                   </div>
                 ))}
               </div>

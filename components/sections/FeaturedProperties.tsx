@@ -59,7 +59,9 @@ const CommunityCardView = ({ community }: { community: CommunityCard }) => (
       </div>
     </div>
     <div className="p-6">
-      <h3 className="mb-1 text-xl font-bold text-slate-900">{community.name}</h3>
+      <h3 className="mb-1 text-xl font-bold text-slate-900">
+        {community.name}
+      </h3>
       <p className="mb-3 flex items-center gap-1 text-sm text-slate-600">
         <MapPin className="h-4 w-4 text-blue-600" aria-hidden />
         {community.location}
@@ -84,8 +86,9 @@ export default function FeaturedProperties() {
               Explore Valley Communities
             </h2>
             <p className="text-lg text-slate-600">
-              Live MLS search sits under every hero. These area hubs pair current
-              medians with neighborhood photography — not placeholder listings.
+              Live MLS search sits under every hero. These area hubs pair
+              current medians with neighborhood photography — not placeholder
+              listings.
             </p>
           </div>
           <Button asChild variant="outline" className="mt-2 md:mt-0">

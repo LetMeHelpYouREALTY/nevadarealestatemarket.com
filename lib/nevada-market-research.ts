@@ -67,11 +67,31 @@ export const clarkCountyDemographics = {
   countySeat: "Las Vegas",
   medianAge: "38.5 years",
   cities: [
-    { name: "Las Vegas", population: "678,900+", role: "County seat & tourism hub" },
-    { name: "Henderson", population: "350,000+", role: "Family & luxury corridor" },
-    { name: "North Las Vegas", population: "294,000+", role: "Value & new construction" },
-    { name: "Boulder City", population: "15,000+", role: "Small-town, no gaming" },
-    { name: "Mesquite", population: "23,600+", role: "Northern county gateway" },
+    {
+      name: "Las Vegas",
+      population: "678,900+",
+      role: "County seat & tourism hub",
+    },
+    {
+      name: "Henderson",
+      population: "350,000+",
+      role: "Family & luxury corridor",
+    },
+    {
+      name: "North Las Vegas",
+      population: "294,000+",
+      role: "Value & new construction",
+    },
+    {
+      name: "Boulder City",
+      population: "15,000+",
+      role: "Small-town, no gaming",
+    },
+    {
+      name: "Mesquite",
+      population: "23,600+",
+      role: "Northern county gateway",
+    },
   ],
   demographics: [
     "Hispanic or Latino residents: ~33% (above U.S. average)",
@@ -85,7 +105,11 @@ export const economicDriversDetail = [
   {
     title: "Tourism & Hospitality",
     body: "Las Vegas Strip resorts, conventions, and entertainment employ hundreds of thousands and anchor Clark County's service economy. Stable visitation supports rental demand and move-up buying across the valley.",
-    entities: ["Las Vegas Strip", "Clark County", "Las Vegas Convention Center"],
+    entities: [
+      "Las Vegas Strip",
+      "Clark County",
+      "Las Vegas Convention Center",
+    ],
   },
   {
     title: "Data Centers & Technology",
@@ -108,7 +132,8 @@ export const valleyMarketSignals = {
   mortgageRateRange: "6.3% – 6.9% (30-year fixed, early 2026)",
   listToSaleRatio: "~97–98%",
   sellerConcessions: "~31% of closings include concessions (up from 2022 lows)",
-  inventoryTrend: "Valley-wide active listings rebuilt to 8,000+ — up from 2022 cycle lows",
+  inventoryTrend:
+    "Valley-wide active listings rebuilt to 8,000+ — up from 2022 cycle lows",
   priceTrend: "1–4% annual appreciation forecast; submarkets vary widely",
   buyerLeverage:
     "Balanced market: more inventory, longer DOM, and price reductions on overpriced listings",
@@ -201,7 +226,8 @@ export const taxRelocationFacts = [
 export const expandedMarketFaqs: Record<string, FAQItem[]> = {
   hub: [
     {
-      question: "What is the median home price in the Las Vegas Valley in 2026?",
+      question:
+        "What is the median home price in the Las Vegas Valley in 2026?",
       answer: `Las Vegas Realtors data shows the valley-wide median single-family sale price near ${marketStats.lasVegas.medianPriceFormatted} in early 2026, with year-over-year appreciation in the 2–4% range. Condo and townhome medians run lower — near $298,000–$375,000 depending on the month.`,
     },
     {
@@ -229,11 +255,13 @@ export const expandedMarketFaqs: Record<string, FAQItem[]> = {
   clarkCounty: [
     {
       question: "What is the population of Clark County Nevada?",
-      answer: "Clark County had approximately 2.4 million residents in 2024 per U.S. Census estimates — the 11th-largest county in the United States and home to 73% of Nevada's population.",
+      answer:
+        "Clark County had approximately 2.4 million residents in 2024 per U.S. Census estimates — the 11th-largest county in the United States and home to 73% of Nevada's population.",
     },
     {
       question: "What cities are in Clark County Nevada?",
-      answer: "Major incorporated cities include Las Vegas (county seat), Henderson, North Las Vegas, Boulder City, and Mesquite. Unincorporated communities include Paradise, Spring Valley, and Enterprise.",
+      answer:
+        "Major incorporated cities include Las Vegas (county seat), Henderson, North Las Vegas, Boulder City, and Mesquite. Unincorporated communities include Paradise, Spring Valley, and Enterprise.",
     },
     {
       question: "Why is Clark County growing?",
@@ -315,14 +343,38 @@ export function getValleyMarketDataset() {
     description: `Clark County Nevada residential market snapshot — ${marketStats.lastUpdated}`,
     dateModified: "2026-06-11",
     variables: [
-      { name: "Median Sale Price (SFR)", value: marketStats.lasVegas.medianPriceFormatted },
-      { name: "Year-over-Year Change", value: marketStats.lasVegas.yearOverYearChange },
-      { name: "Days on Market", value: String(marketStats.lasVegas.daysOnMarket) },
-      { name: "Months of Supply", value: String(marketStats.lasVegas.inventoryMonths) },
-      { name: "Active Listings (Valley)", value: marketStats.lasVegas.activeListings.toLocaleString() },
-      { name: "Henderson Median", value: marketStats.henderson.medianPriceFormatted },
-      { name: "Summerlin Median", value: marketStats.summerlin.medianPriceFormatted },
-      { name: "Clark County Population", value: clarkCountyDemographics.population2024 },
+      {
+        name: "Median Sale Price (SFR)",
+        value: marketStats.lasVegas.medianPriceFormatted,
+      },
+      {
+        name: "Year-over-Year Change",
+        value: marketStats.lasVegas.yearOverYearChange,
+      },
+      {
+        name: "Days on Market",
+        value: String(marketStats.lasVegas.daysOnMarket),
+      },
+      {
+        name: "Months of Supply",
+        value: String(marketStats.lasVegas.inventoryMonths),
+      },
+      {
+        name: "Active Listings (Valley)",
+        value: marketStats.lasVegas.activeListings.toLocaleString(),
+      },
+      {
+        name: "Henderson Median",
+        value: marketStats.henderson.medianPriceFormatted,
+      },
+      {
+        name: "Summerlin Median",
+        value: marketStats.summerlin.medianPriceFormatted,
+      },
+      {
+        name: "Clark County Population",
+        value: clarkCountyDemographics.population2024,
+      },
     ],
   };
 }

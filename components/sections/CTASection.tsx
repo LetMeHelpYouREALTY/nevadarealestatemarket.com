@@ -26,7 +26,11 @@ export default function CTASection() {
           </p>
 
           <div className="mb-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button asChild size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
+            <Button
+              asChild
+              size="lg"
+              className="bg-white text-blue-600 hover:bg-blue-50"
+            >
               <a
                 href="http://drjanduffy.realscout.com/"
                 target="_blank"

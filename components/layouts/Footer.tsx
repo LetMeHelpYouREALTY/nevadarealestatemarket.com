@@ -206,7 +206,9 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-bold text-lg mb-4 text-white">Real Estate Services</h3>
+            <h3 className="font-bold text-lg mb-4 text-white">
+              Real Estate Services
+            </h3>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -301,7 +303,9 @@ export default function Footer() {
 
           {/* Contact Info - NAP (Name, Address, Phone) */}
           <div>
-            <h3 className="font-bold text-lg mb-4 text-white">Contact Dr. Jan Duffy</h3>
+            <h3 className="font-bold text-lg mb-4 text-white">
+              Contact Dr. Jan Duffy
+            </h3>
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0 mt-0.5" />

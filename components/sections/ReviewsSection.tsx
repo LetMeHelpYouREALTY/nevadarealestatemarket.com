@@ -124,7 +124,9 @@ export default function ReviewsSection({
                     />
                   ) : (
                     <div className="w-full h-full bg-slate-200 flex items-center justify-center">
-                      <span className="text-slate-400 text-sm">{review.name[0]}</span>
+                      <span className="text-slate-400 text-sm">
+                        {review.name[0]}
+                      </span>
                     </div>
                   )}
                 </div>
@@ -134,12 +136,17 @@ export default function ReviewsSection({
                 </div>
               </div>
 
-              <div className="flex items-center mb-4" aria-label={`${review.rating} out of 5 stars`}>
+              <div
+                className="flex items-center mb-4"
+                aria-label={`${review.rating} out of 5 stars`}
+              >
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
                     className={`h-5 w-5 ${
-                      i < review.rating ? "text-yellow-400 fill-yellow-400" : "text-slate-300"
+                      i < review.rating
+                        ? "text-yellow-400 fill-yellow-400"
+                        : "text-slate-300"
                     }`}
                     aria-hidden
                   />
@@ -147,8 +154,13 @@ export default function ReviewsSection({
               </div>
 
               <div className="relative">
-                <Quote className="absolute -top-2 -left-2 h-8 w-8 text-blue-100" aria-hidden />
-                <p className="text-slate-700 relative z-10 pl-4">{review.text}</p>
+                <Quote
+                  className="absolute -top-2 -left-2 h-8 w-8 text-blue-100"
+                  aria-hidden
+                />
+                <p className="text-slate-700 relative z-10 pl-4">
+                  {review.text}
+                </p>
               </div>
             </div>
           ))}

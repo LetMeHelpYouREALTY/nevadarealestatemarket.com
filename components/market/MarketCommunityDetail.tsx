@@ -89,27 +89,44 @@ export function MarketCommunityDetail({
 
         <section className="px-4 py-16">
           <div className="mx-auto max-w-5xl">
-            <p className="mb-8 text-lg leading-relaxed text-gray-700" data-speakable>
+            <p
+              className="mb-8 text-lg leading-relaxed text-gray-700"
+              data-speakable
+            >
               {community.description}
             </p>
-            <HeadingPhoto heading={community.name} src={communityHero.src} alt={communityHero.alt} />
+            <HeadingPhoto
+              heading={community.name}
+              src={communityHero.src}
+              alt={communityHero.alt}
+            />
 
             <div className="mb-10 grid gap-8 md:grid-cols-2">
               <div>
-                <h2 className="mb-4 text-xl font-bold text-blue-950">Highlights</h2>
+                <h2 className="mb-4 text-xl font-bold text-blue-950">
+                  Highlights
+                </h2>
                 <ul className="space-y-2">
                   {community.highlights.map((highlight) => (
-                    <li key={highlight} className="flex items-center gap-2 text-gray-700">
+                    <li
+                      key={highlight}
+                      className="flex items-center gap-2 text-gray-700"
+                    >
                       <span className="text-yellow-500">✦</span> {highlight}
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <h2 className="mb-4 text-xl font-bold text-blue-950">Best For</h2>
+                <h2 className="mb-4 text-xl font-bold text-blue-950">
+                  Best For
+                </h2>
                 <ul className="space-y-2">
                   {community.bestFor.map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-gray-700">
+                    <li
+                      key={item}
+                      className="flex items-center gap-2 text-gray-700"
+                    >
                       <span className="text-blue-600">•</span> {item}
                     </li>
                   ))}
@@ -122,8 +139,8 @@ export function MarketCommunityDetail({
                 Ready to explore {community.name}?
               </h2>
               <p className="mb-6 text-gray-700">
-                Get current listings, pricing trends, and a personalized tour from Dr. Jan
-                Duffy — Nevada&apos;s Top 1% REALTOR®.
+                Get current listings, pricing trends, and a personalized tour
+                from Dr. Jan Duffy — Nevada&apos;s Top 1% REALTOR®.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a

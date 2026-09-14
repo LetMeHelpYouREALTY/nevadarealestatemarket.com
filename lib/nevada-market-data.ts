@@ -137,7 +137,10 @@ const legacyFaqs = {
 
 export const nevadaMarketFaqs = {
   hub: mergeFaqs(expandedMarketFaqs.hub, legacyFaqs.hub),
-  clarkCounty: mergeFaqs(expandedMarketFaqs.clarkCounty, legacyFaqs.clarkCounty),
+  clarkCounty: mergeFaqs(
+    expandedMarketFaqs.clarkCounty,
+    legacyFaqs.clarkCounty,
+  ),
   forecast: mergeFaqs(expandedMarketFaqs.forecast, legacyFaqs.forecast),
   compare: mergeFaqs(expandedMarketFaqs.compare, legacyFaqs.compare),
   tax: expandedMarketFaqs.tax,

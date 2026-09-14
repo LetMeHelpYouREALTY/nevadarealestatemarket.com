@@ -1,4 +1,9 @@
-import { officeInfo, agentInfo, siteConfig, businessHours } from "@/lib/site-config";
+import {
+  officeInfo,
+  agentInfo,
+  siteConfig,
+  businessHours,
+} from "@/lib/site-config";
 
 export type MapLocation = {
   slug: string;
@@ -26,7 +31,12 @@ export type MapLocation = {
   relatedPath: string;
 };
 
-function buildEmbedUrl(query: string, lat: number, lng: number, zoom: number): string {
+function buildEmbedUrl(
+  query: string,
+  lat: number,
+  lng: number,
+  zoom: number,
+): string {
   const encoded = encodeURIComponent(query);
   return `https://maps.google.com/maps?q=${encoded}&ll=${lat},${lng}&z=${zoom}&ie=UTF8&iwloc=&output=embed`;
 }
@@ -126,7 +136,13 @@ export const mapLocations: MapLocation[] = [
     directionsUrl: buildDirectionsUrl("Summerlin, Las Vegas, NV"),
     searchUrl: buildSearchUrl("homes for sale Summerlin Las Vegas"),
     heroKey: "summerlin",
-    neighborhoods: ["The Ridges", "Red Rock", "Downtown Summerlin", "The Trails", "Willows"],
+    neighborhoods: [
+      "The Ridges",
+      "Red Rock",
+      "Downtown Summerlin",
+      "The Trails",
+      "Willows",
+    ],
     relatedPath: "/summerlin",
     faqs: [
       {
@@ -172,7 +188,8 @@ export const mapLocations: MapLocation[] = [
           "The Las Vegas Valley median is approximately $450,000 with 28 average days on market as of January 2026.",
       },
       {
-        question: "Which Las Vegas neighborhoods have parks and master-planned amenities?",
+        question:
+          "Which Las Vegas neighborhoods have parks and master-planned amenities?",
         answer:
           "Summerlin, Henderson, Skye Canyon, Mountains Edge, and Centennial Hills are popular for parks, trails, and master-planned amenities.",
       },
@@ -194,7 +211,12 @@ export const mapLocations: MapLocation[] = [
     directionsUrl: buildDirectionsUrl("North Las Vegas, NV"),
     searchUrl: buildSearchUrl("homes for sale North Las Vegas NV"),
     heroKey: "north-las-vegas",
-    neighborhoods: ["Aliante", "Eldorado", "Centennial Hills edge", "Tropical Parkway corridor"],
+    neighborhoods: [
+      "Aliante",
+      "Eldorado",
+      "Centennial Hills edge",
+      "Tropical Parkway corridor",
+    ],
     relatedPath: "/north-las-vegas",
     faqs: [
       {
@@ -225,7 +247,13 @@ export const mapLocations: MapLocation[] = [
     directionsUrl: buildDirectionsUrl("Clark County, Nevada"),
     searchUrl: buildSearchUrl("Clark County Nevada real estate"),
     heroKey: "clark-county-housing-market",
-    neighborhoods: ["Las Vegas", "Henderson", "Summerlin", "North Las Vegas", "Boulder City"],
+    neighborhoods: [
+      "Las Vegas",
+      "Henderson",
+      "Summerlin",
+      "North Las Vegas",
+      "Boulder City",
+    ],
     relatedPath: "/clark-county-housing-market",
     faqs: [
       {

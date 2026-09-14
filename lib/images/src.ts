@@ -32,10 +32,17 @@ export function isCloudflareImagesEnabled(): boolean {
  */
 export function siteImage(src: string): string {
   if (!src) return src;
-  if (src.startsWith("http://") || src.startsWith("https://") || src.startsWith("data:")) {
+  if (
+    src.startsWith("http://") ||
+    src.startsWith("https://") ||
+    src.startsWith("data:")
+  ) {
     return src;
   }
-  if (src.includes("/images/agent/") || src.endsWith("/images/dr-jan-duffy.jpg")) {
+  if (
+    src.includes("/images/agent/") ||
+    src.endsWith("/images/dr-jan-duffy.jpg")
+  ) {
     return src;
   }
   if (!isCloudflareImagesEnabled()) {

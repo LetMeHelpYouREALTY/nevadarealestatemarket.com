@@ -259,6 +259,8 @@ export function getHeroImage(pathname: string): HeroImage {
   return HERO_IMAGES.home;
 }
 
-export function getHeroImageByKey(key: keyof typeof HERO_IMAGES | string): HeroImage {
+export function getHeroImageByKey(
+  key: keyof typeof HERO_IMAGES | string,
+): HeroImage {
   return HERO_IMAGES[key] ?? HERO_IMAGES.home;
 }

@@ -7,10 +7,13 @@ import { getHeroImageByKey } from "@/lib/hero-images";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Summerlin NV Real Estate | Communities & Luxury Homes",
-  description:
-    `Summerlin Nevada real estate — median ${marketStats.summerlin.medianPriceFormatted}. The Ridges, Red Rock, guard-gated luxury. Dr. Jan Duffy · ${agentInfo.phone}`,
+  description: `Summerlin Nevada real estate — median ${marketStats.summerlin.medianPriceFormatted}. The Ridges, Red Rock, guard-gated luxury. Dr. Jan Duffy · ${agentInfo.phone}`,
   path: "/summerlin",
-  keywords: ["Summerlin real estate", "Summerlin homes for sale", "The Ridges Summerlin"],
+  keywords: [
+    "Summerlin real estate",
+    "Summerlin homes for sale",
+    "The Ridges Summerlin",
+  ],
 });
 
 const breadcrumbs = [
