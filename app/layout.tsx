@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/site-config";
 import { generateSiteGraphSchema } from "@/lib/schema";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
 import { DeferredWidgetBe } from "@/components/analytics/DeferredWidgetBe";
 
@@ -48,6 +49,7 @@ export default function RootLayout({
         />
         {/* Analytics after idle — avoid competing with LCP */}
         <Analytics />
+        <SpeedInsights />
         {/* Lead widget: idle + delay / first interaction — keeps WidgetBe off critical path */}
         <DeferredWidgetBe />
       </body>
