@@ -81,13 +81,13 @@ const priceRanges = [
 const neighborhoods = [
   {
     name: "Summerlin",
-    description: "Master-planned community with Red Rock views, top schools, and 150+ parks",
+    description: "Master-planned community with Red Rock views, parks and trails, and 150+ parks",
     medianPrice: "$625,000",
     daysOnMarket: 22,
   },
   {
     name: "Henderson",
-    description: "Nevada's second-largest city with family-friendly communities and low crime",
+    description: "Nevada's second-largest city with amenity-rich communities and walkable amenities",
     medianPrice: "$485,000",
     daysOnMarket: 24,
   },
@@ -158,7 +158,7 @@ export default function ListingsPage() {
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Las Vegas offers diverse neighborhoods for every lifestyle and budget. Whether you're 
-              seeking luxury estates in guard-gated communities, family homes near top-rated schools, 
+              seeking luxury estates in guard-gated communities, homes near parks and trails, 
               or affordable new construction, our comprehensive search tools help you find exactly 
               what you're looking for. Browse the most popular searches below or use the advanced 
               filters to customize your home search experience.
@@ -219,9 +219,9 @@ export default function ListingsPage() {
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Each Las Vegas neighborhood offers a unique lifestyle, from the resort-style living 
-              of Summerlin to the family-friendly communities of Henderson. Understanding these 
+              of Summerlin to the amenity-rich communities of Henderson. Understanding these 
               differences is crucial to finding a home that fits your needs. As a Berkshire 
-              Hathaway HomeServices agent serving Las Vegas since 2008, Dr. Jan Duffy provides 
+              Hathaway HomeServices agent serving Las Vegas since 2013, Dr. Jan Duffy provides 
               expert guidance on which neighborhoods match your priorities—whether that's schools, 
               commute times, amenities, or investment potential.
             </p>
@@ -259,7 +259,7 @@ export default function ListingsPage() {
               In today's competitive Las Vegas market, having expert representation can mean the 
               difference between winning your dream home and losing out. Dr. Jan Duffy brings 
               the resources of Berkshire Hathaway HomeServices—the most trusted name in real estate—
-              combined with deep local market knowledge from serving Las Vegas since 2008.
+              combined with deep local market knowledge from serving Las Vegas since 2013.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">

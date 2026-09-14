@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { HeroImage } from "@/lib/hero-images";
 import { siteConfig } from "@/lib/site-config";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import { siteImage } from "@/lib/images/src";
 
 type PageHeroProps = {
   hero: HeroImage;
@@ -51,7 +52,7 @@ export function PageHero({
         className={`relative flex items-end md:items-center overflow-hidden ${minH} ${className}`.trim()}
       >
         <Image
-          src={hero.src}
+          src={siteImage(hero.src)}
           alt={hero.alt}
           fill
           priority

@@ -12,6 +12,7 @@ import {
   type BreadcrumbItem,
 } from "@/lib/schema";
 import { sitePath } from "@/lib/seo/site-url";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 type MarketCommunityDetailProps = {
   community: MarketCommunity;
@@ -54,6 +55,7 @@ export function MarketCommunityDetail({
   });
 
   const communitySchema = combineSchemas(placeSchema, pageSchema);
+  const communityHero = getHeroImage(pagePath);
 
   const faqs = [
     {
@@ -78,7 +80,7 @@ export function MarketCommunityDetail({
       <SchemaScript schema={communitySchema} id="community-schema" />
       <main>
         <PageHero
-          hero={getHeroImage(pagePath)}
+          hero={communityHero}
           badge={areaLabel}
           title={community.name}
           subtitle={`${community.tagline} · ${community.priceRange}`}
@@ -87,9 +89,10 @@ export function MarketCommunityDetail({
 
         <section className="px-4 py-16">
           <div className="mx-auto max-w-5xl">
-            <p className="mb-8 text-lg text-gray-700 leading-relaxed" data-speakable>
+            <p className="mb-8 text-lg leading-relaxed text-gray-700" data-speakable>
               {community.description}
             </p>
+            <HeadingPhoto heading={community.name} src={communityHero.src} alt={communityHero.alt} />
 
             <div className="mb-10 grid gap-8 md:grid-cols-2">
               <div>

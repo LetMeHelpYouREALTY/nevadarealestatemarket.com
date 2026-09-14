@@ -1,8 +1,10 @@
 import Navbar from "@/components/layouts/Navbar";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
+import FeaturedProperties from "@/components/sections/FeaturedProperties";
 import ReviewsSection from "@/components/sections/ReviewsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import Footer from "@/components/layouts/Footer";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 import Link from "next/link";
 import {
   Phone,
@@ -101,9 +103,10 @@ export default function Home() {
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-700 mb-3">
                 Dr. Jan Duffy · BHHS Nevada
               </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              <h2 className="mb-4 text-3xl font-bold text-pretty text-slate-900 md:text-4xl">
                 Local market expertise. National brand strength.
               </h2>
+              <HeadingPhoto heading="Local market expertise. National brand strength." />
               <p className="text-lg text-slate-600">
                 Berkshire Hathaway HomeServices Nevada Properties — data-led
                 guidance for buyers and sellers across the Las Vegas Valley.
@@ -146,9 +149,10 @@ export default function Home() {
         <section className="section-shell bg-slate-950 text-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mb-10">
-              <h2 className="text-3xl font-bold mb-3 tracking-tight text-white">
+              <h2 className="mb-3 text-3xl font-bold tracking-tight text-pretty text-white">
                 {config.neighborhood} snapshot
               </h2>
+              <HeadingPhoto heading={`${config.neighborhood} snapshot`} className="mb-6" />
               <p
                 className="speakable-summary text-slate-300 text-sm md:text-base leading-relaxed"
                 data-speakable
@@ -216,6 +220,7 @@ export default function Home() {
           </div>
         </section>
 <WhyChooseUs />
+        <FeaturedProperties />
         <ReviewsSection />
         <FAQSection />
 
@@ -233,7 +238,7 @@ export default function Home() {
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-100 mb-3">
                 {siteConfig.name}
               </p>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+              <h2 className="mb-4 text-3xl font-bold tracking-tight text-pretty md:text-4xl">
                 {config.ctaHeadline}
               </h2>
               <p className="text-xl text-blue-50 mb-8 leading-relaxed">

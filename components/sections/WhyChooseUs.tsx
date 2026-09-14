@@ -1,12 +1,13 @@
 import { Shield, TrendingUp, Users, Award, Clock, Home, Phone } from "lucide-react";
 import { AgentPhoto } from "@/components/sections/AgentPhoto";
-import { agentInfo } from "@/lib/site-config";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
+import { agentInfo, agentStats } from "@/lib/site-config";
 
 const features = [
   {
     icon: Shield,
     title: "Trusted Expertise",
-    description: "Serving Las Vegas and Henderson since 2008 with proven results.",
+    description: `Serving Las Vegas and Henderson since ${agentStats.servingSince} with proven results.`,
   },
   {
     icon: TrendingUp,
@@ -38,25 +39,26 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="bg-white py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto mb-14">
+        <div className="mx-auto mb-14 grid max-w-6xl items-center gap-12 lg:grid-cols-2">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-blue-700 mb-3">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-blue-700">
               Dr. Jan Duffy, REALTOR®
             </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+            <h2 className="mb-4 text-3xl font-bold text-pretty text-slate-900 md:text-4xl lg:text-5xl">
               Why Choose Us
             </h2>
-            <p className="text-xl text-slate-600 mb-6">
+            <HeadingPhoto heading="Why Choose Us" />
+            <p className="mb-6 text-xl text-slate-600">
               Local Nevada market expertise with Berkshire Hathaway HomeServices
               resources — one agent who answers the phone.
             </p>
             <a
               href={agentInfo.phoneTel}
-              className="inline-flex items-center gap-2 rounded-lg bg-blue-700 px-6 py-3 font-semibold text-white hover:bg-blue-800 transition-colors"
+              className="inline-flex items-center gap-2 rounded-lg bg-blue-700 px-6 py-3 font-semibold text-white transition-colors hover:bg-blue-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
             >
-              <Phone className="h-5 w-5" />
+              <Phone className="h-5 w-5" aria-hidden />
               Call {agentInfo.phone}
             </a>
           </div>
@@ -67,18 +69,18 @@ export default function WhyChooseUs() {
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
               <div
                 key={feature.title}
-                className="flex flex-col items-center text-center p-6 rounded-lg hover:bg-slate-50 transition-colors"
+                className="flex flex-col items-center rounded-lg p-6 text-center transition-colors hover:bg-slate-50"
               >
-                <div className="bg-blue-100 rounded-full p-4 mb-4">
-                  <Icon className="h-8 w-8 text-blue-600" />
+                <div className="mb-4 rounded-full bg-blue-100 p-4">
+                  <Icon className="h-8 w-8 text-blue-600" aria-hidden />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">{feature.title}</h3>
+                <h3 className="mb-2 text-xl font-bold text-slate-900">{feature.title}</h3>
                 <p className="text-slate-600">{feature.description}</p>
               </div>
             );

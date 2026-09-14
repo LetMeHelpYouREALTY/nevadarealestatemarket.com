@@ -1,9 +1,15 @@
 /**
- * Cloudflare Image Loader for Next.js
- * 
- * Custom image loader that optimizes images using Cloudflare Images
- * or falls back to standard optimization.
+ * Cloudflare Image Loader for Next.js (Cloudflare Pages / next.config.cloudflare.js).
+ *
+ * Delivery format per Cloudflare Images docs (Apr 2026):
+ *   https://imagedelivery.net/<ACCOUNT_HASH>/<IMAGE_ID>/<VARIANT>
+ * Flexible variants (optional):
+ *   https://imagedelivery.net/<ACCOUNT_HASH>/<IMAGE_ID>/w=1200,q=85
+ *
+ * Git copies under /public/images remain the backup when the hash is unset.
  */
+
+import { localPathToImageId } from "./images/src";
 
 export default function cloudflareImageLoader({
   src,
@@ -14,30 +20,26 @@ export default function cloudflareImageLoader({
   width: number;
   quality?: number;
 }): string {
-  // If using Cloudflare Images (requires configuration)
-  const useCloudflareImages = process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_ENABLED === 'true';
-  
-  if (useCloudflareImages && process.env.NEXT_PUBLIC_CLOUDFLARE_ACCOUNT_HASH) {
-    const accountHash = process.env.NEXT_PUBLIC_CLOUDFLARE_ACCOUNT_HASH;
-    // Remove leading slash if present
-    const imagePath = src.startsWith('/') ? src.slice(1) : src;
-    
-    // Build Cloudflare Images URL
-    const params = new URLSearchParams({
-      width: width.toString(),
-      quality: (quality || 85).toString(),
-      format: 'auto', // Automatically serves WebP/AVIF when supported
-    });
-    
-    return `https://imagedelivery.net/${accountHash}/${imagePath}?${params.toString()}`;
+  const accountHash = process.env.NEXT_PUBLIC_CF_IMAGES_HASH;
+  const useFlexible = process.env.NEXT_PUBLIC_CF_IMAGES_FLEXIBLE === "true";
+
+  if (accountHash && !src.startsWith("http://") && !src.startsWith("https://")) {
+    const imageId = localPathToImageId(src);
+    if (useFlexible) {
+      return `https://imagedelivery.net/${accountHash}/${imageId}/w=${width},q=${quality || 85}`;
+    }
+    return `https://imagedelivery.net/${accountHash}/${imageId}/public`;
   }
-  
-  // Fallback: Use query parameters for Worker-based optimization
+
+  if (src.startsWith("https://imagedelivery.net/")) {
+    return src;
+  }
+
   const params = new URLSearchParams({
     w: width.toString(),
     q: (quality || 85).toString(),
-    f: 'auto',
+    f: "auto",
   });
-  
+
   return `${src}?${params.toString()}`;
 }

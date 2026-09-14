@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export interface FAQ {
   question: string;
@@ -28,7 +29,7 @@ export const defaultFaqs: FAQ[] = [
   {
     question: "What makes you different from other real estate agents?",
     answer:
-      "Serving Las Vegas since 2008 with 500+ successful transactions, we combine deep local market knowledge with personalized service. As part of Berkshire Hathaway HomeServices, we have access to extensive resources and technology to serve you better.",
+      "Serving Las Vegas since 2013 with 500+ successful transactions, we combine deep local market knowledge with personalized service. As part of Berkshire Hathaway HomeServices, we have access to extensive resources and technology to serve you better.",
   },
   {
     question: "Can you help with investment properties?",
@@ -68,11 +69,12 @@ export default function FAQSection({
   return (
     <section className={`py-16 md:py-24 bg-white ${className}`}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+        <div className="mb-12 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-pretty text-slate-900 md:text-4xl lg:text-5xl">
             {title}
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">{subtitle}</p>
+          <p className="mx-auto mb-6 max-w-3xl text-xl text-slate-600">{subtitle}</p>
+          <HeadingPhoto heading={title} className="mx-auto max-w-3xl" />
         </div>
 
         <div className="max-w-3xl mx-auto">
@@ -82,8 +84,10 @@ export default function FAQSection({
               className="border border-slate-200 rounded-lg mb-4 overflow-hidden"
             >
               <button
+                type="button"
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-slate-50 transition-colors"
+                aria-expanded={openIndex === index}
+                className="flex w-full items-center justify-between px-6 py-4 text-left transition-colors hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
               >
                 <span className="font-semibold text-slate-900 pr-4">{faq.question}</span>
                 {openIndex === index ? (

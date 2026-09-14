@@ -27,7 +27,7 @@ const faqs = [
   {
     question: "Why do buyers choose Summerlin over other Las Vegas areas?",
     answer:
-      "Summerlin offers Red Rock Canyon access, 150+ parks, top-rated schools, Downtown Summerlin shopping, and guard-gated luxury options — making it one of Nevada's most desirable master-planned communities.",
+      "Summerlin offers Red Rock Canyon access, 150+ parks, Downtown Summerlin shopping, and guard-gated luxury options — making it one of Nevada's most desirable master-planned communities.",
   },
 ];
 
@@ -41,9 +41,9 @@ export default function SummerlinPage() {
       faqs={faqs}
       hero={getHeroImageByKey("summerlin")}
       title="Summerlin, NV Real Estate"
-      subtitle="Master-planned living with Red Rock views, top schools, and world-class amenities."
+      subtitle="Master-planned living with Red Rock views, parks and trails, and world-class amenities."
       sectionTitle="Summerlin Communities"
-      sectionDescription="From family-friendly villages to ultra-luxury guard-gated estates — explore every Summerlin corridor."
+      sectionDescription="From amenity-rich villages to ultra-luxury guard-gated estates — explore every Summerlin corridor."
       areaPath="/summerlin"
       communities={summerlinCommunities}
       ctaTitle="Find Your Summerlin Home"

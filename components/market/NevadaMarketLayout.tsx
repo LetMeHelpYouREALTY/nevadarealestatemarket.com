@@ -13,6 +13,7 @@ import type { FAQItem, BreadcrumbItem } from "@/lib/schema";
 import type { HeroImage } from "@/lib/hero-images";
 import { PageHero } from "@/components/sections/PageHero";
 import { Phone, MapPin, Clock, TrendingUp } from "lucide-react";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 type StatCard = {
   value: string;
@@ -107,10 +108,14 @@ export function NevadaMarketLayout({
             ))}
           </nav>
 
-          <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-10 max-w-6xl mx-auto">
-            <h2 className="text-xl font-bold mb-6 text-center">
+          <section className="mx-auto mb-16 max-w-6xl rounded-2xl bg-slate-900 p-8 text-white md:p-10">
+            <h2 className="mb-6 text-center text-xl font-bold text-pretty">
               Market Snapshot | {marketStats.lastUpdated}
             </h2>
+            <HeadingPhoto
+              heading="Market Snapshot"
+              className="mb-8"
+            />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {displayStats.map((stat) => (
                 <div key={stat.label} className="text-center">

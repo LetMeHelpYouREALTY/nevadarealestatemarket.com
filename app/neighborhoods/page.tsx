@@ -26,7 +26,7 @@ const neighborhoods = [
     slug: "summerlin",
     medianPrice: "$625,000",
     priceChange: "+6.8%",
-    description: "Premier master-planned community with parks, trails, and top-rated schools",
+    description: "Premier master-planned community with parks, trails, and parks and trails",
     highlights: ["150+ Parks", "Top Schools", "Red Rock Views", "Downtown Summerlin"],
     bestFor: "Families, professionals, outdoor enthusiasts",
   },
@@ -35,7 +35,7 @@ const neighborhoods = [
     slug: "henderson",
     medianPrice: "$485,000",
     priceChange: "+5.1%",
-    description: "Nevada's second-largest city known for safety, schools, and family-friendly living",
+    description: "Nevada's second-largest city known for safety, schools, and amenity-rich living",
     highlights: ["Low Crime Rate", "Excellent Schools", "Lake Las Vegas", "Green Valley"],
     bestFor: "Families, retirees, commuters",
   },
@@ -71,7 +71,7 @@ const neighborhoods = [
     slug: "north-las-vegas",
     medianPrice: "$385,000",
     priceChange: "+3.2%",
-    description: "Rapidly growing area with affordable new construction and family-friendly communities",
+    description: "Rapidly growing area with affordable new construction and amenity-rich communities",
     highlights: ["New Construction", "Affordable", "Growing Area", "Family-Friendly"],
     bestFor: "First-time buyers, young families, investors",
   },
@@ -180,7 +180,7 @@ export default function NeighborhoodsPage() {
             <div className="bg-slate-50 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Every Las Vegas neighborhood has its own personality. Whether you want the
-                family-friendly parks of Summerlin, the established charm of Green Valley, or the
+                amenity-rich parks of Summerlin, the established charm of Green Valley, or the
                 luxury of The Ridges, I'll help you find the community that matches your lifestyle.
                 That's the Berkshire Hathaway HomeServices difference—personalized guidance backed
                 by local expertise."

@@ -4,6 +4,7 @@ import { SitePage } from "@/components/layouts/SitePage";
 import { agentInfo, officeInfo, businessHours } from "@/lib/site-config";
 import type { BreadcrumbItem, FAQItem } from "@/lib/schema";
 import type { HeroImage } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export type SeoArticleSection = {
   heading: string;
@@ -66,9 +67,10 @@ export function SeoArticlePage({
 
           {sections.map((section) => (
             <section key={section.heading} className="mt-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+              <h2 className="mb-4 text-2xl font-bold text-pretty text-slate-900 md:text-3xl">
                 {section.heading}
               </h2>
+              <HeadingPhoto heading={section.heading} />
               {section.body.map((p) => (
                 <p key={p.slice(0, 48)} className="text-slate-700 mb-3 leading-relaxed">
                   {p}

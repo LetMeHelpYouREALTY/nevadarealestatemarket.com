@@ -1,40 +1,42 @@
 # Image Assets Guide
 
+## Storage
+
+- **Git backup:** files in `/public/images/` (this repo)
+- **Runtime CDN:** Cloudflare Images (`imagedelivery.net`) when `NEXT_PUBLIC_CF_IMAGES_HASH` is set
+- **Upload:** `pnpm images:upload` using `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`
+
+Do not orange-cloud the Vercel apex. Images CDN is a separate hostname.
+
 ## Folder Structure
 
 ```
 images/
-├── dr-jan-duffy.jpg          # Default OG / schema portrait
-├── og-default.jpg            # 1200×630 social share
-├── hero/                     # Full-bleed page heroes (Unsplash)
-├── agent/                    # Dr. Jan Duffy portraits (favicon source)
-├── properties/               # Listing / property photos
-├── neighborhoods/            # Area photos
-├── testimonials/             # Client headshots (optional)
-└── logos/                    # Brand assets
+├── dr-jan-duffy.jpg          # Default OG / schema portrait (real photo)
+├── og-home.jpg               # 1200×630 social share
+├── hero/                     # Full-bleed page H1s (Nevada-accurate)
+├── neighborhoods/            # Community-specific H1s and cards
+├── sections/                 # H2/H3 photography
+├── properties/               # Investment / area cards
+├── agent/                    # Dr. Jan Duffy portraits — never AI-replace
+├── testimonials/
+└── logos/
 ```
-
-## Agent portraits (live)
-
-| File | Use |
-|------|-----|
-| `agent/dr-jan-duffy.jpg` | About, schema, OG |
-| `agent/dr-jan-duffy-on-call.jpg` | Contact, Why Choose Us, favicon source |
-| `agent/dr-jan-duffy-portrait.jpg` | Alternate portrait |
-
-Favicon set generated from the on-call portrait: `app/favicon.ico`, `app/icon.png`, `app/apple-icon.png`, `public/favicon-32x32.png`, `public/apple-touch-icon.png`.
 
 ## Hero keys
 
-Route heroes are registered in `lib/hero-images.ts` and rendered via `PageHero` / `SitePage`.
+Route heroes: `lib/hero-images.ts`. Community slugs: `lib/images/community-images.ts`.
+H2/H3 matching: `lib/images/section-images.ts` + `HeadingPhoto`.
+
+CDN helper: `siteImage()` in `lib/images/src.ts`.
 
 ## Specs
 
 | Folder | Size | Format | Notes |
 |--------|------|--------|-------|
-| hero/ | 1920x1080+ | JPG/WebP | 16:9, edge-to-edge |
-| agent/ | 720x720+ | JPG | Face-forward portraits |
-| properties/ | 1200x800+ | JPG/WebP | Landscape |
-| neighborhoods/ | 1200x800+ | JPG/WebP | Community context |
+| hero/ | 1280×720 | JPG | 16:9, edge-to-edge |
+| neighborhoods/ | 1280×720 | JPG | Community context |
+| sections/ | 4:3 or 16:9 | JPG | Heading-matched |
+| agent/ | portrait | JPG | Real likeness only |
 
-Always include location/service language in `alt` text for SEO and AEO.
+Always include location/service language in `alt` text.

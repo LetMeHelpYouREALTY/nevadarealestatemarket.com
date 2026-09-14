@@ -49,7 +49,7 @@ const summerlinFaqs = [
   {
     question: "What makes Summerlin different from other Las Vegas communities?",
     answer:
-      "Summerlin offers 150+ parks, 150+ miles of trails, top-rated schools, and stunning Red Rock Canyon views. The Howard Hughes Corporation has developed Summerlin with careful planning since 1990, creating distinct villages each with unique character.",
+      "Summerlin offers 150+ parks, 150+ miles of trails, parks and trails, and stunning Red Rock Canyon views. The Howard Hughes Corporation has developed Summerlin with careful planning since 1990, creating distinct villages each with unique character.",
   },
   {
     question: "Why should I use a Berkshire Hathaway HomeServices agent in Summerlin?",
@@ -65,7 +65,7 @@ const pageSchemas = combineSchemas(
     name: "Summerlin",
     slug: "summerlin",
     description:
-      "Premier master-planned community in Las Vegas featuring Red Rock Canyon views, 150+ parks, top-rated schools, and luxury homes from $400K to $10M+.",
+      "Premier master-planned community in Las Vegas featuring Red Rock Canyon views, 150+ parks, parks and trails, and luxury homes from $400K to $10M+.",
     latitude: 36.1672,
     longitude: -115.331,
     containedIn: "Las Vegas",
@@ -156,7 +156,7 @@ export default function SummerlinPage() {
               </p>
               <p>
                 <strong>Berkshire Hathaway HomeServices Nevada Properties</strong> has deep roots in Summerlin,
-                and our agents understand the nuances of each village—from the family-friendly atmosphere of
+                and our agents understand the nuances of each village—from the amenity-rich atmosphere of
                 The Paseos to the luxury estates of The Ridges. Whether you're a first-time buyer looking at
                 condos in Affinity or a move-up buyer seeking a custom home in Red Rock Country Club, BHHS
                 has the expertise to guide you through the process.
@@ -293,7 +293,7 @@ export default function SummerlinPage() {
               <p>
                 Working with a <strong>Berkshire Hathaway HomeServices</strong> agent gives you access to listings
                 before they hit the market, expert negotiation skills, and the backing of a globally trusted brand.
-                Dr. Jan Duffy has been serving Summerlin since 2008, which means you'll have insights that online 
+                Dr. Jan Duffy has been serving Summerlin since 2013, which means you'll have insights that online 
                 searches simply can't provide—from which streets have the best mountain views to which builders 
                 offer the best construction quality.
               </p>
@@ -346,7 +346,7 @@ export default function SummerlinPage() {
                   What makes Summerlin different from other Las Vegas communities?
                 </h3>
                 <p className="text-slate-600">
-                  Summerlin offers 150+ parks, 150+ miles of trails, top-rated schools, and stunning
+                  Summerlin offers 150+ parks, 150+ miles of trails, parks and trails, and stunning
                   Red Rock Canyon views. The Howard Hughes Corporation has developed Summerlin with
                   careful planning since 1990, creating distinct villages each with unique character.
                 </p>

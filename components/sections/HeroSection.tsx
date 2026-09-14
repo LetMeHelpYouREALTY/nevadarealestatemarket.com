@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { siteImage } from "@/lib/images/src";
 
 export default function HeroSection() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -40,11 +41,18 @@ export default function HeroSection() {
             }`}
           >
             <Image
-              src={src}
-              alt={`Hero image ${index + 1}`}
+              src={siteImage(src)}
+              alt={`Las Vegas Valley real estate — ${
+                index === 0
+                  ? "modern Nevada luxury home"
+                  : index === 1
+                    ? "Henderson neighborhood street"
+                    : "desert luxury estate"
+              }`}
               fill
               className="object-cover"
               priority={index === 0}
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-black/40" />
           </div>

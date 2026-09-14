@@ -1,18 +1,19 @@
-# Hero image sources
+# Hero and section image sources
 
-Images sourced via [Parallel Search MCP](https://parallel.ai) research and Unsplash (free license), with AI-generated fills where downloads failed.
+Photography is generated to match each page H1 and section H2/H3 (Southern Nevada
+architecture, Mojave landscape). Git copies live under `/public/images/` as the
+backup. Cloudflare Images is the runtime CDN when `NEXT_PUBLIC_CF_IMAGES_HASH`
+is set.
 
-| File | Source |
-|------|--------|
-| `nevada-valley-skyline.jpg` | Unsplash — Antonio Gabola (`XuRPKQAwk_k`) |
-| `las-vegas-skyline.jpg` | Unsplash — capnsnap (`EHL0NM1zQ6k`) |
-| `summerlin-red-rock.jpg` | Unsplash — Melvin Morales (`uydAZ7_1Lu0`) |
-| `clark-county-aerial.jpg` | Unsplash — Yansi Keim (`XZU_LmTeOk8`) |
-| `modern-nevada-home.jpg` | Unsplash — Ярослав Алексеенко (`_TPTXZd9mOo`) |
-| `desert-luxury-home.jpg` | Unsplash — Frames For Your Heart (`2d4lAQAlbDA`) |
-| `buyer-new-home.jpg` | Unsplash — Tierra Mallorca (`rgJ1J8SDEAY`) |
-| `henderson-neighborhood.jpg` | AI-generated (Henderson suburban street) |
-| `north-las-vegas-homes.jpg` | AI-generated (NLV new construction aerial) |
-| `nevada-neighborhoods.jpg` | AI-generated (Nevada neighborhood comparison) |
+Upload: `pnpm images:upload` (requires `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`).
 
-Community slug pages inherit area heroes via `getHeroImage()` in `lib/hero-images.ts`.
+| Folder | Use |
+|--------|-----|
+| `hero/` | Full-bleed page H1s |
+| `neighborhoods/` | Community / area H1s and cards |
+| `sections/` | H2/H3 photography |
+| `properties/` | Investment / listing-adjacent visuals |
+| `agent/` | Real portraits of Dr. Jan Duffy (never AI-replaced) |
+
+Prior Unsplash placeholders (Mediterranean villa, Strip tourist night shot) were
+replaced so heroes match Las Vegas Valley housing, not generic stock.

@@ -3,7 +3,7 @@ const nextConfig = {
   // Standalone output for Docker/Vercel optimization
   output: 'standalone',
 
-  // Image optimization
+  // Image optimization — local git files + Cloudflare Images CDN
   images: {
     formats: ['image/avif', 'image/webp'],
     // Cap at 1920 — mobile PageSpeed was generating unused 3840w candidates
@@ -13,6 +13,12 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'imagedelivery.net',
+      },
+    ],
   },
 
   // Compression

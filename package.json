@@ -30,7 +30,8 @@
     "cloudflare:deploy": "wrangler deploy",
     "cloudflare:pages": "npx @cloudflare/next-on-pages",
     "cloudflare:build": "npm run cloudflare:pages",
-    "build:cloudflare": "npx @cloudflare/next-on-pages"
+    "build:cloudflare": "npx @cloudflare/next-on-pages",
+    "images:upload": "node scripts/upload-to-cloudflare-images.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.24.0",

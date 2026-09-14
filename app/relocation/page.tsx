@@ -55,13 +55,13 @@ const popularRelocationAreas = [
   {
     name: "Summerlin",
     best: "Families, professionals",
-    highlights: "Top-rated schools, 150+ parks, Red Rock Canyon proximity, master-planned living",
+    highlights: "Parks and trails, 150+ parks, Red Rock Canyon proximity, master-planned living",
     from: "$500K",
   },
   {
     name: "Henderson",
     best: "Families, retirees",
-    highlights: "Lowest crime rates, excellent schools, community feel, diverse neighborhoods",
+    highlights: "Lowest crime rates, nearby parks and trails, community feel, diverse neighborhoods",
     from: "$450K",
   },
   {
@@ -397,7 +397,7 @@ export default function RelocationPage() {
                 },
                 {
                   q: "What are the best areas for families relocating to Las Vegas?",
-                  a: "Summerlin, Henderson (especially Green Valley and Inspirada), and Skye Canyon consistently rank highest for families due to excellent schools, low crime, and family-friendly amenities. Dr. Jan can match you with the right area based on your specific priorities—schools, commute, budget, and lifestyle.",
+                  a: "Summerlin, Henderson (especially Green Valley and Inspirada), and Skye Canyon consistently rank highest for families due to nearby parks and trails, walkable amenities, and amenity-rich amenities. Dr. Jan can match you with the right area based on your specific priorities—schools, commute, budget, and lifestyle.",
                 },
                 {
                   q: "How does the cost of living compare to California?",
@@ -413,7 +413,7 @@ export default function RelocationPage() {
                 },
                 {
                   q: "Is Las Vegas safe for families?",
-                  a: "Yes, particularly in the suburban communities. Henderson consistently ranks as one of America's safest cities. Summerlin, Green Valley, and Inspirada also have very low crime rates. Dr. Jan can provide detailed crime statistics for any neighborhood you're considering.",
+                  a: "Yes, particularly in the suburban communities. Henderson consistently ranks as one of America's safest cities. Summerlin, Green Valley, and Inspirada also have very walkable amenities rates. Dr. Jan can provide detailed crime statistics for any neighborhood you're considering.",
                 },
               ].map((faq, index) => (
                 <div key={index} className="bg-slate-50 rounded-lg p-6">

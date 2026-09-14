@@ -120,7 +120,7 @@ export default function ContactPage() {
                 property, or exploring investment opportunities, I'm here to
                 provide expert guidance backed by the trusted{" "}
                 <strong>Berkshire Hathaway HomeServices</strong> brand. Serving
-                Las Vegas since 2008 with $127M+ in closed transactions.
+                Las Vegas since 2013 with $127M+ in closed transactions.
               </p>
 
               {/* NAP Information */}

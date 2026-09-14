@@ -23,7 +23,7 @@ export const nevadaMarketAreas = [
     change: marketStats.henderson.yearOverYearChange,
     daysOnMarket: marketStats.henderson.daysOnMarket,
     summary:
-      "Nevada's second-largest city — family-friendly, strong schools, and premier luxury corridors like Lake Las Vegas.",
+      "Nevada's second-largest city — amenity-rich, strong schools, and premier luxury corridors like Lake Las Vegas.",
     bestFor: "Families, luxury buyers, California relocators",
   },
   {
@@ -34,7 +34,7 @@ export const nevadaMarketAreas = [
     change: marketStats.summerlin.yearOverYearChange,
     daysOnMarket: marketStats.summerlin.daysOnMarket,
     summary:
-      "Master-planned living with Red Rock views, top schools, and guard-gated luxury in The Ridges.",
+      "Master-planned living with Red Rock views, parks and trails, and guard-gated luxury in The Ridges.",
     bestFor: "Families, outdoor lifestyle, upscale buyers",
   },
   {
@@ -125,7 +125,7 @@ const legacyFaqs = {
     {
       question: "Las Vegas vs Henderson for families?",
       answer:
-        "Henderson consistently ranks among America's safest cities with excellent schools and master-planned amenities. Las Vegas proper offers more price diversity and urban access. Many families choose Henderson (Green Valley, Anthem, Inspirada) or west-side Las Vegas (Summerlin, Skye Canyon).",
+        "Henderson consistently ranks among America's safest cities with nearby parks and trails and master-planned amenities. Las Vegas proper offers more price diversity and urban access. Many families choose Henderson (Green Valley, Anthem, Inspirada) or west-side Las Vegas (Summerlin, Skye Canyon).",
     },
     {
       question: "Where are the most affordable homes in the Las Vegas Valley?",

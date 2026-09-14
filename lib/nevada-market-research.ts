@@ -144,7 +144,7 @@ export const cityMarketProfiles = [
     dom: `${marketStats.summerlin.daysOnMarket} days`,
     summary:
       "Howard Hughes master-planned community with Red Rock Canyon views, Downtown Summerlin retail, and guard-gated luxury in The Ridges. Commands a 5–12% school-zone premium over valley medians.",
-    bestFor: "Outdoor lifestyle, top schools, upscale buyers",
+    bestFor: "Outdoor lifestyle, parks and trails, upscale buyers",
     path: "/summerlin",
     mapPath: "/maps/summerlin",
   },
@@ -298,7 +298,7 @@ export const expandedMarketFaqs: Record<string, FAQItem[]> = {
     {
       question: "North Las Vegas vs Henderson for first-time buyers?",
       answer:
-        "North Las Vegas ($420K median) offers the lowest entry point with new construction incentives. Henderson ($492K median) costs more but delivers top schools, safety ratings, and resale strength.",
+        "North Las Vegas ($420K median) offers the lowest entry point with new construction incentives. Henderson ($492K median) costs more but delivers parks and trails, safety ratings, and resale strength.",
     },
     {
       question: "Which Las Vegas area appreciates fastest?",

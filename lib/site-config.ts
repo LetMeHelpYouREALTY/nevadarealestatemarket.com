@@ -226,7 +226,7 @@ export const neighborhoods = [
       "Golf course living",
       "Custom homes",
       "Mature landscaping",
-      "Top schools",
+      "215 Beltway access",
     ],
   },
   {
@@ -256,19 +256,19 @@ export const neighborhoods = [
       "Master-planned Henderson community with parks, trails, and 55+ options",
     medianPrice: "$495,000",
     highlights: [
-      "Parks and trails",
-      "55+ communities",
-      "Family-friendly",
-      "Great schools",
+                "Parks, trails, and community amenities",
+                "Resort-style pools",
+                "Walking trails",
+                "New construction",
     ],
   },
   {
     name: "Summerlin",
     slug: "summerlin",
     description:
-      "Master-planned community with parks, trails, and top-rated schools",
+      "Master-planned community with parks, trails, and parks and trails",
     medianPrice: "$625,000",
-    highlights: ["Red Rock views", "150+ parks", "Top schools", "Golf courses"],
+    highlights: ["Red Rock views", "150+ parks", "Trail network", "Golf courses"],
   },
   {
     name: "The Ridges",

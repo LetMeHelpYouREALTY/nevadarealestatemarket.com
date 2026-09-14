@@ -6,6 +6,10 @@ import { PageHero } from "@/components/sections/PageHero";
 import { SitePage } from "@/components/layouts/SitePage";
 import SchemaScript from "@/components/SchemaScript";
 import { generateItemListSchema, type BreadcrumbItem, type FAQItem } from "@/lib/schema";
+import Image from "next/image";
+import { getCommunityHeroImage } from "@/lib/images/community-images";
+import { siteImage } from "@/lib/images/src";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 type MarketAreaIndexProps = {
   path: string;
@@ -71,15 +75,29 @@ export function MarketAreaIndex({
 
       <section className="px-4 py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="mb-2 text-center text-2xl font-bold text-blue-950">{sectionTitle}</h2>
-          <p className="mb-10 text-center text-gray-600">{sectionDescription}</p>
+          <h2 className="mb-2 text-center text-2xl font-bold text-pretty text-blue-950">{sectionTitle}</h2>
+          <p className="mb-6 text-center text-gray-600">{sectionDescription}</p>
+          <HeadingPhoto heading={sectionTitle} className="mx-auto mb-10 max-w-4xl" />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {communities.map((community) => (
+            {communities.map((community) => {
+              const photo =
+                getCommunityHeroImage(community.slug) ?? hero;
+              return (
               <Link
                 key={community.slug}
                 href={`${areaPath}/${community.slug}`}
-                className="group rounded-xl border p-6 transition hover:border-blue-300 hover:shadow-lg"
+                className="group overflow-hidden rounded-xl border transition hover:border-blue-300 hover:shadow-lg"
               >
+                <div className="relative aspect-[16/9] w-full bg-slate-200">
+                  <Image
+                    src={siteImage(photo.src)}
+                    alt={photo.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="p-6">
                 <h3 className="mb-1 text-xl font-bold text-blue-950 group-hover:text-blue-700">
                   {community.name}
                 </h3>
@@ -88,12 +106,14 @@ export function MarketAreaIndex({
                 <ul className="space-y-1 text-sm text-gray-600">
                   {community.highlights.slice(0, 4).map((highlight) => (
                     <li key={highlight} className="flex items-center gap-2">
-                      <span className="text-yellow-500">✦</span> {highlight}
+                      <span className="text-yellow-500" aria-hidden>✦</span> {highlight}
                     </li>
                   ))}
                 </ul>
+                </div>
               </Link>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>

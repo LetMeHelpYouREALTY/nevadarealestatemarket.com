@@ -138,7 +138,7 @@ export const summerlinCommunities: MarketCommunity[] = [
       "US-95 & 215 access",
       "Mountain recreation nearby",
     ],
-    bestFor: ["New construction buyers", "First-time luxury buyers", "Families", "CA equity buyers"],
+    bestFor: ["New construction buyers", "First-time luxury buyers", "CA equity buyers", "Buyers wanting park amenities"],
     address: "Skye Canyon Park Dr",
     zip: "89166",
   },

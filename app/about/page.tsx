@@ -45,7 +45,7 @@ const personSchema = {
   jobTitle: "REALTOR®",
   image: `${siteConfig.url}${agentInfo.image}`,
   description:
-    "Licensed real estate agent with Berkshire Hathaway HomeServices Nevada Properties, serving Las Vegas, Henderson, and Summerlin since 2008.",
+    "Licensed real estate agent with Berkshire Hathaway HomeServices Nevada Properties, serving Las Vegas, Henderson, and Summerlin since 2013.",
   telephone: "+17025001955",
   email: agentInfo.email,
   url: `${siteConfig.url}/about`,
@@ -139,7 +139,7 @@ export default function AboutPage() {
         hero={getHeroImageByKey("about")}
         badge="Berkshire Hathaway HomeServices Nevada Properties"
         title="Meet Dr. Jan Duffy"
-        subtitle="Nevada real estate market guidance since 2008 — buyer, seller, luxury, and California relocation representation across the Las Vegas Valley."
+        subtitle="Nevada real estate market guidance since 2013 — buyer, seller, luxury, and California relocation representation across the Las Vegas Valley."
         className="pt-24"
       />
       <main className="pb-16">

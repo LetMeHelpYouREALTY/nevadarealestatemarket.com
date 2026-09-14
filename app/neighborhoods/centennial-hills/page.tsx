@@ -45,7 +45,7 @@ const faqSchema = {
       name: "How far is Centennial Hills from the Las Vegas Strip?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Centennial Hills is approximately 20-25 minutes from the Strip via US-95. The community offers easy freeway access while maintaining a suburban, family-oriented atmosphere away from tourist areas.",
+        text: "Centennial Hills is approximately 20-25 minutes from the Strip via US-95. The community offers easy freeway access while maintaining a suburban, park-centered atmosphere away from tourist areas.",
       },
     },
     {
@@ -93,7 +93,7 @@ export default function CentennialHillsPage() {
             </div>
             <h2 className="sr-only">Berkshire Hathaway HomeServices Centennial Hills</h2>
             <p className="text-xl text-slate-600">
-              Family-friendly northwest Las Vegas living. Find your Centennial Hills home with{" "}
+              Amenity-rich northwest Las Vegas living. Find your Centennial Hills home with{" "}
               <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
             </p>
           </div>
@@ -357,7 +357,7 @@ export default function CentennialHillsPage() {
                 <p className="text-slate-600">
                   Centennial Hills is approximately 20-25 minutes from the Strip via US-95.
                   The community offers easy freeway access while maintaining a suburban,
-                  family-oriented atmosphere away from tourist areas.
+                  park-centered atmosphere away from tourist areas.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">

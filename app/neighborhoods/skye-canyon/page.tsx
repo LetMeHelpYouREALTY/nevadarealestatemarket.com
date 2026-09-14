@@ -45,7 +45,7 @@ const faqSchema = {
       name: "Is Skye Canyon good for families?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, Skye Canyon is designed for families with new schools, extensive children's amenities, community events, and safe neighborhoods. The community hosts family-friendly events throughout the year at Skye Center.",
+        text: "Yes, Skye Canyon is designed for families with new schools, extensive children's amenities, community events, and well-maintained streetscapes. The community hosts amenity-rich events throughout the year at Skye Center.",
       },
     },
     {
@@ -356,7 +356,7 @@ export default function SkyeCanyonPage() {
                 </h3>
                 <p className="text-slate-600">
                   Yes, Skye Canyon is designed for families with new schools, extensive children's
-                  amenities, community events, and safe neighborhoods. The community hosts family-friendly
+                  amenities, community events, and well-maintained streetscapes. The community hosts amenity-rich
                   events throughout the year at Skye Center.
                 </p>
               </div>

@@ -40,7 +40,13 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {children}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-blue-700 focus:px-4 focus:py-2 focus:text-white"
+        >
+          Skip to content
+        </a>
+        <div id="main-content">{children}</div>
         {/* RealScout: load once globally, deferred for LCP (user rule + PageSpeed) */}
         <Script
           src="https://em.realscout.com/widgets/v1/web.js"

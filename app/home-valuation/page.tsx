@@ -128,7 +128,7 @@ export default function HomeValuationPage() {
                   Online estimators like Zillow's "Zestimate" can be off by 10% or more—that's
                   $45,000+ on a typical Las Vegas home. Dr. Jan Duffy provides a comprehensive
                   market analysis using current MLS data, recent comparable sales, and her expertise
-                  serving Las Vegas since 2008. The result? Accurate pricing that helps you sell
+                  serving Las Vegas since 2013. The result? Accurate pricing that helps you sell
                   faster and for more money.
                 </p>
                 <div className="space-y-3">

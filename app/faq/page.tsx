@@ -85,7 +85,7 @@ const faqCategories = [
     faqs: [
       {
         q: "What is my home worth in today's market?",
-        a: "Home values depend on location, condition, size, and recent comparable sales. Dr. Jan provides free, comprehensive home valuations using current MLS data and her expertise serving Las Vegas since 2008.",
+        a: "Home values depend on location, condition, size, and recent comparable sales. Dr. Jan provides free, comprehensive home valuations using current MLS data and her expertise serving Las Vegas since 2013.",
       },
       {
         q: "How long will it take to sell my home?",
@@ -131,7 +131,7 @@ const faqCategories = [
       },
       {
         q: "What are the best neighborhoods for families?",
-        a: "Summerlin, Henderson (Green Valley, Inspirada), and Centennial Hills are top choices for families, offering excellent schools, parks, and community amenities. Dr. Jan can match you with the right neighborhood based on your priorities.",
+        a: "Summerlin, Henderson (Green Valley, Inspirada), and Centennial Hills are top choices for families, offering nearby parks and trails, parks, and community amenities. Dr. Jan can match you with the right neighborhood based on your priorities.",
       },
       {
         q: "How is the cost of living in Las Vegas?",
@@ -144,7 +144,7 @@ const faqCategories = [
     faqs: [
       {
         q: "What is Dr. Jan Duffy's experience?",
-        a: "Dr. Jan has been serving Las Vegas since 2008, with $127M+ in closed transactions and 500+ satisfied clients. She specializes in residential, luxury, investment, and relocation services throughout Southern Nevada.",
+        a: "Dr. Jan has been serving Las Vegas since 2013, with $127M+ in closed transactions and 500+ satisfied clients. She specializes in residential, luxury, investment, and relocation services throughout Southern Nevada.",
       },
       {
         q: "How do I contact Dr. Jan Duffy?",
