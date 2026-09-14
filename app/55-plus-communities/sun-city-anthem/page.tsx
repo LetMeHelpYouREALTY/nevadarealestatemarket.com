@@ -15,6 +15,7 @@ import type { Metadata } from "next";
 import SchemaScript from "@/components/SchemaScript";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 import {
   generateBreadcrumbSchema,
   generateSeniorCommunitySchema,
@@ -193,6 +194,7 @@ export default function SunCityAnthemPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 About Sun City Anthem
               </h2>
+              <HeadingPhoto heading="About Sun City Anthem" />
               <p>
                 <strong>Sun City Anthem</strong> brings the Sun City lifestyle
                 to Henderson. Built by Del Webb from 1998-2008, this 7,100+ home
@@ -226,34 +228,33 @@ export default function SunCityAnthemPage() {
                     Why Henderson Matters
                   </h3>
                   <p className="text-slate-700 mb-4">
-                    Henderson consistently ranks as one of America's safest
-                    cities. For 55+ buyers, this translates to peace of mind,
-                    stable property values, and a community that attracts
-                    similar residents who value safety and quality of life.
+                    Henderson's Anthem master plan puts Sun City Anthem near
+                    parks, trail networks, golf, and St. Rose Parkway retail.
+                    For 55+ buyers, that means clubhouse amenities, two
+                    championship golf courses, and a short drive to medical and
+                    shopping corridors.
                   </p>
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="text-center bg-white rounded-lg p-4">
-                      <div className="text-2xl font-bold text-green-600">
-                        #2
-                      </div>
+                      <div className="text-2xl font-bold text-green-600">2</div>
                       <div className="text-sm text-slate-600">
-                        Safest Large City
+                        Championship Golf Courses
                       </div>
                     </div>
                     <div className="text-center bg-white rounded-lg p-4">
                       <div className="text-2xl font-bold text-green-600">
-                        A+
+                        64K
                       </div>
                       <div className="text-sm text-slate-600">
-                        Livability Score
+                        Sq Ft Clubhouse
                       </div>
                     </div>
                     <div className="text-center bg-white rounded-lg p-4">
                       <div className="text-2xl font-bold text-green-600">
-                        Low
+                        80+
                       </div>
                       <div className="text-sm text-slate-600">
-                        Property Crime
+                        Resident Clubs
                       </div>
                     </div>
                   </div>

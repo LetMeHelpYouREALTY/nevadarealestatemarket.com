@@ -507,8 +507,8 @@ export default function BuyersPage() {
                   a: "The Las Vegas market is moderately competitive with 2.1 months of inventory—a slight seller's market. Well-priced homes in desirable areas like Summerlin and Henderson often receive multiple offers within the first week. Having a pre-approval and experienced agent gives you a significant advantage.",
                 },
                 {
-                  q: "What are the best neighborhoods for families in Las Vegas?",
-                  a: "Summerlin, Henderson (Green Valley, Inspirada), and Centennial Hills are top choices for families, offering nearby parks and trails, parks, and community amenities. Dr. Jan can match you with the right neighborhood based on your priorities—schools, commute, budget, and lifestyle.",
+                  q: "Which Las Vegas neighborhoods have parks, trails, and master-planned amenities?",
+                  a: "Summerlin, Henderson (Green Valley, Inspirada), and Centennial Hills offer nearby parks and trails plus community amenities. Dr. Jan can match you based on commute, budget, named school campuses, and lifestyle.",
                 },
               ].map((faq, index) => (
                 <div key={index} className="bg-slate-50 rounded-lg p-6">

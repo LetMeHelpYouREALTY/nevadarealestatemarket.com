@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import SchemaScript from "@/components/SchemaScript";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 import {
   generateBreadcrumbSchema,
   generateFAQSchema,
@@ -130,8 +131,8 @@ const faqCategories = [
         a: "Absolutely! Our global network of 50,000+ agents makes relocations seamless. Dr. Jan can coordinate with BHHS agents in your current city while providing expert guidance on Las Vegas neighborhoods, schools, and communities.",
       },
       {
-        q: "What are the best neighborhoods for families?",
-        a: "Summerlin, Henderson (Green Valley, Inspirada), and Centennial Hills are top choices for families, offering nearby parks and trails, parks, and community amenities. Dr. Jan can match you with the right neighborhood based on your priorities.",
+        q: "Which neighborhoods have parks, trails, and master-planned amenities?",
+        a: "Summerlin, Henderson (Green Valley, Inspirada), and Centennial Hills offer nearby parks and trails plus community amenities. Dr. Jan can match you with the right neighborhood based on commute, budget, and lifestyle.",
       },
       {
         q: "How is the cost of living in Las Vegas?",
@@ -208,6 +209,7 @@ export default function FAQPage() {
 
           {/* FAQ Categories */}
           <div className="max-w-4xl mx-auto space-y-12">
+            <HeadingPhoto heading="Frequently Asked Questions" />
             {faqCategories.map((category) => (
               <section key={category.title}>
                 <h2 className="text-2xl font-bold text-slate-900 mb-6 pb-2 border-b border-slate-200">

@@ -16,10 +16,15 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "https://www.nevadarealestatemarket.com/55-plus-communities/solera-anthem" },
-  title: "Solera at Anthem Homes for Sale | Intimate Guard-Gated 55+ Henderson | Dr. Jan Duffy",
+  alternates: {
+    canonical:
+      "https://www.nevadarealestatemarket.com/55-plus-communities/solera-anthem",
+  },
+  title:
+    "Solera at Anthem Homes for Sale | Intimate Guard-Gated 55+ Henderson | Dr. Jan Duffy",
   description:
     "Solera at Anthem - intimate guard-gated 55+ community in Henderson. Homes from $380K-$650K. Lower HOA fees, close-knit atmosphere. Dr. Jan Duffy, BHHS. Call (702) 500-1955.",
   keywords: [
@@ -96,8 +101,8 @@ export default function SoleraAnthemPage() {
             </div>
             <h2 className="sr-only">Solera at Anthem</h2>
             <p className="text-xl text-slate-600">
-              The close-knit alternative to mega-communities. Guard-gated security
-              in Henderson's safest neighborhood.
+              The close-knit alternative to mega-communities. Guard-gated 55+
+              living in Henderson's Anthem master plan.
             </p>
           </div>
 
@@ -138,13 +143,14 @@ export default function SoleraAnthemPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 About Solera at Anthem
               </h2>
+              <HeadingPhoto heading="About Solera at Anthem" />
               <p>
                 <strong>Solera at Anthem</strong> offers something increasingly
-                rare in Las Vegas 55+ living—a genuinely intimate community where
-                neighbors become friends. With approximately 1,200 homes, Solera
-                is significantly smaller than Sun City's 7,000+ home developments,
-                creating a close-knit atmosphere that larger communities simply
-                can't replicate.
+                rare in Las Vegas 55+ living—a genuinely intimate community
+                where neighbors become friends. With approximately 1,200 homes,
+                Solera is significantly smaller than Sun City's 7,000+ home
+                developments, creating a close-knit atmosphere that larger
+                communities simply can't replicate.
               </p>
               <p>
                 Built by Del Webb from 2002-2006, Solera features guard-gated
@@ -155,7 +161,9 @@ export default function SoleraAnthemPage() {
                 community demographic.
               </p>
               <p>
-                <strong>Berkshire Hathaway HomeServices Nevada Properties</strong>{" "}
+                <strong>
+                  Berkshire Hathaway HomeServices Nevada Properties
+                </strong>{" "}
                 helps buyers who value community over amenity overload. Dr. Jan
                 Duffy understands why some buyers prefer Solera's intimate scale
                 and all-55+ requirement to larger developments.
@@ -264,12 +272,12 @@ export default function SoleraAnthemPage() {
                   <Shield className="h-6 w-6 text-teal-600 mr-3 flex-shrink-0" />
                   <div>
                     <h3 className="font-bold text-slate-900 mb-2">
-                      Top Safety Rankings
+                      Guard-Gated Anthem Location
                     </h3>
                     <p className="text-slate-600 text-sm">
-                      Henderson consistently ranks as one of the safest large
-                      cities in America. Double security: Henderson's safety plus
-                      Solera's guard gate.
+                      Solera sits inside Henderson's Anthem master plan with a
+                      24/7 staffed guard gate plus parks, trails, and nearby
+                      retail along St. Rose Parkway.
                     </p>
                   </div>
                 </div>
@@ -343,7 +351,8 @@ export default function SoleraAnthemPage() {
                     All residents 55+—no exceptions
                   </strong>
                   <p className="text-slate-600 text-sm">
-                    Consistent community demographic with shared life experiences
+                    Consistent community demographic with shared life
+                    experiences
                   </p>
                 </div>
               </div>
@@ -351,11 +360,11 @@ export default function SoleraAnthemPage() {
                 <CheckCircle className="h-6 w-6 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
                 <div>
                   <strong className="text-slate-900">
-                    Guard-gated in America's safest city
+                    Guard-gated Anthem location
                   </strong>
                   <p className="text-slate-600 text-sm">
-                    Double layer of security: Henderson's safety record plus 24/7
-                    guard gate
+                    24/7 staffed gate plus Henderson parks, trails, and St. Rose
+                    Parkway retail within a short drive
                   </p>
                 </div>
               </div>
@@ -366,8 +375,8 @@ export default function SoleraAnthemPage() {
                     Lower HOA than mega-communities
                   </strong>
                   <p className="text-slate-600 text-sm">
-                    Pay for what you use, not massive golf courses and rec centers
-                    you may not need
+                    Pay for what you use, not massive golf courses and rec
+                    centers you may not need
                   </p>
                 </div>
               </div>
@@ -387,7 +396,8 @@ export default function SoleraAnthemPage() {
                 over endless amenities."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada
+                Properties
               </cite>
             </div>
           </section>
@@ -399,7 +409,8 @@ export default function SoleraAnthemPage() {
             </h2>
             <p className="text-xl text-teal-100 mb-8">
               Discover why Solera at Anthem offers the close-knit community
-              experience larger developments can't match. Tour with Dr. Jan Duffy.
+              experience larger developments can't match. Tour with Dr. Jan
+              Duffy.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <a
@@ -428,7 +439,7 @@ export default function SoleraAnthemPage() {
           Last Updated: January 2026
         </div>
       </main>
-<Footer />
+      <Footer />
     </>
   );
 }

@@ -114,16 +114,16 @@ export default function NevadaHousingForecastPage() {
             <div className="rounded-xl border p-6">
               <h3 className="font-bold text-lg mb-2">Entry-Level</h3>
               <p className="text-sm text-slate-600">
-                North Las Vegas and east valley — steady demand, more new supply.
-                Expect 3–5% appreciation. Strong for first-time buyers with
-                assistance programs.
+                North Las Vegas and east valley — steady demand, more new
+                supply. Expect 3–5% appreciation. Strong for first-time buyers
+                with assistance programs.
               </p>
             </div>
             <div className="rounded-xl border p-6">
               <h3 className="font-bold text-lg mb-2">Move-Up</h3>
               <p className="text-sm text-slate-600">
                 Henderson, Green Valley, Inspirada — 4–6% appreciation. Low DOM
-                for well-priced homes. Ideal for families relocating from
+                for well-priced homes. Ideal for buyers relocating from
                 California.
               </p>
             </div>
@@ -139,7 +139,9 @@ export default function NevadaHousingForecastPage() {
         </section>
 
         <section className="rounded-xl bg-blue-950 text-white p-8">
-          <h2 className="text-xl font-bold mb-4">Buyer & Seller Strategy for 2026</h2>
+          <h2 className="text-xl font-bold mb-4">
+            Buyer & Seller Strategy for 2026
+          </h2>
           <div className="grid md:grid-cols-2 gap-6 text-blue-100 text-sm">
             <div>
               <h3 className="font-semibold text-white mb-2">Buyers</h3>
@@ -153,8 +155,8 @@ export default function NevadaHousingForecastPage() {
               <h3 className="font-semibold text-white mb-2">Sellers</h3>
               <p>
                 Price to market on day one, invest in professional media, and
-                leverage BHHS global marketing. Henderson luxury listings average
-                24 DOM when priced correctly.
+                leverage BHHS global marketing. Henderson luxury listings
+                average 24 DOM when priced correctly.
               </p>
             </div>
           </div>

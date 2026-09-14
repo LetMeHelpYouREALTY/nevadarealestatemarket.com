@@ -18,6 +18,7 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   alternates: {
@@ -207,6 +208,7 @@ export default function CaliforniaRelocatorPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
               What Your California Equity Buys in Las Vegas
             </h2>
+            <HeadingPhoto heading="What Your California Equity Buys in Las Vegas" />
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-red-50 border border-red-200 rounded-xl p-6">
                 <div className="flex items-center mb-4">
@@ -311,7 +313,7 @@ export default function CaliforniaRelocatorPage() {
                     amenity-rich" accolades.
                   </p>
                   <div className="text-sm text-slate-500 mb-4">
-                    <strong>Best for:</strong> Tech workers, young families, San
+                    <strong>Best for:</strong> Tech workers, California and San
                     Diego relocators
                   </div>
                   <ul className="text-sm space-y-1 text-slate-700">

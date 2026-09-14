@@ -13,6 +13,7 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   alternates: {
@@ -116,6 +117,7 @@ export default function WhyBerkshireHathawayPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
               The BHHS Advantage
             </h2>
+            <HeadingPhoto heading="The BHHS Advantage" />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white border border-slate-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
                 <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">

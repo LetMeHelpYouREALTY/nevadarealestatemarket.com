@@ -11,7 +11,11 @@ export const metadata: Metadata = buildPageMetadata({
     "Las Vegas Nevada real estate market and neighborhood guides. Centennial Hills, Spring Valley, Rhodes Ranch & more. Dr. Jan Duffy · " +
     agentInfo.phone,
   path: "/las-vegas",
-  keywords: ["Las Vegas real estate", "Las Vegas homes for sale", "Las Vegas housing market"],
+  keywords: [
+    "Las Vegas real estate",
+    "Las Vegas homes for sale",
+    "Las Vegas housing market",
+  ],
 });
 
 const breadcrumbs = [
@@ -27,9 +31,10 @@ const faqs = [
       "The Las Vegas Valley median home price is approximately $450,000 as of January 2026, with 28 average days on market and 2.1 months of inventory.",
   },
   {
-    question: "Which Las Vegas neighborhoods are best for families?",
+    question:
+      "Which Las Vegas neighborhoods have parks, trails, and master-planned amenities?",
     answer:
-      "Families often choose Summerlin, Henderson, Skye Canyon, Mountains Edge, and Centennial Hills for schools, parks, and master-planned amenities.",
+      "Buyers often compare Summerlin, Henderson, Skye Canyon, Mountains Edge, and Centennial Hills for parks, trails, and master-planned amenities plus commute times.",
   },
 ];
 

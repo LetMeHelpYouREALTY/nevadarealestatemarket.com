@@ -46,7 +46,7 @@ export const nevadaMarketAreas = [
     daysOnMarket: 42,
     summary:
       "Fast-growing value market with new construction, first-time buyer programs, and strong rental demand.",
-    bestFor: "First-time buyers, investors, young families",
+    bestFor: "First-time buyers, investors, relocators",
   },
 ] as const;
 
@@ -123,9 +123,9 @@ const legacyFaqs = {
         "Henderson offers slightly lower medians ($492K vs $625K), strong schools, and Lake Las Vegas luxury. Summerlin provides Red Rock access, Downtown Summerlin, and ultra-luxury in The Ridges. Both appreciate well — choice depends on commute, budget, and lifestyle.",
     },
     {
-      question: "Las Vegas vs Henderson for families?",
+      question: "Las Vegas vs Henderson for relocating buyers?",
       answer:
-        "Henderson consistently ranks among America's safest cities with nearby parks and trails and master-planned amenities. Las Vegas proper offers more price diversity and urban access. Many families choose Henderson (Green Valley, Anthem, Inspirada) or west-side Las Vegas (Summerlin, Skye Canyon).",
+        "Henderson offers nearby parks and trails and master-planned amenities in Green Valley, Anthem, and Inspirada. Las Vegas proper offers more price diversity and urban access. Many relocators also compare west-side Las Vegas (Summerlin, Skye Canyon) for Red Rock access and commute times.",
     },
     {
       question: "Where are the most affordable homes in the Las Vegas Valley?",

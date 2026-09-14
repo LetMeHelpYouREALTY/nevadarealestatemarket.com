@@ -137,6 +137,7 @@ export function NevadaMarketLayout({
             <h2 className="text-2xl font-bold text-slate-900 mb-8 text-center">
               Frequently Asked Questions
             </h2>
+            <HeadingPhoto heading="Frequently Asked Questions" />
             <div className="space-y-4">
               {faqs.map((faq) => (
                 <details

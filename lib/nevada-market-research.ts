@@ -157,8 +157,8 @@ export const cityMarketProfiles = [
     median: marketStats.henderson.medianPriceFormatted,
     dom: `${marketStats.henderson.daysOnMarket} days`,
     summary:
-      "Nevada's second-largest city ranks among America's safest large cities. Green Valley, Anthem, Inspirada, and Lake Las Vegas attract families and California relocators. Single-family medians near $530,000 with strong school zones.",
-    bestFor: "Families, luxury buyers, California relocators",
+      "Nevada's second-largest city is known for master-planned amenities. Green Valley, Anthem, Inspirada, and Lake Las Vegas attract California relocators. Single-family medians near $530,000 with named Clark County School District campuses nearby.",
+    bestFor: "Luxury buyers, California relocators",
     path: "/henderson",
     mapPath: "/maps/henderson",
   },
@@ -180,7 +180,7 @@ export const cityMarketProfiles = [
     dom: "42 days",
     summary:
       "Fastest-growing value market with Aliante, Skye Canyon access, and Apex industrial expansion. Median sale prices near $420,000 with strong rental demand and builder incentives on new construction.",
-    bestFor: "First-time buyers, investors, young families",
+    bestFor: "First-time buyers, investors, relocators",
     path: "/north-las-vegas",
     mapPath: "/maps/north-las-vegas",
   },

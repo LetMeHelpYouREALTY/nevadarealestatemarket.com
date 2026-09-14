@@ -11,6 +11,7 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   alternates: {
@@ -51,10 +52,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Is Skye Canyon good for families?",
+      name: "What amenities does Skye Canyon offer nearby parks and trails?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, Skye Canyon is designed for families with new schools, extensive children's amenities, community events, and well-maintained streetscapes. The community hosts amenity-rich events throughout the year at Skye Center.",
+        text: "Skye Canyon includes Skye Center, a 15-acre amenity campus with resort-style pools, a fitness center, sports courts, and event space. Miles of trails connect to Floyd Lamb Park. Nearby Clark County School District campuses include those serving northwest Las Vegas.",
       },
     },
     {
@@ -153,6 +154,7 @@ export default function SkyeCanyonPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Skye Canyon: Northwest Las Vegas's Most Exciting New Community
               </h2>
+              <HeadingPhoto heading="Skye Canyon: Northwest Las Vegas's Most Exciting New Community" />
               <p>
                 <strong>Skye Canyon</strong> represents the future of Las Vegas
                 master-planned living. This 1,700-acre community in northwest
@@ -411,9 +413,9 @@ export default function SkyeCanyonPage() {
                 <strong>21 days on market</strong>—among the fastest in the
                 valley. The median price of <strong>$550,000</strong> reflects
                 5.5% year-over-year appreciation, driven by continued demand
-                from families seeking modern homes with exceptional amenities.
-                New construction from builders like Toll Brothers, Lennar, and
-                Woodside Homes ranges from $450,000 to $800,000.
+                from relocating buyers seeking modern homes with exceptional
+                amenities. New construction from builders like Toll Brothers,
+                Lennar, and Woodside Homes ranges from $450,000 to $800,000.
               </p>
               <p>
                 Choosing <strong>Berkshire Hathaway HomeServices</strong> for
@@ -431,8 +433,8 @@ export default function SkyeCanyonPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Skye Canyon is where young families want to be right now. The
-                amenities are incredible, the homes are modern and
+                "Skye Canyon is where relocating buyers want to be right now.
+                The amenities are incredible, the homes are modern and
                 energy-efficient, and the community vibe is exactly what people
                 are looking for. As a Berkshire Hathaway HomeServices agent, I
                 make sure my clients get the best value—whether that's
@@ -476,13 +478,13 @@ export default function SkyeCanyonPage() {
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  Is Skye Canyon good for families?
+                  What amenities does Skye Canyon offer?
                 </h3>
                 <p className="text-slate-600">
-                  Yes, Skye Canyon is designed for families with new schools,
-                  extensive children's amenities, community events, and
-                  well-maintained streetscapes. The community hosts amenity-rich
-                  events throughout the year at Skye Center.
+                  Skye Canyon includes Skye Center, a 15-acre amenity campus
+                  with resort-style pools, a fitness center, sports courts, and
+                  event space. Miles of trails connect to Floyd Lamb Park, and
+                  community events run throughout the year at Skye Center.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">

@@ -13,6 +13,7 @@ import type { Metadata } from "next";
 import SchemaScript from "@/components/SchemaScript";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 import {
   generateBreadcrumbSchema,
   generateFAQSchema,
@@ -168,13 +169,14 @@ export default function SummerlinPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Why Summerlin Is Las Vegas's Most Sought-After Community
               </h2>
+              <HeadingPhoto heading="Why Summerlin Is Las Vegas's Most Sought-After Community" />
               <p>
                 When homebuyers search for the best neighborhoods in Las Vegas,{" "}
                 <strong>Summerlin</strong> consistently ranks at the top. As a{" "}
                 <strong>Berkshire Hathaway HomeServices</strong> agent
                 specializing in Summerlin real estate, Dr. Jan Duffy has helped
-                hundreds of families find their perfect home in this
-                award-winning master-planned community.
+                hundreds of buyers find a home in this award-winning
+                master-planned community.
               </p>
               <p>
                 Developed by The Howard Hughes Corporation since 1990, Summerlin

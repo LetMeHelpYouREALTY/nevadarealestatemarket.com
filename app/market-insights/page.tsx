@@ -16,6 +16,7 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -96,6 +97,7 @@ export default function MarketInsightsPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">
               5 Forces Driving Las Vegas Real Estate in 2026
             </h2>
+            <HeadingPhoto heading="5 Forces Driving Las Vegas Real Estate in 2026" />
             <div className="grid md:grid-cols-5 gap-4">
               <div className="text-center">
                 <div className="text-3xl font-bold text-amber-400 mb-2">

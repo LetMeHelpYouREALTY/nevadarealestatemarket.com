@@ -18,6 +18,7 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   alternates: {
@@ -136,6 +137,7 @@ export default function FirstTimeBuyersPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
               First-Time Buyer Financing Options
             </h2>
+            <HeadingPhoto heading="First-Time Buyer Financing Options" />
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="bg-white border border-slate-200 rounded-xl p-6 text-center">
                 <div className="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">

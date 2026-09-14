@@ -13,6 +13,7 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   alternates: {
@@ -107,6 +108,7 @@ export default function InvestmentPropertiesPage() {
             <h2 className="text-2xl font-bold mb-8 text-center">
               Why Invest in Las Vegas?
             </h2>
+            <HeadingPhoto heading="Why Invest in Las Vegas?" />
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">
                 <DollarSign className="h-12 w-12 text-green-400 mx-auto mb-3" />

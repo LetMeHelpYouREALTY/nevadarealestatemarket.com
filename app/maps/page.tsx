@@ -5,7 +5,9 @@ import Footer from "@/components/layouts/Footer";
 import { PageSeo } from "@/components/seo/PageSeo";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
-import { mapLocations } from "@/lib/map-locations";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
+import { GoogleMapEmbed } from "@/components/maps/GoogleMapEmbed";
+import { mapLocations, getOfficeLocation } from "@/lib/map-locations";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { MapPin, Navigation, ArrowRight } from "lucide-react";
 
@@ -74,7 +76,15 @@ export default function MapsIndexPage() {
             <ArrowRight className="h-5 w-5 text-blue-600" />
           </Link>
 
-          <h2 className="text-2xl font-bold text-slate-900 mb-6">Market Area Maps</h2>
+          <div className="mb-12">
+            <HeadingPhoto heading="Office Directions & Map" />
+            <GoogleMapEmbed location={getOfficeLocation()} height={360} />
+          </div>
+
+          <h2 className="text-2xl font-bold text-slate-900 mb-6">
+            Market Area Maps
+          </h2>
+          <HeadingPhoto heading="Market Area Maps" />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {areaMaps.map((loc) => (
               <Link

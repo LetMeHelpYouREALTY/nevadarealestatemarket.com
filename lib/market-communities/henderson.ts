@@ -144,7 +144,7 @@ export const hendersonCommunities: MarketCommunity[] = [
     name: "Inspirada",
     tagline: "West Henderson's newest master plan",
     priceRange: "$450K – $900K",
-    description: `Inspirada is west Henderson's most vibrant new community — a walkable, park-dense master plan where residents live blocks from resort-style pools, dog parks, and miles of trails. Top builders including Toll Brothers, Woodside, and Taylor Morrison are still delivering new inventory, meaning buyers can customize finishes and lock in builder incentives. The community is attracting young families and California equity buyers priced out of Summerlin.`,
+    description: `Inspirada is west Henderson's most vibrant new community — a walkable, park-dense master plan where residents live blocks from resort-style pools, dog parks, and miles of trails. Top builders including Toll Brothers, Woodside, and Taylor Morrison are still delivering new inventory, meaning buyers can customize finishes and lock in builder incentives. The community is attracting California equity buyers priced out of Summerlin.`,
     highlights: [
       "New construction available",
       "Multiple community pools",

@@ -17,6 +17,7 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   alternates: {
@@ -122,6 +123,7 @@ export default function LuxuryHomesPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">
               Las Vegas Luxury Market Performance
             </h2>
+            <HeadingPhoto heading="Las Vegas Luxury Market Performance" />
             <div className="grid md:grid-cols-4 gap-6 mb-8">
               <div className="text-center">
                 <div className="text-4xl font-bold text-amber-400 mb-2">

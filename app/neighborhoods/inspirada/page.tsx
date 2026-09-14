@@ -11,6 +11,7 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   alternates: {
@@ -53,7 +54,7 @@ const faqSchema = {
       name: "How are the schools in Inspirada?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Inspirada is served by highly-rated Henderson schools including newer facilities built specifically for the growing community. The area attracts families specifically for its educational options and amenity-rich environment.",
+        text: "Inspirada is served by Clark County School District campuses built for the growing west Henderson master plan. Buyers often weigh those named campuses plus resort-style pools, trails, and HOA amenities.",
       },
     },
     {
@@ -152,6 +153,7 @@ export default function InspiradaPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Inspirada: Henderson's Award-Winning Resort-Style Community
               </h2>
+              <HeadingPhoto heading="Inspirada: Henderson's Award-Winning Resort-Style Community" />
               <p>
                 <strong>Inspirada</strong> redefines what a master-planned
                 community can be. This 2,000-acre development in Henderson
@@ -473,10 +475,10 @@ export default function InspiradaPage() {
                   How are the schools in Inspirada?
                 </h3>
                 <p className="text-slate-600">
-                  Inspirada is served by highly-rated Henderson schools
-                  including newer facilities built specifically for the growing
-                  community. The area attracts families specifically for its
-                  educational options and amenity-rich environment.
+                  Inspirada is served by Clark County School District campuses
+                  built for the growing west Henderson master plan. Buyers often
+                  weigh those named campuses plus resort-style pools, trails,
+                  and HOA amenities.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">

@@ -11,6 +11,7 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   alternates: {
@@ -62,7 +63,7 @@ const faqSchema = {
       name: "Is Green Valley a good investment?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Green Valley has shown consistent appreciation due to its prime Henderson location, established infrastructure, and ongoing demand from families seeking parks and trails and safety. BHHS agents can provide detailed market analysis.",
+        text: "Green Valley has shown consistent appreciation due to its prime Henderson location, established infrastructure, and ongoing demand from buyers seeking parks, trails, and mature landscaping. BHHS agents can provide detailed market analysis.",
       },
     },
   ],
@@ -151,9 +152,10 @@ export default function GreenValleyPage() {
           <section className="mb-16 max-w-5xl mx-auto">
             <div className="prose prose-lg max-w-none text-slate-700">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                Green Valley: Where Henderson Families Have Thrived for 35+
-                Years
+                Green Valley: Henderson's Original Master-Planned Community for
+                35+ Years
               </h2>
+              <HeadingPhoto heading="Green Valley: Henderson's Original Master-Planned Community" />
               <p>
                 <strong>Green Valley</strong> holds a special place in
                 Henderson's history as the city's original master-planned
@@ -161,9 +163,9 @@ export default function GreenValleyPage() {
                 concept of thoughtfully designed neighborhoods in Southern
                 Nevada—long before master-planned communities became the norm.
                 Today, <strong>Berkshire Hathaway HomeServices</strong>
-                continues to serve Green Valley families, helping new
-                generations discover what long-time residents already know: this
-                is one of the best places to live in Nevada.
+                continues to serve Green Valley buyers, helping new generations
+                discover what long-time residents already know: this is one of
+                the best places to live in Nevada.
               </p>
               <p>
                 What makes Green Valley unique is something that can't be
@@ -476,8 +478,8 @@ export default function GreenValleyPage() {
                 <p className="text-slate-600">
                   Green Valley has shown consistent appreciation due to its
                   prime Henderson location, established infrastructure, and
-                  ongoing demand from families seeking parks and trails and
-                  safety. BHHS agents can provide detailed market analysis.
+                  ongoing demand from buyers seeking parks, trails, and mature
+                  landscaping. BHHS agents can provide detailed market analysis.
                 </p>
               </div>
             </div>

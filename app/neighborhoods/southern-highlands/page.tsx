@@ -5,6 +5,7 @@ import { Phone, Shield, Mountain, Star, MapPin } from "lucide-react";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   alternates: {
@@ -150,6 +151,7 @@ export default function SouthernHighlandsPage() {
                 Southern Highlands: Southwest Las Vegas's Premier Master-Planned
                 Community
               </h2>
+              <HeadingPhoto heading="Southern Highlands: Southwest Las Vegas's Premier Master-Planned Community" />
               <p>
                 <strong>Southern Highlands</strong> stands as southwest Las
                 Vegas's answer to Summerlin—a meticulously planned 2,200-acre
@@ -178,8 +180,9 @@ export default function SouthernHighlandsPage() {
                 various sections—from the guard-gated luxury estates surrounding
                 the golf course to the amenity-rich neighborhoods in the
                 community's newer phases. Whether you're seeking a golf course
-                lot with Strip views or a spacious family home with top-rated
-                schools, BHHS has the local expertise to guide your search.
+                lot with Strip views or a spacious home near named Clark County
+                School District campuses, BHHS has the local expertise to guide
+                your search.
               </p>
 
               {/* Community Highlights */}

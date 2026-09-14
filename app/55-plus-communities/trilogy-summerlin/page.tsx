@@ -16,10 +16,15 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "https://www.nevadarealestatemarket.com/55-plus-communities/trilogy-summerlin" },
-  title: "Trilogy at Summerlin Homes for Sale | Luxury Resort 55+ Living | Dr. Jan Duffy",
+  alternates: {
+    canonical:
+      "https://www.nevadarealestatemarket.com/55-plus-communities/trilogy-summerlin",
+  },
+  title:
+    "Trilogy at Summerlin Homes for Sale | Luxury Resort 55+ Living | Dr. Jan Duffy",
   description:
     "Trilogy at Summerlin - luxury resort-style 55+ community. Homes from $500K-$1.1M. On-site farm-to-table restaurant, spa, contemporary designs. Dr. Jan Duffy, BHHS. Call (702) 500-1955.",
   keywords: [
@@ -138,6 +143,7 @@ export default function TrilogySummerlinPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 About Trilogy at Summerlin
               </h2>
+              <HeadingPhoto heading="About Trilogy at Summerlin" />
               <p>
                 <strong>Trilogy at Summerlin</strong> redefines what a 55+
                 community can be. Developed by Shea Homes, Trilogy brings a
@@ -153,7 +159,9 @@ export default function TrilogySummerlinPage() {
                 plans, designer finishes, and modern smart home technology.
               </p>
               <p>
-                <strong>Berkshire Hathaway HomeServices Nevada Properties</strong>{" "}
+                <strong>
+                  Berkshire Hathaway HomeServices Nevada Properties
+                </strong>{" "}
                 serves discerning buyers seeking luxury 55+ options. Dr. Jan
                 Duffy understands why buyers choose Trilogy's resort experience
                 over traditional active adult communities.
@@ -171,9 +179,9 @@ export default function TrilogySummerlinPage() {
                     The Trilogy Difference: Resort-Style Living
                   </h3>
                   <p className="text-slate-700 mb-4">
-                    Trilogy isn't just a 55+ community with a nice clubhouse—it's
-                    a resort experience you happen to live in. The difference is
-                    in the details.
+                    Trilogy isn't just a 55+ community with a nice
+                    clubhouse—it's a resort experience you happen to live in.
+                    The difference is in the details.
                   </p>
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="bg-white rounded-lg p-4 text-center">
@@ -332,8 +340,8 @@ export default function TrilogySummerlinPage() {
                     True resort lifestyle, not just amenities
                   </strong>
                   <p className="text-slate-600 text-sm">
-                    On-site restaurant, full-service spa, and hospitality-trained
-                    staff create a resort experience
+                    On-site restaurant, full-service spa, and
+                    hospitality-trained staff create a resort experience
                   </p>
                 </div>
               </div>
@@ -356,8 +364,8 @@ export default function TrilogySummerlinPage() {
                     Boutique community size
                   </strong>
                   <p className="text-slate-600 text-sm">
-                    800+ homes—large enough for vibrant programming, small enough
-                    for genuine community
+                    800+ homes—large enough for vibrant programming, small
+                    enough for genuine community
                   </p>
                 </div>
               </div>
@@ -381,15 +389,16 @@ export default function TrilogySummerlinPage() {
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-r-xl p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Trilogy at Summerlin is for buyers who want more than a 55+
-                community—they want a lifestyle. The on-site restaurant, spa, and
-                contemporary homes create an experience you simply can't find
-                elsewhere. As a{" "}
+                community—they want a lifestyle. The on-site restaurant, spa,
+                and contemporary homes create an experience you simply can't
+                find elsewhere. As a{" "}
                 <strong>Berkshire Hathaway HomeServices</strong> agent serving
                 luxury 55+ buyers, I recommend Trilogy to those who appreciate
                 quality and won't settle for ordinary."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada
+                Properties
               </cite>
             </div>
           </section>
@@ -400,8 +409,9 @@ export default function TrilogySummerlinPage() {
               Experience Luxury 55+ Living
             </h2>
             <p className="text-xl text-rose-100 mb-8">
-              Discover why Trilogy at Summerlin sets the standard for resort-style
-              55+ living. Private tours available with Dr. Jan Duffy.
+              Discover why Trilogy at Summerlin sets the standard for
+              resort-style 55+ living. Private tours available with Dr. Jan
+              Duffy.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
               <a
@@ -430,7 +440,7 @@ export default function TrilogySummerlinPage() {
           Last Updated: January 2026
         </div>
       </main>
-<Footer />
+      <Footer />
     </>
   );
 }

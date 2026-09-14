@@ -5,6 +5,7 @@ import { Phone, Shield, Users, GraduationCap, TreePine } from "lucide-react";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   alternates: {
@@ -49,10 +50,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "How safe is Henderson compared to Las Vegas?",
+      name: "What amenities set Henderson apart from Las Vegas?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Henderson consistently ranks as one of America's safest cities. It has been named the safest city in Nevada and frequently appears in national 'Best Places to Live' rankings for its walkable amenities rates and amenity-rich environment.",
+        text: "Henderson offers 60+ city parks, recreation centers, trail networks, and master-planned communities such as Green Valley, Inspirada, Anthem, and MacDonald Highlands. Many buyers compare commute times to the Strip and airport plus HOA amenities rather than city-to-city labels.",
       },
     },
     {
@@ -118,9 +119,10 @@ export default function HendersonPage() {
               Berkshire Hathaway HomeServices Henderson
             </h2>
             <p className="text-xl text-slate-600">
-              Nevada's safest city. Find your Henderson home with Dr. Jan Duffy,
-              your trusted <strong>Berkshire Hathaway HomeServices</strong>{" "}
-              Henderson specialist.
+              Master-planned parks, trails, and civic amenities. Find your
+              Henderson home with Dr. Jan Duffy, your trusted{" "}
+              <strong>Berkshire Hathaway HomeServices</strong> Henderson
+              specialist.
             </p>
           </div>
 
@@ -129,6 +131,7 @@ export default function HendersonPage() {
             <h2 className="text-2xl font-bold mb-8 text-center">
               Henderson Real Estate Market | January 2026
             </h2>
+            <HeadingPhoto heading="Henderson Real Estate Market | January 2026" />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-400 mb-1">
@@ -163,25 +166,24 @@ export default function HendersonPage() {
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
                 Why Henderson Is Nevada's Best-Kept Secret
               </h2>
+              <HeadingPhoto heading="Why Henderson Is Nevada's Best-Kept Secret" />
               <p>
                 <strong>Henderson</strong> has quietly become one of the most
                 desirable cities in the American Southwest. As Nevada's
                 second-largest city with over 320,000 residents, Henderson
                 offers the perfect balance of suburban tranquility and urban
                 convenience. <strong>Berkshire Hathaway HomeServices</strong>{" "}
-                has been helping families find their Henderson dream homes for
-                decades, and Dr. Jan Duffy brings unmatched expertise to every
-                transaction.
+                has been helping buyers find Henderson homes for decades, and
+                Dr. Jan Duffy brings unmatched expertise to every transaction.
               </p>
               <p>
-                What sets Henderson apart? Start with safety. Henderson
-                consistently ranks as one of America's safest large cities,
-                making it the top choice for families with children. The city's
-                excellent schools, walkable amenities rates, and
-                community-oriented atmosphere create an environment where
-                families thrive. Add in the fact that Nevada has no state income
-                tax, and you understand why so many Californians are making
-                Henderson their new home.
+                What sets Henderson apart? Start with amenities. Henderson
+                maintains 60+ city parks, recreation centers, and trail networks
+                that connect Green Valley, Anthem, and Inspirada. Named Clark
+                County School District campuses and walkable retail corridors
+                sit inside the master plans. Add in the fact that Nevada has no
+                state income tax, and you understand why so many Californians
+                are making Henderson their new home.
               </p>
               <p>
                 The Henderson real estate market offers remarkable diversity.
@@ -208,32 +210,28 @@ export default function HendersonPage() {
                   <div className="flex items-center mb-4">
                     <Shield className="h-8 w-8 text-blue-600 mr-3" />
                     <h4 className="font-bold text-slate-900 text-lg">
-                      Henderson's amenity-rich
+                      Parks, Trails, and Civic Amenities
                     </h4>
                   </div>
                   <p className="text-slate-600">
-                    Henderson has been named the safest city in Nevada and
-                    consistently ranks among America's safest large cities. The
-                    Henderson Police Department's community policing approach
-                    and active neighborhood watch programs contribute to
-                    exceptionally walkable amenities rates that give families
-                    peace of mind.
+                    Henderson operates 60+ parks, recreation centers, and trail
+                    corridors that link Green Valley, Anthem, and Inspirada.
+                    Buyers often weigh commute times to the Strip and airport
+                    plus HOA pools, clubhouses, and golf access.
                   </p>
                 </div>
                 <div className="bg-slate-50 p-6 rounded-xl">
                   <div className="flex items-center mb-4">
                     <Users className="h-8 w-8 text-blue-600 mr-3" />
                     <h4 className="font-bold text-slate-900 text-lg">
-                      Family-First Community
+                      Parks and Civic Calendar
                     </h4>
                   </div>
                   <p className="text-slate-600">
-                    Henderson is designed for families. The city operates over
-                    60 parks, multiple recreation centers, and hundreds of youth
-                    programs. The Henderson Libraries system is award-winning,
-                    and community events throughout the year—from the Henderson
-                    Farmers Market to the annual Heritage Parade—bring neighbors
-                    together.
+                    Henderson operates over 60 parks, multiple recreation
+                    centers, and year-round civic events. The Henderson
+                    Libraries system and events such as the Henderson Farmers
+                    Market and Heritage Parade are regular stops for residents.
                   </p>
                 </div>
               </div>
@@ -468,7 +466,7 @@ export default function HendersonPage() {
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Henderson offers something for everyone—young professionals,
-                growing families, active retirees. As a Berkshire Hathaway
+                relocating buyers, and 55+ residents. As a Berkshire Hathaway
                 HomeServices agent, I help clients cut through the options and
                 find the community that fits their lifestyle. There's a reason
                 Henderson keeps winning 'Best Places to Live' awards."
@@ -499,13 +497,14 @@ export default function HendersonPage() {
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  How safe is Henderson compared to Las Vegas?
+                  What amenities set Henderson apart from Las Vegas?
                 </h3>
                 <p className="text-slate-600">
-                  Henderson consistently ranks as one of America's safest
-                  cities. It has been named the safest city in Nevada and
-                  frequently appears in national "Best Places to Live" rankings
-                  for its walkable amenities rates and amenity-rich environment.
+                  Henderson offers 60+ city parks, recreation centers, trail
+                  networks, and master-planned communities such as Green Valley,
+                  Inspirada, Anthem, and MacDonald Highlands. Compare commute
+                  times, HOA amenities, and home styles rather than city-to-city
+                  labels.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">

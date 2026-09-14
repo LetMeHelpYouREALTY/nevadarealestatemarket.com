@@ -15,6 +15,7 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   alternates: {
@@ -242,6 +243,7 @@ export default function HomeValuationPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
               Why Online Home Value Estimates Often Miss the Mark
             </h2>
+            <HeadingPhoto heading="Why Online Home Value Estimates Often Miss the Mark" />
             <div className="prose prose-lg max-w-none text-slate-700">
               <p>
                 If you've checked Zillow, Redfin, or other online home value

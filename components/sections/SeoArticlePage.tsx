@@ -102,6 +102,7 @@ export function SeoArticlePage({
               <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
                 Frequently asked questions
               </h2>
+              <HeadingPhoto heading="Frequently asked questions" />
               <div className="space-y-4">
                 {faqs.map((faq) => (
                   <div

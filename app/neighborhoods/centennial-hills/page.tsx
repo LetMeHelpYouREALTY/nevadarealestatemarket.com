@@ -11,6 +11,7 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   alternates: {
@@ -151,17 +152,18 @@ export default function CentennialHillsPage() {
           <section className="mb-16 max-w-5xl mx-auto">
             <div className="prose prose-lg max-w-none text-slate-700">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                Centennial Hills: Northwest Las Vegas's Established Family
-                Community
+                Centennial Hills: Northwest Las Vegas's Established
+                Master-Planned Community
               </h2>
+              <HeadingPhoto heading="Centennial Hills: Northwest Las Vegas's Established Master-Planned Community" />
               <p>
                 <strong>Centennial Hills</strong> represents the best of
                 established northwest Las Vegas living. While newer communities
                 like Skye Canyon attract attention, Centennial Hills offers
-                something they can't: mature neighborhoods with proven schools,
-                established landscaping, and a genuine sense of community built
-                over nearly two decades.
-                <strong> Berkshire Hathaway HomeServices</strong> helps families
+                something they can't: mature neighborhoods with named Clark
+                County School District campuses, established landscaping, and a
+                genuine sense of community built over nearly two decades.
+                <strong> Berkshire Hathaway HomeServices</strong> helps buyers
                 discover why Centennial Hills remains one of the valley's most
                 desirable addresses.
               </p>
@@ -196,13 +198,13 @@ export default function CentennialHillsPage() {
                   <div className="flex items-center mb-4">
                     <Users className="h-8 w-8 text-blue-600 mr-3" />
                     <h4 className="font-bold text-slate-900 text-lg">
-                      Established Family Community
+                      Established Master-Planned Community
                     </h4>
                   </div>
                   <p className="text-slate-600">
-                    Centennial Hills has matured into a true community where
-                    neighbors know each other and families put down roots. The
-                    area features multiple established parks including the
+                    Centennial Hills has matured into a true community with
+                    parks, trail access, and the Centennial Hills Town Center.
+                    The area features multiple established parks including the
                     popular Centennial Hills Park, community events throughout
                     the year, and the kind of neighborhood stability that
                     creates lifelong friendships and strong property values.
@@ -462,8 +464,8 @@ export default function CentennialHillsPage() {
                 building: a genuine sense of community. The schools have track
                 records, the neighbors have history, and the landscaping is
                 mature. As a Berkshire Hathaway HomeServices agent, I help
-                families see beyond the shiny new construction to communities
-                that have proven their value over time."
+                buyers see beyond the shiny new construction to communities that
+                have proven their value over time."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
                 — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada
