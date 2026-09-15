@@ -9,6 +9,7 @@ import { generateArticleSchema } from "@/lib/schema";
 import { getHeroImageByKey } from "@/lib/hero-images";
 import { CheckCircle, AlertCircle } from "lucide-react";
 import { MarketResearchContent } from "@/components/market/MarketResearchContent";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Nevada Housing Forecast 2026 | Las Vegas Market Outlook",
@@ -110,6 +111,7 @@ export default function NevadaHousingForecastPage() {
           <h2 className="text-2xl font-bold text-slate-900 mb-6">
             Segment Outlook
           </h2>
+          <HeadingPhoto heading="Segment Outlook" />
           <div className="grid md:grid-cols-3 gap-6">
             <div className="rounded-xl border p-6">
               <h3 className="font-bold text-lg mb-2">Entry-Level</h3>

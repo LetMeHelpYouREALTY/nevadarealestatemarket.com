@@ -43,7 +43,7 @@ export default function LasVegasHomesWithRvParkingPage() {
       path={path}
       title={metadata.title as string}
       description={metadata.description as string}
-      hero={getHeroImageByKey("north-las-vegas")}
+      hero={getHeroImageByKey("las-vegas-homes-with-rv-parking")}
       heroBadge="RV & Boat Parking"
       heroTitle="Las Vegas Homes with RV Parking"
       heroSubtitle="Side-yard parking, oversized lots, and HOA-aware searches across the Las Vegas Valley."

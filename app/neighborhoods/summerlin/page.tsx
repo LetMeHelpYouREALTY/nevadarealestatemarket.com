@@ -225,16 +225,15 @@ export default function SummerlinPage() {
                   <div className="flex items-center mb-4">
                     <GraduationCap className="h-8 w-8 text-blue-600 mr-3" />
                     <h4 className="font-bold text-slate-900 text-lg">
-                      Top-Rated Schools
+                      Named School Campuses
                     </h4>
                   </div>
                   <p className="text-slate-600">
-                    Summerlin is home to some of Nevada's highest-performing
-                    schools. The community includes multiple Blue Ribbon
-                    schools, advanced STEM programs, and excellent private
-                    school options like The Meadows School and Bishop Gorman
-                    High School. Families consistently choose Summerlin for its
-                    exceptional educational opportunities.
+                    Summerlin is served by Clark County School District campuses
+                    including the Palo Verde cluster, plus nearby private
+                    options such as The Meadows School and Bishop Gorman High
+                    School. Buyers often weigh commute times to those campuses
+                    alongside Red Rock trail access.
                   </p>
                 </div>
               </div>
@@ -246,8 +245,8 @@ export default function SummerlinPage() {
               <div className="not-prose bg-white border border-slate-200 rounded-xl p-6">
                 <p className="text-slate-700 mb-4">
                   Summerlin is served by the Clark County School District with
-                  some of Nevada's highest-rated public schools, plus excellent
-                  private options:
+                  named campuses in the Palo Verde cluster, plus nearby private
+                  options:
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div>

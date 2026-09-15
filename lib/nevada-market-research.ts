@@ -293,7 +293,7 @@ export const expandedMarketFaqs: Record<string, FAQItem[]> = {
     {
       question: "Best Nevada neighborhoods to buy in 2026?",
       answer:
-        "Families: Henderson (Green Valley, Anthem) or Summerlin. First-time buyers: North Las Vegas, Mountains Edge, Skye Canyon. Luxury: The Ridges, MacDonald Ranch, Lake Las Vegas. Call (702) 500-1955 for a personalized shortlist.",
+        "Henderson (Green Valley, Anthem) or Summerlin for parks and master-planned amenities. First-time buyers: North Las Vegas, Mountains Edge, Skye Canyon. Luxury: The Ridges, MacDonald Ranch, Lake Las Vegas. Call (702) 500-1955 for a personalized shortlist.",
     },
   ],
   tax: [

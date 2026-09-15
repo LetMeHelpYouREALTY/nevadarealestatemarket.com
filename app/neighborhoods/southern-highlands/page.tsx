@@ -5,6 +5,7 @@ import { Phone, Shield, Mountain, Star, MapPin } from "lucide-react";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { getCommunityHeroImage } from "@/lib/images/community-images";
 import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
@@ -73,7 +74,10 @@ export default function SouthernHighlandsPage() {
       />
       <Navbar />
       <PageHero
-        hero={getHeroImageByKey("las-vegas")}
+        hero={
+          getCommunityHeroImage("southern-highlands") ??
+          getHeroImageByKey("las-vegas")
+        }
         title="Berkshire Hathaway HomeServices Southern Highlands"
         subtitle="Berkshire Hathaway HomeServices Southern Highlands real estate guidance from Dr. Jan Duffy — Nevada Real Estate Market."
         className="pt-24"

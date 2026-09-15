@@ -10,6 +10,7 @@ import {
 import { generateDatasetSchema, generateItemListSchema } from "@/lib/schema";
 import { getValleyMarketDataset } from "@/lib/nevada-market-research";
 import { MarketResearchContent } from "@/components/market/MarketResearchContent";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 import { getHeroImageByKey } from "@/lib/hero-images";
 import SchemaScript from "@/components/SchemaScript";
 import { ArrowRight, BarChart3, Home, MapPin } from "lucide-react";
@@ -40,7 +41,8 @@ const datasetSchema = generateDatasetSchema({
 
 const areaListSchema = generateItemListSchema({
   name: "Nevada Real Estate Markets by City",
-  description: "Major Las Vegas Valley housing markets with median prices and trends",
+  description:
+    "Major Las Vegas Valley housing markets with median prices and trends",
   items: nevadaMarketAreas.map((area) => ({
     name: `${area.name} Real Estate`,
     url: area.path,
@@ -69,10 +71,11 @@ export default function NevadaRealEstateMarketPage() {
           <h2 className="text-2xl font-bold text-slate-900 mb-4">
             Major Nevada Housing Markets
           </h2>
+          <HeadingPhoto heading="Major Nevada Housing Markets" />
           <p className="text-slate-600 mb-8 max-w-3xl">
-            Clark County drives Nevada&apos;s residential market. Each city offers
-            different price points, schools, and lifestyle — compare medians and
-            drill into community-level guides.
+            Clark County drives Nevada&apos;s residential market. Each city
+            offers different price points, schools, and lifestyle — compare
+            medians and drill into community-level guides.
           </p>
           <div className="grid gap-6 md:grid-cols-2">
             {nevadaMarketAreas.map((area) => (
@@ -146,18 +149,24 @@ export default function NevadaRealEstateMarketPage() {
             href="/no-state-income-tax"
             className="rounded-xl border border-green-200 bg-green-50 p-6 hover:shadow-md transition"
           >
-            <h3 className="font-bold text-lg mb-2 text-slate-900">No State Income Tax</h3>
+            <h3 className="font-bold text-lg mb-2 text-slate-900">
+              No State Income Tax
+            </h3>
             <p className="text-slate-600 text-sm">
-              Why Nevada&apos;s tax advantage drives California relocators — and how much you could save.
+              Why Nevada&apos;s tax advantage drives California relocators — and
+              how much you could save.
             </p>
           </Link>
           <Link
             href="/nevada-buyers-guide"
             className="rounded-xl border border-blue-200 bg-blue-50 p-6 hover:shadow-md transition"
           >
-            <h3 className="font-bold text-lg mb-2 text-slate-900">Nevada Buyers Guide</h3>
+            <h3 className="font-bold text-lg mb-2 text-slate-900">
+              Nevada Buyers Guide
+            </h3>
             <p className="text-slate-600 text-sm">
-              Step-by-step process from pre-approval to closing in the Las Vegas Valley.
+              Step-by-step process from pre-approval to closing in the Las Vegas
+              Valley.
             </p>
           </Link>
         </section>

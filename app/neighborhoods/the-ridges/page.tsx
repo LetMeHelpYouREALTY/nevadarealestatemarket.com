@@ -5,6 +5,7 @@ import { Phone, Shield, Star, Mountain, Home as HomeIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { getCommunityHeroImage } from "@/lib/images/community-images";
 import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
@@ -73,7 +74,9 @@ export default function TheRidgesPage() {
       />
       <Navbar />
       <PageHero
-        hero={getHeroImageByKey("summerlin")}
+        hero={
+          getCommunityHeroImage("the-ridges") ?? getHeroImageByKey("summerlin")
+        }
         title="Berkshire Hathaway HomeServices The Ridges"
         subtitle="Berkshire Hathaway HomeServices The Ridges real estate guidance from Dr. Jan Duffy — Nevada Real Estate Market."
         className="pt-24"

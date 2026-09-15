@@ -1,6 +1,7 @@
 import { SeoArticlePage } from "@/components/sections/SeoArticlePage";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { getCommunityHeroImage } from "@/lib/images/community-images";
 import { agentInfo } from "@/lib/site-config";
 
 const path = "/henderson/seven-hills";
@@ -33,7 +34,9 @@ export default function SevenHillsPage() {
       path={path}
       title="Seven Hills Homes for Sale | Henderson NV"
       description="Guard-gated Seven Hills Henderson with Rio Secco Golf Club, elevated views, and enclaves from resale to custom estates."
-      hero={getHeroImageByKey("henderson")}
+      hero={
+        getCommunityHeroImage("seven-hills") ?? getHeroImageByKey("henderson")
+      }
       heroBadge="Henderson · 89052"
       heroTitle="Seven Hills"
       heroSubtitle="Guard-gated hillside living around Rio Secco — distinct from Anthem and MacDonald Highlands."
@@ -56,7 +59,8 @@ export default function SevenHillsPage() {
             " for current MLS pricing.",
         },
         {
-          question: "How does Seven Hills differ from Anthem or MacDonald Highlands?",
+          question:
+            "How does Seven Hills differ from Anthem or MacDonald Highlands?",
           answer:
             "Seven Hills is a fully built-out ~1,300-acre guard-gated plan centered on public-access Rio Secco (Rees Jones) and the Butch Harmon School of Golf. Anthem mixes Country Club, Highlands, and Sun City Anthem 55+. MacDonald Highlands sits higher with DragonRidge and a steeper luxury price band.",
         },

@@ -5,6 +5,7 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 import { agentInfo } from "@/lib/site-config";
 import { nevadaMarketFaqs } from "@/lib/nevada-market-data";
 import { MarketResearchContent } from "@/components/market/MarketResearchContent";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 import { DollarSign, Sun, Home, TrendingUp } from "lucide-react";
 import { getHeroImageByKey } from "@/lib/hero-images";
 
@@ -29,8 +30,18 @@ const breadcrumbs = [
 
 const savingsExamples = [
   { income: "$150,000", caTax: "~$9,500/yr", nvTax: "$0", savings: "~$9,500" },
-  { income: "$250,000", caTax: "~$18,000/yr", nvTax: "$0", savings: "~$18,000" },
-  { income: "$500,000", caTax: "~$45,000/yr", nvTax: "$0", savings: "~$45,000" },
+  {
+    income: "$250,000",
+    caTax: "~$18,000/yr",
+    nvTax: "$0",
+    savings: "~$18,000",
+  },
+  {
+    income: "$500,000",
+    caTax: "~$45,000/yr",
+    nvTax: "$0",
+    savings: "~$45,000",
+  },
 ];
 
 export default function NoStateIncomeTaxPage() {
@@ -89,17 +100,27 @@ export default function NoStateIncomeTaxPage() {
         <h2 className="text-2xl font-bold text-slate-900 mb-6">
           Estimated Annual State Income Tax Savings (CA → NV)
         </h2>
+        <HeadingPhoto heading="Estimated Annual State Income Tax Savings (CA → NV)" />
         <p className="text-sm text-slate-500 mb-4">
-          Illustrative estimates only — consult a tax professional for your situation.
+          Illustrative estimates only — consult a tax professional for your
+          situation.
         </p>
         <div className="overflow-x-auto rounded-xl border">
           <table className="w-full text-sm">
             <thead className="bg-slate-50 border-b">
               <tr>
-                <th className="px-6 py-3 text-left font-semibold">Household Income</th>
-                <th className="px-6 py-3 text-left font-semibold">Est. CA State Tax</th>
-                <th className="px-6 py-3 text-left font-semibold">NV State Tax</th>
-                <th className="px-6 py-3 text-left font-semibold">Annual Savings</th>
+                <th className="px-6 py-3 text-left font-semibold">
+                  Household Income
+                </th>
+                <th className="px-6 py-3 text-left font-semibold">
+                  Est. CA State Tax
+                </th>
+                <th className="px-6 py-3 text-left font-semibold">
+                  NV State Tax
+                </th>
+                <th className="px-6 py-3 text-left font-semibold">
+                  Annual Savings
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -108,7 +129,9 @@ export default function NoStateIncomeTaxPage() {
                   <td className="px-6 py-3 font-medium">{row.income}</td>
                   <td className="px-6 py-3 text-red-600">{row.caTax}</td>
                   <td className="px-6 py-3 text-green-600">{row.nvTax}</td>
-                  <td className="px-6 py-3 text-blue-600 font-semibold">{row.savings}</td>
+                  <td className="px-6 py-3 text-blue-600 font-semibold">
+                    {row.savings}
+                  </td>
                 </tr>
               ))}
             </tbody>

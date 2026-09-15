@@ -32,8 +32,8 @@ export const HERO_IMAGES: Record<string, HeroImage> = {
     alt: "Clark County Nevada suburban communities and desert mountains from the air",
   },
   "nevada-housing-forecast": {
-    src: "/images/hero/selling-curb-appeal.jpg",
-    alt: "Nevada home exterior representing 2026 Las Vegas Valley housing market trends",
+    src: "/images/hero/clark-county-aerial.jpg",
+    alt: "Clark County Nevada aerial housing grid representing 2026 Las Vegas Valley market trends",
   },
   "compare-communities": {
     src: "/images/hero/nevada-neighborhoods.jpg",

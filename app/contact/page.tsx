@@ -25,6 +25,7 @@ import {
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { HeadingPhoto } from "@/components/sections/SectionImage";
 import { GoogleMapEmbed } from "@/components/maps/GoogleMapEmbed";
+import { GbpPostsFeed } from "@/components/gbp/GbpPostsFeed";
 import { getOfficeLocation } from "@/lib/map-locations";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -200,6 +201,7 @@ export default function ContactPage() {
               <div className="mb-8">
                 <GoogleMapEmbed location={getOfficeLocation()} height={300} />
               </div>
+              <GbpPostsFeed className="mb-8" />
 
               {/* Credentials */}
               <div className="p-4 bg-blue-50 rounded-lg">

@@ -7,9 +7,16 @@ import { GoogleMapEmbed } from "@/components/maps/GoogleMapEmbed";
 import SchemaScript from "@/components/SchemaScript";
 import type { MapLocation } from "@/lib/map-locations";
 import { getHeroImageByKey } from "@/lib/hero-images";
-import { agentInfo, officeInfo, businessHours, siteConfig } from "@/lib/site-config";
+import {
+  agentInfo,
+  officeInfo,
+  businessHours,
+  siteConfig,
+} from "@/lib/site-config";
 import { generateBreadcrumbSchema, combineSchemas } from "@/lib/schema";
 import { Phone, MapPin, Clock, ArrowRight } from "lucide-react";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
+import { GbpPostsFeed } from "@/components/gbp/GbpPostsFeed";
 
 type MapSeoPageProps = {
   location: MapLocation;
@@ -17,7 +24,8 @@ type MapSeoPageProps = {
 };
 
 function buildPlaceSchema(location: MapLocation) {
-  const basePath = location.slug === "office" ? "/directions" : `/maps/${location.slug}`;
+  const basePath =
+    location.slug === "office" ? "/directions" : `/maps/${location.slug}`;
 
   return {
     "@context": "https://schema.org",
@@ -54,7 +62,8 @@ function buildPlaceSchema(location: MapLocation) {
 }
 
 export function MapSeoPage({ location, breadcrumbs }: MapSeoPageProps) {
-  const path = location.slug === "office" ? "/directions" : `/maps/${location.slug}`;
+  const path =
+    location.slug === "office" ? "/directions" : `/maps/${location.slug}`;
   const hero = getHeroImageByKey(location.heroKey);
 
   const placeSchema = buildPlaceSchema(location);
@@ -106,7 +115,9 @@ export function MapSeoPage({ location, breadcrumbs }: MapSeoPageProps) {
             <aside className="space-y-6">
               {location.address && (
                 <div className="rounded-xl border p-6 bg-white">
-                  <h2 className="font-bold text-lg text-slate-900 mb-4">Office NAP</h2>
+                  <h2 className="font-bold text-lg text-slate-900 mb-4">
+                    Office NAP
+                  </h2>
                   <div className="space-y-3 text-sm text-slate-700">
                     <p className="flex items-start gap-2">
                       <MapPin className="h-4 w-4 text-blue-600 mt-0.5 shrink-0" />
@@ -119,7 +130,10 @@ export function MapSeoPage({ location, breadcrumbs }: MapSeoPageProps) {
                     </p>
                     <p className="flex items-center gap-2">
                       <Phone className="h-4 w-4 text-blue-600 shrink-0" />
-                      <a href={agentInfo.phoneTel} className="hover:text-blue-600 font-medium">
+                      <a
+                        href={agentInfo.phoneTel}
+                        className="hover:text-blue-600 font-medium"
+                      >
                         {agentInfo.phone}
                       </a>
                     </p>
@@ -133,11 +147,16 @@ export function MapSeoPage({ location, breadcrumbs }: MapSeoPageProps) {
 
               <div className="rounded-xl border p-6 bg-blue-50">
                 <h2 className="font-bold text-lg text-slate-900 mb-3">
-                  {location.slug === "office" ? "Service Areas" : "Featured Areas"}
+                  {location.slug === "office"
+                    ? "Service Areas"
+                    : "Featured Areas"}
                 </h2>
                 <ul className="space-y-2">
                   {location.neighborhoods.map((n) => (
-                    <li key={n} className="text-sm text-slate-700 flex items-center gap-2">
+                    <li
+                      key={n}
+                      className="text-sm text-slate-700 flex items-center gap-2"
+                    >
                       <span className="text-blue-600">•</span> {n}
                     </li>
                   ))}
@@ -161,7 +180,10 @@ export function MapSeoPage({ location, breadcrumbs }: MapSeoPageProps) {
           </div>
 
           <section className="max-w-4xl mx-auto mt-16">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">FAQ</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">
+              FAQ
+            </h2>
+            <HeadingPhoto heading="FAQ" />
             <div className="space-y-4">
               {location.faqs.map((faq) => (
                 <details
@@ -174,14 +196,21 @@ export function MapSeoPage({ location, breadcrumbs }: MapSeoPageProps) {
                       +
                     </span>
                   </summary>
-                  <p className="mt-3 text-slate-600 text-sm leading-relaxed">{faq.answer}</p>
+                  <p className="mt-3 text-slate-600 text-sm leading-relaxed">
+                    {faq.answer}
+                  </p>
                 </details>
               ))}
             </div>
           </section>
+          {location.slug === "office" && (
+            <section className="max-w-4xl mx-auto mt-12">
+              <GbpPostsFeed />
+            </section>
+          )}
         </div>
       </main>
-<Footer />
+      <Footer />
     </>
   );
 }

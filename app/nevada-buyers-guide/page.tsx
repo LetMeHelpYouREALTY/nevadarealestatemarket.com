@@ -3,8 +3,15 @@ import Link from "next/link";
 import { NevadaMarketLayout } from "@/components/market/NevadaMarketLayout";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { marketResourceLinks } from "@/lib/nevada-market-data";
-import { ArrowRight, ClipboardCheck, Search, FileText, Key } from "lucide-react";
+import {
+  ArrowRight,
+  ClipboardCheck,
+  Search,
+  FileText,
+  Key,
+} from "lucide-react";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Nevada Home Buyers Guide 2026 | Step-by-Step Las Vegas Valley",
@@ -83,19 +90,25 @@ export default function NevadaBuyersGuidePage() {
       breadcrumbs={breadcrumbs}
       faqs={faqs}
     >
-      <section className="mb-16 grid md:grid-cols-2 gap-8">
-        {steps.map(({ icon: Icon, step, title, text }) => (
-          <div key={step} className="flex gap-4 rounded-xl border p-6">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-600 font-bold">
-              {step}
+      <section className="mb-16">
+        <h2 className="text-2xl font-bold text-slate-900 mb-6">
+          Nevada Home Buying Steps
+        </h2>
+        <HeadingPhoto heading="Nevada Home Buying Steps" />
+        <div className="grid md:grid-cols-2 gap-8">
+          {steps.map(({ icon: Icon, step, title, text }) => (
+            <div key={step} className="flex gap-4 rounded-xl border p-6">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-600 font-bold">
+                {step}
+              </div>
+              <div>
+                <Icon className="h-5 w-5 text-blue-600 mb-2" />
+                <h3 className="font-bold text-lg mb-2">{title}</h3>
+                <p className="text-sm text-slate-600">{text}</p>
+              </div>
             </div>
-            <div>
-              <Icon className="h-5 w-5 text-blue-600 mb-2" />
-              <h3 className="font-bold text-lg mb-2">{title}</h3>
-              <p className="text-sm text-slate-600">{text}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </section>
 
       <section className="mb-16 grid md:grid-cols-3 gap-6">
@@ -103,7 +116,9 @@ export default function NevadaBuyersGuidePage() {
           href="/buyers/first-time-buyers"
           className="rounded-xl border p-6 hover:border-blue-300 hover:shadow-md transition group"
         >
-          <h3 className="font-bold mb-2 group-hover:text-blue-600">First-Time Buyers</h3>
+          <h3 className="font-bold mb-2 group-hover:text-blue-600">
+            First-Time Buyers
+          </h3>
           <p className="text-sm text-slate-600 mb-3">
             Down payment assistance, FHA/VA programs, and builder incentives.
           </p>
@@ -115,7 +130,9 @@ export default function NevadaBuyersGuidePage() {
           href="/no-state-income-tax"
           className="rounded-xl border p-6 hover:border-blue-300 hover:shadow-md transition group"
         >
-          <h3 className="font-bold mb-2 group-hover:text-blue-600">Tax Advantages</h3>
+          <h3 className="font-bold mb-2 group-hover:text-blue-600">
+            Tax Advantages
+          </h3>
           <p className="text-sm text-slate-600 mb-3">
             Why Nevada&apos;s zero state income tax attracts relocators.
           </p>
@@ -127,7 +144,9 @@ export default function NevadaBuyersGuidePage() {
           href="/compare-communities"
           className="rounded-xl border p-6 hover:border-blue-300 hover:shadow-md transition group"
         >
-          <h3 className="font-bold mb-2 group-hover:text-blue-600">Compare Communities</h3>
+          <h3 className="font-bold mb-2 group-hover:text-blue-600">
+            Compare Communities
+          </h3>
           <p className="text-sm text-slate-600 mb-3">
             Henderson vs Summerlin vs Las Vegas side-by-side.
           </p>
@@ -138,7 +157,9 @@ export default function NevadaBuyersGuidePage() {
       </section>
 
       <section>
-        <h2 className="text-xl font-bold text-slate-900 mb-4">More Market Resources</h2>
+        <h2 className="text-xl font-bold text-slate-900 mb-4">
+          More Market Resources
+        </h2>
         <div className="grid sm:grid-cols-2 gap-3">
           {marketResourceLinks.map((link) => (
             <Link

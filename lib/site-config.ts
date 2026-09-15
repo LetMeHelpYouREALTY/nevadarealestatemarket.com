@@ -308,7 +308,7 @@ export const neighborhoods = [
       "Resort pools",
       "Walking trails",
       "New construction",
-      "Great schools",
+      "Named CCSD campuses",
     ],
   },
 ];

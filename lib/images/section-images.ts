@@ -76,7 +76,7 @@ const RULES: { key: string; test: RegExp; src: string; alt: string }[] = [
   },
   {
     key: "market-snapshot",
-    test: /snapshot|median|inventory|housing market|market data|forecast|market report|market insights|market update|forces driving|real estate market/i,
+    test: /snapshot|median|inventory|housing market|market data|forecast|market report|market insights|market update|forces driving|real estate market|key statistics|segment outlook/i,
     src: "/images/sections/section-market-snapshot.jpg",
     alt: "Aerial rooftops across the Las Vegas Valley housing market",
   },

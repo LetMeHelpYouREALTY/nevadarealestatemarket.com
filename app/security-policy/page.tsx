@@ -1,23 +1,36 @@
-import type { Metadata } from 'next'
+import type { Metadata } from "next";
+import { SitePage } from "@/components/layouts/SitePage";
+import { getHeroImageByKey } from "@/lib/hero-images";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "https://www.nevadarealestatemarket.com/security-policy" },
-  title: 'Security Policy',
-  description: 'Security policy and responsible disclosure information for nevadarealestatemarket.com',
+  alternates: {
+    canonical: "https://www.nevadarealestatemarket.com/security-policy",
+  },
+  title: "Security Policy",
+  description:
+    "Security policy and responsible disclosure for nevadarealestatemarket.com. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties. (702) 500-1955.",
   robots: {
     index: true,
     follow: true,
   },
-}
+};
 
 export default function SecurityPolicyPage() {
   return (
-    <div className="min-h-screen bg-white py-12">
-      <div className="container mx-auto max-w-4xl px-4">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">
-          Security Policy
-        </h1>
-
+    <SitePage
+      path="/security-policy"
+      seoTitle="Security Policy"
+      seoDescription="Security policy and responsible disclosure for nevadarealestatemarket.com."
+      hero={getHeroImageByKey("contact")}
+      heroBadge="Site Policy"
+      heroTitle="Security Policy"
+      heroSubtitle="Responsible disclosure and security practices for Dr. Jan Duffy's Nevada real estate site."
+      breadcrumbs={[
+        { name: "Home", url: "/" },
+        { name: "Security Policy", url: "/security-policy" },
+      ]}
+    >
+      <main className="container mx-auto max-w-4xl px-4 py-12">
         <div className="prose prose-lg max-w-none">
           {/* Overview */}
           <section className="mb-12">
@@ -25,9 +38,10 @@ export default function SecurityPolicyPage() {
               Our Commitment to Security
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              At Berkshire Hathaway HomeServices Nevada Properties, we take the security
-              of our systems and the privacy of our clients seriously. This page outlines
-              our security practices and provides information for security researchers.
+              At Berkshire Hathaway HomeServices Nevada Properties, we take the
+              security of our systems and the privacy of our clients seriously.
+              This page outlines our security practices and provides information
+              for security researchers.
             </p>
           </section>
 
@@ -37,23 +51,26 @@ export default function SecurityPolicyPage() {
               Reporting Security Vulnerabilities
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              If you've discovered a security vulnerability, we appreciate your help in
-              disclosing it to us responsibly.
+              If you've discovered a security vulnerability, we appreciate your
+              help in disclosing it to us responsibly.
             </p>
-            
+
             <div className="bg-blue-50 border-l-4 border-blue-500 p-6 my-6">
               <h3 className="font-semibold text-blue-900 mb-3">
                 How to Report
               </h3>
               <ul className="space-y-2 text-blue-800">
                 <li>
-                  <strong>Email:</strong>{' '}
-                  <a href="mailto:security@heyberkshire.com" className="underline">
+                  <strong>Email:</strong>{" "}
+                  <a
+                    href="mailto:security@heyberkshire.com"
+                    className="underline"
+                  >
                     security@heyberkshire.com
                   </a>
                 </li>
                 <li>
-                  <strong>Phone:</strong>{' '}
+                  <strong>Phone:</strong>{" "}
                   <a href="tel:+17025001955" className="underline">
                     (702) 500-1955
                   </a>
@@ -142,7 +159,8 @@ export default function SecurityPolicyPage() {
               Third-Party Services
             </h2>
             <p className="text-gray-700 mb-4">
-              We use trusted third-party services to provide the best experience:
+              We use trusted third-party services to provide the best
+              experience:
             </p>
             <ul className="list-disc pl-6 text-gray-700 space-y-2">
               <li>
@@ -171,7 +189,8 @@ export default function SecurityPolicyPage() {
               </li>
             </ul>
             <p className="text-gray-700 mt-4">
-              Each service maintains its own security practices and compliance certifications.
+              Each service maintains its own security practices and compliance
+              certifications.
             </p>
           </section>
 
@@ -181,15 +200,18 @@ export default function SecurityPolicyPage() {
               Responsible Disclosure Policy
             </h2>
             <div className="bg-green-50 border-l-4 border-green-500 p-6">
-              <h3 className="font-semibold text-green-900 mb-3">
-                We Promise
-              </h3>
+              <h3 className="font-semibold text-green-900 mb-3">We Promise</h3>
               <ul className="text-green-800 space-y-2">
                 <li>✅ We will respond within 48 hours</li>
                 <li>✅ We will keep you updated on our progress</li>
                 <li>✅ We will credit you for the discovery (if desired)</li>
-                <li>✅ We will not take legal action against good-faith researchers</li>
-                <li>✅ We will work with you to understand and resolve the issue</li>
+                <li>
+                  ✅ We will not take legal action against good-faith
+                  researchers
+                </li>
+                <li>
+                  ✅ We will work with you to understand and resolve the issue
+                </li>
               </ul>
             </div>
           </section>
@@ -200,7 +222,8 @@ export default function SecurityPolicyPage() {
               Out of Scope
             </h2>
             <p className="text-gray-700 mb-4">
-              Please do not report the following (not considered vulnerabilities):
+              Please do not report the following (not considered
+              vulnerabilities):
             </p>
             <ul className="list-disc pl-6 text-gray-700 space-y-2">
               <li>Publicly accessible information (e.g., property listings)</li>
@@ -221,7 +244,10 @@ export default function SecurityPolicyPage() {
               To protect your information when using our site:
             </p>
             <ul className="list-disc pl-6 text-gray-700 space-y-2">
-              <li>Ensure you&apos;re on the correct domain: <strong>nevadarealestatemarket.com</strong></li>
+              <li>
+                Ensure you&apos;re on the correct domain:{" "}
+                <strong>nevadarealestatemarket.com</strong>
+              </li>
               <li>Look for the padlock icon (HTTPS)</li>
               <li>Don't share sensitive information via email</li>
               <li>Use strong, unique passwords if creating an account</li>
@@ -246,13 +272,16 @@ export default function SecurityPolicyPage() {
                 Berkshire Hathaway HomeServices Nevada Properties
               </p>
               <p className="mb-2">
-                Email:{' '}
-                <a href="mailto:info@heyberkshire.com" className="text-blue-600 underline">
+                Email:{" "}
+                <a
+                  href="mailto:info@heyberkshire.com"
+                  className="text-blue-600 underline"
+                >
                   info@heyberkshire.com
                 </a>
               </p>
               <p>
-                Phone:{' '}
+                Phone:{" "}
                 <a href="tel:+17025001955" className="text-blue-600 underline">
                   (702) 500-1955
                 </a>
@@ -260,17 +289,16 @@ export default function SecurityPolicyPage() {
             </div>
           </section>
 
-          {/* Last Updated */}
-          <footer className="border-t pt-6 mt-12">
+          <div className="border-t pt-6 mt-12">
             <p className="text-sm text-gray-500">
               Last updated: February 14, 2026
             </p>
             <p className="text-sm text-gray-500">
               This policy is reviewed and updated regularly.
             </p>
-          </footer>
+          </div>
         </div>
-      </div>
-    </div>
-  )
+      </main>
+    </SitePage>
+  );
 }

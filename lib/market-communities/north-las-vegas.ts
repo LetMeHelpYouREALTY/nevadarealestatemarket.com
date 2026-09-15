@@ -77,7 +77,7 @@ export const northLasVegasCommunities: MarketCommunity[] = [
     name: "Eldorado",
     tagline: "Established North Las Vegas community with great value",
     priceRange: "$280K – $550K",
-    description: `Eldorado is one of North Las Vegas's most established residential areas, offering strong value for first-time buyers and investors. The community features a mix of housing built across several decades, with many homes featuring larger lots than comparably priced properties in the valley. Its central North Las Vegas location provides easy access to Nellis Air Force Base, North Las Vegas Airport, and major employment corridors along I-15 and US-95. Strong rental demand from military families and essential workers.`,
+    description: `Eldorado is one of North Las Vegas's most established residential areas, offering strong value for first-time buyers and investors. The community features a mix of housing built across several decades, with many homes featuring larger lots than comparably priced properties in the valley. Its central North Las Vegas location provides easy access to Nellis Air Force Base, North Las Vegas Airport, and major employment corridors along I-15 and US-95. Strong rental demand from essential workers and nearby employment centers.`,
     highlights: [
       "Value-priced entry point",
       "Larger lots than comparable areas",
@@ -89,7 +89,7 @@ export const northLasVegasCommunities: MarketCommunity[] = [
     bestFor: [
       "First-time buyers",
       "Investors",
-      "Military families",
+      "Near Nellis Air Force Base",
       "Value-focused buyers",
     ],
     address: "Civic Center Dr",

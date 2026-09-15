@@ -1,6 +1,7 @@
 import { SeoArticlePage } from "@/components/sections/SeoArticlePage";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { getCommunityHeroImage } from "@/lib/images/community-images";
 import { agentInfo } from "@/lib/site-config";
 
 const path = "/discover-your-dream-home-at-silverstone-ranch";
@@ -32,8 +33,7 @@ const faqs = [
   },
   {
     question: "How do I tour Silverstone Ranch homes?",
-    answer:
-      `Call or text Dr. Jan Duffy at ${agentInfo.phone}. She sets private showings, reviews HOA docs, and compares nearby Centennial Hills alternatives.`,
+    answer: `Call or text Dr. Jan Duffy at ${agentInfo.phone}. She sets private showings, reviews HOA docs, and compares nearby Centennial Hills alternatives.`,
   },
 ];
 
@@ -43,7 +43,10 @@ export default function SilverstoneRanchPage() {
       path={path}
       title={metadata.title as string}
       description={metadata.description as string}
-      hero={getHeroImageByKey("las-vegas")}
+      hero={
+        getCommunityHeroImage("silverstone-ranch") ??
+        getHeroImageByKey("las-vegas")
+      }
       heroBadge="Northwest Las Vegas"
       heroTitle="Discover Your Dream Home at Silverstone Ranch"
       heroSubtitle="Golf-course community living in Northwest Las Vegas — guided MLS search with Dr. Jan Duffy."
@@ -84,7 +87,10 @@ export default function SilverstoneRanchPage() {
         },
       ]}
       relatedLinks={[
-        { href: "/las-vegas/centennial-hills", label: "Centennial Hills guide" },
+        {
+          href: "/las-vegas/centennial-hills",
+          label: "Centennial Hills guide",
+        },
         { href: "/las-vegas", label: "Las Vegas homes" },
         { href: "/luxury-homes", label: "Luxury homes valley-wide" },
         { href: "/home-valuation", label: "Free home valuation" },

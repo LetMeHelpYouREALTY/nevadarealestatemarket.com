@@ -32,8 +32,7 @@ const faqs = [
   },
   {
     question: "Can Dr. Jan Duffy help with a HIP purchase?",
-    answer:
-      `Yes. Dr. Jan Duffy coordinates with HIP-approved lenders, finds homes that fit program price bands, and manages timelines so financing contingencies stay on track. Call ${agentInfo.phone}.`,
+    answer: `Yes. Dr. Jan Duffy coordinates with HIP-approved lenders, finds homes that fit program price bands, and manages timelines so financing contingencies stay on track. Call ${agentInfo.phone}.`,
   },
 ];
 
@@ -43,7 +42,7 @@ export default function HipProgramPage() {
       path={path}
       title={metadata.title as string}
       description={metadata.description as string}
-      hero={getHeroImageByKey("buyers-first-time-buyers")}
+      hero={getHeroImageByKey("market-insights-home-is-possible-hip-program")}
       heroBadge="Down Payment Assistance"
       heroTitle="Nevada Home Is Possible (HIP) Program"
       heroSubtitle="Statewide assistance for qualified buyers — how it fits a Las Vegas Valley purchase."

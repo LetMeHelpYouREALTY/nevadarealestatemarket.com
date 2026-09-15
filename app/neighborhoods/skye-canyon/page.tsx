@@ -11,6 +11,7 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { getCommunityHeroImage } from "@/lib/images/community-images";
 import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
@@ -78,7 +79,10 @@ export default function SkyeCanyonPage() {
       />
       <Navbar />
       <PageHero
-        hero={getHeroImageByKey("north-las-vegas")}
+        hero={
+          getCommunityHeroImage("skye-canyon") ??
+          getHeroImageByKey("north-las-vegas")
+        }
         title="Berkshire Hathaway HomeServices Skye Canyon"
         subtitle="Berkshire Hathaway HomeServices Skye Canyon real estate guidance from Dr. Jan Duffy — Nevada Real Estate Market."
         className="pt-24"

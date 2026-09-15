@@ -23,8 +23,8 @@ export const nevadaMarketAreas = [
     change: marketStats.henderson.yearOverYearChange,
     daysOnMarket: marketStats.henderson.daysOnMarket,
     summary:
-      "Nevada's second-largest city — amenity-rich, strong schools, and premier luxury corridors like Lake Las Vegas.",
-    bestFor: "Families, luxury buyers, California relocators",
+      "Nevada's second-largest city — amenity-rich master plans and premier luxury corridors like Lake Las Vegas.",
+    bestFor: "Luxury buyers, California relocators",
   },
   {
     name: "Summerlin",
@@ -35,7 +35,7 @@ export const nevadaMarketAreas = [
     daysOnMarket: marketStats.summerlin.daysOnMarket,
     summary:
       "Master-planned living with Red Rock views, parks and trails, and guard-gated luxury in The Ridges.",
-    bestFor: "Families, outdoor lifestyle, upscale buyers",
+    bestFor: "Outdoor lifestyle, upscale buyers",
   },
   {
     name: "North Las Vegas",
@@ -113,14 +113,14 @@ const legacyFaqs = {
     {
       question: "Best areas to buy in Nevada in 2026?",
       answer:
-        "Families often choose Henderson or Summerlin; first-time buyers look at North Las Vegas and Mountains Edge; luxury buyers target The Ridges, MacDonald Ranch, and Lake Las Vegas. Schedule a consultation at (702) 500-1955 for a personalized shortlist.",
+        "Buyers often compare Henderson or Summerlin for parks and master-planned amenities; first-time buyers look at North Las Vegas and Mountains Edge; luxury buyers target The Ridges, MacDonald Ranch, and Lake Las Vegas. Schedule a consultation at (702) 500-1955 for a personalized shortlist.",
     },
   ],
   compare: [
     {
       question: "Henderson vs Summerlin — which is better?",
       answer:
-        "Henderson offers slightly lower medians ($492K vs $625K), strong schools, and Lake Las Vegas luxury. Summerlin provides Red Rock access, Downtown Summerlin, and ultra-luxury in The Ridges. Both appreciate well — choice depends on commute, budget, and lifestyle.",
+        "Henderson offers slightly lower medians ($492K vs $625K), 60+ city parks, and Lake Las Vegas luxury. Summerlin provides Red Rock access, Downtown Summerlin, and ultra-luxury in The Ridges. Both appreciate well — choice depends on commute, budget, and lifestyle.",
     },
     {
       question: "Las Vegas vs Henderson for relocating buyers?",

@@ -5,12 +5,13 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 import { nevadaMarketAreas, nevadaMarketFaqs } from "@/lib/nevada-market-data";
 import { Check, Minus } from "lucide-react";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 import { MarketResearchContent } from "@/components/market/MarketResearchContent";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Compare Las Vegas Communities | Henderson vs Summerlin vs NLV",
   description:
-    "Compare Henderson, Summerlin, Las Vegas & North Las Vegas — median prices, lifestyle, schools, and who each community is best for. Nevada real estate guide by Dr. Jan Duffy.",
+    "Compare Henderson, Summerlin, Las Vegas & North Las Vegas — median prices, lifestyle, commute, and who each community is best for. Nevada real estate guide by Dr. Jan Duffy.",
   path: "/compare-communities",
   keywords: [
     "Henderson vs Summerlin",
@@ -57,18 +58,18 @@ const comparisonRows: CompareRow[] = [
     northLV: "42",
   },
   {
-    factor: "Schools",
-    henderson: "Excellent",
-    summerlin: "Top-rated",
-    lasVegas: "Varies by zone",
-    northLV: "Improving",
+    factor: "Named School Campuses",
+    henderson: "CCSD + nearby private options",
+    summerlin: "Palo Verde cluster + private options",
+    lasVegas: "Varies by corridor",
+    northLV: "CCSD northwest campuses",
   },
   {
-    factor: "Safety",
-    henderson: "Very high",
-    summerlin: "Very high",
-    lasVegas: "Varies",
-    northLV: "Moderate",
+    factor: "Parks & Trails",
+    henderson: "60+ city parks, Anthem trails",
+    summerlin: "150+ parks, Red Rock access",
+    lasVegas: "Valley-wide parks",
+    northLV: "Floyd Lamb, Aliante trails",
   },
   {
     factor: "Luxury Options",
@@ -86,15 +87,20 @@ const comparisonRows: CompareRow[] = [
   },
   {
     factor: "Best For",
-    henderson: "Families, CA relocators",
-    summerlin: "Upscale families, outdoor",
+    henderson: "CA relocators, luxury buyers",
+    summerlin: "Red Rock lifestyle, upscale buyers",
     lasVegas: "Diversity, urban access",
     northLV: "First-time buyers, investors",
   },
 ];
 
 function RatingIcon({ value }: { value: string }) {
-  if (value === "Excellent" || value === "Top-rated" || value === "Very high" || value === "High volume") {
+  if (
+    value === "Excellent" ||
+    value === "Top-rated" ||
+    value === "Very high" ||
+    value === "High volume"
+  ) {
     return <Check className="h-4 w-4 text-green-600 inline mr-1" />;
   }
   if (value === "Varies" || value === "Moderate" || value === "Limited") {
@@ -112,11 +118,15 @@ export default function CompareCommunitiesPage() {
       metaTitle="Compare Las Vegas Valley Communities"
       metaDescription="Side-by-side comparison of Henderson, Summerlin, Las Vegas, and North Las Vegas housing markets."
       heroBadge="Community Comparison"
-      heroSubtitle="Median prices, lifestyle, schools, and who each city fits best — so you can narrow your search before touring homes."
+      heroSubtitle="Median prices, lifestyle, commute, and who each city fits — so you can narrow your search before touring homes."
       breadcrumbs={breadcrumbs}
       faqs={nevadaMarketFaqs.compare}
     >
       <section className="mb-16 overflow-x-auto">
+        <h2 className="text-2xl font-bold text-slate-900 mb-6">
+          Community Comparison Snapshot
+        </h2>
+        <HeadingPhoto heading="Compare Las Vegas Communities" />
         <table className="w-full min-w-[720px] text-sm border rounded-xl overflow-hidden">
           <thead className="bg-slate-900 text-white">
             <tr>
@@ -124,7 +134,9 @@ export default function CompareCommunitiesPage() {
               <th className="px-4 py-4 text-left font-semibold">Henderson</th>
               <th className="px-4 py-4 text-left font-semibold">Summerlin</th>
               <th className="px-4 py-4 text-left font-semibold">Las Vegas</th>
-              <th className="px-4 py-4 text-left font-semibold">North Las Vegas</th>
+              <th className="px-4 py-4 text-left font-semibold">
+                North Las Vegas
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -161,8 +173,12 @@ export default function CompareCommunitiesPage() {
       <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
         {nevadaMarketAreas.map((area) => (
           <div key={area.slug} className="rounded-xl border p-5">
-            <h3 className="font-bold text-lg text-slate-900 mb-2">{area.name}</h3>
-            <p className="text-2xl font-bold text-blue-600 mb-2">{area.medianPrice}</p>
+            <h3 className="font-bold text-lg text-slate-900 mb-2">
+              {area.name}
+            </h3>
+            <p className="text-2xl font-bold text-blue-600 mb-2">
+              {area.medianPrice}
+            </p>
             <p className="text-sm text-slate-600 mb-4">{area.summary}</p>
             <Link
               href={area.path}

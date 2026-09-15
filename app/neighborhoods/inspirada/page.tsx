@@ -11,6 +11,7 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { getCommunityHeroImage } from "@/lib/images/community-images";
 import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
@@ -77,7 +78,9 @@ export default function InspiradaPage() {
       />
       <Navbar />
       <PageHero
-        hero={getHeroImageByKey("henderson")}
+        hero={
+          getCommunityHeroImage("inspirada") ?? getHeroImageByKey("henderson")
+        }
         title="Berkshire Hathaway HomeServices Inspirada"
         subtitle="Berkshire Hathaway HomeServices Inspirada real estate guidance from Dr. Jan Duffy — Nevada Real Estate Market."
         className="pt-24"
@@ -427,7 +430,7 @@ export default function InspiradaPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Inspirada isn't just a place to live—it's a lifestyle. Families
+                "Inspirada isn't just a place to live—it's a lifestyle. Buyers
                 move here for the pools, the trails, and the community events
                 that make weekends special. As a Berkshire Hathaway HomeServices
                 agent, I help clients find the specific neighborhood within
