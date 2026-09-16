@@ -22,9 +22,11 @@
  * Agent portraits stay on git and are not uploaded.
  */
 
-const fs = require("fs");
-const path = require("path");
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DEFAULT_ACCOUNT_ID = "2cc579c1ec9e426ed585e933ebf4753b";
 const ACCOUNT_ID = process.env.CLOUDFLARE_ACCOUNT_ID || DEFAULT_ACCOUNT_ID;
 const TOKEN = process.env.CLOUDFLARE_API_TOKEN;
