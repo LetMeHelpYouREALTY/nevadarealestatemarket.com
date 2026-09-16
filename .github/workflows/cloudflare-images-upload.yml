@@ -1,0 +1,33 @@
+name: Cloudflare Images Upload
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, "cursor/**"]
+    paths:
+      - "public/images/**"
+      - "scripts/upload-to-cloudflare-images.mjs"
+      - ".github/workflows/cloudflare-images-upload.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  upload:
+    name: Upload hosted images
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Upload public/images to Cloudflare Images
+        env:
+          CLOUDFLARE_ACCOUNT_ID: 2cc579c1ec9e426ed585e933ebf4753b
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_IMAGES_SKIP_EXISTING: "1"
+        run: node scripts/upload-to-cloudflare-images.mjs

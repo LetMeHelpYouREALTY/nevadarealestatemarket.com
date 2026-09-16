@@ -3,8 +3,12 @@
 ## Storage
 
 - **Git backup:** files in `/public/images/` (this repo)
-- **Runtime CDN:** Cloudflare Images (`imagedelivery.net`) when `NEXT_PUBLIC_CF_IMAGES_HASH` is set
-- **Upload:** `pnpm images:upload` using `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`
+- **Runtime CDN:** Cloudflare Images hosted storage at
+  `https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/<id>/public`
+  when `NEXT_PUBLIC_CF_IMAGES_HASH=byE6BTe9lNqo21V57n4aPQ`
+- **Upload:** `pnpm images:upload` using `CLOUDFLARE_API_TOKEN`
+  (Account.Cloudflare Images:Edit) and account `2cc579c1ec9e426ed585e933ebf4753b`
+- **Portraits:** `/images/agent/` and `/images/dr-jan-duffy.jpg` stay on git
 
 Do not orange-cloud the Vercel apex. Images CDN is a separate hostname.
 

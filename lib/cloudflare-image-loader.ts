@@ -1,15 +1,16 @@
 /**
  * Cloudflare Image Loader for Next.js (Cloudflare Pages / next.config.cloudflare.js).
  *
- * Delivery format per Cloudflare Images docs (Apr 2026):
+ * Delivery format per Cloudflare Images docs (hosted + named variants, 2026):
  *   https://imagedelivery.net/<ACCOUNT_HASH>/<IMAGE_ID>/<VARIANT>
- * Flexible variants (optional):
+ * Flexible variants (optional, dashboard toggle):
  *   https://imagedelivery.net/<ACCOUNT_HASH>/<IMAGE_ID>/w=1200,q=85
  *
  * Git copies under /public/images remain the backup when the hash is unset.
+ * Agent portraits never go through imagedelivery.net.
  */
 
-import { localPathToImageId } from "./images/src";
+import { isAgentPortraitSrc, localPathToImageId } from "./images/src";
 
 export default function cloudflareImageLoader({
   src,
@@ -20,13 +21,14 @@ export default function cloudflareImageLoader({
   width: number;
   quality?: number;
 }): string {
-  const accountHash = process.env.NEXT_PUBLIC_CF_IMAGES_HASH;
+  const accountHash = process.env.NEXT_PUBLIC_CF_IMAGES_HASH?.trim() || "";
   const useFlexible = process.env.NEXT_PUBLIC_CF_IMAGES_FLEXIBLE === "true";
 
   if (
     accountHash &&
     !src.startsWith("http://") &&
-    !src.startsWith("https://")
+    !src.startsWith("https://") &&
+    !isAgentPortraitSrc(src)
   ) {
     const imageId = localPathToImageId(src);
     if (useFlexible) {
