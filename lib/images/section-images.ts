@@ -4,8 +4,8 @@ export type SectionImageMatch = HeroImage & { key: string };
 
 /**
  * Specific heading matches first; greedy buyer/seller patterns last.
- * Photos live in public/images (git backup). Cloudflare Images is used
- * when NEXT_PUBLIC_CF_IMAGES_HASH is set — see lib/images/src.ts.
+ * Photos live in public/images (git backup). Cloudflare Images hosted
+ * storage is used when NEXT_PUBLIC_CF_IMAGES_HASH is set — see lib/images/src.ts.
  */
 const RULES: { key: string; test: RegExp; src: string; alt: string }[] = [
   {

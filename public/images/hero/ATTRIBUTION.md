@@ -2,10 +2,11 @@
 
 Photography is generated to match each page H1 and section H2/H3 (Southern Nevada
 architecture, Mojave landscape). Git copies live under `/public/images/` as the
-backup. Cloudflare Images is the runtime CDN when `NEXT_PUBLIC_CF_IMAGES_HASH`
-is set.
+backup. Cloudflare Images hosted storage is the runtime CDN when
+`NEXT_PUBLIC_CF_IMAGES_HASH=byE6BTe9lNqo21V57n4aPQ`.
 
-Upload: `pnpm images:upload` (requires `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`).
+Delivery: `https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/<custom_id>/public`
+Upload: `pnpm images:upload` (`CLOUDFLARE_API_TOKEN` with Account.Cloudflare Images:Edit).
 
 | Folder           | Use                                                 |
 | ---------------- | --------------------------------------------------- |
