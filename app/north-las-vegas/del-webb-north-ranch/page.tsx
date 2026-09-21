@@ -1,6 +1,7 @@
 import { SeoArticlePage } from "@/components/sections/SeoArticlePage";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { getCommunityHeroImage } from "@/lib/images/community-images";
 import { agentInfo } from "@/lib/site-config";
 
 const path = "/north-las-vegas/del-webb-north-ranch";
@@ -28,7 +29,10 @@ export default function DelWebbNorthRanchPage() {
       path={path}
       title="Del Webb at North Ranch Homes for Sale | North Las Vegas"
       description="New Del Webb 55+ community in North Las Vegas with single-story homes and resort amenities."
-      hero={getHeroImageByKey("55-plus-communities")}
+      hero={
+        getCommunityHeroImage("del-webb-north-ranch") ??
+        getHeroImageByKey("55-plus-communities")
+      }
       heroBadge="55+ · North Las Vegas"
       heroTitle="Del Webb at North Ranch"
       heroSubtitle="New active-adult homes near Centennial Parkway and Losee Road — distinct from Sun City Aliante."
@@ -105,8 +109,14 @@ export default function DelWebbNorthRanchPage() {
         },
       ]}
       relatedLinks={[
-        { href: "/55-plus-communities/sun-city-aliante", label: "Sun City Aliante guide" },
-        { href: "/55-plus-communities", label: "All Las Vegas 55+ communities" },
+        {
+          href: "/55-plus-communities/sun-city-aliante",
+          label: "Sun City Aliante guide",
+        },
+        {
+          href: "/55-plus-communities",
+          label: "All Las Vegas 55+ communities",
+        },
         { href: "/north-las-vegas", label: "North Las Vegas market overview" },
         { href: "/sellers/downsizing", label: "Downsizing & 55+ move guide" },
         { href: "/contact", label: "Schedule a North Ranch tour" },

@@ -15,6 +15,7 @@ import type { Metadata } from "next";
 import SchemaScript from "@/components/SchemaScript";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { getCommunityHeroImage } from "@/lib/images/community-images";
 import { HeadingPhoto } from "@/components/sections/SectionImage";
 import {
   generateBreadcrumbSchema,
@@ -123,7 +124,10 @@ export default function SunCityAnthemPage() {
       <SchemaScript schema={pageSchemas} id="sun-city-anthem-schema" />
       <Navbar />
       <PageHero
-        hero={getHeroImageByKey("55-plus-communities")}
+        hero={
+          getCommunityHeroImage("sun-city-anthem") ??
+          getHeroImageByKey("55-plus-communities")
+        }
         title="Sun City Anthem"
         subtitle="Sun City Anthem real estate guidance from Dr. Jan Duffy — Nevada Real Estate Market."
         className="pt-24"

@@ -1,13 +1,107 @@
 import type { HeroImage } from "@/lib/images/types";
+import { COMMUNITY_HERO_IMAGES } from "@/lib/images/community-images";
 
 export type SectionImageMatch = HeroImage & { key: string };
+
+type SectionRule = { key: string; test: RegExp; src: string; alt: string };
+
+/**
+ * Named-community heading matches first (longest slug wins) so
+ * "About Sun City Anthem" does not fall through to the generic 55+ photo.
+ */
+const COMMUNITY_RULES: SectionRule[] = Object.entries(COMMUNITY_HERO_IMAGES)
+  .sort((a, b) => b[0].length - a[0].length)
+  .map(([slug, img]) => ({
+    key: `community-${slug}`,
+    test: new RegExp(slug.replace(/-/g, "[\\s-]"), "i"),
+    src: img.src,
+    alt: img.alt,
+  }));
 
 /**
  * Specific heading matches first; greedy buyer/seller patterns last.
  * Photos live in public/images (git backup). Cloudflare Images hosted
  * storage is used when NEXT_PUBLIC_CF_IMAGES_HASH is set — see lib/images/src.ts.
  */
-const RULES: { key: string; test: RegExp; src: string; alt: string }[] = [
+const HEADING_RULES: SectionRule[] = [
+  {
+    key: "named-schools",
+    test: /named schools|schools near|school campus/i,
+    src: "/images/sections/section-named-schools.jpg",
+    alt: "Henderson Nevada school campus building used as a location landmark",
+  },
+  {
+    key: "tax-savings",
+    test: /income tax savings|state income tax savings/i,
+    src: "/images/sections/section-tax-savings.jpg",
+    alt: "Nevada desert home representing California-to-Nevada tax relocation",
+  },
+  {
+    key: "equity",
+    test: /equity position|stronger than you think/i,
+    src: "/images/sections/section-equity.jpg",
+    alt: "Move-up Henderson home with pool representing seller equity",
+  },
+  {
+    key: "divorce-probate",
+    test: /situations we help|divorce|probate/i,
+    src: "/images/sections/section-divorce-probate.jpg",
+    alt: "Quiet Nevada street for discreet divorce and probate home sales",
+  },
+  {
+    key: "services",
+    test: /real estate services|core real estate|neighborhood services/i,
+    src: "/images/sections/section-services.jpg",
+    alt: "Henderson office desk for Nevada real estate services",
+  },
+  {
+    key: "service-areas",
+    test: /service areas|areas we serve/i,
+    src: "/images/sections/section-service-areas.jpg",
+    alt: "Las Vegas Valley aerial covering Henderson Summerlin and North Las Vegas",
+  },
+  {
+    key: "specialization",
+    test: /areas of specialization/i,
+    src: "/images/sections/section-specialization.jpg",
+    alt: "Mixed Las Vegas Valley housing types showing areas of specialization",
+  },
+  {
+    key: "clark-county",
+    test: /about clark county/i,
+    src: "/images/sections/section-clark-county.jpg",
+    alt: "Aerial of Clark County Nevada suburban housing and mountains",
+  },
+  {
+    key: "property-search",
+    test: /property searches|popular property/i,
+    src: "/images/sections/section-property-search.jpg",
+    alt: "Mixed Nevada home styles along a Henderson street for MLS searches",
+  },
+  {
+    key: "why-henderson",
+    test: /why henderson/i,
+    src: "/images/sections/section-henderson.jpg",
+    alt: "Palm-lined Henderson Nevada neighborhood with McCullough Range",
+  },
+  {
+    key: "why-summerlin",
+    test: /why summerlin/i,
+    src: "/images/sections/section-summerlin.jpg",
+    alt: "Summerlin homes with Red Rock Canyon sandstone cliffs",
+  },
+  {
+    key: "segment-outlook",
+    test: /segment outlook/i,
+    src: "/images/sections/section-segment-outlook.jpg",
+    alt: "Aerial rooftops showing mixed Las Vegas Valley housing segments",
+  },
+  {
+    key: "market-cities",
+    test: /valley cities|market profiles/i,
+    src: "/images/sections/section-service-areas.jpg",
+    alt: "Las Vegas Valley cities housing profiles from the air",
+  },
   {
     key: "55-plus",
     test: /55|active adult|sun city|del webb|downsiz|extract your equity/i,
@@ -99,6 +193,8 @@ const RULES: { key: string; test: RegExp; src: string; alt: string }[] = [
     alt: "Side-by-side Southern Nevada neighborhood streetscapes for community comparison",
   },
 ];
+
+const RULES: SectionRule[] = [...COMMUNITY_RULES, ...HEADING_RULES];
 
 const DEFAULT_SECTION: SectionImageMatch = {
   key: "default",

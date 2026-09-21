@@ -50,7 +50,7 @@ export default function MapsIndexPage() {
       />
       <Navbar />
       <PageHero
-        hero={getHeroImageByKey("nevada-real-estate-market")}
+        hero={getHeroImageByKey("maps")}
         badge="Local SEO Maps"
         title="Nevada Real Estate Maps"
         subtitle="Interactive Google Maps for every major Las Vegas Valley market — plus directions to our Henderson office."

@@ -16,6 +16,7 @@ import {
 import type { Metadata } from "next";
 import { PageHero } from "@/components/sections/PageHero";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { getCommunityHeroImage } from "@/lib/images/community-images";
 import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
@@ -71,7 +72,10 @@ export default function SoleraAnthemPage() {
       />
       <Navbar />
       <PageHero
-        hero={getHeroImageByKey("55-plus-communities")}
+        hero={
+          getCommunityHeroImage("solera-anthem") ??
+          getHeroImageByKey("55-plus-communities")
+        }
         title="Solera at Anthem"
         subtitle="Solera at Anthem real estate guidance from Dr. Jan Duffy — Nevada Real Estate Market."
         className="pt-24"

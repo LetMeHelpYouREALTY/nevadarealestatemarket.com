@@ -32,7 +32,7 @@ export const HERO_IMAGES: Record<string, HeroImage> = {
     alt: "Clark County Nevada suburban communities and desert mountains from the air",
   },
   "nevada-housing-forecast": {
-    src: "/images/hero/clark-county-aerial.jpg",
+    src: "/images/hero/housing-forecast.jpg",
     alt: "Clark County Nevada aerial housing grid representing 2026 Las Vegas Valley market trends",
   },
   "compare-communities": {
@@ -92,7 +92,7 @@ export const HERO_IMAGES: Record<string, HeroImage> = {
     alt: "Single-story Henderson and Summerlin homes for downsizers",
   },
   "sellers-move-up": {
-    src: "/images/hero/modern-nevada-home.jpg",
+    src: "/images/hero/move-up-home.jpg",
     alt: "Move-up Nevada home for growing households in Clark County",
   },
   "sellers-relocation": {
@@ -100,16 +100,16 @@ export const HERO_IMAGES: Record<string, HeroImage> = {
     alt: "Las Vegas Valley skyline for sellers relocating in or out of Nevada",
   },
   services: {
-    src: "/images/hero/office-henderson.jpg",
-    alt: "Henderson office corridor representing full-service Nevada real estate",
+    src: "/images/hero/services-consult.jpg",
+    alt: "Henderson office consultation room representing full-service Nevada real estate",
   },
   listings: {
-    src: "/images/hero/modern-nevada-home.jpg",
+    src: "/images/hero/listings-search.jpg",
     alt: "Featured Nevada homes and MLS listings across the Las Vegas Valley",
   },
   "home-valuation": {
-    src: "/images/hero/henderson-neighborhood.jpg",
-    alt: "Henderson Nevada homes for accurate market valuation insights",
+    src: "/images/hero/home-valuation.jpg",
+    alt: "Henderson Nevada home at twilight for accurate market valuation insights",
   },
   "luxury-homes": {
     src: "/images/hero/desert-luxury-home.jpg",
@@ -136,11 +136,11 @@ export const HERO_IMAGES: Record<string, HeroImage> = {
     alt: "Dr. Jan Duffy Google Business Profile contact and reviews",
   },
   faq: {
-    src: "/images/hero/nevada-valley-skyline.jpg",
+    src: "/images/hero/faq-consultation.jpg",
     alt: "Nevada real estate FAQ answers for Las Vegas Valley buyers and sellers",
   },
   "market-update": {
-    src: "/images/hero/nevada-valley-skyline.jpg",
+    src: "/images/hero/market-update.jpg",
     alt: "Nevada real estate market update for the Las Vegas Valley",
   },
   "market-report": {
@@ -148,7 +148,7 @@ export const HERO_IMAGES: Record<string, HeroImage> = {
     alt: "Clark County housing market report aerial neighborhood view",
   },
   "market-insights": {
-    src: "/images/hero/modern-nevada-home.jpg",
+    src: "/images/hero/market-insights.jpg",
     alt: "Nevada housing market insights with a modern desert home exterior",
   },
   neighborhoods: {
@@ -160,7 +160,7 @@ export const HERO_IMAGES: Record<string, HeroImage> = {
     alt: "Active adult 55+ communities in Henderson and Summerlin Nevada",
   },
   maps: {
-    src: "/images/hero/nevada-valley-skyline.jpg",
+    src: "/images/hero/maps-valley.jpg",
     alt: "Interactive Nevada real estate maps for Las Vegas Valley communities",
   },
   directions: {
@@ -176,7 +176,7 @@ export const HERO_IMAGES: Record<string, HeroImage> = {
     alt: "Las Vegas real estate skyline and valley housing market",
   },
   news: {
-    src: "/images/hero/nevada-valley-skyline.jpg",
+    src: "/images/hero/news-market.jpg",
     alt: "Nevada real estate news and Las Vegas Valley market updates",
   },
   "privacy-policy": {
@@ -188,7 +188,7 @@ export const HERO_IMAGES: Record<string, HeroImage> = {
     alt: "Nevada Real Estate Market security policy",
   },
   "site-map": {
-    src: "/images/hero/nevada-neighborhoods.jpg",
+    src: "/images/hero/site-map-valley.jpg",
     alt: "Site map of Nevada Real Estate Market pages and communities",
   },
   "north-las-vegas-zip-codes-a-comprehensive-guide": {

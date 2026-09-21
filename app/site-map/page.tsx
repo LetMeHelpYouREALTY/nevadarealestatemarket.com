@@ -46,7 +46,7 @@ export default function HtmlSiteMapPage() {
             " for a guided tour.",
         },
       ]}
-      hero={getHeroImageByKey("home")}
+      hero={getHeroImageByKey("site-map")}
       heroTitle="Site Map"
       heroSubtitle="Every major page on Nevada Real Estate Market — linked for buyers, sellers, and search engines."
       heroBadge="Navigation"
