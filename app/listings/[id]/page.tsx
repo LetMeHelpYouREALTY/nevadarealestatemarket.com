@@ -2,7 +2,7 @@ import { SitePage } from "@/components/layouts/SitePage";
 import { HeadingPhoto } from "@/components/sections/SectionImage";
 import { getHeroImageByKey } from "@/lib/hero-images";
 import { buildPageMetadata } from "@/lib/seo/metadata";
-import { agentInfo, officeInfo } from "@/lib/site-config";
+import { agentInfo, businessHours, officeInfo } from "@/lib/site-config";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -57,7 +57,7 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
           .
         </p>
         <p className="mb-8 text-slate-700 leading-relaxed">
-          {officeInfo.address.full}. Hours {officeInfo.hours}.{" "}
+          {officeInfo.address.full}. Hours {businessHours.display}.{" "}
           <Link href="/listings" className="text-blue-700 underline">
             All listings
           </Link>
