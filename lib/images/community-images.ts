@@ -34,8 +34,8 @@ export const COMMUNITY_HERO_IMAGES: Record<string, HeroImage> = {
     alt: "MacDonald Ranch Henderson desert-contemporary homes below MacDonald Highlands",
   },
   "green-valley-ranch": {
-    src: "/images/neighborhoods/green-valley.jpg",
-    alt: "Green Valley Ranch Henderson neighborhood with mature desert landscaping",
+    src: "/images/neighborhoods/green-valley-ranch.jpg",
+    alt: "Green Valley Ranch Henderson neighborhood near The District shopping village",
   },
   "green-valley": {
     src: "/images/neighborhoods/green-valley.jpg",
@@ -94,8 +94,8 @@ export const COMMUNITY_HERO_IMAGES: Record<string, HeroImage> = {
     alt: "Silverstone Ranch Northwest Las Vegas golf-course community homes",
   },
   "lone-mountain": {
-    src: "/images/neighborhoods/centennial-hills.jpg",
-    alt: "Lone Mountain Las Vegas homes with desert hillside backdrop",
+    src: "/images/neighborhoods/lone-mountain.jpg",
+    alt: "Lone Mountain Las Vegas homes with the rocky peak behind rooftops",
   },
   "arts-district": {
     src: "/images/neighborhoods/arts-district.jpg",
@@ -150,8 +150,8 @@ export const COMMUNITY_HERO_IMAGES: Record<string, HeroImage> = {
     alt: "Trilogy Summerlin 55+ homes near Red Rock Canyon",
   },
   "del-webb-lake-las-vegas": {
-    src: "/images/neighborhoods/lake-las-vegas.jpg",
-    alt: "Del Webb Lake Las Vegas 55+ homes near the private lake",
+    src: "/images/neighborhoods/del-webb-lake-las-vegas.jpg",
+    alt: "Del Webb Lake Las Vegas 55+ villas with clubhouse pool and lake views",
   },
 };
 

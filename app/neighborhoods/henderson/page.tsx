@@ -452,11 +452,12 @@ export default function HendersonPage() {
                 Choosing <strong>Berkshire Hathaway HomeServices</strong> for
                 your Henderson home search means working with agents who
                 understand the subtle differences between Henderson's many
-                communities. Dr. Jan Duffy can explain which neighborhoods have
-                the best schools for your children's ages, which HOAs are
-                well-managed, and which areas offer the strongest investment
-                potential. That local knowledge, backed by the resources and
-                reputation of Berkshire Hathaway, makes all the difference.
+                communities. Dr. Jan Duffy can walk you through commute times to
+                St. Rose Parkway medical campuses, named CCSD schools near Green
+                Valley and Anthem, HOA fee structures, and which corridors have
+                stronger recent resale velocity. That local knowledge, backed by
+                the resources and reputation of Berkshire Hathaway, makes all
+                the difference.
               </p>
             </div>
           </section>
@@ -465,11 +466,10 @@ export default function HendersonPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Henderson offers something for everyone—young professionals,
-                relocating buyers, and 55+ residents. As a Berkshire Hathaway
-                HomeServices agent, I help clients cut through the options and
-                find the community that fits their lifestyle. There's a reason
-                Henderson keeps winning 'Best Places to Live' awards."
+                "Henderson offers master-planned amenities from Green Valley to
+                Anthem and Lake Las Vegas. I help clients compare square
+                footage, HOA costs, and commute times so the numbers fit. Call
+                (702) 500-1955."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
                 — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada

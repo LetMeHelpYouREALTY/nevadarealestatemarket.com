@@ -116,8 +116,8 @@ export default function RelocationPage() {
               </div>
             </div>
             <p className="text-center text-slate-300 mt-8">
-              Moving to Dallas? Phoenix? Chicago? We connect you with top-rated
-              BHHS agents in your new city at no extra cost.
+              Moving to Dallas? Phoenix? Chicago? We connect you with BHHS
+              agents in your new city at no extra cost.
             </p>
           </section>
 

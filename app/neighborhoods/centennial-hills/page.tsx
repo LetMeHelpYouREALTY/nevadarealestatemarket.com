@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "Centennial Hills homes for sale",
     "Centennial Hills Las Vegas",
     "northwest Las Vegas real estate",
-    "family homes Las Vegas",
+    "single-family homes Las Vegas",
   ],
 };
 
@@ -45,10 +45,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Is Centennial Hills a good family neighborhood?",
+      name: "What parks and campuses are near Centennial Hills?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, Centennial Hills is one of Las Vegas's best family neighborhoods with highly-rated schools, safe streets, multiple parks including Centennial Hills Park, and convenient shopping at Centennial Center.",
+        text: "Centennial Hills Park, trailheads toward the Spring Mountains, shopping at Centennial Center (Target, Costco), and CCSD campuses along the US-95 northwest corridor. Downtown Summerlin is typically 15–20 minutes by car. Call Dr. Jan Duffy at (702) 500-1955 for current listings.",
       },
     },
     {
@@ -497,13 +497,13 @@ export default function CentennialHillsPage() {
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  Is Centennial Hills a good family neighborhood?
+                  What parks and campuses are near Centennial Hills?
                 </h3>
                 <p className="text-slate-600">
-                  Yes, Centennial Hills is one of Las Vegas's best family
-                  neighborhoods with highly-rated schools, safe streets,
-                  multiple parks including Centennial Hills Park, and convenient
-                  shopping at Centennial Center.
+                  Centennial Hills Park, trailheads toward the Spring Mountains,
+                  shopping at Centennial Center (Target, Costco), and CCSD
+                  campuses along the US-95 northwest corridor. Downtown
+                  Summerlin is typically 15–20 minutes by car.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -538,8 +538,8 @@ export default function CentennialHillsPage() {
             </h2>
             <p className="text-xl text-blue-100 mb-8">
               Contact Dr. Jan Duffy, your Berkshire Hathaway HomeServices
-              Centennial Hills expert, for guidance in this established family
-              community.
+              Centennial Hills expert, for listings, HOA details, and commute
+              times in northwest Las Vegas.
             </p>
             <a
               href="tel:+17025001955"

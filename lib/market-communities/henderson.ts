@@ -29,7 +29,7 @@ export const hendersonCommunities: MarketCommunity[] = [
     name: "MacDonald Ranch",
     tagline: "Master-planned luxury in east Henderson",
     priceRange: "$550K – $1.8M",
-    description: `MacDonald Ranch is one of Henderson's premier master-planned communities, known for well-maintained streetscapes, guard-gated neighborhoods, and top-performing schools. Located in the heart of east Henderson, it offers convenient access to the 215 Beltway, Green Valley Pkwy amenities, and the Desert Willow Golf Resort. Homes feature desert-contemporary architecture, large lots, and dramatic mountain views.`,
+    description: `MacDonald Ranch is one of Henderson's premier master-planned communities, known for well-maintained streetscapes, guard-gated neighborhoods, and CCSD-zoned campuses along Green Valley Parkway. Located in the heart of east Henderson, it offers convenient access to the 215 Beltway, Green Valley Pkwy amenities, and the Desert Willow Golf Resort. Homes feature desert-contemporary architecture, large lots, and dramatic mountain views.`,
     highlights: [
       "Desert Willow Golf Resort",
       "Guard-gated options",
@@ -73,14 +73,14 @@ export const hendersonCommunities: MarketCommunity[] = [
   {
     slug: "green-valley-ranch",
     name: "Green Valley Ranch",
-    tagline: "Established community with everything nearby",
+    tagline: "Built-out Green Valley Ranch near The District",
     priceRange: "$400K – $1.2M",
-    description: `Green Valley Ranch is Henderson's most walkable and amenity-rich neighborhood — home to The District shopping and dining, the award-winning Green Valley Ranch Resort, and an extensive trail system. The community blends established neighborhoods with newer builds, making it an ideal choice for buyers who want move-in-ready homes with a true neighborhood feel.`,
+    description: `Green Valley Ranch is Henderson's most walkable amenity corridor — home to The District shopping and dining, Green Valley Ranch Resort, and an extensive trail system. Housing stock mixes 1990s–2000s resale streets with newer infill, which suits buyers who want move-in-ready square footage within walking distance of retail.`,
     highlights: [
       "The District shopping & dining",
       "Green Valley Ranch Resort",
       "Extensive trail system",
-      "Extensive trail system",
+      "1990s–2000s resale streets",
       "Variety of price points",
       "Easy freeway access",
     ],

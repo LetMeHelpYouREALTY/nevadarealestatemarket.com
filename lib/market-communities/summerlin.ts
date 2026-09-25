@@ -121,9 +121,9 @@ export const summerlinCommunities: MarketCommunity[] = [
     name: "The Vistas",
     tagline: "Established luxury with mountain and valley views",
     priceRange: "$650K – $2M",
-    description: `The Vistas is one of Summerlin West's established luxury villages, known for wide streets, mature landscaping, and some of the best valley and mountain views in the corridor. Guard-gated neighborhoods sit alongside non-gated custom sections. Homes range from 2,500-square-foot resales to sprawling custom estates on cul-de-sac lots. The Vistas is fully built out, meaning buyers get established neighborhoods with no construction traffic — a premium for many relocating executives and empty-nesters.`,
+    description: `The Vistas is a fully built-out Summerlin West luxury village with wide streets, mature landscaping, and valley and mountain views. Guard-gated neighborhoods sit alongside non-gated custom sections. Homes range from 2,500-square-foot resales to custom estates on cul-de-sac lots. With no remaining construction phases, buyers get finished streetscapes and no builder traffic — a practical premium for relocating executives and downsizers.`,
     highlights: [
-      "Established community",
+      "Fully built-out village",
       "Guard-gated options",
       "Mountain & valley views",
       "Custom estate lots",

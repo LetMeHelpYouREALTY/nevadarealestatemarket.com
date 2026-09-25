@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
   title: "Berkshire Hathaway HomeServices Green Valley | Henderson Real Estate",
   description:
-    "Find Green Valley homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in Henderson's most established community. Median price $520K. Call (702) 500-1955.",
+    "Find Green Valley homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in Henderson's original master-planned community. Median price $520K. Call (702) 500-1955.",
   keywords: [
     "Berkshire Hathaway HomeServices Green Valley",
     "Green Valley homes for sale",
@@ -397,11 +397,10 @@ export default function GreenValleyPage() {
                 <strong>187 active listings</strong> with homes averaging{" "}
                 <strong>26 days on market</strong>. The median price of{" "}
                 <strong>$520,000</strong>
-                reflects the community's desirability and the premium buyers pay
-                for established neighborhoods. Properties range from
-                well-maintained townhomes in the $400,000s to custom homes
-                exceeding $1.2 million in Green Valley's more exclusive
-                enclaves.
+                reflects demand for 1970s–1990s housing stock with mature
+                landscaping. Properties range from well-maintained townhomes in
+                the $400,000s to custom homes exceeding $1.2 million in Green
+                Valley's more exclusive enclaves.
               </p>
               <p>
                 Working with a <strong>Berkshire Hathaway HomeServices</strong>{" "}
@@ -409,10 +408,9 @@ export default function GreenValleyPage() {
                 between Green Valley proper, Green Valley Ranch, and Green
                 Valley South. Each area has distinct characteristics, price
                 points, and lifestyle offerings. Dr. Jan Duffy helps buyers
-                navigate these nuances and find the perfect fit—whether that's a
-                starter home for a young family or a forever home for empty
-                nesters looking to downsize without leaving the community they
-                love.
+                navigate these nuances and find the square footage, HOA
+                structure, and commute that fit—starter resale, move-up, or a
+                single-story downsize without leaving the Green Valley corridor.
               </p>
             </div>
           </section>
@@ -421,12 +419,11 @@ export default function GreenValleyPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Green Valley offers something newer communities can't
-                replicate—35 years of established neighborhoods, proven schools,
-                and a real sense of community. When clients tell me they want
-                tree-lined streets and neighbors who know each other's names, I
-                show them Green Valley. It's the original, and still one of the
-                best."
+                "Green Valley is Henderson's original 1970s–1990s master-planned
+                corridor — tree-lined streets, The District nearby, and named
+                CCSD campuses along Green Valley Parkway. When clients want
+                mature landscaping and 15-minute access to the airport and St.
+                Rose, I start them here."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
                 — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada
@@ -497,7 +494,7 @@ export default function GreenValleyPage() {
             <p className="text-xl text-blue-100 mb-8">
               Contact Dr. Jan Duffy, your Berkshire Hathaway HomeServices Green
               Valley specialist, for expert guidance in Henderson's most
-              established community.
+              original master-planned community.
             </p>
             <a
               href="tel:+17025001955"

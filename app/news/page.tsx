@@ -70,7 +70,7 @@ export default function NewsPage() {
       path={path}
       title={metadata.title as string}
       description={metadata.description as string}
-      hero={getHeroImageByKey("market-update")}
+      hero={getHeroImageByKey("news")}
       heroBadge="News & Updates"
       heroTitle="Nevada Real Estate News"
       heroSubtitle="Builder notes, assistance programs, and valley market reading from Dr. Jan Duffy."

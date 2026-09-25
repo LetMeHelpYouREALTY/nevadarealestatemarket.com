@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SitePage } from "@/components/layouts/SitePage";
 import { getHeroImageByKey } from "@/lib/hero-images";
+import { HeadingPhoto } from "@/components/sections/SectionImage";
 
 export const metadata: Metadata = {
   alternates: {
@@ -21,7 +22,7 @@ export default function SecurityPolicyPage() {
       path="/security-policy"
       seoTitle="Security Policy"
       seoDescription="Security policy and responsible disclosure for nevadarealestatemarket.com."
-      hero={getHeroImageByKey("contact")}
+      hero={getHeroImageByKey("security-policy")}
       heroBadge="Site Policy"
       heroTitle="Security Policy"
       heroSubtitle="Responsible disclosure and security practices for Dr. Jan Duffy's Nevada real estate site."
@@ -37,6 +38,7 @@ export default function SecurityPolicyPage() {
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">
               Our Commitment to Security
             </h2>
+            <HeadingPhoto heading="Our Commitment to Security" />
             <p className="text-gray-700 leading-relaxed">
               At Berkshire Hathaway HomeServices Nevada Properties, we take the
               security of our systems and the privacy of our clients seriously.
@@ -50,6 +52,7 @@ export default function SecurityPolicyPage() {
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">
               Reporting Security Vulnerabilities
             </h2>
+            <HeadingPhoto heading="Reporting Security Vulnerabilities" />
             <p className="text-gray-700 leading-relaxed mb-4">
               If you've discovered a security vulnerability, we appreciate your
               help in disclosing it to us responsibly.

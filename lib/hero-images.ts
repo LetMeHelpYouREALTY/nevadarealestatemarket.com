@@ -36,16 +36,16 @@ export const HERO_IMAGES: Record<string, HeroImage> = {
     alt: "Clark County Nevada aerial housing grid representing 2026 Las Vegas Valley market trends",
   },
   "compare-communities": {
-    src: "/images/hero/nevada-neighborhoods.jpg",
-    alt: "Nevada master-planned neighborhood with palms and desert homes for community comparison",
+    src: "/images/hero/compare-communities.jpg",
+    alt: "Side-by-side Henderson, Summerlin, Las Vegas, and North Las Vegas neighborhoods for comparison",
   },
   "no-state-income-tax": {
-    src: "/images/hero/california-relocator.jpg",
+    src: "/images/hero/no-state-income-tax.jpg",
     alt: "Nevada luxury desert home for California relocators — no state income tax",
   },
   "nevada-buyers-guide": {
-    src: "/images/hero/buyer-new-home.jpg",
-    alt: "New Nevada home with curb appeal for Las Vegas Valley buyers",
+    src: "/images/hero/buyers-guide.jpg",
+    alt: "Open entry of a new Henderson home for the Nevada buyers guide",
   },
   henderson: {
     src: "/images/hero/henderson-neighborhood.jpg",
@@ -96,8 +96,8 @@ export const HERO_IMAGES: Record<string, HeroImage> = {
     alt: "Move-up Nevada home for growing households in Clark County",
   },
   "sellers-relocation": {
-    src: "/images/hero/las-vegas-skyline.jpg",
-    alt: "Las Vegas Valley skyline for sellers relocating in or out of Nevada",
+    src: "/images/hero/sellers-relocation.jpg",
+    alt: "Moving truck at a Las Vegas Valley home for sellers relocating in or out of Nevada",
   },
   services: {
     src: "/images/hero/services-consult.jpg",
@@ -144,8 +144,8 @@ export const HERO_IMAGES: Record<string, HeroImage> = {
     alt: "Nevada real estate market update for the Las Vegas Valley",
   },
   "market-report": {
-    src: "/images/hero/clark-county-aerial.jpg",
-    alt: "Clark County housing market report aerial neighborhood view",
+    src: "/images/hero/market-report.jpg",
+    alt: "Clark County housing market report aerial of suburban rooftops",
   },
   "market-insights": {
     src: "/images/hero/market-insights.jpg",
@@ -172,20 +172,20 @@ export const HERO_IMAGES: Record<string, HeroImage> = {
     alt: "Las Vegas Valley home with RV garage and recreational vehicle parking",
   },
   "las-vegas-real-estate": {
-    src: "/images/hero/las-vegas-skyline.jpg",
-    alt: "Las Vegas real estate skyline and valley housing market",
+    src: "/images/hero/las-vegas-real-estate.jpg",
+    alt: "Las Vegas Valley housing grids across Henderson Summerlin and North Las Vegas",
   },
   news: {
     src: "/images/hero/news-market.jpg",
     alt: "Nevada real estate news and Las Vegas Valley market updates",
   },
   "privacy-policy": {
-    src: "/images/hero/office-henderson.jpg",
-    alt: "Nevada Real Estate Market privacy policy — Henderson office",
+    src: "/images/hero/privacy-policy.jpg",
+    alt: "Nevada Real Estate Market privacy policy — Henderson office desk",
   },
   "security-policy": {
-    src: "/images/hero/office-henderson.jpg",
-    alt: "Nevada Real Estate Market security policy",
+    src: "/images/hero/security-policy.jpg",
+    alt: "Nevada Real Estate Market security policy — Henderson office corridor",
   },
   "site-map": {
     src: "/images/hero/site-map-valley.jpg",
@@ -204,7 +204,7 @@ export const HERO_IMAGES: Record<string, HeroImage> = {
     alt: "Dr. Jan Duffy Henderson luxury real estate expert",
   },
   "william-lyon-homes-las-vegas-now-part-of-taylor-morrison": {
-    src: "/images/hero/new-construction.jpg",
+    src: "/images/hero/taylor-morrison.jpg",
     alt: "Taylor Morrison and former William Lyon new construction in Las Vegas",
   },
   "market-insights-home-is-possible-hip-program": {

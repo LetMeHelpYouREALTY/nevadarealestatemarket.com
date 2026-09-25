@@ -75,16 +75,16 @@ export const northLasVegasCommunities: MarketCommunity[] = [
   {
     slug: "eldorado",
     name: "Eldorado",
-    tagline: "Established North Las Vegas community with great value",
+    tagline: "North Las Vegas resale streets with larger lots",
     priceRange: "$280K – $550K",
-    description: `Eldorado is one of North Las Vegas's most established residential areas, offering strong value for first-time buyers and investors. The community features a mix of housing built across several decades, with many homes featuring larger lots than comparably priced properties in the valley. Its central North Las Vegas location provides easy access to Nellis Air Force Base, North Las Vegas Airport, and major employment corridors along I-15 and US-95. Strong rental demand from essential workers and nearby employment centers.`,
+    description: `Eldorado is a North Las Vegas residential corridor with housing built across several decades and lots that often run larger than comparably priced valley product. Central North Las Vegas location provides access to Nellis Air Force Base, North Las Vegas Airport, and employment along I-15 and US-95. Rental demand tracks nearby employment centers.`,
     highlights: [
       "Value-priced entry point",
       "Larger lots than comparable areas",
       "Near Nellis Air Force Base",
       "Strong rental demand",
       "I-15 & US-95 access",
-      "Established neighborhood feel",
+      "Decades of resale housing stock",
     ],
     bestFor: [
       "First-time buyers",

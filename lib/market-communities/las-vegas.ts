@@ -6,7 +6,7 @@ export const lasVegasCommunities: MarketCommunity[] = [
     name: "Centennial Hills",
     tagline: "Northwest master-planned living with easy mountain access",
     priceRange: "$450K – $1.2M",
-    description: `Centennial Hills is one of northwest Las Vegas's most established master-planned corridors, anchored by the Centennial Hills Town Center and offering a mix of single-family homes, gated communities, and new construction. The area sits at the base of the Spring Mountains, with quick access to hiking, biking, and outdoor recreation. Proximity to US-95 and a strong community infrastructure make it a perennial favorite for move-up buyers and California relocators.`,
+    description: `Centennial Hills is a northwest Las Vegas master-planned corridor anchored by Centennial Hills Town Center, with a mix of single-family homes, gated sections, and new construction. The area sits at the base of the Spring Mountains, with trail access and a typical 20–25 minute US-95 drive to the Strip. Proximity to the Beltway and retail along Centennial Parkway draws move-up buyers and California relocators.`,
     highlights: [
       "Centennial Hills Town Center",
       "US-95 corridor access",
@@ -26,9 +26,9 @@ export const lasVegasCommunities: MarketCommunity[] = [
   {
     slug: "spring-valley",
     name: "Spring Valley",
-    tagline: "Established southwest Las Vegas with unbeatable location",
+    tagline: "Built-out southwest Las Vegas near the Strip and airport",
     priceRange: "$350K – $900K",
-    description: `Spring Valley is one of Las Vegas's most established and densely populated communities, offering exceptional proximity to the Strip, the airport, and the Las Vegas Medical District. The area features a wide variety of housing — from entry-level single-family homes to executive-level gated neighborhoods. Its central location, mature trees, and access to major employers make it a top choice for professionals, investors, and buyers seeking strong rental income potential.`,
+    description: `Spring Valley is a densely populated southwest Las Vegas corridor with short drives to the Strip, Harry Reid International Airport, and the Las Vegas Medical District. Housing ranges from entry-level single-family homes to gated executive neighborhoods, with mature trees on many resale streets. Central employment access supports both owner-occupants and rental-income buyers.`,
     highlights: [
       "Minutes from the Strip",
       "Proximity to Medical District",
@@ -120,7 +120,7 @@ export const lasVegasCommunities: MarketCommunity[] = [
     name: "Arts District",
     tagline: "Downtown Las Vegas walkable urban living",
     priceRange: "$300K – $700K",
-    description: `The Arts District — centered around Main Street and Charleston Boulevard — is Las Vegas's most walkable urban neighborhood and the city's creative hub. Loft condos, townhomes, and renovated mid-century homes sit alongside galleries, breweries, coffee shops, and independent restaurants. First Friday draws thousands monthly. The area is attracting a growing wave of young professionals, remote workers, and investors who see the long-term appreciation potential of downtown Las Vegas's revitalization. Strong short-term rental demand for Airbnb-permitted units.`,
+    description: `The Arts District — centered around Main Street and Charleston Boulevard — is Las Vegas's most walkable urban neighborhood and the city's creative hub. Loft condos, townhomes, and renovated mid-century homes sit alongside galleries, breweries, coffee shops, and independent restaurants. First Friday draws thousands monthly. Remote workers and investors tracking downtown revitalization often shortlist lofts here. Strong short-term rental demand for Airbnb-permitted units.`,
     highlights: [
       "Walkable urban neighborhood",
       "First Friday arts district",

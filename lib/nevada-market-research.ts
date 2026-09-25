@@ -168,7 +168,7 @@ export const cityMarketProfiles = [
     median: marketStats.summerlin.medianPriceFormatted,
     dom: `${marketStats.summerlin.daysOnMarket} days`,
     summary:
-      "Howard Hughes master-planned community with Red Rock Canyon views, Downtown Summerlin retail, and guard-gated luxury in The Ridges. Commands a 5–12% school-zone premium over valley medians.",
+      "Howard Hughes master-planned community with Red Rock Canyon views, Downtown Summerlin retail, and guard-gated luxury in The Ridges. Commands a 5–12% amenity and commute premium over valley medians.",
     bestFor: "Outdoor lifestyle, parks and trails, upscale buyers",
     path: "/summerlin",
     mapPath: "/maps/summerlin",
@@ -189,7 +189,7 @@ export const cityMarketProfiles = [
 export const buyerSellerPlaybook = {
   buyers: [
     "Get pre-approved before touring — rates near 6.5% make payment math critical",
-    "Target neighborhoods with school-zone or employment tailwinds (Henderson, Summerlin, Skye Canyon)",
+    "Target neighborhoods with employment corridors and commute times that match your job (Henderson, Summerlin, Skye Canyon)",
     "Negotiate concessions: ~31% of valley closings now include seller credits or repairs",
     "Compare new construction buydowns vs. resale value in North Las Vegas and Mountains Edge",
     "Factor HOA, insurance, and property tax into monthly cost — not just purchase price",
@@ -271,7 +271,7 @@ export const expandedMarketFaqs: Record<string, FAQItem[]> = {
     {
       question: "What is the cheapest city to buy a home in Clark County?",
       answer:
-        "North Las Vegas typically offers the lowest median sale prices (near $420,000), followed by select east Las Vegas corridors. Henderson and Summerlin command premiums for schools, amenities, and master-planned living.",
+        "North Las Vegas typically offers the lowest median sale prices (near $420,000), followed by select east Las Vegas corridors. Henderson and Summerlin command premiums for master-planned amenities and commute times.",
     },
   ],
   forecast: [

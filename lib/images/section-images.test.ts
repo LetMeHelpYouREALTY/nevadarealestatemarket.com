@@ -28,6 +28,13 @@ describe("getSectionImage", () => {
       "/images/sections/section-specialization.jpg",
     );
   });
+  it("matches privacy and security policy headings to unique office photos", () => {
+    const privacy = getSectionImage("Information we collect");
+    const security = getSectionImage("Reporting Security Vulnerabilities");
+    expect(privacy.src).toBe("/images/hero/privacy-policy.jpg");
+    expect(security.src).toBe("/images/hero/security-policy.jpg");
+    expect(privacy.src).not.toBe(security.src);
+  });
 });
 
 describe("unique community heroes", () => {
@@ -36,5 +43,69 @@ describe("unique community heroes", () => {
     const index = getHeroImageByKey("55-plus-communities");
     expect(anthem?.src).toBe("/images/neighborhoods/sun-city-anthem.jpg");
     expect(anthem?.src).not.toBe(index.src);
+  });
+
+  it("gives Green Valley Ranch a different H1 photo than Green Valley", () => {
+    const gvr = getCommunityHeroImage("green-valley-ranch");
+    const gv = getCommunityHeroImage("green-valley");
+    expect(gvr?.src).toBe("/images/neighborhoods/green-valley-ranch.jpg");
+    expect(gv?.src).toBe("/images/neighborhoods/green-valley.jpg");
+    expect(gvr?.src).not.toBe(gv?.src);
+  });
+
+  it("gives Del Webb Lake Las Vegas a different H1 than Lake Las Vegas", () => {
+    const delWebb = getCommunityHeroImage("del-webb-lake-las-vegas");
+    const lake = getCommunityHeroImage("lake-las-vegas");
+    expect(delWebb?.src).toBe(
+      "/images/neighborhoods/del-webb-lake-las-vegas.jpg",
+    );
+    expect(lake?.src).toBe("/images/neighborhoods/lake-las-vegas.jpg");
+    expect(delWebb?.src).not.toBe(lake?.src);
+  });
+});
+
+describe("unique page heroes", () => {
+  it("does not reuse contact office photo for privacy or security", () => {
+    const contact = getHeroImageByKey("contact");
+    const privacy = getHeroImageByKey("privacy-policy");
+    const security = getHeroImageByKey("security-policy");
+    expect(privacy.src).toBe("/images/hero/privacy-policy.jpg");
+    expect(security.src).toBe("/images/hero/security-policy.jpg");
+    expect(privacy.src).not.toBe(contact.src);
+    expect(security.src).not.toBe(contact.src);
+    expect(privacy.src).not.toBe(security.src);
+  });
+
+  it("does not reuse neighborhoods photo for compare-communities", () => {
+    const compare = getHeroImageByKey("compare-communities");
+    const neighborhoods = getHeroImageByKey("neighborhoods");
+    expect(compare.src).toBe("/images/hero/compare-communities.jpg");
+    expect(compare.src).not.toBe(neighborhoods.src);
+  });
+
+  it("gives leftover hubs unique H1 photos", () => {
+    expect(getHeroImageByKey("sellers-relocation").src).toBe(
+      "/images/hero/sellers-relocation.jpg",
+    );
+    expect(getHeroImageByKey("las-vegas-real-estate").src).toBe(
+      "/images/hero/las-vegas-real-estate.jpg",
+    );
+    expect(getHeroImageByKey("market-report").src).not.toBe(
+      getHeroImageByKey("market-update").src,
+    );
+    expect(getHeroImageByKey("nevada-buyers-guide").src).toBe(
+      "/images/hero/buyers-guide.jpg",
+    );
+    expect(getHeroImageByKey("no-state-income-tax").src).toBe(
+      "/images/hero/no-state-income-tax.jpg",
+    );
+    expect(
+      getHeroImageByKey(
+        "william-lyon-homes-las-vegas-now-part-of-taylor-morrison",
+      ).src,
+    ).toBe("/images/hero/taylor-morrison.jpg");
+    expect(getCommunityHeroImage("lone-mountain")?.src).toBe(
+      "/images/neighborhoods/lone-mountain.jpg",
+    );
   });
 });

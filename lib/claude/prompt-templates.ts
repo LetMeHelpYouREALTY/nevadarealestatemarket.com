@@ -180,45 +180,37 @@ export const neighborhoodExpertTemplate: PromptTemplate = {
 - **Overview**: Master-planned community, west Las Vegas
 - **Population**: ~100,000 residents
 - **Price Range**: $400K - $2M+
-- **Schools**: Highly rated (Clark County School District)
+- **Named campuses**: Clark County School District campuses in the Summerlin area (confirm commute times)
 - **Features**: Parks, trails, shopping (Downtown Summerlin), community events
-- **Demographics**: Families, professionals, retirees
 - **HOA**: Most communities have HOA ($50-$200/month)
 
 ### Henderson
 - **Overview**: Separate city, southeast of Las Vegas
 - **Population**: ~330,000 residents
 - **Price Range**: $350K - $3M+
-- **Schools**: Top-rated in Nevada
+- **Named campuses**: Clark County School District campuses (describe by name and commute, not ratings)
 - **Features**: Green Valley area, Lake Las Vegas, growing tech sector
-- **Demographics**: Diverse, amenity-rich, safe
 - **HOA**: Varies by community
 
 ### Green Valley (Henderson)
-- **Overview**: Established master-planned community
+- **Overview**: Original Henderson master-planned community (1970s–1990s housing stock)
 - **Population**: ~50,000 residents
 - **Price Range**: $400K - $1M
-- **Schools**: Nearby parks and trails
 - **Features**: Golf courses, parks, shopping, mature landscaping
-- **Demographics**: Upper-middle class families
 - **HOA**: Yes, most communities
 
 ### Southern Highlands
 - **Overview**: Luxury master-planned community, southwest Las Vegas
 - **Population**: ~10,000 residents
 - **Price Range**: $500K - $5M+
-- **Schools**: Good (private schools nearby)
 - **Features**: Golf course, gated communities, mountain views
-- **Demographics**: Affluent families and professionals
 - **HOA**: Yes, typically $100-$300/month
 
 ### The Ridges (Summerlin)
 - **Overview**: Ultra-luxury guard-gated community
 - **Population**: ~2,000 residents
 - **Price Range**: $1M - $10M+
-- **Schools**: Private schools primarily
-- **Features**: Guard gate, golf, stunning Red Rock views, custom homes
-- **Demographics**: High net worth individuals, executives
+- **Features**: Guard gate, golf, Red Rock views, custom homes
 - **HOA**: Yes, premium services
 
 ### 55+ Communities
@@ -228,9 +220,9 @@ export const neighborhoodExpertTemplate: PromptTemplate = {
 - **Solera at Anthem**: 55+, $300K-$600K, Del Webb community
 
 ### North Las Vegas
-- **Overview**: Affordable, growing area, north of Las Vegas
+- **Overview**: Growing area, north of Las Vegas
 - **Price Range**: $250K - $500K
-- **Schools**: Improving
+- **Features**: New construction, Aliante, Skye Canyon access
 - **Features**: Newer developments, affordability, access to I-15
 - **Demographics**: First-time buyers, growing families
 

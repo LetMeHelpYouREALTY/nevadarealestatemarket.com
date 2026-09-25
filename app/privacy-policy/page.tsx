@@ -39,8 +39,7 @@ const faqs = [
   },
   {
     question: "Who do I contact about privacy?",
-    answer:
-      `Email ${agentInfo.email} or call ${agentInfo.phone}. Office: ${officeInfo.address.full}.`,
+    answer: `Email ${agentInfo.email} or call ${agentInfo.phone}. Office: ${officeInfo.address.full}.`,
   },
 ];
 
@@ -50,7 +49,7 @@ export default function PrivacyPolicyPage() {
       path={path}
       title={metadata.title as string}
       description={metadata.description as string}
-      hero={getHeroImageByKey("home")}
+      hero={getHeroImageByKey("privacy-policy")}
       heroBadge="Legal"
       heroTitle="Privacy Policy"
       heroSubtitle={`How ${siteConfig.name} handles information you share with Dr. Jan Duffy.`}

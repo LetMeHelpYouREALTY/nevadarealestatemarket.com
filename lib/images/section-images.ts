@@ -25,6 +25,18 @@ const COMMUNITY_RULES: SectionRule[] = Object.entries(COMMUNITY_HERO_IMAGES)
  */
 const HEADING_RULES: SectionRule[] = [
   {
+    key: "privacy-policy",
+    test: /privacy|information we collect|how we use information/i,
+    src: "/images/hero/privacy-policy.jpg",
+    alt: "Henderson office desk for Nevada Real Estate Market privacy policy",
+  },
+  {
+    key: "security-policy",
+    test: /security|vulnerabilit|responsible disclosure/i,
+    src: "/images/hero/security-policy.jpg",
+    alt: "Henderson office corridor for Nevada Real Estate Market security policy",
+  },
+  {
     key: "named-schools",
     test: /named schools|schools near|school campus/i,
     src: "/images/sections/section-named-schools.jpg",

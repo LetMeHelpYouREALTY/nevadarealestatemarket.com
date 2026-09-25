@@ -22,8 +22,7 @@ export const metadata = buildPageMetadata({
 const faqs = [
   {
     question: "What is the Las Vegas median home price in 2026?",
-    answer:
-      `Valley median single-family prices have recently tracked near ${marketStats.lasVegas.medianPriceFormatted} (${marketStats.lastUpdated} market data). Neighborhood medians vary widely — Summerlin and luxury pockets trade higher; North Las Vegas offers lower entry points.`,
+    answer: `Valley median single-family prices have recently tracked near ${marketStats.lasVegas.medianPriceFormatted} (${marketStats.lastUpdated} market data). Neighborhood medians vary widely — Summerlin and luxury pockets trade higher; North Las Vegas offers lower entry points.`,
   },
   {
     question: "Where should I start looking in Las Vegas?",
@@ -32,8 +31,7 @@ const faqs = [
   },
   {
     question: "Who should I contact for Las Vegas real estate help?",
-    answer:
-      `Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties. Call or text ${agentInfo.phone}.`,
+    answer: `Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties. Call or text ${agentInfo.phone}.`,
   },
 ];
 
@@ -43,7 +41,7 @@ export default function LasVegasRealEstatePage() {
       path={path}
       title={metadata.title as string}
       description={metadata.description as string}
-      hero={getHeroImageByKey("las-vegas")}
+      hero={getHeroImageByKey("las-vegas-real-estate")}
       heroBadge="Las Vegas Valley"
       heroTitle="Las Vegas Real Estate"
       heroSubtitle="One hub for valley markets, community guides, and representation with Dr. Jan Duffy."
@@ -59,7 +57,9 @@ export default function LasVegasRealEstatePage() {
       sections={[
         {
           heading: "Explore by city",
-          body: ["Start with the submarket that matches your commute and housing type:"],
+          body: [
+            "Start with the submarket that matches your commute and housing type:",
+          ],
           bullets: [
             "Las Vegas city neighborhoods & Centennial Hills",
             "Henderson — Green Valley, Anthem, Lake Las Vegas",

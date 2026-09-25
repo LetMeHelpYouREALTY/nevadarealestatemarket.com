@@ -92,7 +92,7 @@ const priceRanges = [
   },
   {
     range: "$400K - $600K",
-    description: "Single-family homes, established neighborhoods",
+    description: "Resale single-family homes, 1990s–2000s streets",
     count: "2,100+",
   },
   {

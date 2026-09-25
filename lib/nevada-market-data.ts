@@ -77,7 +77,7 @@ const legacyFaqs = {
     {
       question: "Is Nevada a good state to buy real estate?",
       answer:
-        "Nevada offers no state income tax, strong job growth, and home prices typically 40–60% below comparable California markets. Clark County continues to attract relocators and investors. Work with a local expert to match community, schools, and appreciation potential to your goals.",
+        "Nevada offers no state income tax, strong job growth, and home prices typically 40–60% below comparable California markets. Clark County continues to attract relocators and investors. Work with a local expert to match commute, square footage, and HOA costs to your goals.",
     },
     {
       question: "Who provides Nevada real estate market analysis?",
@@ -92,7 +92,7 @@ const legacyFaqs = {
     {
       question: "Which Clark County city has the lowest home prices?",
       answer:
-        "North Las Vegas typically offers the most affordable entry points (median around $420,000), followed by select Las Vegas corridors. Henderson and Summerlin command higher medians for schools, amenities, and master-planned living.",
+        "North Las Vegas typically offers the most affordable entry points (median around $420,000), followed by select Las Vegas corridors. Henderson and Summerlin command higher medians for master-planned amenities and commute times.",
     },
     {
       question: "How do I get a Clark County market report?",

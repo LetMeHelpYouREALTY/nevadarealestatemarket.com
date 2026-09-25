@@ -32,8 +32,7 @@ const faqs = [
   },
   {
     question: "Should I use a buyer’s agent for Taylor Morrison?",
-    answer:
-      `Yes — register with Dr. Jan Duffy before your first builder visit so representation is recognized. Call ${agentInfo.phone}. Buyer-agent registration protects your interests on upgrades, incentives, and contract review.`,
+    answer: `Yes — register with Dr. Jan Duffy before your first builder visit so representation is recognized. Call ${agentInfo.phone}. Buyer-agent registration protects your interests on upgrades, incentives, and contract review.`,
   },
 ];
 
@@ -43,7 +42,9 @@ export default function WilliamLyonTaylorMorrisonPage() {
       path={path}
       title={metadata.title as string}
       description={metadata.description as string}
-      hero={getHeroImageByKey("new-construction")}
+      hero={getHeroImageByKey(
+        "william-lyon-homes-las-vegas-now-part-of-taylor-morrison",
+      )}
       heroBadge="New Construction"
       heroTitle="William Lyon Homes Las Vegas — Now Part of Taylor Morrison"
       heroSubtitle="What the builder transition means for incentives, communities, and buyer representation."

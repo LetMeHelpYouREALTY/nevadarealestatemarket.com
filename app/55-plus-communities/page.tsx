@@ -279,7 +279,7 @@ const communities = [
     highlights: [
       "Most affordable Summerlin 55+ option",
       "18-hole golf course",
-      "Established community (1990s)",
+      "Housing stock from the 1990s",
       "Strong sense of community",
     ],
     description:
