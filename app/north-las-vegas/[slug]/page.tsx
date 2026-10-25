@@ -9,7 +9,7 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 import { agentInfo } from "@/lib/site-config";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 /** Dedicated page owns this slug (richer unique content + self-canonical). */
@@ -21,7 +21,8 @@ export async function generateStaticParams() {
     .map((community) => ({ slug: community.slug }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const { slug } = params;
   if (DEDICATED_SLUGS.has(slug)) return {};
   const community = getNorthLasVegasCommunity(slug);
@@ -39,7 +40,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-export default async function NorthLasVegasCommunityPage({ params }: Props) {
+export default async function NorthLasVegasCommunityPage(props: Props) {
+  const params = await props.params;
   const { slug } = params;
   if (DEDICATED_SLUGS.has(slug)) notFound();
   const community = getNorthLasVegasCommunity(slug);
