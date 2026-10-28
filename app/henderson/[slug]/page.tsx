@@ -9,7 +9,7 @@ import { agentInfo } from "@/lib/site-config";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 /** Dedicated unique pages own these slugs (stronger self-canonicals). */
@@ -21,7 +21,8 @@ export async function generateStaticParams() {
     .map((community) => ({ slug: community.slug }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const { slug } = params;
   if (DEDICATED_SLUGS.has(slug)) return {};
   const community = getHendersonCommunity(slug);
@@ -39,7 +40,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-export default async function HendersonCommunityPage({ params }: Props) {
+export default async function HendersonCommunityPage(props: Props) {
+  const params = await props.params;
   const { slug } = params;
   if (DEDICATED_SLUGS.has(slug)) notFound();
   const community = getHendersonCommunity(slug);

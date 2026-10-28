@@ -4,7 +4,7 @@ import { MapSeoPage } from "@/components/maps/MapSeoPage";
 import { getMapLocation, mapLocations } from "@/lib/map-locations";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
@@ -13,7 +13,8 @@ export function generateStaticParams() {
     .map((loc) => ({ slug: loc.slug }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const location = getMapLocation(params.slug);
   if (!location || location.slug === "office") return {};
 
@@ -29,7 +30,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-export default function MapSlugPage({ params }: Props) {
+export default async function MapSlugPage(props: Props) {
+  const params = await props.params;
   const location = getMapLocation(params.slug);
   if (!location || location.slug === "office") notFound();
 

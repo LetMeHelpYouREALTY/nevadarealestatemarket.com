@@ -26,7 +26,6 @@ const nextConfig = {
   compress: true,
 
   // Performance optimizations
-  swcMinify: true,
 
   // Redirects: apex→www, legacy WordPress/GSC 404 recovery
   async redirects() {
