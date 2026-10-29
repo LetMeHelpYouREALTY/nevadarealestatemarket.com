@@ -116,7 +116,7 @@ export const mapLocations: MapLocation[] = [
       },
       {
         question: "Who is the best realtor in Henderson NV?",
-        answer: `Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada, ranked Nevada's Top 1%. Office: ${officeInfo.address.full}. Call ${agentInfo.phone}.`,
+        answer: `Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada. Office: ${officeInfo.address.full}. Call ${agentInfo.phone}.`,
       },
     ],
   },

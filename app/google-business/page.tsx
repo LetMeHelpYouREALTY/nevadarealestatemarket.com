@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Henderson MacDonald Highlands Real Estate | Homes by Dr. Jan Duffy",
     description:
-      "Luxury Henderson real estate expert ranked Nevada's Top 1%. Private showings and personalized consultations.",
+      "Luxury Henderson real estate expert. Private showings and personalized consultations.",
     url: "https://www.nevadarealestatemarket.com/google-business",
     type: "profile",
   },

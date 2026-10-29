@@ -81,7 +81,7 @@ const legacyFaqs = {
     },
     {
       question: "Who provides Nevada real estate market analysis?",
-      answer: `Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, publishes market reports and neighborhood guides at ${siteConfig.url}. Ranked Nevada's Top 1% with $127M+ closed volume since 2013.`,
+      answer: `Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, publishes market reports and neighborhood guides at ${siteConfig.url}. $127M+ in Dr. Duffy Group career sales.`,
     },
   ],
   clarkCounty: [

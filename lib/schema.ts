@@ -208,7 +208,7 @@ export function generateRealEstateAgentSchema() {
       "Luxury estates",
       "Property management consulting",
     ],
-    slogan: "Luxury Henderson Real Estate | Nevada's Top 1% REALTOR®",
+    slogan: "Luxury Henderson Real Estate |, REALTOR®",
   };
 }
 

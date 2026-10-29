@@ -241,7 +241,7 @@ export default function WhyBerkshireHathawayPage() {
                   Dr. Jan Duffy brings the power of{" "}
                   <strong>Berkshire Hathaway HomeServices</strong> to Las Vegas,
                   Henderson, Summerlin, and all of Southern Nevada. Serving the
-                  area since 2013 with $127M+ in closed transactions, you get
+                  area since 2013 with $127M+ in Dr. Duffy Group career sales, you get
                   global brand strength with hometown expertise.
                 </p>
                 <ul className="space-y-3 mb-8">

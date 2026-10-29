@@ -140,7 +140,7 @@ export function MarketCommunityDetail({
               </h2>
               <p className="mb-6 text-gray-700">
                 Get current listings, pricing trends, and a personalized tour
-                from Dr. Jan Duffy — Nevada&apos;s Top 1% REALTOR®.
+                from Dr. Jan Duffy —, REALTOR®.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
