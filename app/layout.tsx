@@ -90,7 +90,8 @@ export default function RootLayout({
         {/* Analytics after idle — avoid competing with LCP */}
         <Analytics />
         {/* Lead widget: idle + delay / first interaction — keeps WidgetBe off critical path */}
-        <DeferredWidgetBe />
+        {/* Production only: keeps Vercel preview URLs out of the FUB Pixel install list */}
+        {process.env.VERCEL_ENV === "production" && <DeferredWidgetBe />}
       </body>
     </html>
   );
