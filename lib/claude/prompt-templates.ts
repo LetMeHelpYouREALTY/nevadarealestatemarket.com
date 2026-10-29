@@ -224,7 +224,7 @@ export const neighborhoodExpertTemplate: PromptTemplate = {
 - **Price Range**: $250K - $500K
 - **Features**: New construction, Aliante, Skye Canyon access
 - **Features**: Newer developments, affordability, access to I-15
-- **Demographics**: First-time buyers, growing families
+- **Demographics**: First-time buyers, move-up buyers
 
 ## How to Use This Knowledge
 - Match client needs to appropriate neighborhoods

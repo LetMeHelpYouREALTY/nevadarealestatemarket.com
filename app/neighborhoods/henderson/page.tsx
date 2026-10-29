@@ -242,7 +242,7 @@ export default function HendersonPage() {
               </h3>
               <div className="not-prose bg-white border border-slate-200 rounded-xl p-6">
                 <p className="text-slate-700 mb-4">
-                  Henderson offers some of Nevada's best public schools through
+                  Henderson offers some of Nevada's nearby public schools through
                   Clark County School District, plus excellent charter and
                   private options:
                 </p>

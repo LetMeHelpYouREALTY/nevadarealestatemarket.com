@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "downsizing Las Vegas",
     "sell large home Las Vegas",
     "55 plus communities Las Vegas",
-    "empty nester Las Vegas",
+    "downsizer Las Vegas",
     "Berkshire Hathaway HomeServices downsizing",
   ],
 };
@@ -160,7 +160,7 @@ export default function DownsizingPage() {
                   Single-Story Homes
                 </h3>
                 <p className="text-slate-600 text-sm mb-4">
-                  Right-sized single-story in established neighborhoods. No
+                  Right-sized single-story in older neighborhoods. No
                   stairs, smaller yard, lower utility costs. Age-in-place
                   features available.
                 </p>

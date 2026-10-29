@@ -164,7 +164,7 @@ export default function CentennialHillsPage() {
                 <strong>Centennial Hills</strong> represents the best of
                 established northwest Las Vegas living. While newer communities
                 like Skye Canyon attract attention, Centennial Hills offers
-                something they can't: mature neighborhoods with named Clark
+                something they can't: older neighborhoods with named Clark
                 County School District campuses, established landscaping, and a
                 genuine sense of community built over nearly two decades.
                 <strong> Berkshire Hathaway HomeServices</strong> helps buyers

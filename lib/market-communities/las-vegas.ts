@@ -131,7 +131,7 @@ export const lasVegasCommunities: MarketCommunity[] = [
     ],
     bestFor: [
       "Investors",
-      "Young professionals",
+      "Professionals",
       "Urban lifestyle buyers",
       "Short-term rental investors",
     ],
