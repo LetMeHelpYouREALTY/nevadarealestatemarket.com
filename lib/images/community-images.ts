@@ -39,7 +39,7 @@ export const COMMUNITY_HERO_IMAGES: Record<string, HeroImage> = {
   },
   "green-valley": {
     src: "/images/neighborhoods/green-valley.jpg",
-    alt: "Green Valley Henderson established neighborhood streetscapes",
+    alt: "Green Valley Henderson older neighborhood streetscapes",
   },
   anthem: {
     src: "/images/neighborhoods/anthem.jpg",

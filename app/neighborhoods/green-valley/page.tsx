@@ -400,7 +400,7 @@ export default function GreenValleyPage() {
                 reflects demand for 1970s–1990s housing stock with mature
                 landscaping. Properties range from well-maintained townhomes in
                 the $400,000s to custom homes exceeding $1.2 million in Green
-                Valley's more exclusive enclaves.
+                Valley's more luxury enclaves.
               </p>
               <p>
                 Working with a <strong>Berkshire Hathaway HomeServices</strong>{" "}
