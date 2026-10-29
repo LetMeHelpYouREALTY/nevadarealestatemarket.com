@@ -17,9 +17,9 @@ export const siteConfig = {
   shortName: "BHHS",
   url: "https://www.nevadarealestatemarket.com",
   description:
-    "Nevada real estate market data, home prices, and housing forecasts for the Las Vegas Valley — Henderson, Summerlin, Las Vegas, North Las Vegas, and Clark County. Expert guidance from Dr. Jan Duffy, Nevada's Top 1% REALTOR® with Berkshire Hathaway HomeServices. Call (702) 500-1955.",
+    "Nevada real estate market data, home prices, and housing forecasts for the Las Vegas Valley — Henderson, Summerlin, Las Vegas, North Las Vegas, and Clark County. Expert guidance from Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices. Call (702) 500-1955.",
   gbpDescription:
-    "Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices® Nevada, specializes in luxury homes and estates in Henderson, Nevada. Serving prestigious communities like Lake Las Vegas, MacDonald Ranch, Green Valley Ranch, Seven Hills, and Anthem, Dr. Duffy provides expert representation for luxury properties, custom builds, and estates. Ranked in Nevada's Top 1%, she offers private showings, personalized consultations, and market insights tailored to buyers and sellers seeking premier real estate in Henderson.",
+    "Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices® Nevada, specializes in luxury homes and estates in Henderson, Nevada. Serving prestigious communities like Lake Las Vegas, MacDonald Ranch, Green Valley Ranch, Seven Hills, and Anthem, Dr. Duffy provides expert representation for luxury properties, custom builds, and estates. She offers private showings, personalized consultations, and market insights tailored to buyers and sellers seeking premier real estate in Henderson.",
   foundingDate: "2013-09-19",
 };
 
@@ -189,7 +189,7 @@ export const agentStats = {
   volumeClosed: "$127M+",
   averageRating: 4.9,
   reviewCount: 200,
-  ranking: "Nevada's Top 1%",
+  ranking: "5.0★ on Realtor.com (50 reviews)",
 };
 
 // Value Propositions
@@ -198,7 +198,7 @@ export const valuePropositions = {
   trust:
     "Berkshire Hathaway HomeServices is the only real estate brand backed by Warren Buffett's Berkshire Hathaway Inc. This means unmatched financial stability, ethical standards, and a global referral network of 50,000+ agents.",
   expertise:
-    "Serving Henderson luxury real estate since 2013 with $127M+ in closed transactions, Dr. Jan Duffy combines deep local market knowledge with the resources of a global brand. Ranked in Nevada's Top 1%.",
+    "Serving Henderson luxury real estate since 2013 with $127M+ in Dr. Duffy Group career sales, Dr. Jan Duffy combines deep local market knowledge with the resources of a global brand.",
 };
 
 // Neighborhoods served
@@ -387,7 +387,7 @@ export const commonFAQs = {
       question:
         "Who is Dr. Jan Duffy and what areas does she serve in Henderson?",
       answer:
-        "Dr. Jan Duffy is a REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, ranked in Nevada's Top 1%. She specializes in luxury homes and estates in Henderson, serving Lake Las Vegas, MacDonald Ranch, Green Valley Ranch, Seven Hills, Anthem, and surrounding Henderson communities. Call (702) 500-1955 for a consultation.",
+        "Dr. Jan Duffy is a REALTOR® with Berkshire Hathaway HomeServices Nevada Properties. She specializes in luxury homes and estates in Henderson, serving Lake Las Vegas, MacDonald Ranch, Green Valley Ranch, Seven Hills, Anthem, and surrounding Henderson communities. Call (702) 500-1955 for a consultation.",
     },
     {
       question:
@@ -403,7 +403,7 @@ export const commonFAQs = {
     {
       question: "What is Dr. Jan Duffy's experience in Henderson real estate?",
       answer:
-        "Dr. Jan Duffy has served Henderson since 2013, with $127M+ in closed transactions and 500+ satisfied clients. Her expertise spans luxury estates, custom builds, and premier Henderson communities. She is ranked in Nevada's Top 1% of REALTORS®.",
+        "Dr. Jan Duffy has served Henderson since 2013, with $127M+ in Dr. Duffy Group career sales and 500+ team sales. Her expertise spans luxury estates, custom builds, and premier Henderson communities.",
     },
   ],
   buying: [

@@ -33,7 +33,7 @@ export const DOMAIN_CONFIGS: Record<string, DomainConfig> = {
     tagline:
       "Nevada Real Estate Market | Las Vegas Valley Home Prices & Housing Trends",
     description:
-      "Nevada real estate market statistics, forecasts, and expert guidance from Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada. Henderson, Summerlin, Las Vegas & Clark County. Ranked Nevada's Top 1%. Call (702) 500-1955.",
+      "Nevada real estate market statistics, forecasts, and expert guidance from Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada. Henderson, Summerlin, Las Vegas & Clark County. Call (702) 500-1955.",
     heroHeadline: "Nevada Real Estate Market",
     heroSubheadline:
       "Home prices, neighborhood guides, and representation across Henderson, Summerlin, and Las Vegas — from Dr. Jan Duffy.",
@@ -703,7 +703,7 @@ export const DEFAULT_CONFIG: DomainConfig = {
   tagline:
     "Nevada Real Estate Market | Las Vegas Valley Home Prices & Housing Trends",
   description:
-    "Nevada real estate market statistics, forecasts, and expert guidance from Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada. Henderson, Summerlin, Las Vegas & Clark County. Ranked Nevada's Top 1%. Call (702) 500-1955.",
+    "Nevada real estate market statistics, forecasts, and expert guidance from Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada. Henderson, Summerlin, Las Vegas & Clark County. Call (702) 500-1955.",
   heroHeadline: "Nevada Real Estate Market",
   heroSubheadline:
     "Home prices, neighborhood guides, and representation across Henderson, Summerlin, and Las Vegas — from Dr. Jan Duffy.",

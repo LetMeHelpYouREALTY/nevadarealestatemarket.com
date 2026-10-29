@@ -96,7 +96,7 @@ export const businessInfo = {
 export const gbpDescription = {
   whoWeAre: siteConfig.gbpDescription,
 
-  whatWeDo: `Dr. Jan Duffy provides expert representation for luxury properties, custom builds, and estates across Henderson's most prestigious communities. Ranked in Nevada's Top 1%, she offers private showings, personalized consultations, and market insights tailored to buyers and sellers seeking premier real estate.
+  whatWeDo: `Dr. Jan Duffy provides expert representation for luxury properties, custom builds, and estates across Henderson's most prestigious communities. She offers private showings, personalized consultations, and market insights tailored to buyers and sellers seeking premier real estate.
 
 Specialized services include buyer and seller representation, luxury home sales, custom build guidance, private showings, market consultations, and property management consulting. Dr. Jan's approach combines deep Henderson neighborhood expertise with the global resources of Berkshire Hathaway HomeServices.`,
 
@@ -114,7 +114,7 @@ export const gbpFAQs = [
   {
     question: "Is Dr. Jan Duffy ranked among top Henderson real estate agents?",
     answer:
-      "Yes. Dr. Jan Duffy is ranked in Nevada's Top 1% of REALTORS® with Berkshire Hathaway HomeServices Nevada Properties. She has closed $127M+ in transactions and served 500+ satisfied clients since 2013.",
+      "Yes. Dr. Jan Duffy is a REALTOR® with Berkshire Hathaway HomeServices Nevada Properties. She has led the Dr. Duffy Group to $127M+ in career sales and 500+ families served.",
   },
   {
     question: "Does Dr. Jan offer private showings for luxury Henderson homes?",

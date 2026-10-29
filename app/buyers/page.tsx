@@ -129,7 +129,7 @@ export default function BuyersPage() {
         hero={getHeroImageByKey("buyers")}
         badge="Buyer Representation"
         title="Buy Your Las Vegas Home with Confidence"
-        subtitle="Buy a Las Vegas Valley home with Top 1% guidance from Dr. Jan Duffy."
+        subtitle="Buy a Las Vegas Valley home with a guidance from Dr. Jan Duffy."
         className="pt-24"
       />
       <main className="pt-8 pb-16">
