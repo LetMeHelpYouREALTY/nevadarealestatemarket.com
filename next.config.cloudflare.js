@@ -24,7 +24,6 @@ const nextConfig = {
   compress: false,
 
   // Performance optimizations
-  swcMinify: true,
 
   // Environment variables
   env: {

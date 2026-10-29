@@ -9,14 +9,15 @@ import { agentInfo } from "@/lib/site-config";
 import { buildPageMetadata } from "@/lib/seo/metadata";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
   return summerlinCommunities.map((community) => ({ slug: community.slug }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const params = await props.params;
   const { slug } = params;
   const community = getSummerlinCommunity(slug);
   if (!community) return {};
@@ -33,7 +34,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-export default async function SummerlinCommunityPage({ params }: Props) {
+export default async function SummerlinCommunityPage(props: Props) {
+  const params = await props.params;
   const { slug } = params;
   const community = getSummerlinCommunity(slug);
   if (!community) notFound();
