@@ -52,7 +52,7 @@ export default function RootLayout({
           src="https://em.realscout.com/widgets/v1/web.js"
           strategy="lazyOnload"
         />
-                {/* Google Tag */}
+        {/* Google Tag */}
         {process.env.NEXT_PUBLIC_GOOGLE_TAG_ID && (
           <>
             <Script
@@ -70,7 +70,7 @@ export default function RootLayout({
             </Script>
           </>
         )}
-{/* Facebook Pixel */}
+        {/* Facebook Pixel */}
         {process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID && (
           <Script id="facebook-pixel" strategy="afterInteractive">
             {`
@@ -96,4 +96,3 @@ export default function RootLayout({
     </html>
   );
 }
-
