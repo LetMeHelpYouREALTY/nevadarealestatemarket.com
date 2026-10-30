@@ -187,8 +187,8 @@ export const agentStats = {
   servingSince: 2013,
   transactionsClosed: 500,
   volumeClosed: "$127M+",
-  averageRating: 4.9,
-  reviewCount: 200,
+  averageRating: 5.0,
+  reviewCount: 50,
   ranking: "5.0★ on Realtor.com (50 reviews)",
 };
 

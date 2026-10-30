@@ -190,13 +190,6 @@ export function generateRealEstateAgentSchema() {
     },
     hasMap: officeInfo.googleMapsUrl,
     employee: { "@id": PERSON_ID },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: agentStats.averageRating.toString(),
-      reviewCount: agentStats.reviewCount.toString(),
-      bestRating: "5",
-      worstRating: "1",
-    },
     knowsAbout: [
       "Henderson luxury real estate",
       "MacDonald Ranch homes",
@@ -376,10 +369,6 @@ export function generateReviewSchema(reviews: ReviewItem[]) {
     "@type": "RealEstateAgent",
     "@id": ORG_ID,
     name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    aggregateRating: generateAggregateRatingSchema(
-      agentStats.averageRating,
-      agentStats.reviewCount,
-    ),
     review: reviews.map((review) => ({
       "@type": "Review",
       author: {

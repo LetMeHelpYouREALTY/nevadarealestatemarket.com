@@ -106,7 +106,6 @@ export function FAQSchema({
  */
 export function ReviewSchema({
   reviews,
-  aggregateRating,
 }: {
   reviews?: Array<{
     author: string;
@@ -125,16 +124,6 @@ export function ReviewSchema({
     "@id": ORG_ID,
     name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
   };
-
-  if (aggregateRating) {
-    schema.aggregateRating = {
-      "@type": "AggregateRating",
-      ratingValue: aggregateRating.ratingValue.toString(),
-      reviewCount: aggregateRating.reviewCount.toString(),
-      bestRating: "5",
-      worstRating: "1",
-    };
-  }
 
   // Nest reviews under RealEstateAgent (omit itemReviewed — parent is the item).
   // Never emit standalone Review nodes or a second aggregateRating for #organization.
