@@ -7,6 +7,7 @@ import { buildPageMetadata } from "@/lib/seo/metadata";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import { DeferredWidgetBe } from "@/components/analytics/DeferredWidgetBe";
+import { SpeedInsights as VercelSpeedInsights } from "@vercel/speed-insights/next";
 
 /**
  * Static root metadata (no headers()) so marketing pages can be CDN-cached.
@@ -91,6 +92,7 @@ export default function RootLayout({
         <Analytics />
         {/* Lead widget: idle + delay / first interaction — keeps WidgetBe off critical path */}
         <DeferredWidgetBe />
+        <VercelSpeedInsights />
       </body>
     </html>
   );
