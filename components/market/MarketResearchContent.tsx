@@ -223,7 +223,17 @@ export function ClarkCountyDemographicsSection() {
             <tbody>
               {clarkCountyDemographics.cities.map((city) => (
                 <tr key={city.name} className="border-b last:border-0">
-                  <td className="px-4 py-3 font-medium">{city.name}</td>
+                  <td className="px-4 py-3 font-medium">
+                    {city.name}
+                    {"href" in city && city.href ? (
+                      <a
+                        href={city.href}
+                        className="ml-2 text-sm font-normal text-blue-700 underline underline-offset-2 hover:text-blue-900"
+                      >
+                        {city.linkText}
+                      </a>
+                    ) : null}
+                  </td>
                   <td className="px-4 py-3 text-slate-600">
                     {city.population}
                   </td>

@@ -75,7 +75,7 @@ export const clarkCountyDemographics = {
     {
       name: "Henderson",
       population: "350,000+",
-      role: "Family & luxury corridor",
+      role: "Luxury & master-planned corridor",
     },
     {
       name: "North Las Vegas",
@@ -91,6 +91,8 @@ export const clarkCountyDemographics = {
       name: "Mesquite",
       population: "23,600+",
       role: "Northern county gateway",
+      href: "https://www.mesquiteestates.com/",
+      linkText: "Mesquite Estates homes and land",
     },
   ],
   demographics: [
