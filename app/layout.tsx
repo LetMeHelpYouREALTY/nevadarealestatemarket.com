@@ -49,10 +49,12 @@ export default function RootLayout({
         <div id="main-content">{children}</div>
         {/* RealScout: load once globally, deferred for LCP (user rule + PageSpeed) */}
         <Script
-          src="https://em.realscout.com/widgets/v1/web.js"
+          id="realscout-web-components"
+          type="module"
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           strategy="lazyOnload"
         />
-                {/* Google Tag */}
+        {/* Google Tag */}
         {process.env.NEXT_PUBLIC_GOOGLE_TAG_ID && (
           <>
             <Script
@@ -70,7 +72,7 @@ export default function RootLayout({
             </Script>
           </>
         )}
-{/* Facebook Pixel */}
+        {/* Facebook Pixel */}
         {process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID && (
           <Script id="facebook-pixel" strategy="afterInteractive">
             {`
@@ -95,4 +97,3 @@ export default function RootLayout({
     </html>
   );
 }
-
